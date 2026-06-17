@@ -1,0 +1,1649 @@
+Ôr@Ÿªassertions¤code´customTransformCache¬dependencies¢id¤meta±moduleSideEffects¬originalCode±originalSourcemap«resolvedIds®sourcemapChainµsyntheticNamedExportsµtransformDependencies®transformFiles¨cacheAstÔrAÚa¹// ==================== å­¦ç”Ÿç”¨æˆ·æ•°æ® ====================
+/** æ¼”ç¤ºå­¦ç”Ÿç”¨æˆ·ï¼ˆå¯¹åº” app.js ä¸­çš„ DEMO_STUDENTï¼‰ */
+export const MOCK_STUDENT = {
+    studentId: '2024316020318',
+    name: 'æ—äºˆå®¸',
+    password: 'demo',
+    college: 'è®¡ç®—æœºå­¦é™¢',
+    major: 'è®¡ç®—æœºç§‘å­¦ä¸æŠ€æœ¯',
+    className: '23è®¡ç§‘U3ç­',
+    grade: '2024',
+    phone: '138****0000',
+    email: '2024316020318@school.edu.cn',
+    address: 'å¹¿ä¸œçœæ·±åœ³å¸‚å—å±±åŒºxxè·¯xxå·',
+    avatarInitial: 'æ—',
+};
+/** é¢å¤–å­¦ç”Ÿç”¨æˆ·ï¼ˆç”¨äºè¾¹ç•Œæµ‹è¯•ï¼‰ */
+export const MOCK_STUDENT_2 = {
+    studentId: '2024316020320',
+    name: 'å¼ ä¸‰',
+    password: '123456',
+    college: 'è®¡ç®—æœºå­¦é™¢',
+    major: 'è®¡ç®—æœºç§‘å­¦ä¸æŠ€æœ¯',
+    className: '23è®¡ç§‘U3ç­',
+    grade: '2024',
+    phone: '139****1111',
+    email: '2024316020320@school.edu.cn',
+    address: 'å¹¿ä¸œçœå¹¿å·å¸‚å¤©æ²³åŒºxxè·¯xxå·',
+    avatarInitial: 'å¼ ',
+};
+// ==================== å­¦ç±æ•°æ® ====================
+/** å­¦ç±ä¿¡æ¯ï¼ˆå¯¹æ ‡ Web å­¦ç±ä¿¡æ¯å­—æ®µï¼‰ */
+export const MOCK_STUDENT_STATUS = {
+    studentId: '2024316020318',
+    name: 'æ—äºˆå®¸',
+    englishName: 'Lin Yuchen',
+    gender: 'ç”·',
+    grade: '2024',
+    schoolSystem: '4å¹´',
+    program: 'æœ¬ç§‘',
+    educationLevel: 'æ™®é€šæœ¬ç§‘',
+    studentCategory: 'å…¨æ—¥åˆ¶',
+    major: 'è®¡ç®—æœºç§‘å­¦ä¸æŠ€æœ¯',
+    department: 'è®¡ç®—æœºå­¦é™¢',
+    adminDepartment: 'è®¡ç®—æœºå­¦é™¢',
+    direction: 'â€”',
+    className: '23è®¡ç§‘U3ç­',
+    enrollmentDate: '2024-09-01',
+    expectedGraduation: '2028-07-01',
+    studyMode: 'å…¨æ—¥åˆ¶',
+    isRegistered: 'æ˜¯',
+    isOnCampus: 'æ˜¯',
+    campus: 'ä¸»æ ¡åŒº',
+    status: 'åœ¨æ ¡',
+    statusEffectiveDate: '2024-09-01',
+    hasStudentStatus: 'æ˜¯',
+    isEmployed: 'å¦',
+    remarks: 'â€”',
+    photoPath: '',
+};
+/** å­¦ç±ä¿¡æ¯åˆ«åï¼ˆé¡µé¢å¼•ç”¨ï¼‰ */
+export const MOCK_STATUS = MOCK_STUDENT_STATUS;
+/** å­¦ç±ä¿¡æ¯å±•ç¤ºå­—æ®µ */
+export const STATUS_FIELDS = [
+    'å­¦å·', 'å§“å', 'æ€§åˆ«', 'é™¢ç³»', 'ä¸“ä¸š', 'ç­çº§',
+    'å­¦ç±çŠ¶æ€', 'å…¥æ ¡æ—¶é—´', 'é¢„è®¡æ¯•ä¸šæ—¶é—´', 'åŸ¹å…»å±‚æ¬¡', 'å­¦åˆ¶'
+];
+// ==================== è¯¾ç¨‹æ•°æ® ====================
+/** è¯¾ç¨‹åŸºç¡€æ•°æ® */
+export const MOCK_COURSES = [
+    {
+        courseCode: 'VDZ02115204.06',
+        courseName: 'Web å‰ç«¯åº”ç”¨',
+        credit: 3,
+        courseType: 'ä¸“ä¸šæ‹“å±•è¯¾ç¨‹',
+        college: 'è®¡ç®—æœºå­¦é™¢',
+        teacher: 'çŸ³é›…è¹',
+        classroom: 'æ•™8æ ‹613',
+        capacity: 60,
+        enrolled: 48,
+        weekRange: '2-9å‘¨',
+        weeks: [2, 9],
+        weekType: 0,
+        description: 'æœ¬è¯¾ç¨‹ä»‹ç»Webå‰ç«¯å¼€å‘åŸºç¡€ï¼ŒåŒ…æ‹¬HTMLã€CSSã€JavaScriptåŠä¸»æµæ¡†æ¶ã€‚',
+        timeSlots: [
+            { dayOfWeek: 1, startPeriod: 1, endPeriod: 2, timeLabel: 'ä¸Šåˆ 1-2èŠ‚', timeSegment: 'am' },
+        ],
+    },
+    {
+        courseCode: 'VDZ02115204.xx',
+        courseName: 'è½¯ä»¶ç»¼åˆå®è·µ',
+        credit: 4,
+        courseType: 'é›†ä¸­å®è·µæ•™å­¦è¯¾ç¨‹',
+        college: 'è®¡ç®—æœºå­¦é™¢',
+        teacher: 'æå›½å¼º',
+        classroom: 'æ•™9æ ‹708',
+        capacity: 50,
+        enrolled: 42,
+        weekRange: 'æŒ‰æ•™åŠ¡å®‰æ’',
+        weeks: [1, 16],
+        weekType: 0,
+        description: 'é›†ä¸­å®è·µè¯¾ç¨‹ï¼Œå®Œæˆä¸€ä¸ªå®Œæ•´çš„è½¯ä»¶é¡¹ç›®ã€‚',
+        timeSlots: [
+            { dayOfWeek: 2, startPeriod: 5, endPeriod: 8, timeLabel: 'ä¸‹åˆ 5-8èŠ‚ï¼ˆè¿ä¸Šï¼‰', timeSegment: 'pm' },
+        ],
+    },
+    {
+        courseCode: 'VDZ02115xxx',
+        courseName: 'å¤§å‹æ•°æ®åº“ç®¡ç†ä¸ç»´æŠ¤',
+        credit: 3,
+        courseType: 'ä¸“ä¸šæ‹“å±•è¯¾ç¨‹',
+        college: 'è®¡ç®—æœºå­¦é™¢',
+        teacher: 'æå›½å¼º',
+        classroom: 'æ•™9æ ‹708',
+        capacity: 55,
+        enrolled: 50,
+        weekRange: '3-14å‘¨',
+        weeks: [3, 14],
+        weekType: 0,
+        description: 'å­¦ä¹ å¤§å‹æ•°æ®åº“çš„è®¾è®¡ã€ç®¡ç†ä¸ç»´æŠ¤ã€‚',
+        timeSlots: [
+            { dayOfWeek: 5, startPeriod: 1, endPeriod: 2, timeLabel: 'ä¸Šåˆ 1-2èŠ‚', timeSegment: 'am' },
+        ],
+    },
+    {
+        courseCode: 'VDZ02115yyy',
+        courseName: 'ç§»åŠ¨åº”ç”¨å¼€å‘',
+        credit: 3,
+        courseType: 'ä¸“ä¸šæ ¸å¿ƒè¯¾ç¨‹',
+        college: 'è®¡ç®—æœºå­¦é™¢',
+        teacher: 'ç‹è€å¸ˆ',
+        classroom: 'æ•™6æ ‹201',
+        capacity: 60,
+        enrolled: 55,
+        weekRange: '1-16å‘¨',
+        weeks: [1, 16],
+        weekType: 0,
+        description: 'å­¦ä¹ ç§»åŠ¨åº”ç”¨å¼€å‘ï¼ŒåŒ…æ‹¬Androidå’ŒHarmonyOSå¹³å°ã€‚',
+        timeSlots: [
+            { dayOfWeek: 2, startPeriod: 3, endPeriod: 4, timeLabel: 'ä¸Šåˆ 3-4èŠ‚', timeSegment: 'am' },
+        ],
+    },
+    {
+        courseCode: 'VDZ02115zzz',
+        courseName: 'æ“ä½œç³»ç»Ÿ',
+        credit: 4,
+        courseType: 'ä¸“ä¸šæ ¸å¿ƒè¯¾ç¨‹',
+        college: 'è®¡ç®—æœºå­¦é™¢',
+        teacher: 'èµµè€å¸ˆ',
+        classroom: 'æ•™7æ ‹410',
+        capacity: 65,
+        enrolled: 60,
+        weekRange: '3-14å‘¨',
+        weeks: [3, 14],
+        weekType: 0,
+        description: 'å­¦ä¹ æ“ä½œç³»ç»ŸåŸç†ï¼ŒåŒ…æ‹¬è¿›ç¨‹ç®¡ç†ã€å†…å­˜ç®¡ç†ã€æ–‡ä»¶ç³»ç»Ÿç­‰ã€‚',
+        timeSlots: [
+            { dayOfWeek: 4, startPeriod: 3, endPeriod: 4, timeLabel: 'ä¸Šåˆ 3-4èŠ‚', timeSegment: 'am' },
+        ],
+    },
+];
+// ==================== è¯¾è¡¨æ•°æ® ====================
+/** è¯¾è¡¨å•å…ƒæ ¼æ•°æ®ï¼ˆå¯¹åº” HTML åŸå‹ä¸­çš„è¯¾è¡¨æ ¼å­ï¼‰ */
+export const MOCK_SCHEDULE_CELLS = [
+    // å‘¨ä¸€ 1-2èŠ‚ï¼šWebå‰ç«¯åº”ç”¨
+    { courseCode: 'VDZ02115204.06', courseName: 'Web å‰ç«¯åº”ç”¨', teacher: 'çŸ³é›…è¹', classroom: 'æ•™8æ ‹613', weekRange: '2-9å‘¨', dayOfWeek: 1, startPeriod: 1, endPeriod: 2, span: 2, isContinued: false, scheduleType: 'normal' },
+    // å‘¨äºŒ 3-4èŠ‚ï¼šç§»åŠ¨åº”ç”¨å¼€å‘
+    { courseCode: 'VDZ02115yyy', courseName: 'ç§»åŠ¨åº”ç”¨å¼€å‘', teacher: 'ç‹è€å¸ˆ', classroom: 'æ•™6æ ‹201', weekRange: '1-16å‘¨', dayOfWeek: 2, startPeriod: 3, endPeriod: 4, span: 2, isContinued: false, scheduleType: 'normal' },
+    // å‘¨äºŒ 5-8èŠ‚ï¼šè½¯ä»¶ç»¼åˆå®è·µï¼ˆè¿ä¸Šï¼‰
+    { courseCode: 'VDZ02115204.xx', courseName: 'è½¯ä»¶ç»¼åˆå®è·µ', teacher: 'æå›½å¼º', classroom: 'æ•™9æ ‹708', weekRange: 'æŒ‰æ•™åŠ¡å®‰æ’', dayOfWeek: 2, startPeriod: 5, endPeriod: 8, span: 4, isContinued: false, scheduleType: 'normal' },
+    // å‘¨ä¸‰ ç©º
+    // å‘¨å›› 3-4èŠ‚ï¼šæ“ä½œç³»ç»Ÿ
+    { courseCode: 'VDZ02115zzz', courseName: 'æ“ä½œç³»ç»Ÿ', teacher: 'èµµè€å¸ˆ', classroom: 'æ•™7æ ‹410', weekRange: '3-14å‘¨', dayOfWeek: 4, startPeriod: 3, endPeriod: 4, span: 2, isContinued: false, scheduleType: 'normal' },
+    // å‘¨äº” 1-2èŠ‚ï¼šå¤§å‹æ•°æ®åº“
+    { courseCode: 'VDZ02115xxx', courseName: 'å¤§å‹æ•°æ®åº“ç®¡ç†ä¸ç»´æŠ¤', teacher: 'æå›½å¼º', classroom: 'æ•™9æ ‹708', weekRange: '3-14å‘¨', dayOfWeek: 5, startPeriod: 1, endPeriod: 2, span: 2, isContinued: false, scheduleType: 'normal' },
+];
+/** å®è·µè¯¾è¡¨æ•°æ® */
+export const MOCK_PRACTICE_SCHEDULE = [
+    { courseCode: 'PRAC001', courseName: 'ä¼ä¸šå®ä¹ ', teacher: 'æè€å¸ˆ', classroom: 'æ ¡å¤–å®ä¹ åŸºåœ°', weekRange: '1-16å‘¨', dayOfWeek: 3, startPeriod: 5, endPeriod: 8, span: 4, isContinued: false, scheduleType: 'practice' },
+    { courseCode: 'PRAC002', courseName: 'è¯¾ç¨‹è®¾è®¡', teacher: 'ç‹è€å¸ˆ', classroom: 'æ•™5æ ‹301', weekRange: '10-14å‘¨', dayOfWeek: 5, startPeriod: 5, endPeriod: 6, span: 2, isContinued: false, scheduleType: 'practice' },
+];
+/** ä»Šæ—¥è¯¾ç¨‹æ•°æ® */
+export const MOCK_TODAY_COURSES = [
+    {
+        courseCode: 'VDZ02115204.06',
+        courseName: 'Web å‰ç«¯åº”ç”¨',
+        teacher: 'çŸ³é›…è¹',
+        classroom: 'æ•™8æ ‹613',
+        startPeriod: 1,
+        endPeriod: 2,
+        periodLabel: 'ä¸Šåˆ 1-2èŠ‚',
+        timeLabel: '08:00-09:35',
+        isTomorrow: false,
+    },
+    {
+        courseCode: 'VDZ02115204.xx',
+        courseName: 'è½¯ä»¶ç»¼åˆå®è·µ',
+        teacher: 'æå›½å¼º',
+        classroom: 'æ•™9æ ‹708',
+        startPeriod: 5,
+        endPeriod: 8,
+        periodLabel: 'ä¸‹åˆ 5-8èŠ‚',
+        timeLabel: '14:00-17:25',
+        isTomorrow: false,
+    },
+];
+/** ç©ºä»Šæ—¥è¯¾ç¨‹ï¼ˆè¾¹ç•Œæ•°æ®ï¼‰ */
+export const MOCK_TODAY_COURSES_EMPTY = [];
+/** æ˜æ—¥è¯¾ç¨‹æ•°æ® */
+export const MOCK_TOMORROW_COURSES = [
+    {
+        courseCode: 'VDZ02115yyy',
+        courseName: 'ç§»åŠ¨åº”ç”¨å¼€å‘',
+        teacher: 'ç‹è€å¸ˆ',
+        classroom: 'æ•™6æ ‹201',
+        startPeriod: 3,
+        endPeriod: 4,
+        periodLabel: 'ä¸Šåˆ 3-4èŠ‚',
+        timeLabel: '09:50-11:25',
+        isTomorrow: true,
+    },
+];
+/** è¯¾ç¨‹è¯¦æƒ…æ•°æ® */
+const WEB_FRONTEND_DETAIL = {
+    courseCode: 'VDZ02115204.06',
+    courseName: 'Web å‰ç«¯åº”ç”¨',
+    credit: 3,
+    courseType: 'ä¸“ä¸šæ‹“å±•è¯¾ç¨‹',
+    college: 'è®¡ç®—æœºå­¦é™¢',
+    teacher: 'çŸ³é›…è¹',
+    scheduleDesc: 'å‘¨ä¸€ ä¸Šåˆ 1-2èŠ‚',
+    weekRange: 'ç¬¬2-9å‘¨',
+    classroom: 'æ•™8æ ‹613',
+    description: 'æœ¬è¯¾ç¨‹ä»‹ç»Webå‰ç«¯å¼€å‘åŸºç¡€ï¼ŒåŒ…æ‹¬HTMLã€CSSã€JavaScriptåŠä¸»æµæ¡†æ¶ã€‚',
+    prerequisites: 'æ— ',
+    assessmentMethod: 'è€ƒè¯•+å®éªŒ',
+};
+const SOFTWARE_PRACTICE_DETAIL = {
+    courseCode: 'VDZ02115204.xx',
+    courseName: 'è½¯ä»¶ç»¼åˆå®è·µ',
+    credit: 4,
+    courseType: 'é›†ä¸­å®è·µæ•™å­¦è¯¾ç¨‹',
+    college: 'è®¡ç®—æœºå­¦é™¢',
+    teacher: 'æå›½å¼º',
+    scheduleDesc: 'å‘¨äºŒ ä¸‹åˆ 5-8èŠ‚ï¼ˆè¿ä¸Šï¼‰',
+    weekRange: 'æŒ‰æ•™åŠ¡å®‰æ’',
+    classroom: 'æ•™9æ ‹708',
+    description: 'é›†ä¸­å®è·µè¯¾ç¨‹ï¼Œå®Œæˆä¸€ä¸ªå®Œæ•´çš„è½¯ä»¶é¡¹ç›®ã€‚',
+    prerequisites: 'Webå‰ç«¯åº”ç”¨',
+    assessmentMethod: 'é¡¹ç›®ç­”è¾©',
+};
+export const MOCK_COURSE_DETAILS = new Map([
+    ['VDZ02115204.06', WEB_FRONTEND_DETAIL],
+    ['VDZ02115204.xx', SOFTWARE_PRACTICE_DETAIL],
+]);
+// ==================== æˆç»©æ•°æ® ====================
+/** å½“å‰å­¦æœŸæˆç»©æ•°æ®ï¼ˆå¯¹åº” app.js ä¸­çš„ gradeDataï¼‰ */
+export const MOCK_GRADES_CURRENT = [
+    {
+        id: 'g001',
+        semester: '2025-2026 ç¬¬1å­¦æœŸ',
+        courseCode: 'VDZ02115204.06',
+        courseSerial: 'VDZ02115204.06',
+        courseName: 'Web å‰ç«¯åº”ç”¨',
+        courseType: 'ä¸“ä¸šæ‹“å±•è¯¾ç¨‹',
+        credit: 3,
+        finalScore: 88,
+        overallScore: 90,
+        endScore: 90,
+        gpa: 4.0,
+        isPublished: true,
+        subScores: { regular: 92, midterm: 88, final: 88, experiment: 95 },
+    },
+    {
+        id: 'g002',
+        semester: '2025-2026 ç¬¬1å­¦æœŸ',
+        courseCode: 'VDZ02115204.xx',
+        courseSerial: 'VDZ02115204.xx',
+        courseName: 'è½¯ä»¶ç»¼åˆå®è·µ',
+        courseType: 'é›†ä¸­å®è·µæ•™å­¦è¯¾ç¨‹',
+        credit: 4,
+        finalScore: 85,
+        overallScore: 87,
+        endScore: 87,
+        gpa: 3.7,
+        isPublished: true,
+        subScores: { regular: 90, midterm: 0, final: 85, experiment: 88 },
+    },
+    {
+        id: 'g003',
+        semester: '2025-2026 ç¬¬1å­¦æœŸ',
+        courseCode: 'VDZ02115xxx',
+        courseSerial: 'VDZ02115xxx',
+        courseName: 'å¤§å‹æ•°æ®åº“ç®¡ç†ä¸ç»´æŠ¤',
+        courseType: 'ä¸“ä¸šæ‹“å±•è¯¾ç¨‹',
+        credit: 3,
+        finalScore: 82,
+        overallScore: 84,
+        endScore: 84,
+        gpa: 3.3,
+        isPublished: true,
+        subScores: { regular: 85, midterm: 80, final: 82 },
+    },
+];
+/** å†å²å­¦æœŸæˆç»©æ•°æ® */
+export const MOCK_GRADES_HISTORY = [
+    {
+        id: 'g004',
+        semester: '2024-2025 ç¬¬2å­¦æœŸ',
+        courseCode: 'VDZ02114aaa',
+        courseSerial: 'VDZ02114aaa',
+        courseName: 'æ•°æ®ç»“æ„',
+        courseType: 'ä¸“ä¸šæ ¸å¿ƒè¯¾ç¨‹',
+        credit: 4,
+        finalScore: 90,
+        overallScore: 91,
+        endScore: 91,
+        gpa: 4.0,
+        isPublished: true,
+    },
+    {
+        id: 'g005',
+        semester: '2024-2025 ç¬¬2å­¦æœŸ',
+        courseCode: 'VDZ02114bbb',
+        courseSerial: 'VDZ02114bbb',
+        courseName: 'è®¡ç®—æœºç½‘ç»œ',
+        courseType: 'ä¸“ä¸šæ ¸å¿ƒè¯¾ç¨‹',
+        credit: 3,
+        finalScore: 86,
+        overallScore: 87,
+        endScore: 87,
+        gpa: 3.7,
+        isPublished: true,
+    },
+];
+/** æˆç»©æœªå‘å¸ƒï¼ˆè¾¹ç•Œæ•°æ®ï¼‰ */
+export const MOCK_GRADES_UNPUBLISHED = [
+    {
+        id: 'g006',
+        semester: '2025-2026 ç¬¬2å­¦æœŸ',
+        courseCode: 'VDZ02116aaa',
+        courseSerial: 'VDZ02116aaa',
+        courseName: 'äººå·¥æ™ºèƒ½å¯¼è®º',
+        courseType: 'ä¸“ä¸šæ‹“å±•è¯¾ç¨‹',
+        credit: 3,
+        finalScore: 0,
+        overallScore: 0,
+        endScore: 0,
+        gpa: 0,
+        isPublished: false,
+    },
+];
+/** å­¦æœŸæˆç»©æ±‡æ€» */
+export const MOCK_SEMESTER_SUMMARY = {
+    semester: '2025-2026 ç¬¬1å­¦æœŸ',
+    totalCredit: 10,
+    avgGpa: 3.67,
+    weightedAvg: 86.3,
+    records: MOCK_GRADES_CURRENT,
+};
+// ==================== é€‰è¯¾æ•°æ® ====================
+/** é€‰è¯¾è½®æ¬¡ä¿¡æ¯ */
+export const MOCK_SELECTION_ROUND = {
+    roundName: '2025-2026-1 å­¦æœŸæ­£é€‰',
+    startTime: '2025-08-20 09:00',
+    endTime: '2025-09-05 23:59',
+    isActive: true,
+    maxCredit: 30,
+};
+/** å¯é€‰è¯¾ç¨‹åˆ—è¡¨ */
+export const MOCK_SELECTABLE_COURSES = [
+    {
+        courseCode: 'VDZ02116aaa',
+        courseName: 'äººå·¥æ™ºèƒ½å¯¼è®º',
+        teacher: 'é™ˆæ•™æˆ',
+        scheduleInfo: 'å‘¨ä¸‰ ä¸Šåˆ 1-2èŠ‚ Â· æ•™10æ ‹405',
+        capacity: 60,
+        enrolled: 45,
+        credit: 3,
+        courseType: 'ä¸“ä¸šæ‹“å±•è¯¾ç¨‹',
+        isSelected: false,
+    },
+    {
+        courseCode: 'VDZ02116bbb',
+        courseName: 'æœºå™¨å­¦ä¹ ',
+        teacher: 'åˆ˜è€å¸ˆ',
+        scheduleInfo: 'å‘¨å›› ä¸Šåˆ 3-4èŠ‚ Â· æ•™10æ ‹501',
+        capacity: 50,
+        enrolled: 50,
+        credit: 3,
+        courseType: 'ä¸“ä¸šæ‹“å±•è¯¾ç¨‹',
+        isSelected: false,
+    },
+    {
+        courseCode: 'VDZ02116ccc',
+        courseName: 'è½¯ä»¶æµ‹è¯•æŠ€æœ¯',
+        teacher: 'å¼ è€å¸ˆ',
+        scheduleInfo: 'å‘¨äº” ä¸‹åˆ 5-6èŠ‚ Â· æ•™8æ ‹312',
+        capacity: 55,
+        enrolled: 30,
+        credit: 2,
+        courseType: 'ä¸“ä¸šé€‰ä¿®è¯¾ç¨‹',
+        isSelected: true, // å·²é€‰
+    },
+    {
+        courseCode: 'VDZ02116ddd',
+        courseName: 'ç§»åŠ¨åº”ç”¨å¼€å‘ï¼ˆé¸¿è’™ï¼‰',
+        teacher: 'ç‹è€å¸ˆ',
+        scheduleInfo: 'å‘¨äºŒ ä¸Šåˆ 3-4èŠ‚ Â· æ•™6æ ‹201',
+        capacity: 60,
+        enrolled: 58,
+        credit: 3,
+        courseType: 'ä¸“ä¸šæ ¸å¿ƒè¯¾ç¨‹',
+        isSelected: false,
+    },
+];
+/** å·²é€‰è¯¾ç¨‹åˆ—è¡¨ */
+export const MOCK_MY_SELECTIONS = [
+    {
+        courseCode: 'VDZ02115204.06',
+        courseName: 'Web å‰ç«¯åº”ç”¨',
+        teacher: 'çŸ³é›…è¹',
+        scheduleInfo: 'å‘¨ä¸€ ä¸Šåˆ 1-2èŠ‚ Â· æ•™8æ ‹613',
+        capacity: 60,
+        enrolled: 48,
+        credit: 3,
+        courseType: 'ä¸“ä¸šæ‹“å±•è¯¾ç¨‹',
+        isSelected: true,
+    },
+    {
+        courseCode: 'VDZ02115204.xx',
+        courseName: 'è½¯ä»¶ç»¼åˆå®è·µ',
+        teacher: 'æå›½å¼º',
+        scheduleInfo: 'å‘¨äºŒ ä¸‹åˆ 5-8èŠ‚ Â· æ•™9æ ‹708',
+        capacity: 50,
+        enrolled: 42,
+        credit: 4,
+        courseType: 'é›†ä¸­å®è·µæ•™å­¦è¯¾ç¨‹',
+        isSelected: true,
+    },
+    {
+        courseCode: 'VDZ02116ccc',
+        courseName: 'è½¯ä»¶æµ‹è¯•æŠ€æœ¯',
+        teacher: 'å¼ è€å¸ˆ',
+        scheduleInfo: 'å‘¨äº” ä¸‹åˆ 5-6èŠ‚ Â· æ•™8æ ‹312',
+        capacity: 55,
+        enrolled: 30,
+        credit: 2,
+        courseType: 'ä¸“ä¸šé€‰ä¿®è¯¾ç¨‹',
+        isSelected: true,
+    },
+];
+// ==================== è¯„æ•™æ•°æ® ====================
+/** è¯„æ•™ä»»åŠ¡åˆ—è¡¨ï¼ˆåŒ…å«ã€Œå¼€æ”¾è¯„æ•™/ä¸åœ¨å¼€æ”¾æ—¶é—´èŒƒå›´å†…ã€ä¸¤ç§çŠ¶æ€ï¼‰ */
+export const MOCK_EVAL_TASKS = [
+    {
+        id: 'eval001',
+        courseCode: 'VDZ02115204.06',
+        courseName: 'Web å‰ç«¯åº”ç”¨',
+        courseType: 'ä¸“ä¸šæ‹“å±•è¯¾ç¨‹',
+        teacher: 'çŸ³é›…è¹',
+        semester: '2025-2026 ç¬¬1å­¦æœŸ',
+        questionnaireName: 'æ•™å¸ˆè¯¾å ‚æ•™å­¦æƒ…å†µå­¦ç”Ÿé—®å·è°ƒæŸ¥',
+        status: 'closed',
+        openTime: '2026-01-01 00:00',
+        closeTime: '2026-01-15 23:59',
+        statusText: 'ä¸åœ¨å¼€æ”¾æ—¶é—´èŒƒå›´å†…',
+    },
+    {
+        id: 'eval002',
+        courseCode: 'VDZ02115204.xx',
+        courseName: 'è½¯ä»¶ç»¼åˆå®è·µ',
+        courseType: 'é›†ä¸­å®è·µæ•™å­¦è¯¾ç¨‹',
+        teacher: 'æå›½å¼º',
+        semester: '2025-2026 ç¬¬1å­¦æœŸ',
+        questionnaireName: 'æ•™å¸ˆè¯¾å ‚æ•™å­¦æƒ…å†µå­¦ç”Ÿé—®å·è°ƒæŸ¥',
+        status: 'open',
+        openTime: '2025-12-01 00:00',
+        closeTime: '2025-12-31 23:59',
+        statusText: 'å¼€æ”¾è¯„æ•™',
+    },
+    {
+        id: 'eval003',
+        courseCode: 'VDZ02115xxx',
+        courseName: 'å¤§å‹æ•°æ®åº“ç®¡ç†ä¸ç»´æŠ¤',
+        courseType: 'ä¸“ä¸šæ‹“å±•è¯¾ç¨‹',
+        teacher: 'æå›½å¼º',
+        semester: '2025-2026 ç¬¬1å­¦æœŸ',
+        questionnaireName: 'æ•™å¸ˆè¯¾å ‚æ•™å­¦æƒ…å†µå­¦ç”Ÿé—®å·è°ƒæŸ¥',
+        status: 'submitted',
+        openTime: '2025-12-01 00:00',
+        closeTime: '2025-12-31 23:59',
+        statusText: 'å·²æäº¤',
+    },
+];
+/** è¯„æ•™é—®å·ï¼ˆå¼€æ”¾è¯„æ•™æ—¶å±•ç¤ºï¼‰ */
+export const MOCK_EVAL_QUESTIONNAIRE = {
+    taskId: 'eval002',
+    questions: [
+        {
+            id: 'q1',
+            index: 1,
+            type: 'single',
+            title: 'æ•™å¸ˆçš„æ•™å­¦æ€åº¦æ˜¯å¦è®¤çœŸè´Ÿè´£ï¼Ÿ',
+            options: [
+                { id: 'q1_o1', label: 'éå¸¸è®¤çœŸ', score: 5 },
+                { id: 'q1_o2', label: 'æ¯”è¾ƒè®¤çœŸ', score: 4 },
+                { id: 'q1_o3', label: 'ä¸€èˆ¬', score: 3 },
+                { id: 'q1_o4', label: 'ä¸å¤ªè®¤çœŸ', score: 2 },
+                { id: 'q1_o5', label: 'å¾ˆä¸è®¤çœŸ', score: 1 },
+            ],
+            required: true,
+        },
+        {
+            id: 'q2',
+            index: 2,
+            type: 'single',
+            title: 'æ•™å¸ˆçš„æ•™å­¦å†…å®¹æ˜¯å¦å……å®ã€æœ‰æ¡ç†ï¼Ÿ',
+            options: [
+                { id: 'q2_o1', label: 'éå¸¸å……å®', score: 5 },
+                { id: 'q2_o2', label: 'æ¯”è¾ƒå……å®', score: 4 },
+                { id: 'q2_o3', label: 'ä¸€èˆ¬', score: 3 },
+                { id: 'q2_o4', label: 'ä¸å¤ªå……å®', score: 2 },
+                { id: 'q2_o5', label: 'å¾ˆä¸å……å®', score: 1 },
+            ],
+            required: true,
+        },
+        {
+            id: 'q3',
+            index: 3,
+            type: 'multi',
+            title: 'æ•™å¸ˆé‡‡ç”¨äº†å“ªäº›æ•™å­¦æ–¹æ³•ï¼Ÿï¼ˆå¤šé€‰ï¼‰',
+            options: [
+                { id: 'q3_o1', label: 'è¯¾å ‚è®²æˆ', score: 1 },
+                { id: 'q3_o2', label: 'æ¡ˆä¾‹åˆ†æ', score: 1 },
+                { id: 'q3_o3', label: 'å°ç»„è®¨è®º', score: 1 },
+                { id: 'q3_o4', label: 'å®éªŒå®è·µ', score: 1 },
+                { id: 'q3_o5', label: 'åœ¨çº¿å­¦ä¹ ', score: 1 },
+            ],
+            required: false,
+        },
+        {
+            id: 'q4',
+            index: 4,
+            type: 'star',
+            title: 'æ‚¨å¯¹è¿™é—¨è¯¾ç¨‹çš„æ€»ä½“æ»¡æ„åº¦ï¼Ÿ',
+            options: [],
+            required: true,
+        },
+        {
+            id: 'q5',
+            index: 5,
+            type: 'text',
+            title: 'æ‚¨å¯¹è¿™é—¨è¯¾ç¨‹æˆ–æ•™å¸ˆæœ‰ä»€ä¹ˆå»ºè®®ï¼Ÿï¼ˆé€‰å¡«ï¼‰',
+            options: [],
+            required: false,
+        },
+    ],
+};
+/** è¯„æ•™é—®å·é¢˜ç›®ï¼ˆé¡µé¢å¼•ç”¨ï¼‰ */
+export const MOCK_EVAL_QUESTIONS = MOCK_EVAL_QUESTIONNAIRE.questions;
+// ==================== é€šçŸ¥å…¬å‘Šæ•°æ® ====================
+export const MOCK_NOTICES = [
+    {
+        id: 'n001',
+        title: 'å…³äº 2025-2026-1 å­¦æœŸé€‰è¯¾å®‰æ’çš„é€šçŸ¥',
+        content: 'å„å­¦é™¢ã€å„ä½åŒå­¦ï¼š\n\n2025-2026å­¦å¹´ç¬¬ä¸€å­¦æœŸé€‰è¯¾å·¥ä½œå³å°†å¼€å§‹ï¼Œç°å°†æœ‰å…³äº‹é¡¹é€šçŸ¥å¦‚ä¸‹ï¼š\nä¸€ã€é€‰è¯¾æ—¶é—´\næ­£é€‰é˜¶æ®µï¼š2025å¹´8æœˆ20æ—¥9:00è‡³9æœˆ5æ—¥23:59\nè¡¥é€‰é˜¶æ®µï¼š2025å¹´9æœˆ10æ—¥9:00è‡³9æœˆ15æ—¥23:59\n\näºŒã€é€‰è¯¾è¦æ±‚\n1. è¯·åŒå­¦ä»¬åœ¨è§„å®šæ—¶é—´å†…å®Œæˆé€‰è¯¾ï¼Œé€¾æœŸä¸äºˆè¡¥é€‰ã€‚\n2. é€‰è¯¾ç»“æœä»¥æœ€ç»ˆç¡®è®¤ä¸ºå‡†ï¼Œè¯·å…³æ³¨é€‰è¯¾ç»“æœå…¬ç¤ºã€‚\n\næ•™åŠ¡å¤„\n2025å¹´8æœˆ10æ—¥',
+        publisher: 'æ•™åŠ¡å¤„',
+        publishTime: '2025-08-10 09:00',
+        isRead: false,
+        type: 'é€šçŸ¥',
+    },
+    {
+        id: 'n002',
+        title: 'å…³äº2025-2026å­¦å¹´æ ¡å†å®‰æ’çš„é€šçŸ¥',
+        content: '2025-2026å­¦å¹´æ ¡å†å·²å‘å¸ƒï¼Œè¯·å„ä½åŒå­¦æŸ¥çœ‹ã€‚\nç¬¬ä¸€å­¦æœŸï¼š2025å¹´9æœˆ1æ—¥è‡³2026å¹´1æœˆ18æ—¥\nç¬¬äºŒå­¦æœŸï¼š2026å¹´2æœˆ24æ—¥è‡³2026å¹´7æœˆ5æ—¥',
+        publisher: 'æ•™åŠ¡å¤„',
+        publishTime: '2025-07-20 10:00',
+        isRead: true,
+        type: 'é€šçŸ¥',
+    },
+    {
+        id: 'n003',
+        title: 'å…³äºæœŸæœ«è€ƒè¯•å®‰æ’çš„é€šçŸ¥',
+        content: '2025-2026-1å­¦æœŸæœŸæœ«è€ƒè¯•å®‰æ’å·²å‘å¸ƒï¼Œè¯·åŒå­¦ä»¬åŠæ—¶æŸ¥çœ‹è€ƒè¯•å®‰æ’ï¼Œåšå¥½å¤ä¹ å‡†å¤‡ã€‚',
+        publisher: 'æ•™åŠ¡å¤„',
+        publishTime: '2025-12-20 14:00',
+        isRead: false,
+        type: 'è€ƒè¯•é€šçŸ¥',
+    },
+];
+// ==================== è€ƒè¯•å®‰æ’æ•°æ® ====================
+export const MOCK_EXAMS = [
+    {
+        id: 'e001',
+        courseName: 'Web å‰ç«¯åº”ç”¨',
+        examType: 'æœŸæœ«è€ƒè¯•',
+        examDate: '2026-01-10',
+        examTime: '09:00-11:00',
+        examRoom: 'æ•™8æ ‹201',
+        seatNumber: 'A15',
+        semester: '2025-2026 ç¬¬1å­¦æœŸ',
+        notes: 'è¯·æºå¸¦å­¦ç”Ÿè¯å’Œèº«ä»½è¯ï¼Œæå‰15åˆ†é’Ÿå…¥åœºã€‚',
+    },
+    {
+        id: 'e002',
+        courseName: 'è½¯ä»¶ç»¼åˆå®è·µ',
+        examType: 'é¡¹ç›®ç­”è¾©',
+        examDate: '2026-01-12',
+        examTime: '14:00-17:00',
+        examRoom: 'æ•™9æ ‹708',
+        seatNumber: 'â€”',
+        semester: '2025-2026 ç¬¬1å­¦æœŸ',
+        notes: 'è¯·å‡†å¤‡å¥½é¡¹ç›®æ¼”ç¤ºPPTï¼Œæ¯ç»„ç­”è¾©æ—¶é—´15åˆ†é’Ÿã€‚',
+    },
+    {
+        id: 'e003',
+        courseName: 'å¤§å‹æ•°æ®åº“ç®¡ç†ä¸ç»´æŠ¤',
+        examType: 'æœŸæœ«è€ƒè¯•',
+        examDate: '2026-01-14',
+        examTime: '09:00-11:00',
+        examRoom: 'æ•™9æ ‹405',
+        seatNumber: 'B08',
+        semester: '2025-2026 ç¬¬1å­¦æœŸ',
+        notes: 'é—­å·è€ƒè¯•ï¼Œè¯·æºå¸¦2Bé“…ç¬”å’Œé»‘è‰²ç­¾å­—ç¬”ã€‚',
+    },
+];
+// ==================== ä½œä¸š/å®éªŒæ•°æ®ï¼ˆæ‰©å±•åŠŸèƒ½ï¼‰====================
+export const MOCK_ASSIGNMENTS = [
+    {
+        id: 'a001',
+        courseName: 'Web å‰ç«¯åº”ç”¨',
+        courseCode: 'VDZ02115204.06',
+        title: 'å®éªŒä¸€ï¼šä¸ªäººç®€å†é¡µé¢',
+        description: 'ä½¿ç”¨HTML+CSSåˆ¶ä½œä¸€ä¸ªä¸ªäººç®€å†é¡µé¢ï¼Œè¦æ±‚å“åº”å¼å¸ƒå±€ã€‚',
+        deadline: '2025-10-15 23:59',
+        status: 'submitted',
+        statusText: 'å·²æäº¤',
+        score: 92,
+        comment: 'é¡µé¢å¸ƒå±€åˆç†ï¼Œå“åº”å¼æ•ˆæœè‰¯å¥½ï¼Œä½†é¢œè‰²æ­é…å¯ä»¥ä¼˜åŒ–ã€‚',
+        attachmentRequired: true,
+    },
+    {
+        id: 'a002',
+        courseName: 'Web å‰ç«¯åº”ç”¨',
+        courseCode: 'VDZ02115204.06',
+        title: 'å®éªŒäºŒï¼šToDo Liståº”ç”¨',
+        description: 'ä½¿ç”¨JavaScriptå®ç°ä¸€ä¸ªToDo Liståº”ç”¨ï¼Œæ”¯æŒå¢åˆ æ”¹æŸ¥ã€‚',
+        deadline: '2025-11-01 23:59',
+        status: 'not_submitted',
+        statusText: 'æœªæäº¤',
+        attachmentRequired: true,
+    },
+    {
+        id: 'a003',
+        courseName: 'è½¯ä»¶ç»¼åˆå®è·µ',
+        courseCode: 'VDZ02115204.xx',
+        title: 'é¡¹ç›®ä¸­æœŸæŠ¥å‘Š',
+        description: 'æäº¤é¡¹ç›®ä¸­æœŸæŠ¥å‘Šï¼ŒåŒ…æ‹¬éœ€æ±‚åˆ†æã€ç³»ç»Ÿè®¾è®¡ã€è¿›åº¦å®‰æ’ã€‚',
+        deadline: '2025-11-15 23:59',
+        status: 'graded',
+        statusText: 'å·²æ‰¹æ”¹',
+        score: 88,
+        comment: 'éœ€æ±‚åˆ†æè¾ƒå®Œæ•´ï¼Œç³»ç»Ÿè®¾è®¡åˆç†ï¼Œè¿›åº¦å®‰æ’å¯è¡Œã€‚',
+        attachmentRequired: true,
+    },
+];
+// ==================== å…¨å±€é…ç½®æ•°æ® ====================
+/** å½“å‰å­¦å¹´å­¦æœŸ */
+export const CURRENT_SEMESTER = '2025-2026 ç¬¬1å­¦æœŸ';
+/** å½“å‰æ•™å­¦å‘¨ */
+export const CURRENT_WEEK = 11;
+/** å­¦å¹´å­¦æœŸé€‰é¡¹ */
+export const SEMESTER_OPTIONS = [
+    '2025-2026 ç¬¬1å­¦æœŸ',
+    '2025-2026 ç¬¬2å­¦æœŸ',
+    '2024-2025 ç¬¬2å­¦æœŸ',
+    '2024-2025 ç¬¬1å­¦æœŸ',
+];
+/** æ•™å­¦å‘¨é€‰é¡¹ï¼ˆ1-20å‘¨ï¼‰ */
+export function getWeekOptions() {
+    const options = ['å…¨éƒ¨'];
+    for (let i = 1; i <= 20; i++) {
+        options.push(`ç¬¬${i}å‘¨`);
+    }
+    return options;
+}
+/** æ¼”ç¤ºç™»å½•å­¦å·åˆ—è¡¨ */
+export function isValidStudentId(studentId) {
+    return studentId === '2024316020318' || studentId === '2024316020320' || studentId === 'demo';
+}
+/** æ¼”ç¤ºç™»å½•å¯†ç éªŒè¯ */
+export function validatePassword(studentId, password) {
+    if (!password || password.length === 0) {
+        return false;
+    }
+    // æ¼”ç¤ºï¼šä»»æ„éç©ºå¯†ç å‡å¯ç™»å½•
+    return true;
+}
+//# sourceMappingURL=MockData.js.mapÂÙTC:\Users\32492\DevEcoStudioProjects\harmony_edu\entry\src\main\ets\mock\MockData.etsÔrB›ªmoduleName±isLocalDependency¯isNodeEntryFile§pkgPath±belongProjectPath§pkgNameªpkgVersion±dependencyPkgInfo¯hostModulesInfo°belongModulePath¬shouldEmitJs¥entryÃÂÙ5C:\Users\32492\DevEcoStudioProjects\harmony_edu\entryÙ/C:\Users\32492\DevEcoStudioProjects\harmony_edu¥entry¥1.0.0Ô  šÔrC’²hostDependencyName®hostModuleName°../mock/MockData¥entryC°../mock/MockData¥entryC°../mock/MockData¥entryC°../mock/MockData¥entryC°../mock/MockData¥entryC°../mock/MockData¥entryC°../mock/MockData¥entryC°../mock/MockData¥entryC°../mock/MockData¥entryC°../mock/MockData¥entryÙ5C:\Users\32492\DevEcoStudioProjects\harmony_edu\entryÃÃÚ[O/**
+ * å…¨å±€ Mock æ¨¡æ‹Ÿæ•°æ®
+ * è¦†ç›–å…¨ä¸šåŠ¡åœºæ™¯ï¼Œå­—æ®µä¸¥æ ¼åŒ¹é…éœ€æ±‚æ–‡æ¡£å’Œ HTML åŸå‹
+ * å¯¹åº”éœ€æ±‚æ–‡æ¡£ 4.1~4.25 å„ç« èŠ‚
+ */
+
+import { StudentUser } from '../model/UserModel';
+import { Course, CourseDetail, ScheduleCell, SelectableCourse, SelectionRound, TodayCourseItem } from '../model/CourseModel';
+import { GradeRecord, SemesterGradeSummary, ExamArrangement } from '../model/GradeModel';
+import { EvaluationTask, EvaluationQuestion, EvaluationQuestionnaire } from '../model/EvalModel';
+import { NoticeItem, StudentStatus, AssignmentItem } from '../model/CommonModel';
+
+// ==================== å­¦ç”Ÿç”¨æˆ·æ•°æ® ====================
+
+/** æ¼”ç¤ºå­¦ç”Ÿç”¨æˆ·ï¼ˆå¯¹åº” app.js ä¸­çš„ DEMO_STUDENTï¼‰ */
+export const MOCK_STUDENT: StudentUser = {
+  studentId: '2024316020318',
+  name: 'æ—äºˆå®¸',
+  password: 'demo',
+  college: 'è®¡ç®—æœºå­¦é™¢',
+  major: 'è®¡ç®—æœºç§‘å­¦ä¸æŠ€æœ¯',
+  className: '23è®¡ç§‘U3ç­',
+  grade: '2024',
+  phone: '138****0000',
+  email: '2024316020318@school.edu.cn',
+  address: 'å¹¿ä¸œçœæ·±åœ³å¸‚å—å±±åŒºxxè·¯xxå·',
+  avatarInitial: 'æ—',
+};
+
+/** é¢å¤–å­¦ç”Ÿç”¨æˆ·ï¼ˆç”¨äºè¾¹ç•Œæµ‹è¯•ï¼‰ */
+export const MOCK_STUDENT_2: StudentUser = {
+  studentId: '2024316020320',
+  name: 'å¼ ä¸‰',
+  password: '123456',
+  college: 'è®¡ç®—æœºå­¦é™¢',
+  major: 'è®¡ç®—æœºç§‘å­¦ä¸æŠ€æœ¯',
+  className: '23è®¡ç§‘U3ç­',
+  grade: '2024',
+  phone: '139****1111',
+  email: '2024316020320@school.edu.cn',
+  address: 'å¹¿ä¸œçœå¹¿å·å¸‚å¤©æ²³åŒºxxè·¯xxå·',
+  avatarInitial: 'å¼ ',
+};
+
+// ==================== å­¦ç±æ•°æ® ====================
+
+/** å­¦ç±ä¿¡æ¯ï¼ˆå¯¹æ ‡ Web å­¦ç±ä¿¡æ¯å­—æ®µï¼‰ */
+export const MOCK_STUDENT_STATUS: StudentStatus = {
+  studentId: '2024316020318',
+  name: 'æ—äºˆå®¸',
+  englishName: 'Lin Yuchen',
+  gender: 'ç”·',
+  grade: '2024',
+  schoolSystem: '4å¹´',
+  program: 'æœ¬ç§‘',
+  educationLevel: 'æ™®é€šæœ¬ç§‘',
+  studentCategory: 'å…¨æ—¥åˆ¶',
+  major: 'è®¡ç®—æœºç§‘å­¦ä¸æŠ€æœ¯',
+  department: 'è®¡ç®—æœºå­¦é™¢',
+  adminDepartment: 'è®¡ç®—æœºå­¦é™¢',
+  direction: 'â€”',
+  className: '23è®¡ç§‘U3ç­',
+  enrollmentDate: '2024-09-01',
+  expectedGraduation: '2028-07-01',
+  studyMode: 'å…¨æ—¥åˆ¶',
+  isRegistered: 'æ˜¯',
+  isOnCampus: 'æ˜¯',
+  campus: 'ä¸»æ ¡åŒº',
+  status: 'åœ¨æ ¡',
+  statusEffectiveDate: '2024-09-01',
+  hasStudentStatus: 'æ˜¯',
+  isEmployed: 'å¦',
+  remarks: 'â€”',
+  photoPath: '',
+};
+
+/** å­¦ç±ä¿¡æ¯åˆ«åï¼ˆé¡µé¢å¼•ç”¨ï¼‰ */
+export const MOCK_STATUS: StudentStatus = MOCK_STUDENT_STATUS;
+
+/** å­¦ç±ä¿¡æ¯å±•ç¤ºå­—æ®µ */
+export const STATUS_FIELDS: string[] = [
+  'å­¦å·', 'å§“å', 'æ€§åˆ«', 'é™¢ç³»', 'ä¸“ä¸š', 'ç­çº§',
+  'å­¦ç±çŠ¶æ€', 'å…¥æ ¡æ—¶é—´', 'é¢„è®¡æ¯•ä¸šæ—¶é—´', 'åŸ¹å…»å±‚æ¬¡', 'å­¦åˆ¶'
+];
+
+// ==================== è¯¾ç¨‹æ•°æ® ====================
+
+/** è¯¾ç¨‹åŸºç¡€æ•°æ® */
+export const MOCK_COURSES: Course[] = [
+  {
+    courseCode: 'VDZ02115204.06',
+    courseName: 'Web å‰ç«¯åº”ç”¨',
+    credit: 3,
+    courseType: 'ä¸“ä¸šæ‹“å±•è¯¾ç¨‹',
+    college: 'è®¡ç®—æœºå­¦é™¢',
+    teacher: 'çŸ³é›…è¹',
+    classroom: 'æ•™8æ ‹613',
+    capacity: 60,
+    enrolled: 48,
+    weekRange: '2-9å‘¨',
+    weeks: [2, 9],
+    weekType: 0,
+    description: 'æœ¬è¯¾ç¨‹ä»‹ç»Webå‰ç«¯å¼€å‘åŸºç¡€ï¼ŒåŒ…æ‹¬HTMLã€CSSã€JavaScriptåŠä¸»æµæ¡†æ¶ã€‚',
+    timeSlots: [
+      { dayOfWeek: 1, startPeriod: 1, endPeriod: 2, timeLabel: 'ä¸Šåˆ 1-2èŠ‚', timeSegment: 'am' },
+    ],
+  },
+  {
+    courseCode: 'VDZ02115204.xx',
+    courseName: 'è½¯ä»¶ç»¼åˆå®è·µ',
+    credit: 4,
+    courseType: 'é›†ä¸­å®è·µæ•™å­¦è¯¾ç¨‹',
+    college: 'è®¡ç®—æœºå­¦é™¢',
+    teacher: 'æå›½å¼º',
+    classroom: 'æ•™9æ ‹708',
+    capacity: 50,
+    enrolled: 42,
+    weekRange: 'æŒ‰æ•™åŠ¡å®‰æ’',
+    weeks: [1, 16],
+    weekType: 0,
+    description: 'é›†ä¸­å®è·µè¯¾ç¨‹ï¼Œå®Œæˆä¸€ä¸ªå®Œæ•´çš„è½¯ä»¶é¡¹ç›®ã€‚',
+    timeSlots: [
+      { dayOfWeek: 2, startPeriod: 5, endPeriod: 8, timeLabel: 'ä¸‹åˆ 5-8èŠ‚ï¼ˆè¿ä¸Šï¼‰', timeSegment: 'pm' },
+    ],
+  },
+  {
+    courseCode: 'VDZ02115xxx',
+    courseName: 'å¤§å‹æ•°æ®åº“ç®¡ç†ä¸ç»´æŠ¤',
+    credit: 3,
+    courseType: 'ä¸“ä¸šæ‹“å±•è¯¾ç¨‹',
+    college: 'è®¡ç®—æœºå­¦é™¢',
+    teacher: 'æå›½å¼º',
+    classroom: 'æ•™9æ ‹708',
+    capacity: 55,
+    enrolled: 50,
+    weekRange: '3-14å‘¨',
+    weeks: [3, 14],
+    weekType: 0,
+    description: 'å­¦ä¹ å¤§å‹æ•°æ®åº“çš„è®¾è®¡ã€ç®¡ç†ä¸ç»´æŠ¤ã€‚',
+    timeSlots: [
+      { dayOfWeek: 5, startPeriod: 1, endPeriod: 2, timeLabel: 'ä¸Šåˆ 1-2èŠ‚', timeSegment: 'am' },
+    ],
+  },
+  {
+    courseCode: 'VDZ02115yyy',
+    courseName: 'ç§»åŠ¨åº”ç”¨å¼€å‘',
+    credit: 3,
+    courseType: 'ä¸“ä¸šæ ¸å¿ƒè¯¾ç¨‹',
+    college: 'è®¡ç®—æœºå­¦é™¢',
+    teacher: 'ç‹è€å¸ˆ',
+    classroom: 'æ•™6æ ‹201',
+    capacity: 60,
+    enrolled: 55,
+    weekRange: '1-16å‘¨',
+    weeks: [1, 16],
+    weekType: 0,
+    description: 'å­¦ä¹ ç§»åŠ¨åº”ç”¨å¼€å‘ï¼ŒåŒ…æ‹¬Androidå’ŒHarmonyOSå¹³å°ã€‚',
+    timeSlots: [
+      { dayOfWeek: 2, startPeriod: 3, endPeriod: 4, timeLabel: 'ä¸Šåˆ 3-4èŠ‚', timeSegment: 'am' },
+    ],
+  },
+  {
+    courseCode: 'VDZ02115zzz',
+    courseName: 'æ“ä½œç³»ç»Ÿ',
+    credit: 4,
+    courseType: 'ä¸“ä¸šæ ¸å¿ƒè¯¾ç¨‹',
+    college: 'è®¡ç®—æœºå­¦é™¢',
+    teacher: 'èµµè€å¸ˆ',
+    classroom: 'æ•™7æ ‹410',
+    capacity: 65,
+    enrolled: 60,
+    weekRange: '3-14å‘¨',
+    weeks: [3, 14],
+    weekType: 0,
+    description: 'å­¦ä¹ æ“ä½œç³»ç»ŸåŸç†ï¼ŒåŒ…æ‹¬è¿›ç¨‹ç®¡ç†ã€å†…å­˜ç®¡ç†ã€æ–‡ä»¶ç³»ç»Ÿç­‰ã€‚',
+    timeSlots: [
+      { dayOfWeek: 4, startPeriod: 3, endPeriod: 4, timeLabel: 'ä¸Šåˆ 3-4èŠ‚', timeSegment: 'am' },
+    ],
+  },
+];
+
+// ==================== è¯¾è¡¨æ•°æ® ====================
+
+/** è¯¾è¡¨å•å…ƒæ ¼æ•°æ®ï¼ˆå¯¹åº” HTML åŸå‹ä¸­çš„è¯¾è¡¨æ ¼å­ï¼‰ */
+export const MOCK_SCHEDULE_CELLS: ScheduleCell[] = [
+  // å‘¨ä¸€ 1-2èŠ‚ï¼šWebå‰ç«¯åº”ç”¨
+  { courseCode: 'VDZ02115204.06', courseName: 'Web å‰ç«¯åº”ç”¨', teacher: 'çŸ³é›…è¹', classroom: 'æ•™8æ ‹613', weekRange: '2-9å‘¨', dayOfWeek: 1, startPeriod: 1, endPeriod: 2, span: 2, isContinued: false, scheduleType: 'normal' },
+  // å‘¨äºŒ 3-4èŠ‚ï¼šç§»åŠ¨åº”ç”¨å¼€å‘
+  { courseCode: 'VDZ02115yyy', courseName: 'ç§»åŠ¨åº”ç”¨å¼€å‘', teacher: 'ç‹è€å¸ˆ', classroom: 'æ•™6æ ‹201', weekRange: '1-16å‘¨', dayOfWeek: 2, startPeriod: 3, endPeriod: 4, span: 2, isContinued: false, scheduleType: 'normal' },
+  // å‘¨äºŒ 5-8èŠ‚ï¼šè½¯ä»¶ç»¼åˆå®è·µï¼ˆè¿ä¸Šï¼‰
+  { courseCode: 'VDZ02115204.xx', courseName: 'è½¯ä»¶ç»¼åˆå®è·µ', teacher: 'æå›½å¼º', classroom: 'æ•™9æ ‹708', weekRange: 'æŒ‰æ•™åŠ¡å®‰æ’', dayOfWeek: 2, startPeriod: 5, endPeriod: 8, span: 4, isContinued: false, scheduleType: 'normal' },
+  // å‘¨ä¸‰ ç©º
+  // å‘¨å›› 3-4èŠ‚ï¼šæ“ä½œç³»ç»Ÿ
+  { courseCode: 'VDZ02115zzz', courseName: 'æ“ä½œç³»ç»Ÿ', teacher: 'èµµè€å¸ˆ', classroom: 'æ•™7æ ‹410', weekRange: '3-14å‘¨', dayOfWeek: 4, startPeriod: 3, endPeriod: 4, span: 2, isContinued: false, scheduleType: 'normal' },
+  // å‘¨äº” 1-2èŠ‚ï¼šå¤§å‹æ•°æ®åº“
+  { courseCode: 'VDZ02115xxx', courseName: 'å¤§å‹æ•°æ®åº“ç®¡ç†ä¸ç»´æŠ¤', teacher: 'æå›½å¼º', classroom: 'æ•™9æ ‹708', weekRange: '3-14å‘¨', dayOfWeek: 5, startPeriod: 1, endPeriod: 2, span: 2, isContinued: false, scheduleType: 'normal' },
+];
+
+/** å®è·µè¯¾è¡¨æ•°æ® */
+export const MOCK_PRACTICE_SCHEDULE: ScheduleCell[] = [
+  { courseCode: 'PRAC001', courseName: 'ä¼ä¸šå®ä¹ ', teacher: 'æè€å¸ˆ', classroom: 'æ ¡å¤–å®ä¹ åŸºåœ°', weekRange: '1-16å‘¨', dayOfWeek: 3, startPeriod: 5, endPeriod: 8, span: 4, isContinued: false, scheduleType: 'practice' },
+  { courseCode: 'PRAC002', courseName: 'è¯¾ç¨‹è®¾è®¡', teacher: 'ç‹è€å¸ˆ', classroom: 'æ•™5æ ‹301', weekRange: '10-14å‘¨', dayOfWeek: 5, startPeriod: 5, endPeriod: 6, span: 2, isContinued: false, scheduleType: 'practice' },
+];
+
+/** ä»Šæ—¥è¯¾ç¨‹æ•°æ® */
+export const MOCK_TODAY_COURSES: TodayCourseItem[] = [
+  {
+    courseCode: 'VDZ02115204.06',
+    courseName: 'Web å‰ç«¯åº”ç”¨',
+    teacher: 'çŸ³é›…è¹',
+    classroom: 'æ•™8æ ‹613',
+    startPeriod: 1,
+    endPeriod: 2,
+    periodLabel: 'ä¸Šåˆ 1-2èŠ‚',
+    timeLabel: '08:00-09:35',
+    isTomorrow: false,
+  },
+  {
+    courseCode: 'VDZ02115204.xx',
+    courseName: 'è½¯ä»¶ç»¼åˆå®è·µ',
+    teacher: 'æå›½å¼º',
+    classroom: 'æ•™9æ ‹708',
+    startPeriod: 5,
+    endPeriod: 8,
+    periodLabel: 'ä¸‹åˆ 5-8èŠ‚',
+    timeLabel: '14:00-17:25',
+    isTomorrow: false,
+  },
+];
+
+/** ç©ºä»Šæ—¥è¯¾ç¨‹ï¼ˆè¾¹ç•Œæ•°æ®ï¼‰ */
+export const MOCK_TODAY_COURSES_EMPTY: TodayCourseItem[] = [];
+
+/** æ˜æ—¥è¯¾ç¨‹æ•°æ® */
+export const MOCK_TOMORROW_COURSES: TodayCourseItem[] = [
+  {
+    courseCode: 'VDZ02115yyy',
+    courseName: 'ç§»åŠ¨åº”ç”¨å¼€å‘',
+    teacher: 'ç‹è€å¸ˆ',
+    classroom: 'æ•™6æ ‹201',
+    startPeriod: 3,
+    endPeriod: 4,
+    periodLabel: 'ä¸Šåˆ 3-4èŠ‚',
+    timeLabel: '09:50-11:25',
+    isTomorrow: true,
+  },
+];
+
+/** è¯¾ç¨‹è¯¦æƒ…æ•°æ® */
+const WEB_FRONTEND_DETAIL: CourseDetail = {
+  courseCode: 'VDZ02115204.06',
+  courseName: 'Web å‰ç«¯åº”ç”¨',
+  credit: 3,
+  courseType: 'ä¸“ä¸šæ‹“å±•è¯¾ç¨‹',
+  college: 'è®¡ç®—æœºå­¦é™¢',
+  teacher: 'çŸ³é›…è¹',
+  scheduleDesc: 'å‘¨ä¸€ ä¸Šåˆ 1-2èŠ‚',
+  weekRange: 'ç¬¬2-9å‘¨',
+  classroom: 'æ•™8æ ‹613',
+  description: 'æœ¬è¯¾ç¨‹ä»‹ç»Webå‰ç«¯å¼€å‘åŸºç¡€ï¼ŒåŒ…æ‹¬HTMLã€CSSã€JavaScriptåŠä¸»æµæ¡†æ¶ã€‚',
+  prerequisites: 'æ— ',
+  assessmentMethod: 'è€ƒè¯•+å®éªŒ',
+};
+
+const SOFTWARE_PRACTICE_DETAIL: CourseDetail = {
+  courseCode: 'VDZ02115204.xx',
+  courseName: 'è½¯ä»¶ç»¼åˆå®è·µ',
+  credit: 4,
+  courseType: 'é›†ä¸­å®è·µæ•™å­¦è¯¾ç¨‹',
+  college: 'è®¡ç®—æœºå­¦é™¢',
+  teacher: 'æå›½å¼º',
+  scheduleDesc: 'å‘¨äºŒ ä¸‹åˆ 5-8èŠ‚ï¼ˆè¿ä¸Šï¼‰',
+  weekRange: 'æŒ‰æ•™åŠ¡å®‰æ’',
+  classroom: 'æ•™9æ ‹708',
+  description: 'é›†ä¸­å®è·µè¯¾ç¨‹ï¼Œå®Œæˆä¸€ä¸ªå®Œæ•´çš„è½¯ä»¶é¡¹ç›®ã€‚',
+  prerequisites: 'Webå‰ç«¯åº”ç”¨',
+  assessmentMethod: 'é¡¹ç›®ç­”è¾©',
+};
+
+export const MOCK_COURSE_DETAILS: Map<string, CourseDetail> = new Map([
+  ['VDZ02115204.06', WEB_FRONTEND_DETAIL],
+  ['VDZ02115204.xx', SOFTWARE_PRACTICE_DETAIL],
+]);
+
+// ==================== æˆç»©æ•°æ® ====================
+
+/** å½“å‰å­¦æœŸæˆç»©æ•°æ®ï¼ˆå¯¹åº” app.js ä¸­çš„ gradeDataï¼‰ */
+export const MOCK_GRADES_CURRENT: GradeRecord[] = [
+  {
+    id: 'g001',
+    semester: '2025-2026 ç¬¬1å­¦æœŸ',
+    courseCode: 'VDZ02115204.06',
+    courseSerial: 'VDZ02115204.06',
+    courseName: 'Web å‰ç«¯åº”ç”¨',
+    courseType: 'ä¸“ä¸šæ‹“å±•è¯¾ç¨‹',
+    credit: 3,
+    finalScore: 88,
+    overallScore: 90,
+    endScore: 90,
+    gpa: 4.0,
+    isPublished: true,
+    subScores: { regular: 92, midterm: 88, final: 88, experiment: 95 },
+  },
+  {
+    id: 'g002',
+    semester: '2025-2026 ç¬¬1å­¦æœŸ',
+    courseCode: 'VDZ02115204.xx',
+    courseSerial: 'VDZ02115204.xx',
+    courseName: 'è½¯ä»¶ç»¼åˆå®è·µ',
+    courseType: 'é›†ä¸­å®è·µæ•™å­¦è¯¾ç¨‹',
+    credit: 4,
+    finalScore: 85,
+    overallScore: 87,
+    endScore: 87,
+    gpa: 3.7,
+    isPublished: true,
+    subScores: { regular: 90, midterm: 0, final: 85, experiment: 88 },
+  },
+  {
+    id: 'g003',
+    semester: '2025-2026 ç¬¬1å­¦æœŸ',
+    courseCode: 'VDZ02115xxx',
+    courseSerial: 'VDZ02115xxx',
+    courseName: 'å¤§å‹æ•°æ®åº“ç®¡ç†ä¸ç»´æŠ¤',
+    courseType: 'ä¸“ä¸šæ‹“å±•è¯¾ç¨‹',
+    credit: 3,
+    finalScore: 82,
+    overallScore: 84,
+    endScore: 84,
+    gpa: 3.3,
+    isPublished: true,
+    subScores: { regular: 85, midterm: 80, final: 82 },
+  },
+];
+
+/** å†å²å­¦æœŸæˆç»©æ•°æ® */
+export const MOCK_GRADES_HISTORY: GradeRecord[] = [
+  {
+    id: 'g004',
+    semester: '2024-2025 ç¬¬2å­¦æœŸ',
+    courseCode: 'VDZ02114aaa',
+    courseSerial: 'VDZ02114aaa',
+    courseName: 'æ•°æ®ç»“æ„',
+    courseType: 'ä¸“ä¸šæ ¸å¿ƒè¯¾ç¨‹',
+    credit: 4,
+    finalScore: 90,
+    overallScore: 91,
+    endScore: 91,
+    gpa: 4.0,
+    isPublished: true,
+  },
+  {
+    id: 'g005',
+    semester: '2024-2025 ç¬¬2å­¦æœŸ',
+    courseCode: 'VDZ02114bbb',
+    courseSerial: 'VDZ02114bbb',
+    courseName: 'è®¡ç®—æœºç½‘ç»œ',
+    courseType: 'ä¸“ä¸šæ ¸å¿ƒè¯¾ç¨‹',
+    credit: 3,
+    finalScore: 86,
+    overallScore: 87,
+    endScore: 87,
+    gpa: 3.7,
+    isPublished: true,
+  },
+];
+
+/** æˆç»©æœªå‘å¸ƒï¼ˆè¾¹ç•Œæ•°æ®ï¼‰ */
+export const MOCK_GRADES_UNPUBLISHED: GradeRecord[] = [
+  {
+    id: 'g006',
+    semester: '2025-2026 ç¬¬2å­¦æœŸ',
+    courseCode: 'VDZ02116aaa',
+    courseSerial: 'VDZ02116aaa',
+    courseName: 'äººå·¥æ™ºèƒ½å¯¼è®º',
+    courseType: 'ä¸“ä¸šæ‹“å±•è¯¾ç¨‹',
+    credit: 3,
+    finalScore: 0,
+    overallScore: 0,
+    endScore: 0,
+    gpa: 0,
+    isPublished: false,
+  },
+];
+
+/** å­¦æœŸæˆç»©æ±‡æ€» */
+export const MOCK_SEMESTER_SUMMARY: SemesterGradeSummary = {
+  semester: '2025-2026 ç¬¬1å­¦æœŸ',
+  totalCredit: 10,
+  avgGpa: 3.67,
+  weightedAvg: 86.3,
+  records: MOCK_GRADES_CURRENT,
+};
+
+// ==================== é€‰è¯¾æ•°æ® ====================
+
+/** é€‰è¯¾è½®æ¬¡ä¿¡æ¯ */
+export const MOCK_SELECTION_ROUND: SelectionRound = {
+  roundName: '2025-2026-1 å­¦æœŸæ­£é€‰',
+  startTime: '2025-08-20 09:00',
+  endTime: '2025-09-05 23:59',
+  isActive: true,
+  maxCredit: 30,
+};
+
+/** å¯é€‰è¯¾ç¨‹åˆ—è¡¨ */
+export const MOCK_SELECTABLE_COURSES: SelectableCourse[] = [
+  {
+    courseCode: 'VDZ02116aaa',
+    courseName: 'äººå·¥æ™ºèƒ½å¯¼è®º',
+    teacher: 'é™ˆæ•™æˆ',
+    scheduleInfo: 'å‘¨ä¸‰ ä¸Šåˆ 1-2èŠ‚ Â· æ•™10æ ‹405',
+    capacity: 60,
+    enrolled: 45,
+    credit: 3,
+    courseType: 'ä¸“ä¸šæ‹“å±•è¯¾ç¨‹',
+    isSelected: false,
+  },
+  {
+    courseCode: 'VDZ02116bbb',
+    courseName: 'æœºå™¨å­¦ä¹ ',
+    teacher: 'åˆ˜è€å¸ˆ',
+    scheduleInfo: 'å‘¨å›› ä¸Šåˆ 3-4èŠ‚ Â· æ•™10æ ‹501',
+    capacity: 50,
+    enrolled: 50, // å·²æ»¡
+    credit: 3,
+    courseType: 'ä¸“ä¸šæ‹“å±•è¯¾ç¨‹',
+    isSelected: false,
+  },
+  {
+    courseCode: 'VDZ02116ccc',
+    courseName: 'è½¯ä»¶æµ‹è¯•æŠ€æœ¯',
+    teacher: 'å¼ è€å¸ˆ',
+    scheduleInfo: 'å‘¨äº” ä¸‹åˆ 5-6èŠ‚ Â· æ•™8æ ‹312',
+    capacity: 55,
+    enrolled: 30,
+    credit: 2,
+    courseType: 'ä¸“ä¸šé€‰ä¿®è¯¾ç¨‹',
+    isSelected: true, // å·²é€‰
+  },
+  {
+    courseCode: 'VDZ02116ddd',
+    courseName: 'ç§»åŠ¨åº”ç”¨å¼€å‘ï¼ˆé¸¿è’™ï¼‰',
+    teacher: 'ç‹è€å¸ˆ',
+    scheduleInfo: 'å‘¨äºŒ ä¸Šåˆ 3-4èŠ‚ Â· æ•™6æ ‹201',
+    capacity: 60,
+    enrolled: 58,
+    credit: 3,
+    courseType: 'ä¸“ä¸šæ ¸å¿ƒè¯¾ç¨‹',
+    isSelected: false,
+  },
+];
+
+/** å·²é€‰è¯¾ç¨‹åˆ—è¡¨ */
+export const MOCK_MY_SELECTIONS: SelectableCourse[] = [
+  {
+    courseCode: 'VDZ02115204.06',
+    courseName: 'Web å‰ç«¯åº”ç”¨',
+    teacher: 'çŸ³é›…è¹',
+    scheduleInfo: 'å‘¨ä¸€ ä¸Šåˆ 1-2èŠ‚ Â· æ•™8æ ‹613',
+    capacity: 60,
+    enrolled: 48,
+    credit: 3,
+    courseType: 'ä¸“ä¸šæ‹“å±•è¯¾ç¨‹',
+    isSelected: true,
+  },
+  {
+    courseCode: 'VDZ02115204.xx',
+    courseName: 'è½¯ä»¶ç»¼åˆå®è·µ',
+    teacher: 'æå›½å¼º',
+    scheduleInfo: 'å‘¨äºŒ ä¸‹åˆ 5-8èŠ‚ Â· æ•™9æ ‹708',
+    capacity: 50,
+    enrolled: 42,
+    credit: 4,
+    courseType: 'é›†ä¸­å®è·µæ•™å­¦è¯¾ç¨‹',
+    isSelected: true,
+  },
+  {
+    courseCode: 'VDZ02116ccc',
+    courseName: 'è½¯ä»¶æµ‹è¯•æŠ€æœ¯',
+    teacher: 'å¼ è€å¸ˆ',
+    scheduleInfo: 'å‘¨äº” ä¸‹åˆ 5-6èŠ‚ Â· æ•™8æ ‹312',
+    capacity: 55,
+    enrolled: 30,
+    credit: 2,
+    courseType: 'ä¸“ä¸šé€‰ä¿®è¯¾ç¨‹',
+    isSelected: true,
+  },
+];
+
+// ==================== è¯„æ•™æ•°æ® ====================
+
+/** è¯„æ•™ä»»åŠ¡åˆ—è¡¨ï¼ˆåŒ…å«ã€Œå¼€æ”¾è¯„æ•™/ä¸åœ¨å¼€æ”¾æ—¶é—´èŒƒå›´å†…ã€ä¸¤ç§çŠ¶æ€ï¼‰ */
+export const MOCK_EVAL_TASKS: EvaluationTask[] = [
+  {
+    id: 'eval001',
+    courseCode: 'VDZ02115204.06',
+    courseName: 'Web å‰ç«¯åº”ç”¨',
+    courseType: 'ä¸“ä¸šæ‹“å±•è¯¾ç¨‹',
+    teacher: 'çŸ³é›…è¹',
+    semester: '2025-2026 ç¬¬1å­¦æœŸ',
+    questionnaireName: 'æ•™å¸ˆè¯¾å ‚æ•™å­¦æƒ…å†µå­¦ç”Ÿé—®å·è°ƒæŸ¥',
+    status: 'closed', // ä¸åœ¨å¼€æ”¾æ—¶é—´èŒƒå›´å†…
+    openTime: '2026-01-01 00:00',
+    closeTime: '2026-01-15 23:59',
+    statusText: 'ä¸åœ¨å¼€æ”¾æ—¶é—´èŒƒå›´å†…',
+  },
+  {
+    id: 'eval002',
+    courseCode: 'VDZ02115204.xx',
+    courseName: 'è½¯ä»¶ç»¼åˆå®è·µ',
+    courseType: 'é›†ä¸­å®è·µæ•™å­¦è¯¾ç¨‹',
+    teacher: 'æå›½å¼º',
+    semester: '2025-2026 ç¬¬1å­¦æœŸ',
+    questionnaireName: 'æ•™å¸ˆè¯¾å ‚æ•™å­¦æƒ…å†µå­¦ç”Ÿé—®å·è°ƒæŸ¥',
+    status: 'open', // å¼€æ”¾è¯„æ•™
+    openTime: '2025-12-01 00:00',
+    closeTime: '2025-12-31 23:59',
+    statusText: 'å¼€æ”¾è¯„æ•™',
+  },
+  {
+    id: 'eval003',
+    courseCode: 'VDZ02115xxx',
+    courseName: 'å¤§å‹æ•°æ®åº“ç®¡ç†ä¸ç»´æŠ¤',
+    courseType: 'ä¸“ä¸šæ‹“å±•è¯¾ç¨‹',
+    teacher: 'æå›½å¼º',
+    semester: '2025-2026 ç¬¬1å­¦æœŸ',
+    questionnaireName: 'æ•™å¸ˆè¯¾å ‚æ•™å­¦æƒ…å†µå­¦ç”Ÿé—®å·è°ƒæŸ¥',
+    status: 'submitted', // å·²æäº¤
+    openTime: '2025-12-01 00:00',
+    closeTime: '2025-12-31 23:59',
+    statusText: 'å·²æäº¤',
+  },
+];
+
+/** è¯„æ•™é—®å·ï¼ˆå¼€æ”¾è¯„æ•™æ—¶å±•ç¤ºï¼‰ */
+export const MOCK_EVAL_QUESTIONNAIRE: EvaluationQuestionnaire = {
+  taskId: 'eval002',
+  questions: [
+    {
+      id: 'q1',
+      index: 1,
+      type: 'single',
+      title: 'æ•™å¸ˆçš„æ•™å­¦æ€åº¦æ˜¯å¦è®¤çœŸè´Ÿè´£ï¼Ÿ',
+      options: [
+        { id: 'q1_o1', label: 'éå¸¸è®¤çœŸ', score: 5 },
+        { id: 'q1_o2', label: 'æ¯”è¾ƒè®¤çœŸ', score: 4 },
+        { id: 'q1_o3', label: 'ä¸€èˆ¬', score: 3 },
+        { id: 'q1_o4', label: 'ä¸å¤ªè®¤çœŸ', score: 2 },
+        { id: 'q1_o5', label: 'å¾ˆä¸è®¤çœŸ', score: 1 },
+      ],
+      required: true,
+    },
+    {
+      id: 'q2',
+      index: 2,
+      type: 'single',
+      title: 'æ•™å¸ˆçš„æ•™å­¦å†…å®¹æ˜¯å¦å……å®ã€æœ‰æ¡ç†ï¼Ÿ',
+      options: [
+        { id: 'q2_o1', label: 'éå¸¸å……å®', score: 5 },
+        { id: 'q2_o2', label: 'æ¯”è¾ƒå……å®', score: 4 },
+        { id: 'q2_o3', label: 'ä¸€èˆ¬', score: 3 },
+        { id: 'q2_o4', label: 'ä¸å¤ªå……å®', score: 2 },
+        { id: 'q2_o5', label: 'å¾ˆä¸å……å®', score: 1 },
+      ],
+      required: true,
+    },
+    {
+      id: 'q3',
+      index: 3,
+      type: 'multi',
+      title: 'æ•™å¸ˆé‡‡ç”¨äº†å“ªäº›æ•™å­¦æ–¹æ³•ï¼Ÿï¼ˆå¤šé€‰ï¼‰',
+      options: [
+        { id: 'q3_o1', label: 'è¯¾å ‚è®²æˆ', score: 1 },
+        { id: 'q3_o2', label: 'æ¡ˆä¾‹åˆ†æ', score: 1 },
+        { id: 'q3_o3', label: 'å°ç»„è®¨è®º', score: 1 },
+        { id: 'q3_o4', label: 'å®éªŒå®è·µ', score: 1 },
+        { id: 'q3_o5', label: 'åœ¨çº¿å­¦ä¹ ', score: 1 },
+      ],
+      required: false,
+    },
+    {
+      id: 'q4',
+      index: 4,
+      type: 'star',
+      title: 'æ‚¨å¯¹è¿™é—¨è¯¾ç¨‹çš„æ€»ä½“æ»¡æ„åº¦ï¼Ÿ',
+      options: [],
+      required: true,
+    },
+    {
+      id: 'q5',
+      index: 5,
+      type: 'text',
+      title: 'æ‚¨å¯¹è¿™é—¨è¯¾ç¨‹æˆ–æ•™å¸ˆæœ‰ä»€ä¹ˆå»ºè®®ï¼Ÿï¼ˆé€‰å¡«ï¼‰',
+      options: [],
+      required: false,
+    },
+  ],
+};
+
+/** è¯„æ•™é—®å·é¢˜ç›®ï¼ˆé¡µé¢å¼•ç”¨ï¼‰ */
+export const MOCK_EVAL_QUESTIONS: EvaluationQuestion[] = MOCK_EVAL_QUESTIONNAIRE.questions;
+
+// ==================== é€šçŸ¥å…¬å‘Šæ•°æ® ====================
+
+export const MOCK_NOTICES: NoticeItem[] = [
+  {
+    id: 'n001',
+    title: 'å…³äº 2025-2026-1 å­¦æœŸé€‰è¯¾å®‰æ’çš„é€šçŸ¥',
+    content: 'å„å­¦é™¢ã€å„ä½åŒå­¦ï¼š\n\n2025-2026å­¦å¹´ç¬¬ä¸€å­¦æœŸé€‰è¯¾å·¥ä½œå³å°†å¼€å§‹ï¼Œç°å°†æœ‰å…³äº‹é¡¹é€šçŸ¥å¦‚ä¸‹ï¼š\nä¸€ã€é€‰è¯¾æ—¶é—´\næ­£é€‰é˜¶æ®µï¼š2025å¹´8æœˆ20æ—¥9:00è‡³9æœˆ5æ—¥23:59\nè¡¥é€‰é˜¶æ®µï¼š2025å¹´9æœˆ10æ—¥9:00è‡³9æœˆ15æ—¥23:59\n\näºŒã€é€‰è¯¾è¦æ±‚\n1. è¯·åŒå­¦ä»¬åœ¨è§„å®šæ—¶é—´å†…å®Œæˆé€‰è¯¾ï¼Œé€¾æœŸä¸äºˆè¡¥é€‰ã€‚\n2. é€‰è¯¾ç»“æœä»¥æœ€ç»ˆç¡®è®¤ä¸ºå‡†ï¼Œè¯·å…³æ³¨é€‰è¯¾ç»“æœå…¬ç¤ºã€‚\n\næ•™åŠ¡å¤„\n2025å¹´8æœˆ10æ—¥',
+    publisher: 'æ•™åŠ¡å¤„',
+    publishTime: '2025-08-10 09:00',
+    isRead: false,
+    type: 'é€šçŸ¥',
+  },
+  {
+    id: 'n002',
+    title: 'å…³äº2025-2026å­¦å¹´æ ¡å†å®‰æ’çš„é€šçŸ¥',
+    content: '2025-2026å­¦å¹´æ ¡å†å·²å‘å¸ƒï¼Œè¯·å„ä½åŒå­¦æŸ¥çœ‹ã€‚\nç¬¬ä¸€å­¦æœŸï¼š2025å¹´9æœˆ1æ—¥è‡³2026å¹´1æœˆ18æ—¥\nç¬¬äºŒå­¦æœŸï¼š2026å¹´2æœˆ24æ—¥è‡³2026å¹´7æœˆ5æ—¥',
+    publisher: 'æ•™åŠ¡å¤„',
+    publishTime: '2025-07-20 10:00',
+    isRead: true,
+    type: 'é€šçŸ¥',
+  },
+  {
+    id: 'n003',
+    title: 'å…³äºæœŸæœ«è€ƒè¯•å®‰æ’çš„é€šçŸ¥',
+    content: '2025-2026-1å­¦æœŸæœŸæœ«è€ƒè¯•å®‰æ’å·²å‘å¸ƒï¼Œè¯·åŒå­¦ä»¬åŠæ—¶æŸ¥çœ‹è€ƒè¯•å®‰æ’ï¼Œåšå¥½å¤ä¹ å‡†å¤‡ã€‚',
+    publisher: 'æ•™åŠ¡å¤„',
+    publishTime: '2025-12-20 14:00',
+    isRead: false,
+    type: 'è€ƒè¯•é€šçŸ¥',
+  },
+];
+
+// ==================== è€ƒè¯•å®‰æ’æ•°æ® ====================
+
+export const MOCK_EXAMS: ExamArrangement[] = [
+  {
+    id: 'e001',
+    courseName: 'Web å‰ç«¯åº”ç”¨',
+    examType: 'æœŸæœ«è€ƒè¯•',
+    examDate: '2026-01-10',
+    examTime: '09:00-11:00',
+    examRoom: 'æ•™8æ ‹201',
+    seatNumber: 'A15',
+    semester: '2025-2026 ç¬¬1å­¦æœŸ',
+    notes: 'è¯·æºå¸¦å­¦ç”Ÿè¯å’Œèº«ä»½è¯ï¼Œæå‰15åˆ†é’Ÿå…¥åœºã€‚',
+  },
+  {
+    id: 'e002',
+    courseName: 'è½¯ä»¶ç»¼åˆå®è·µ',
+    examType: 'é¡¹ç›®ç­”è¾©',
+    examDate: '2026-01-12',
+    examTime: '14:00-17:00',
+    examRoom: 'æ•™9æ ‹708',
+    seatNumber: 'â€”',
+    semester: '2025-2026 ç¬¬1å­¦æœŸ',
+    notes: 'è¯·å‡†å¤‡å¥½é¡¹ç›®æ¼”ç¤ºPPTï¼Œæ¯ç»„ç­”è¾©æ—¶é—´15åˆ†é’Ÿã€‚',
+  },
+  {
+    id: 'e003',
+    courseName: 'å¤§å‹æ•°æ®åº“ç®¡ç†ä¸ç»´æŠ¤',
+    examType: 'æœŸæœ«è€ƒè¯•',
+    examDate: '2026-01-14',
+    examTime: '09:00-11:00',
+    examRoom: 'æ•™9æ ‹405',
+    seatNumber: 'B08',
+    semester: '2025-2026 ç¬¬1å­¦æœŸ',
+    notes: 'é—­å·è€ƒè¯•ï¼Œè¯·æºå¸¦2Bé“…ç¬”å’Œé»‘è‰²ç­¾å­—ç¬”ã€‚',
+  },
+];
+
+// ==================== ä½œä¸š/å®éªŒæ•°æ®ï¼ˆæ‰©å±•åŠŸèƒ½ï¼‰====================
+
+export const MOCK_ASSIGNMENTS: AssignmentItem[] = [
+  {
+    id: 'a001',
+    courseName: 'Web å‰ç«¯åº”ç”¨',
+    courseCode: 'VDZ02115204.06',
+    title: 'å®éªŒä¸€ï¼šä¸ªäººç®€å†é¡µé¢',
+    description: 'ä½¿ç”¨HTML+CSSåˆ¶ä½œä¸€ä¸ªä¸ªäººç®€å†é¡µé¢ï¼Œè¦æ±‚å“åº”å¼å¸ƒå±€ã€‚',
+    deadline: '2025-10-15 23:59',
+    status: 'submitted',
+    statusText: 'å·²æäº¤',
+    score: 92,
+    comment: 'é¡µé¢å¸ƒå±€åˆç†ï¼Œå“åº”å¼æ•ˆæœè‰¯å¥½ï¼Œä½†é¢œè‰²æ­é…å¯ä»¥ä¼˜åŒ–ã€‚',
+    attachmentRequired: true,
+  },
+  {
+    id: 'a002',
+    courseName: 'Web å‰ç«¯åº”ç”¨',
+    courseCode: 'VDZ02115204.06',
+    title: 'å®éªŒäºŒï¼šToDo Liståº”ç”¨',
+    description: 'ä½¿ç”¨JavaScriptå®ç°ä¸€ä¸ªToDo Liståº”ç”¨ï¼Œæ”¯æŒå¢åˆ æ”¹æŸ¥ã€‚',
+    deadline: '2025-11-01 23:59',
+    status: 'not_submitted',
+    statusText: 'æœªæäº¤',
+    attachmentRequired: true,
+  },
+  {
+    id: 'a003',
+    courseName: 'è½¯ä»¶ç»¼åˆå®è·µ',
+    courseCode: 'VDZ02115204.xx',
+    title: 'é¡¹ç›®ä¸­æœŸæŠ¥å‘Š',
+    description: 'æäº¤é¡¹ç›®ä¸­æœŸæŠ¥å‘Šï¼ŒåŒ…æ‹¬éœ€æ±‚åˆ†æã€ç³»ç»Ÿè®¾è®¡ã€è¿›åº¦å®‰æ’ã€‚',
+    deadline: '2025-11-15 23:59',
+    status: 'graded',
+    statusText: 'å·²æ‰¹æ”¹',
+    score: 88,
+    comment: 'éœ€æ±‚åˆ†æè¾ƒå®Œæ•´ï¼Œç³»ç»Ÿè®¾è®¡åˆç†ï¼Œè¿›åº¦å®‰æ’å¯è¡Œã€‚',
+    attachmentRequired: true,
+  },
+];
+
+// ==================== å…¨å±€é…ç½®æ•°æ® ====================
+
+/** å½“å‰å­¦å¹´å­¦æœŸ */
+export const CURRENT_SEMESTER: string = '2025-2026 ç¬¬1å­¦æœŸ';
+
+/** å½“å‰æ•™å­¦å‘¨ */
+export const CURRENT_WEEK: number = 11;
+
+/** å­¦å¹´å­¦æœŸé€‰é¡¹ */
+export const SEMESTER_OPTIONS: string[] = [
+  '2025-2026 ç¬¬1å­¦æœŸ',
+  '2025-2026 ç¬¬2å­¦æœŸ',
+  '2024-2025 ç¬¬2å­¦æœŸ',
+  '2024-2025 ç¬¬1å­¦æœŸ',
+];
+
+/** æ•™å­¦å‘¨é€‰é¡¹ï¼ˆ1-20å‘¨ï¼‰ */
+export function getWeekOptions(): string[] {
+  const options: string[] = ['å…¨éƒ¨'];
+  for (let i = 1; i <= 20; i++) {
+    options.push(`ç¬¬${i}å‘¨`);
+  }
+  return options;
+}
+
+/** æ¼”ç¤ºç™»å½•å­¦å·åˆ—è¡¨ */
+export function isValidStudentId(studentId: string): boolean {
+  return studentId === '2024316020318' || studentId === '2024316020320' || studentId === 'demo';
+}
+
+/** æ¼”ç¤ºç™»å½•å¯†ç éªŒè¯ */
+export function validatePassword(studentId: string, password: string): boolean {
+  if (!password || password.length === 0) {
+    return false;
+  }
+  // æ¼”ç¤ºï¼šä»»æ„éç©ºå¯†ç å‡å¯ç™»å½•
+  return true;
+}
+ÀA“ÔrD–§version¤fileªsourceRoot§sources¥names¨mappings«MockData.js ‘¬MockData.etsÜº’”   ”3 3’”   ”( (–”   ” ” ” ” ” )”” ” ” ” ”” ” ”
+ ” ”” ” 
+” ” ”” ” 	” ” ”” ”	 ” 	” ”” ” ” ” ”” ”	 ” 	” ”” ”	 ” 	” ”” ”	 ” 	”( &”” ” 	” ” ”” ” ” ” ’” ” ’”   ” –”   ” ” ” ” ” +”” ” ” ” ””  ”  ”
+  ”  ”” !” !
+” !” !”” "” "	” "” "”” #”	 #” #	” #”” $” $” $” $”” %”	 %” %	” %”” &”	 &” &	” &”” '”	 '” '	”( '&”” (” (	” (” (”” )” )” )” )’” *” *’”  , ”1 ,1’”  . ” .–”  / ” /” /” /”  / ”# /2”” 0” 0” 0” 0”” 1” 1”
+ 1” 1”” 2” 2” 2” 2”” 3”
+ 3” 3
+” 3”” 4”	 4” 4	” 4”” 5” 5” 5” 5”” 6” 6	” 6” 6”” 7” 7” 7” 7”” 8” 8” 8” 8”” 9”	 9” 9	” 9”” :” :” :” :”” ;” ;” ;” ;”” <” <” <” <”” =” =” =” =”” >” >” >”  >”” ?” ?” ?”$ ?"”” Ì@” Ì@” Ì@” Ì@”” ÌA” ÌA” ÌA” ÌA”” ÌB” ÌB” ÌB” ÌB”” ÌC”
+ ÌC” ÌC
+” ÌC”” ÌD”
+ ÌD” ÌD
+” ÌD”” ÌE” ÌE” ÌE”% ÌE#”” ÌF” ÌF” ÌF” ÌF”” ÌG” ÌG” ÌG” ÌG”” ÌH” ÌH	” ÌH” ÌH”” ÌI” ÌI” ÌI” ÌI’” ÌJ” ÌJ’”  ÌL ” ÌL˜”  ÌM ” ÌM” ÌM” ÌM” ÌM” ÌM*”. ÌM=”/ ÌM>’”  ÌO ” ÌO–”  ÌP ” ÌP” ÌP” ÌP” ÌP” ÌP'œ” ÌQ” ÌQ”
+ ÌQ” ÌQ” ÌQ” ÌQ” ÌQ” ÌQ” ÌQ”  ÌQ”" ÌQ ”& ÌQ$š” ÌR”
+ ÌR” ÌR
+” ÌR” ÌR” ÌR” ÌR”$ ÌR"”& ÌR$”* ÌR(’” ÌS” ÌS’”  ÌU ”1 ÌU1’”  ÌW ” ÌW–”  ÌX ” ÌX” ÌX” ÌX” ÌX” ÌX&‘” ÌY”” ÌZ” ÌZ” ÌZ”$ ÌZ ”” Ì[” Ì[” Ì[” Ì[”” Ì\” Ì\
+” Ì\” Ì\”” Ì]” Ì]” Ì]” Ì]”” Ì^” Ì^” Ì^” Ì^”” Ì_” Ì_” Ì_” Ì_”” Ì`” Ì`” Ì`” Ì`”” Ìa” Ìa” Ìa” Ìa”” Ìb” Ìb” Ìb” Ìb”” Ìc” Ìc” Ìc” Ìc˜” Ìd” Ìd	” Ìd” Ìd” Ìd” Ìd” Ìd” Ìd”” Ìe” Ìe” Ìe” Ìe”” Ìf” Ìf” Ìf”ÌA Ìf=“” Ìg” Ìg” ÌgÜ ” Ìh” Ìh” Ìh” Ìh” Ìh” Ìh”' Ìh!”) Ìh#”* Ìh$”, Ìh&”5 Ìh/”7 Ìh1”8 Ìh2”: Ìh4”ÌC Ìh=”ÌE Ìh?”ÌN ÌhÌH”ÌP ÌhÌJ”Ì[ ÌhÌU”Ì] ÌhÌW”Ìa ÌhÌ[”Ìc ÌhÌ]‘”	 Ìi‘” Ìj‘” Ìk”” Ìl” Ìl” Ìl”$ Ìl ”” Ìm” Ìm” Ìm” Ìm”” Ìn” Ìn
+” Ìn” Ìn”” Ìo” Ìo” Ìo” Ìo”” Ìp” Ìp” Ìp” Ìp”” Ìq” Ìq” Ìq” Ìq”” Ìr” Ìr” Ìr” Ìr”” Ìs” Ìs” Ìs” Ìs”” Ìt” Ìt” Ìt” Ìt”” Ìu” Ìu” Ìu” Ìu˜” Ìv” Ìv	” Ìv” Ìv” Ìv” Ìv” Ìv” Ìv”” Ìw” Ìw” Ìw” Ìw”” Ìx” Ìx” Ìx”* Ìx&“” Ìy” Ìy” ÌyÜ ” Ìz” Ìz” Ìz” Ìz” Ìz” Ìz”' Ìz!”) Ìz#”* Ìz$”, Ìz&”5 Ìz/”7 Ìz1”8 Ìz2”: Ìz4”ÌC Ìz=”ÌE Ìz?”ÌR ÌzÌL”ÌT ÌzÌN”Ì_ ÌzÌY”Ìa ÌzÌ[”Ìe ÌzÌ_”Ìg ÌzÌa‘”	 Ì{‘” Ì|‘” Ì}”” Ì~” Ì~” Ì~”! Ì~”” Ì” Ì” Ì”  Ì”” Ì€” Ì€
+” Ì€” Ì€”” Ì” Ì” Ì” Ì”” Ì‚” Ì‚” Ì‚” Ì‚”” Ìƒ” Ìƒ” Ìƒ” Ìƒ”” Ì„” Ì„” Ì„” Ì„”” Ì…” Ì…” Ì…” Ì…”” Ì†” Ì†” Ì†” Ì†”” Ì‡” Ì‡” Ì‡” Ì‡˜” Ìˆ” Ìˆ	” Ìˆ” Ìˆ” Ìˆ” Ìˆ” Ìˆ” Ìˆ”” Ì‰” Ì‰” Ì‰” Ì‰”” ÌŠ” ÌŠ” ÌŠ”( ÌŠ$“” Ì‹” Ì‹” Ì‹Ü ” ÌŒ” ÌŒ” ÌŒ” ÌŒ” ÌŒ” ÌŒ”' ÌŒ!”) ÌŒ#”* ÌŒ$”, ÌŒ&”5 ÌŒ/”7 ÌŒ1”8 ÌŒ2”: ÌŒ4”ÌC ÌŒ=”ÌE ÌŒ?”ÌN ÌŒÌH”ÌP ÌŒÌJ”Ì[ ÌŒÌU”Ì] ÌŒÌW”Ìa ÌŒÌ[”Ìc ÌŒÌ]‘”	 Ì‘” Ì‘” Ì”” Ì” Ì” Ì”! Ì”” Ì‘” Ì‘” Ì‘” Ì‘”” Ì’” Ì’
+” Ì’” Ì’”” Ì“” Ì“” Ì“” Ì“”” Ì”” Ì”” Ì”” Ì””” Ì•” Ì•” Ì•” Ì•”” Ì–” Ì–” Ì–” Ì–”” Ì—” Ì—” Ì—” Ì—”” Ì˜” Ì˜” Ì˜” Ì˜”” Ì™” Ì™” Ì™” Ì™˜” Ìš” Ìš	” Ìš” Ìš” Ìš” Ìš” Ìš” Ìš”” Ì›” Ì›” Ì›” Ì›”” Ìœ” Ìœ” Ìœ”6 Ìœ2“” Ì” Ì” ÌÜ ” Ì” Ì” Ì” Ì” Ì” Ì”' Ì!”) Ì#”* Ì$”, Ì&”5 Ì/”7 Ì1”8 Ì2”: Ì4”ÌC Ì=”ÌE Ì?”ÌN ÌÌH”ÌP ÌÌJ”Ì[ ÌÌU”Ì] ÌÌW”Ìa ÌÌ[”Ìc ÌÌ]‘”	 ÌŸ‘” Ì ‘” Ì¡”” Ì¢” Ì¢” Ì¢”! Ì¢”” Ì£” Ì£” Ì£” Ì£”” Ì¤” Ì¤
+” Ì¤” Ì¤”” Ì¥” Ì¥” Ì¥” Ì¥”” Ì¦” Ì¦” Ì¦” Ì¦”” Ì§” Ì§” Ì§” Ì§”” Ì¨” Ì¨” Ì¨” Ì¨”” Ì©” Ì©” Ì©” Ì©”” Ìª” Ìª” Ìª” Ìª”” Ì«” Ì«” Ì«” Ì«˜” Ì¬” Ì¬	” Ì¬” Ì¬” Ì¬” Ì¬” Ì¬” Ì¬”” Ì­” Ì­” Ì­” Ì­”” Ì®” Ì®” Ì®”2 Ì®.“” Ì¯” Ì¯” Ì¯Ü ” Ì°” Ì°” Ì°” Ì°” Ì°” Ì°”' Ì°!”) Ì°#”* Ì°$”, Ì°&”5 Ì°/”7 Ì°1”8 Ì°2”: Ì°4”ÌC Ì°=”ÌE Ì°?”ÌN Ì°ÌH”ÌP Ì°ÌJ”Ì[ Ì°ÌU”Ì] Ì°ÌW”Ìa Ì°Ì[”Ìc Ì°Ì]‘”	 Ì±‘” Ì²’” Ì³” Ì³’”  Ìµ ”1 Ìµ1’”  Ì· ”  Ì· –”  Ì¸ ” Ì¸” Ì¸” Ì¸”  Ì¸ ”# Ì¸3’” Ì¹” Ì¹Ü .” Ìº” Ìº” Ìº” Ìº”" Ìº ”$ Ìº"”. Ìº,”0 Ìº.”: Ìº8”< Ìº:”ÌC ÌºÌA”ÌE ÌºÌC”ÌJ ÌºÌH”ÌL ÌºÌJ”ÌU ÌºÌS”ÌW ÌºÌU”Ì_ ÌºÌ]”Ìa ÌºÌ_”Ìj ÌºÌh”Ìl ÌºÌj”Ìr ÌºÌp”Ìt ÌºÌr”Ì} ÌºÌ{”Ì ÌºÌ}”Ì€ ÌºÌ~”Ì‚ ÌºÌ€”Ì ÌºÌ‹”Ì ÌºÌ”Ì ÌºÌ”Ì’ ÌºÌ”Ì› ÌºÌ™”Ì ÌºÌ›”Ì ÌºÌœ”Ì  ÌºÌ”Ì¤ ÌºÌ¢”Ì¦ ÌºÌ¤”Ì§ ÌºÌ¥”Ì© ÌºÌ§”Ì´ ÌºÌ²”Ì¶ ÌºÌ´”Ì» ÌºÌ¹”Ì½ ÌºÌ»”ÌÉ ÌºÌÇ”ÌË ÌºÌÉ”ÌÓ ÌºÌÑ”ÌÕ ÌºÌÓ’” Ì»” Ì»Ü .” Ì¼” Ì¼” Ì¼” Ì¼” Ì¼”! Ì¼”+ Ì¼)”- Ì¼+”5 Ì¼3”7 Ì¼5”> Ì¼<”Ì@ Ì¼>”ÌE Ì¼ÌC”ÌG Ì¼ÌE”ÌP Ì¼ÌN”ÌR Ì¼ÌP”ÌZ Ì¼ÌX”Ì\ Ì¼ÌZ”Ìe Ì¼Ìc”Ìg Ì¼Ìe”Ìn Ì¼Ìl”Ìp Ì¼Ìn”Ìy Ì¼Ìw”Ì{ Ì¼Ìy”Ì| Ì¼Ìz”Ì~ Ì¼Ì|”Ì‰ Ì¼Ì‡”Ì‹ Ì¼Ì‰”ÌŒ Ì¼ÌŠ”Ì Ì¼ÌŒ”Ì— Ì¼Ì•”Ì™ Ì¼Ì—”Ìš Ì¼Ì˜”Ìœ Ì¼Ìš”Ì  Ì¼Ì”Ì¢ Ì¼Ì ”Ì£ Ì¼Ì¡”Ì¥ Ì¼Ì£”Ì° Ì¼Ì®”Ì² Ì¼Ì°”Ì· Ì¼Ìµ”Ì¹ Ì¼Ì·”ÌÅ Ì¼ÌÃ”ÌÇ Ì¼ÌÅ”ÌÏ Ì¼ÌÍ”ÌÑ Ì¼ÌÏ’” Ì½” Ì½Ü .” Ì¾” Ì¾” Ì¾” Ì¾”" Ì¾ ”$ Ì¾"”. Ì¾,”0 Ì¾.”8 Ì¾6”: Ì¾8”ÌA Ì¾?”ÌC Ì¾ÌA”ÌH Ì¾ÌF”ÌJ Ì¾ÌH”ÌS Ì¾ÌQ”ÌU Ì¾ÌS”Ì] Ì¾Ì[”Ì_ Ì¾Ì]”Ìh Ì¾Ìf”Ìj Ì¾Ìh”Ìq Ì¾Ìo”Ìs Ì¾Ìq”Ì| Ì¾Ìz”Ì~ Ì¾Ì|”Ì Ì¾Ì}”Ì Ì¾Ì”ÌŒ Ì¾ÌŠ”Ì Ì¾ÌŒ”Ì Ì¾Ì”Ì‘ Ì¾Ì”Ìš Ì¾Ì˜”Ìœ Ì¾Ìš”Ì Ì¾Ì›”ÌŸ Ì¾Ì”Ì£ Ì¾Ì¡”Ì¥ Ì¾Ì£”Ì¦ Ì¾Ì¤”Ì¨ Ì¾Ì¦”Ì³ Ì¾Ì±”Ìµ Ì¾Ì³”Ìº Ì¾Ì¸”Ì¼ Ì¾Ìº”ÌÈ Ì¾ÌÆ”ÌÊ Ì¾ÌÈ”ÌÒ Ì¾ÌĞ”ÌÔ Ì¾ÌÒ’” Ì¿” Ì¿	’” ÌÀ” ÌÀÜ .” ÌÁ” ÌÁ” ÌÁ” ÌÁ” ÌÁ”! ÌÁ”+ ÌÁ)”- ÌÁ+”3 ÌÁ1”5 ÌÁ3”< ÌÁ:”> ÌÁ<”ÌC ÌÁÌA”ÌE ÌÁÌC”ÌN ÌÁÌL”ÌP ÌÁÌN”ÌX ÌÁÌV”ÌZ ÌÁÌX”Ìc ÌÁÌa”Ìe ÌÁÌc”Ìl ÌÁÌj”Ìn ÌÁÌl”Ìw ÌÁÌu”Ìy ÌÁÌw”Ìz ÌÁÌx”Ì| ÌÁÌz”Ì‡ ÌÁÌ…”Ì‰ ÌÁÌ‡”ÌŠ ÌÁÌˆ”ÌŒ ÌÁÌŠ”Ì• ÌÁÌ“”Ì— ÌÁÌ•”Ì˜ ÌÁÌ–”Ìš ÌÁÌ˜”Ì ÌÁÌœ”Ì  ÌÁÌ”Ì¡ ÌÁÌŸ”Ì£ ÌÁÌ¡”Ì® ÌÁÌ¬”Ì° ÌÁÌ®”Ìµ ÌÁÌ³”Ì· ÌÁÌµ”ÌÃ ÌÁÌÁ”ÌÅ ÌÁÌÃ”ÌÍ ÌÁÌË”ÌÏ ÌÁÌÍ’” ÌÂ” ÌÂÜ .” ÌÃ” ÌÃ” ÌÃ” ÌÃ” ÌÃ”! ÌÃ”+ ÌÃ)”- ÌÃ+”9 ÌÃ7”; ÌÃ9”ÌB ÌÃÌ@”ÌD ÌÃÌB”ÌI ÌÃÌG”ÌK ÌÃÌI”ÌT ÌÃÌR”ÌV ÌÃÌT”Ì^ ÌÃÌ\”Ì` ÌÃÌ^”Ìi ÌÃÌg”Ìk ÌÃÌi”Ìr ÌÃÌp”Ìt ÌÃÌr”Ì} ÌÃÌ{”Ì ÌÃÌ}”Ì€ ÌÃÌ~”Ì‚ ÌÃÌ€”Ì ÌÃÌ‹”Ì ÌÃÌ”Ì ÌÃÌ”Ì’ ÌÃÌ”Ì› ÌÃÌ™”Ì ÌÃÌ›”Ì ÌÃÌœ”Ì  ÌÃÌ”Ì¤ ÌÃÌ¢”Ì¦ ÌÃÌ¤”Ì§ ÌÃÌ¥”Ì© ÌÃÌ§”Ì´ ÌÃÌ²”Ì¶ ÌÃÌ´”Ì» ÌÃÌ¹”Ì½ ÌÃÌ»”ÌÉ ÌÃÌÇ”ÌË ÌÃÌÉ”ÌÓ ÌÃÌÑ”ÌÕ ÌÃÌÓ’” ÌÄ” ÌÄ’”  ÌÆ ” ÌÆ–”  ÌÇ ” ÌÇ” ÌÇ” ÌÇ”# ÌÇ#”& ÌÇ6Ü .” ÌÈ” ÌÈ” ÌÈ” ÌÈ” ÌÈ” ÌÈ”' ÌÈ%”) ÌÈ'”/ ÌÈ-”1 ÌÈ/”8 ÌÈ6”: ÌÈ8”? ÌÈ=”ÌA ÌÈ?”ÌJ ÌÈÌH”ÌL ÌÈÌJ”ÌT ÌÈÌR”ÌV ÌÈÌT”Ì_ ÌÈÌ]”Ìa ÌÈÌ_”Ìh ÌÈÌf”Ìj ÌÈÌh”Ìs ÌÈÌq”Ìu ÌÈÌs”Ìv ÌÈÌt”Ìx ÌÈÌv”Ìƒ ÌÈÌ”Ì… ÌÈÌƒ”Ì† ÌÈÌ„”Ìˆ ÌÈÌ†”Ì‘ ÌÈÌ”Ì“ ÌÈÌ‘”Ì” ÌÈÌ’”Ì– ÌÈÌ””Ìš ÌÈÌ˜”Ìœ ÌÈÌš”Ì ÌÈÌ›”ÌŸ ÌÈÌ”Ìª ÌÈÌ¨”Ì¬ ÌÈÌª”Ì± ÌÈÌ¯”Ì³ ÌÈÌ±”Ì¿ ÌÈÌ½”ÌÁ ÌÈÌ¿”ÌË ÌÈÌÉ”ÌÍ ÌÈÌËÜ .” ÌÉ” ÌÉ” ÌÉ” ÌÉ” ÌÉ” ÌÉ”' ÌÉ%”) ÌÉ'”/ ÌÉ-”1 ÌÉ/”8 ÌÉ6”: ÌÉ8”? ÌÉ=”ÌA ÌÉ?”ÌJ ÌÉÌH”ÌL ÌÉÌJ”ÌT ÌÉÌR”ÌV ÌÉÌT”Ì_ ÌÉÌ]”Ìa ÌÉÌ_”Ìi ÌÉÌg”Ìk ÌÉÌi”Ìt ÌÉÌr”Ìv ÌÉÌt”Ìw ÌÉÌu”Ìy ÌÉÌw”Ì„ ÌÉÌ‚”Ì† ÌÉÌ„”Ì‡ ÌÉÌ…”Ì‰ ÌÉÌ‡”Ì’ ÌÉÌ”Ì” ÌÉÌ’”Ì• ÌÉÌ“”Ì— ÌÉÌ•”Ì› ÌÉÌ™”Ì ÌÉÌ›”Ì ÌÉÌœ”Ì  ÌÉÌ”Ì« ÌÉÌ©”Ì­ ÌÉÌ«”Ì² ÌÉÌ°”Ì´ ÌÉÌ²”ÌÀ ÌÉÌ¾”ÌÂ ÌÉÌÀ”ÌÌ ÌÉÌÊ”ÌÎ ÌÉÌÌ’” ÌÊ” ÌÊ’”  ÌÌ ” ÌÌ–”  ÌÍ ” ÌÍ” ÌÍ” ÌÍ” ÌÍ”" ÌÍ5‘” ÌÎ”” ÌÏ” ÌÏ” ÌÏ”$ ÌÏ ”” ÌĞ” ÌĞ” ÌĞ” ÌĞ”” ÌÑ” ÌÑ” ÌÑ” ÌÑ”” ÌÒ” ÌÒ” ÌÒ” ÌÒ”” ÌÓ” ÌÓ” ÌÓ” ÌÓ”” ÌÔ” ÌÔ” ÌÔ” ÌÔ”” ÌÕ” ÌÕ” ÌÕ” ÌÕ”” ÌÖ” ÌÖ” ÌÖ”  ÌÖ”” Ì×” Ì×” Ì×” Ì×‘” ÌØ‘” ÌÙ”” ÌÚ” ÌÚ” ÌÚ”$ ÌÚ ”” ÌÛ” ÌÛ” ÌÛ” ÌÛ”” ÌÜ” ÌÜ” ÌÜ” ÌÜ”” Ìİ” Ìİ” Ìİ” Ìİ”” ÌŞ” ÌŞ” ÌŞ” ÌŞ”” Ìß” Ìß” Ìß” Ìß”” Ìà” Ìà” Ìà” Ìà”” Ìá” Ìá” Ìá”  Ìá”” Ìâ” Ìâ” Ìâ” Ìâ‘” Ìã’” Ìä” Ìä’”  Ìæ ” Ìæ˜”  Ìç ” Ìç” Ìç” Ìç”% Ìç%”( Ìç;”* Ìç=”+ Ìç>’”  Ìé ” Ìé–”  Ìê ” Ìê” Ìê” Ìê”" Ìê"”% Ìê8‘” Ìë”” Ìì” Ìì” Ìì”! Ìì”” Ìí” Ìí” Ìí” Ìí”” Ìî” Ìî” Ìî” Ìî”” Ìï” Ìï” Ìï” Ìï”” Ìğ” Ìğ” Ìğ” Ìğ”” Ìñ” Ìñ” Ìñ” Ìñ”” Ìò” Ìò” Ìò” Ìò”” Ìó” Ìó” Ìó”  Ìó”” Ìô” Ìô” Ìô” Ìô‘” Ìõ’” Ìö” Ìö’”  Ìø ” Ìø””  Ìù ” Ìù” Ìù” Ìù*”” Ìú” Ìú” Ìú”  Ìú”” Ìû” Ìû” Ìû” Ìû”” Ìü”
+ Ìü” Ìü
+” Ìü”” Ìı” Ìı” Ìı” Ìı”” Ìş” Ìş	” Ìş” Ìş”” Ìÿ” Ìÿ	” Ìÿ” Ìÿ”” Í ” Í ” Í ” Í ”” Í” Í” Í” Í”” Í” Í” Í” Í”” Í” Í” Í”= Í;”” Í” Í” Í” Í”” Í” Í” Í” Í’” Í” Í””  Í ” Í” Í”! Í/”” Í	” Í	” Í	”  Í	”” Í
+” Í
+” Í
+” Í
+”” Í”
+ Í” Í
+” Í”” Í” Í” Í” Í”” Í” Í	” Í” Í”” Í” Í	” Í” Í”” Í” Í” Í”" Í ”” Í” Í” Í” Í”” Í” Í” Í” Í”” Í” Í” Í”& Í$”” Í” Í” Í” Í”” Í” Í” Í” Í’” Í” Í™”  Í ” Í” Í” Í”  Í ”# Í>”' ÍÌB”* ÍÌE”+ ÍÌF–” Í” Í” Í” Í”* Í(”+ Í)–” Í” Í” Í” Í”/ Í-”0 Í.“” Í” Í” Í’”  Í ”1 Í1’”  Í ”' Í'–”  Í ” Í” Í” Í”  Í ”# Í2‘” Í ”” Í!”
+ Í!” Í!” Í!”” Í"” Í"” Í"”" Í"”” Í#” Í#” Í#”$ Í# ”” Í$” Í$” Í$”& Í$"”” Í%” Í%” Í%” Í%”” Í&” Í&” Í&” Í&”” Í'” Í'
+” Í'” Í'”” Í(” Í(” Í(” Í(”” Í)” Í)” Í)” Í)”” Í*” Í*” Í*” Í*”” Í+” Í+” Í+	” Í+”” Í,” Í,” Í,” Í,Ü ” Í-” Í-” Í-” Í-” Í-” Í-”  Í-”" Í-”) Í-%”+ Í-'”- Í-)”/ Í-+”4 Í-0”6 Í-2”8 Í-4”: Í-6”ÌD Í-Ì@”ÌF Í-ÌB”ÌH Í-ÌD”ÌJ Í-ÌF‘” Í.‘” Í/”” Í0”
+ Í0” Í0” Í0”” Í1” Í1” Í1”" Í1”” Í2” Í2” Í2”$ Í2 ”” Í3” Í3” Í3”& Í3"”” Í4” Í4” Í4” Í4”” Í5” Í5” Í5” Í5”” Í6” Í6
+” Í6” Í6”” Í7” Í7” Í7” Í7”” Í8” Í8” Í8” Í8”” Í9” Í9” Í9” Í9”” Í:” Í:” Í:	” Í:”” Í;” Í;” Í;” Í;Ü ” Í<” Í<” Í<” Í<” Í<” Í<”  Í<”" Í<”) Í<%”+ Í<'”, Í<(”. Í<*”3 Í</”5 Í<1”7 Í<3”9 Í<5”ÌC Í<?”ÌE Í<ÌA”ÌG Í<ÌC”ÌI Í<ÌE‘” Í=‘” Í>”” Í?”
+ Í?” Í?” Í?”” Í@” Í@” Í@”" Í@”” ÍA” ÍA” ÍA”! ÍA”” ÍB” ÍB” ÍB”# ÍB”” ÍC” ÍC” ÍC”  ÍC”” ÍD” ÍD” ÍD” ÍD”” ÍE” ÍE
+” ÍE” ÍE”” ÍF” ÍF” ÍF” ÍF”” ÍG” ÍG” ÍG” ÍG”” ÍH” ÍH” ÍH” ÍH”” ÍI” ÍI” ÍI	” ÍI”” ÍJ” ÍJ” ÍJ” ÍJÜ ” ÍK” ÍK” ÍK” ÍK” ÍK” ÍK”  ÍK”" ÍK”) ÍK%”+ ÍK'”- ÍK)”/ ÍK+”4 ÍK0”6 ÍK2”8 ÍK4”: ÍK6‘” ÍL’” ÍM” ÍM’”  ÍO ” ÍO–”  ÍP ” ÍP” ÍP” ÍP”  ÍP ”# ÍP2‘” ÍQ”” ÍR”
+ ÍR” ÍR” ÍR”” ÍS” ÍS” ÍS”" ÍS”” ÍT” ÍT” ÍT”! ÍT”” ÍU” ÍU” ÍU”# ÍU”” ÍV” ÍV” ÍV” ÍV”” ÍW” ÍW” ÍW” ÍW”” ÍX” ÍX
+” ÍX” ÍX”” ÍY” ÍY” ÍY” ÍY”” ÍZ” ÍZ” ÍZ” ÍZ”” Í[” Í[” Í[” Í[”” Í\” Í\” Í\	” Í\”” Í]” Í]” Í]” Í]‘” Í^‘” Í_”” Í`”
+ Í`” Í`” Í`”” Ía” Ía” Ía”" Ía”” Íb” Íb” Íb”! Íb”” Íc” Íc” Íc”# Íc”” Íd” Íd” Íd” Íd”” Íe” Íe” Íe” Íe”” Íf” Íf
+” Íf” Íf”” Íg” Íg” Íg” Íg”” Íh” Íh” Íh” Íh”” Íi” Íi” Íi” Íi”” Íj” Íj” Íj	” Íj”” Ík” Ík” Ík” Ík‘” Íl’” Ím” Ím’”  Ío ” Ío–”  Íp ” Íp” Íp” Íp”$ Íp$”' Íp6‘” Íq”” Ír”
+ Ír” Ír” Ír”” Ís” Ís” Ís”" Ís”” Ít” Ít” Ít”! Ít”” Íu” Íu” Íu”# Íu”” Ív” Ív” Ív” Ív”” Íw” Íw” Íw” Íw”” Íx” Íx
+” Íx” Íx”” Íy” Íy” Íy” Íy”” Íz” Íz” Íz” Íz”” Í{” Í{” Í{” Í{”” Í|” Í|” Í|	” Í|
+”” Í}” Í}” Í}” Í}‘” Í~’” Í” Í’”  Í ” Í–”  Í‚ ” Í‚” Í‚” Í‚”" Í‚"”% Í‚;”” Íƒ” Íƒ
+” Íƒ” Íƒ”” Í„” Í„” Í„” Í„”” Í…”
+ Í…” Í…
+” Í…”” Í†” Í†” Í†” Í†”” Í‡” Í‡	” Í‡”  Í‡’” Íˆ” Íˆ’”  ÍŠ ”1 ÍŠ1’”  ÍŒ ” ÍŒ–”  Í ” Í” Í” Í”! Í!”$ Í4”” Í” Í” Í”! Í”” Í” Í” Í”! Í”” Í” Í	” Í” Í”” Í‘” Í‘
+” Í‘” Í‘”” Í’” Í’” Í’” Í’’” Í“” Í“’”  Í• ” Í•–”  Í– ” Í–” Í–” Í–”$ Í–$”' Í–;‘” Í—”” Í˜” Í˜” Í˜”! Í˜”” Í™” Í™” Í™” Í™”” Íš” Íš” Íš” Íš”” Í›” Í›” Í›”, Í›(”” Íœ” Íœ” Íœ” Íœ”” Í” Í” Í” Í”” Í” Í
+” Í” Í”” ÍŸ” ÍŸ” ÍŸ” ÍŸ”” Í ” Í ” Í ” Í ‘” Í¡‘” Í¢”” Í£” Í£” Í£”! Í£”” Í¤” Í¤” Í¤” Í¤”” Í¥” Í¥” Í¥” Í¥”” Í¦” Í¦” Í¦”, Í¦(”” Í§” Í§” Í§” Í§”” Í¨” Í¨” Í¨” Í¨”” Í©” Í©
+” Í©” Í©”” Íª” Íª” Íª” Íª”” Í«” Í«” Í«” Í«‘” Í¬‘” Í­”” Í®” Í®” Í®”! Í®”” Í¯” Í¯” Í¯” Í¯”” Í°” Í°” Í°” Í°”” Í±” Í±” Í±”+ Í±'”” Í²” Í²” Í²” Í²”” Í³” Í³” Í³” Í³”” Í´” Í´
+” Í´” Í´”” Íµ” Íµ” Íµ” Íµ–” Í¶” Í¶” Í¶” Í¶” Í¶” Í¶‘” Í·‘” Í¸”” Í¹” Í¹” Í¹”! Í¹”” Íº” Íº” Íº”  Íº”” Í»” Í»” Í»” Í»”” Í¼” Í¼” Í¼”+ Í¼'”” Í½” Í½” Í½” Í½”” Í¾” Í¾” Í¾” Í¾”” Í¿” Í¿
+” Í¿” Í¿”” ÍÀ” ÍÀ” ÍÀ” ÍÀ”” ÍÁ” ÍÁ” ÍÁ” ÍÁ‘” ÍÂ’” ÍÃ” ÍÃ’”  ÍÅ ” ÍÅ–”  ÍÆ ” ÍÆ” ÍÆ” ÍÆ” ÍÆ”" ÍÆ6‘” ÍÇ”” ÍÈ” ÍÈ” ÍÈ”$ ÍÈ ”” ÍÉ” ÍÉ” ÍÉ” ÍÉ”” ÍÊ” ÍÊ” ÍÊ” ÍÊ”” ÍË” ÍË” ÍË”+ ÍË'”” ÍÌ” ÍÌ” ÍÌ” ÍÌ”” ÍÍ” ÍÍ” ÍÍ” ÍÍ”” ÍÎ” ÍÎ
+” ÍÎ” ÍÎ”” ÍÏ” ÍÏ” ÍÏ” ÍÏ”” ÍĞ” ÍĞ” ÍĞ” ÍĞ‘” ÍÑ‘” ÍÒ”” ÍÓ” ÍÓ” ÍÓ”$ ÍÓ ”” ÍÔ” ÍÔ” ÍÔ” ÍÔ”” ÍÕ” ÍÕ” ÍÕ” ÍÕ”” ÍÖ” ÍÖ” ÍÖ”+ ÍÖ'”” Í×” Í×” Í×” Í×”” ÍØ” ÍØ” ÍØ” ÍØ”” ÍÙ” ÍÙ
+” ÍÙ” ÍÙ”” ÍÚ” ÍÚ” ÍÚ” ÍÚ”” ÍÛ” ÍÛ” ÍÛ” ÍÛ‘” ÍÜ‘” Íİ”” ÍŞ” ÍŞ” ÍŞ”! ÍŞ”” Íß” Íß” Íß” Íß”” Íà” Íà” Íà” Íà”” Íá” Íá” Íá”+ Íá'”” Íâ” Íâ” Íâ” Íâ”” Íã” Íã” Íã” Íã”” Íä” Íä
+” Íä” Íä”” Íå” Íå” Íå” Íå”” Íæ” Íæ” Íæ” Íæ‘” Íç’” Íè” Íè’”  Íê ”1 Íê1’”  Íì ”% Íì%–”  Íí ” Íí” Íí” Íí” Íí” Íí1‘” Íî”” Íï”
+ Íï” Íï” Íï”” Íğ” Íğ” Íğ”$ Íğ ”” Íñ” Íñ” Íñ” Íñ”” Íò” Íò” Íò” Íò”” Íó” Íó” Íó” Íó”” Íô” Íô” Íô”" Íô”” Íõ” Íõ” Íõ”+ Íõ'”” Íö” Íö
+” Íö” Íö”” Í÷” Í÷” Í÷”$ Í÷ ”” Íø” Íø” Íø”% Íø!”” Íù” Íù” Íù” Íù‘” Íú‘” Íû”” Íü”
+ Íü” Íü” Íü”” Íı” Íı” Íı”$ Íı ”” Íş” Íş” Íş” Íş”” Íÿ” Íÿ” Íÿ” Íÿ”” Í ” Í ” Í ” Í ”” Í” Í” Í”" Í”” Í” Í” Í”+ Í'”” Í” Í
+” Í” Í”” Í” Í” Í”$ Í ”” Í” Í” Í”% Í!”” Í” Í” Í” Í‘” Í‘” Í”” Í	”
+ Í	” Í	” Í	”” Í
+” Í
+” Í
+”! Í
+”” Í” Í” Í”  Í”” Í” Í” Í” Í”” Í” Í” Í” Í”” Í” Í” Í”" Í”” Í” Í” Í”+ Í'”” Í” Í
+” Í” Í”” Í” Í” Í”$ Í ”” Í” Í” Í”% Í!”” Í” Í” Í” Í‘” Í’” Í” Í’”  Í ” Í–”  Í ” Í” Í” Í”$ Í$”' ÍÌ@”” Í”
+ Í” Í
+” Í“” Í” Í” Í‘” Í”” Í” Í” Í
+” Í”” Í” Í” Í” Í”” Í” Í
+” Í” Í”” Í” Í” Í”# Í“” Í ” Í ” Í ” Í!” Í!
+” Í!” Í!” Í!” Í!”$ Í!”& Í!”, Í!$”. Í!&”3 Í!+”5 Í!-”6 Í!.”8 Í!0” Í"” Í"
+” Í"” Í"” Í"” Í"”$ Í"”& Í"”, Í"$”. Í"&”3 Í"+”5 Í"-”6 Í".”8 Í"0” Í#” Í#
+” Í#” Í#” Í#” Í#”$ Í#”& Í#”* Í#"”, Í#$”1 Í#)”3 Í#+”4 Í#,”6 Í#.” Í$” Í$
+” Í$” Í$” Í$” Í$”$ Í$”& Í$”, Í$$”. Í$&”3 Í$+”5 Í$-”6 Í$.”8 Í$0” Í%” Í%
+” Í%” Í%” Í%” Í%”$ Í%”& Í%”, Í%$”. Í%&”3 Í%+”5 Í%-”6 Í%.”8 Í%0‘” Í&”” Í'” Í'” Í'” Í'‘”	 Í(‘” Í)”” Í*” Í*” Í*
+” Í*”” Í+” Í+” Í+” Í+”” Í,” Í,
+” Í,” Í,”” Í-” Í-” Í-”% Í-“” Í.” Í.” Í.” Í/” Í/
+” Í/” Í/” Í/” Í/”$ Í/”& Í/”, Í/$”. Í/&”3 Í/+”5 Í/-”6 Í/.”8 Í/0” Í0” Í0
+” Í0” Í0” Í0” Í0”$ Í0”& Í0”, Í0$”. Í0&”3 Í0+”5 Í0-”6 Í0.”8 Í00” Í1” Í1
+” Í1” Í1” Í1” Í1”$ Í1”& Í1”* Í1"”, Í1$”1 Í1)”3 Í1+”4 Í1,”6 Í1.” Í2” Í2
+” Í2” Í2” Í2” Í2”$ Í2”& Í2”, Í2$”. Í2&”3 Í2+”5 Í2-”6 Í2.”8 Í20” Í3” Í3
+” Í3” Í3” Í3” Í3”$ Í3”& Í3”, Í3$”. Í3&”3 Í3+”5 Í3-”6 Í3.”8 Í30‘” Í4”” Í5” Í5” Í5” Í5‘”	 Í6‘” Í7”” Í8” Í8” Í8
+” Í8”” Í9” Í9” Í9” Í9”” Í:” Í:
+” Í:” Í:”” Í;” Í;” Í;”% Í;“” Í<” Í<” Í<” Í=” Í=
+” Í=” Í=” Í=” Í=”$ Í=”& Í=”, Í=$”. Í=&”3 Í=+”5 Í=-”6 Í=.”8 Í=0” Í>” Í>
+” Í>” Í>” Í>” Í>”$ Í>”& Í>”, Í>$”. Í>&”3 Í>+”5 Í>-”6 Í>.”8 Í>0” Í?” Í?
+” Í?” Í?” Í?” Í?”$ Í?”& Í?”, Í?$”. Í?&”3 Í?+”5 Í?-”6 Í?.”8 Í?0” Í@” Í@
+” Í@” Í@” Í@” Í@”$ Í@”& Í@”, Í@$”. Í@&”3 Í@+”5 Í@-”6 Í@.”8 Í@0” ÍA” ÍA
+” ÍA” ÍA” ÍA” ÍA”$ ÍA”& ÍA”, ÍA$”. ÍA&”3 ÍA+”5 ÍA-”6 ÍA.”8 ÍA0‘” ÍB”” ÍC” ÍC” ÍC” ÍC‘”	 ÍD‘” ÍE”” ÍF” ÍF” ÍF
+” ÍF”” ÍG” ÍG” ÍG” ÍG”” ÍH” ÍH
+” ÍH” ÍH”” ÍI” ÍI” ÍI”" ÍI”” ÍJ” ÍJ” ÍJ” ÍJ”” ÍK” ÍK” ÍK” ÍK‘”	 ÍL‘” ÍM”” ÍN” ÍN” ÍN
+” ÍN”” ÍO” ÍO” ÍO” ÍO”” ÍP” ÍP
+” ÍP” ÍP”” ÍQ” ÍQ” ÍQ”( ÍQ"”” ÍR” ÍR” ÍR” ÍR”” ÍS” ÍS” ÍS” ÍS‘”	 ÍT‘” ÍU’” ÍV” ÍV’”  ÍX ” ÍXš”  ÍY ” ÍY” ÍY” ÍY”  ÍY ”# ÍY9”: ÍYÌP”; ÍYÌQ”ÌD ÍYÌZ”ÌE ÍYÌ[’”  Í[ ”3 Í[3–”  Í] ” Í]” Í]” Í]” Í]” Í]*‘” Í^”” Í_”
+ Í_” Í_” Í_”” Í`” Í`	” Í`”) Í`%”” Ía” Ía” Ía”Ìİ ÍaÌÙ”” Íb” Íb” Íb” Íb”” Íc” Íc” Íc”' Íc#”” Íd” Íd
+” Íd” Íd”” Íe” Íe” Íe
+” Íe‘” Íf‘” Íg”” Íh”
+ Íh” Íh” Íh”” Íi” Íi	” Íi”% Íi!”” Íj” Íj” Íj”Ìb ÍjÌ^”” Ík” Ík” Ík” Ík”” Íl” Íl” Íl”' Íl#”” Ím” Ím
+” Ím” Ím”” Ín” Ín” Ín
+” Ín‘” Ío‘” Íp”” Íq”
+ Íq” Íq” Íq”” Ír” Ír	” Ír” Ír”” Ís” Ís” Ís”> Ís:”” Ít” Ít” Ít” Ít”” Íu” Íu” Íu”' Íu#”” Ív” Ív
+” Ív” Ív”” Íw” Íw” Íw
+” Íw‘” Íx’” Íy” Íy’”  Í{ ”3 Í{3–”  Í} ” Í}” Í}” Í}” Í}” Í}-‘” Í~”” Í”
+ Í” Í” Í”” Í€” Í€” Í€” Í€”” Í” Í” Í” Í”” Í‚” Í‚” Í‚” Í‚”” Íƒ” Íƒ” Íƒ” Íƒ”” Í„” Í„” Í„” Í„”” Í…” Í…” Í…” Í…”” Í†” Í†” Í†”" Í†”” Í‡” Í‡	” Í‡”% Í‡!‘” Íˆ‘” Í‰”” ÍŠ”
+ ÍŠ” ÍŠ” ÍŠ”” Í‹” Í‹” Í‹” Í‹”” ÍŒ” ÍŒ” ÍŒ” ÍŒ”” Í” Í” Í” Í”” Í” Í” Í” Í”” Í” Í” Í” Í”” Í” Í” Í” Í”” Í‘” Í‘” Í‘”" Í‘”” Í’” Í’	” Í’”( Í’$‘” Í“‘” Í””” Í•”
+ Í•” Í•” Í•”” Í–” Í–” Í–”  Í–”” Í—” Í—” Í—” Í—”” Í˜” Í˜” Í˜” Í˜”” Í™” Í™” Í™” Í™”” Íš” Íš” Íš” Íš”” Í›” Í›” Í›” Í›”” Íœ” Íœ” Íœ”" Íœ”” Í” Í	” Í”$ Í ‘” Í’” ÍŸ” ÍŸ’”  Í¡ ”9 Í¡9–”  Í£ ” Í£” Í£” Í£” Í£”  Í£2‘” Í¤”” Í¥”
+ Í¥” Í¥” Í¥”” Í¦” Í¦” Í¦” Í¦”” Í§” Í§” Í§”$ Í§ ”” Í¨” Í¨	” Í¨” Í¨”” Í©” Í©” Í©”4 Í©0”” Íª” Íª” Íª”$ Íª ”” Í«” Í«
+” Í«” Í«”” Í¬” Í¬” Í¬” Í¬”” Í­” Í­	” Í­” Í­”” Í®” Í®” Í®”, Í®(”” Í¯” Í¯” Í¯”  Í¯‘” Í°‘” Í±”” Í²”
+ Í²” Í²” Í²”” Í³” Í³” Í³” Í³”” Í´” Í´” Í´”$ Í´ ”” Íµ” Íµ	” Íµ”  Íµ”” Í¶” Í¶” Í¶”: Í¶6”” Í·” Í·” Í·”$ Í· ”” Í¸” Í¸
+” Í¸” Í¸”” Í¹” Í¹” Í¹” Í¹”” Íº” Íº” Íº”  Íº‘” Í»‘” Í¼”” Í½”
+ Í½” Í½” Í½”” Í¾” Í¾” Í¾” Í¾”” Í¿” Í¿” Í¿”$ Í¿ ”” ÍÀ” ÍÀ	” ÍÀ” ÍÀ”” ÍÁ” ÍÁ” ÍÁ”1 ÍÁ-”” ÍÂ” ÍÂ” ÍÂ”$ ÍÂ ”” ÍÃ” ÍÃ
+” ÍÃ” ÍÃ”” ÍÄ” ÍÄ” ÍÄ” ÍÄ”” ÍÅ” ÍÅ	” ÍÅ” ÍÅ”” ÍÆ” ÍÆ” ÍÆ”) ÍÆ%”” ÍÇ” ÍÇ” ÍÇ”  ÍÇ‘” ÍÈ’” ÍÉ” ÍÉ’”  ÍË ”3 ÍË3’”  ÍÍ ” ÍÍ˜”  ÍÎ ” ÍÎ” ÍÎ” ÍÎ” ÍÎ”  ÍÎ(”0 ÍÎ8”1 ÍÎ9’”  ÍĞ ” ÍĞ˜”  ÍÑ ” ÍÑ” ÍÑ” ÍÑ” ÍÑ” ÍÑ$” ÍÑ&” ÍÑ'’”  ÍÓ ” ÍÓ–”  ÍÔ ” ÍÔ” ÍÔ” ÍÔ” ÍÔ”  ÍÔ*’” ÍÕ” ÍÕ’” ÍÖ” ÍÖ’” Í×” Í×’” ÍØ” ÍØ’” ÍÙ” ÍÙ’”  ÍÛ ” ÍÛ””  ÍÜ ” ÍÜ” ÍÜ” ÍÜ˜” Íİ”
+ Íİ” Íİ” Íİ” Íİ” Íİ!” Íİ"” Íİ#” ÍŞ”	 ÍŞ” ÍŞ” ÍŞ” ÍŞ” ÍŞ” ÍŞ” ÍŞ” ÍŞ” ÍŞ” ÍŞ” ÍŞ”  ÍŞ”" ÍŞ š” Íß” Íß” Íß” Íß” Íß” Íß” Íß” Íß” Íß” Íß‘” Íà”” Íá” Íá	” Íá” Íá’”  Íâ ” Íâ’”  Íä ” Íä–”  Íå ” Íå” Íå”  Íå ”! Íå!”* Íå2” Íæ” Íæ	” Íæ” Íæ”( Íæ&”, Íæ*”5 Íæ3”: Íæ8”ÌI ÍæÌG”ÌM ÍæÌK”ÌV ÍæÌT”Ì[ ÍæÌY”Ìa ÍæÌ_”Ìb ÍæÌ`’”  Íç ” Íç’”  Íé ” Íé˜”  Íê ” Íê” Íê”  Íê ”! Íê!”* Íê2”, Íê4”4 ÍêÌD›” Íë” Íë”	 Íë” Íë” Íë” Íë” Íë”$ Íë"”) Íë'”* Íë(”, Íë*”” Íì” Íì” Íì” Íì‘” Íí’” Íî” Íî”” Íï” Íï	” Íï” Íï’”  Íğ ” ÍğÔrE–§version¤file§sources®sourcesContent¥names¨mappingsÀ‘À‘ÀÜ»‘”    ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”  	 ‘”  
+ ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”    ‘”  ! ‘”  " ‘”  # ‘”  $ ‘”  % ‘”  & ‘”  ' ‘”  ( ‘”  ) ‘”  * ‘”  + ‘”  , ‘”  - ‘”  . ‘”  / ‘”  0 ‘”  1 ‘”  2 ‘”  3 ‘”  4 ‘”  5 ‘”  6 ‘”  7 ‘”  8 ‘”  9 ‘”  : ‘”  ; ‘”  < ‘”  = ‘”  > ‘”  ? ‘”  Ì@ ‘”  ÌA ‘”  ÌB ‘”  ÌC ‘”  ÌD ‘”  ÌE ‘”  ÌF ‘”  ÌG ‘”  ÌH ‘”  ÌI ‘”  ÌJ ‘”  ÌK ‘”  ÌL ‘”  ÌM ‘”  ÌN ‘”  ÌO ‘”  ÌP ‘”  ÌQ ‘”  ÌR ‘”  ÌS ‘”  ÌT ‘”  ÌU ‘”  ÌV ‘”  ÌW ‘”  ÌX ‘”  ÌY ‘”  ÌZ ‘”  Ì[ ‘”  Ì\ ‘”  Ì] ‘”  Ì^ ‘”  Ì_ ‘”  Ì` ‘”  Ìa ‘”  Ìb ‘”  Ìc ‘”  Ìd ‘”  Ìe ‘”  Ìf ‘”  Ìg ‘”  Ìh ‘”  Ìi ‘”  Ìj ‘”  Ìk ‘”  Ìl ‘”  Ìm ‘”  Ìn ‘”  Ìo ‘”  Ìp ‘”  Ìq ‘”  Ìr ‘”  Ìs ‘”  Ìt ‘”  Ìu ‘”  Ìv ‘”  Ìw ‘”  Ìx ‘”  Ìy ‘”  Ìz ‘”  Ì{ ‘”  Ì| ‘”  Ì} ‘”  Ì~ ‘”  Ì ‘”  Ì€ ‘”  Ì ‘”  Ì‚ ‘”  Ìƒ ‘”  Ì„ ‘”  Ì… ‘”  Ì† ‘”  Ì‡ ‘”  Ìˆ ‘”  Ì‰ ‘”  ÌŠ ‘”  Ì‹ ‘”  ÌŒ ‘”  Ì ‘”  Ì ‘”  Ì ‘”  Ì ‘”  Ì‘ ‘”  Ì’ ‘”  Ì“ ‘”  Ì” ‘”  Ì• ‘”  Ì– ‘”  Ì— ‘”  Ì˜ ‘”  Ì™ ‘”  Ìš ‘”  Ì› ‘”  Ìœ ‘”  Ì ‘”  Ì ‘”  ÌŸ ‘”  Ì  ‘”  Ì¡ ‘”  Ì¢ ‘”  Ì£ ‘”  Ì¤ ‘”  Ì¥ ‘”  Ì¦ ‘”  Ì§ ‘”  Ì¨ ‘”  Ì© ‘”  Ìª ‘”  Ì« ‘”  Ì¬ ‘”  Ì­ ‘”  Ì® ‘”  Ì¯ ‘”  Ì° ‘”  Ì± ‘”  Ì² ‘”  Ì³ ‘”  Ì´ ‘”  Ìµ ‘”  Ì¶ ‘”  Ì· ‘”  Ì¸ ‘”  Ì¹ ‘”  Ìº ‘”  Ì» ‘”  Ì¼ ‘”  Ì½ ‘”  Ì¾ ‘”  Ì¿ ‘”  ÌÀ ‘”  ÌÁ ‘”  ÌÂ ‘”  ÌÃ ‘”  ÌÄ ‘”  ÌÅ ‘”  ÌÆ ‘”  ÌÇ ‘”  ÌÈ ‘”  ÌÉ ‘”  ÌÊ ‘”  ÌË ‘”  ÌÌ ‘”  ÌÍ ‘”  ÌÎ ‘”  ÌÏ ‘”  ÌĞ ‘”  ÌÑ ‘”  ÌÒ ‘”  ÌÓ ‘”  ÌÔ ‘”  ÌÕ ‘”  ÌÖ ‘”  Ì× ‘”  ÌØ ‘”  ÌÙ ‘”  ÌÚ ‘”  ÌÛ ‘”  ÌÜ ‘”  Ìİ ‘”  ÌŞ ‘”  Ìß ‘”  Ìà ‘”  Ìá ‘”  Ìâ ‘”  Ìã ‘”  Ìä ‘”  Ìå ‘”  Ìæ ‘”  Ìç ‘”  Ìè ‘”  Ìé ‘”  Ìê ‘”  Ìë ‘”  Ìì ‘”  Ìí ‘”  Ìî ‘”  Ìï ‘”  Ìğ ‘”  Ìñ ‘”  Ìò ‘”  Ìó ‘”  Ìô ‘”  Ìõ ‘”  Ìö ‘”  Ì÷ ‘”  Ìø ‘”  Ìù ‘”  Ìú ‘”  Ìû ‘”  Ìü ‘”  Ìı ‘”  Ìş ‘”  Ìÿ ‘”  Í  ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í	 ‘”  Í
+ ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í  ‘”  Í! ‘”  Í" ‘”  Í# ‘”  Í$ ‘”  Í% ‘”  Í& ‘”  Í' ‘”  Í( ‘”  Í) ‘”  Í* ‘”  Í+ ‘”  Í, ‘”  Í- ‘”  Í. ‘”  Í/ ‘”  Í0 ‘”  Í1 ‘”  Í2 ‘”  Í3 ‘”  Í4 ‘”  Í5 ‘”  Í6 ‘”  Í7 ‘”  Í8 ‘”  Í9 ‘”  Í: ‘”  Í; ‘”  Í< ‘”  Í= ‘”  Í> ‘”  Í? ‘”  Í@ ‘”  ÍA ‘”  ÍB ‘”  ÍC ‘”  ÍD ‘”  ÍE ‘”  ÍF ‘”  ÍG ‘”  ÍH ‘”  ÍI ‘”  ÍJ ‘”  ÍK ‘”  ÍL ‘”  ÍM ‘”  ÍN ‘”  ÍO ‘”  ÍP ‘”  ÍQ ‘”  ÍR ‘”  ÍS ‘”  ÍT ‘”  ÍU ‘”  ÍV ‘”  ÍW ‘”  ÍX ‘”  ÍY ‘”  ÍZ ‘”  Í[ ‘”  Í\ ‘”  Í] ‘”  Í^ ‘”  Í_ ‘”  Í` ‘”  Ía ‘”  Íb ‘”  Íc ‘”  Íd ‘”  Íe ‘”  Íf ‘”  Íg ‘”  Íh ‘”  Íi ‘”  Íj ‘”  Ík ‘”  Íl ‘”  Ím ‘”  Ín ‘”  Ío ‘”  Íp ‘”  Íq ‘”  Ír ‘”  Ís ‘”  Ít ‘”  Íu ‘”  Ív ‘”  Íw ‘”  Íx ‘”  Íy ‘”  Íz ‘”  Í{ ‘”  Í| ‘”  Í} ‘”  Í~ ‘”  Í ‘”  Í€ ‘”  Í ‘”  Í‚ ‘”  Íƒ ‘”  Í„ ‘”  Í… ‘”  Í† ‘”  Í‡ ‘”  Íˆ ‘”  Í‰ ‘”  ÍŠ ‘”  Í‹ ‘”  ÍŒ ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í‘ ‘”  Í’ ‘”  Í“ ‘”  Í” ‘”  Í• ‘”  Í– ‘”  Í— ‘”  Í˜ ‘”  Í™ ‘”  Íš ‘”  Í› ‘”  Íœ ‘”  Í ‘”  Í ‘”  ÍŸ ‘”  Í  ‘”  Í¡ ‘”  Í¢ ‘”  Í£ ‘”  Í¤ ‘”  Í¥ ‘”  Í¦ ‘”  Í§ ‘”  Í¨ ‘”  Í© ‘”  Íª ‘”  Í« ‘”  Í¬ ‘”  Í­ ‘”  Í® ‘”  Í¯ ‘”  Í° ‘”  Í± ‘”  Í² ‘”  Í³ ‘”  Í´ ‘”  Íµ ‘”  Í¶ ‘”  Í· ‘”  Í¸ ‘”  Í¹ ‘”  Íº ‘”  Í» ‘”  Í¼ ‘”  Í½ ‘”  Í¾ ‘”  Í¿ ‘”  ÍÀ ‘”  ÍÁ ‘”  ÍÂ ‘”  ÍÃ ‘”  ÍÄ ‘”  ÍÅ ‘”  ÍÆ ‘”  ÍÇ ‘”  ÍÈ ‘”  ÍÉ ‘”  ÍÊ ‘”  ÍË ‘”  ÍÌ ‘”  ÍÍ ‘”  ÍÎ ‘”  ÍÏ ‘”  ÍĞ ‘”  ÍÑ ‘”  ÍÒ ‘”  ÍÓ ‘”  ÍÔ ‘”  ÍÕ ‘”  ÍÖ ‘”  Í× ‘”  ÍØ ‘”  ÍÙ ‘”  ÍÚ ‘”  ÍÛ ‘”  ÍÜ ‘”  Íİ ‘”  ÍŞ ‘”  Íß ‘”  Íà ‘”  Íá ‘”  Íâ ‘”  Íã ‘”  Íä ‘”  Íå ‘”  Íæ ‘”  Íç ‘”  Íè ‘”  Íé ‘”  Íê ‘”  Íë ‘”  Íì ‘”  Íí ‘”  Íî ‘”  Íï ‘”  Íğ ‘”  Íñ ‘”  Íò ‘”  Íó ‘”  Íô ‘”  Íõ ‘”  Íö ‘”  Í÷ ‘”  Íø ‘”  Íù ‘”  Íú ‘”  Íû ‘”  Íü ‘”  Íı ‘”  Íş ‘”  Íÿ ‘”  Í  ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í	 ‘”  Í
+ ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í  ‘”  Í! ‘”  Í" ‘”  Í# ‘”  Í$ ‘”  Í% ‘”  Í& ‘”  Í' ‘”  Í( ‘”  Í) ‘”  Í* ‘”  Í+ ‘”  Í, ‘”  Í- ‘”  Í. ‘”  Í/ ‘”  Í0 ‘”  Í1 ‘”  Í2 ‘”  Í3 ‘”  Í4 ‘”  Í5 ‘”  Í6 ‘”  Í7 ‘”  Í8 ‘”  Í9 ‘”  Í: ‘”  Í; ‘”  Í< ‘”  Í= ‘”  Í> ‘”  Í? ‘”  Í@ ‘”  ÍA ‘”  ÍB ‘”  ÍC ‘”  ÍD ‘”  ÍE ‘”  ÍF ‘”  ÍG ‘”  ÍH ‘”  ÍI ‘”  ÍJ ‘”  ÍK ‘”  ÍL ‘”  ÍM ‘”  ÍN ‘”  ÍO ‘”  ÍP ‘”  ÍQ ‘”  ÍR ‘”  ÍS ‘”  ÍT ‘”  ÍU ‘”  ÍV ‘”  ÍW ‘”  ÍX ‘”  ÍY ‘”  ÍZ ‘”  Í[ ‘”  Í\ ‘”  Í] ‘”  Í^ ‘”  Í_ ‘”  Í` ‘”  Ía ‘”  Íb ‘”  Íc ‘”  Íd ‘”  Íe ‘”  Íf ‘”  Íg ‘”  Íh ‘”  Íi ‘”  Íj ‘”  Ík ‘”  Íl ‘”  Ím ‘”  Ín ‘”  Ío ‘”  Íp ‘”  Íq ‘”  Ír ‘”  Ís ‘”  Ít ‘”  Íu ‘”  Ív ‘”  Íw ‘”  Íx ‘”  Íy ‘”  Íz ‘”  Í{ ‘”  Í| ‘”  Í} ‘”  Í~ ‘”  Í ‘”  Í€ ‘”  Í ‘”  Í‚ ‘”  Íƒ ‘”  Í„ ‘”  Í… ‘”  Í† ‘”  Í‡ ‘”  Íˆ ‘”  Í‰ ‘”  ÍŠ ‘”  Í‹ ‘”  ÍŒ ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í‘ ‘”  Í’ ‘”  Í“ ‘”  Í” ‘”  Í• ‘”  Í– ‘”  Í— ‘”  Í˜ ‘”  Í™ ‘”  Íš ‘”  Í› ‘”  Íœ ‘”  Í ‘”  Í ‘”  ÍŸ ‘”  Í  ‘”  Í¡ ‘”  Í¢ ‘”  Í£ ‘”  Í¤ ‘”  Í¥ ‘”  Í¦ ‘”  Í§ ‘”  Í¨ ‘”  Í© ‘”  Íª ‘”  Í« ‘”  Í¬ ‘”  Í­ ‘”  Í® ‘”  Í¯ ‘”  Í° ‘”  Í± ‘”  Í² ‘”  Í³ ‘”  Í´ ‘”  Íµ ‘”  Í¶ ‘”  Í· ‘”  Í¸ ‘”  Í¹ ‘”  Íº ÔrF’§missing¦pluginÃ¦genAbcÂÔ  ÔrG”²dynamicImportCache¹exportAllDeclarationCache»exportNamedDeclarationCache«importCacheÜ ÔrH–¤type¥start£end«declarationªspecifiers¦source¶ExportNamedDeclarationÌ_Í¨ÔrI•¤type¥start£end¬declarations¤kind³VariableDeclarationÌfÍ¨‘ÔrJ•¤type¥start£end¢id¤init²VariableDeclaratorÌlÍ§ÔrK”¤type¥start£end¤nameªIdentifierÌlÌx¬MOCK_STUDENTÔrL”¤type¥start£endªproperties°ObjectExpressionÌ{Í§›ÔrM™¤type¥start£end¦method©shorthand¨computed£key¥value¤kind¨PropertyÌ‚ÌœÂÂÂKªIdentifierÌ‚Ì‹©studentIdÔrN•¤type¥start£end¥value£raw§LiteralÌÌœ­2024316020318¯'2024316020318'¤initM¨PropertyÌ£Ì®ÂÂÂKªIdentifierÌ£Ì§¤nameN§LiteralÌ©Ì®©æ—äºˆå®¸«'æ—äºˆå®¸'¤initM¨PropertyÌµÌÅÂÂÂKªIdentifierÌµÌ½¨passwordN§LiteralÌ¿ÌÅ¤demo¦'demo'¤initM¨PropertyÌÌÌÜÂÂÂKªIdentifierÌÌÌÓ§collegeN§LiteralÌÕÌÜ¯è®¡ç®—æœºå­¦é™¢±'è®¡ç®—æœºå­¦é™¢'¤initM¨PropertyÌãÌôÂÂÂKªIdentifierÌãÌè¥majorN§LiteralÌêÌô¸è®¡ç®—æœºç§‘å­¦ä¸æŠ€æœ¯º'è®¡ç®—æœºç§‘å­¦ä¸æŠ€æœ¯'¤initM¨PropertyÌûÍÂÂÂKªIdentifierÌûÍ©classNameN§LiteralÍÍ­23è®¡ç§‘U3ç­¯'23è®¡ç§‘U3ç­'¤initM¨PropertyÍÍ#ÂÂÂKªIdentifierÍÍ¥gradeN§LiteralÍÍ#¤2024¦'2024'¤initM¨PropertyÍ*Í>ÂÂÂKªIdentifierÍ*Í/¥phoneN§LiteralÍ1Í>«138****0000­'138****0000'¤initM¨PropertyÍEÍiÂÂÂKªIdentifierÍEÍJ¥emailN§LiteralÍLÍi»2024316020318@school.edu.cn½'2024316020318@school.edu.cn'¤initM¨PropertyÍpÍŠÂÂÂKªIdentifierÍpÍw§addressN§LiteralÍyÍŠÙ%å¹¿ä¸œçœæ·±åœ³å¸‚å—å±±åŒºxxè·¯xxå·Ù''å¹¿ä¸œçœæ·±åœ³å¸‚å—å±±åŒºxxè·¯xxå·'¤initM¨PropertyÍ‘Í£ÂÂÂKªIdentifierÍ‘Í­avatarInitialN§LiteralÍ Í££æ—¥'æ—'¤init¥constÀH¶ExportNamedDeclarationÍÁÍI³VariableDeclarationÍÈÍ‘J²VariableDeclaratorÍÎÍKªIdentifierÍÎÍÜ®MOCK_STUDENT_2L°ObjectExpressionÍßÍ›M¨PropertyÍæÍ ÂÂÂKªIdentifierÍæÍï©studentIdN§LiteralÍñÍ ­2024316020320¯'2024316020320'¤initM¨PropertyÍÍÂÂÂKªIdentifierÍÍ¤nameN§LiteralÍÍ¦å¼ ä¸‰¨'å¼ ä¸‰'¤initM¨PropertyÍÍ*ÂÂÂKªIdentifierÍÍ ¨passwordN§LiteralÍ"Í*¦123456¨'123456'¤initM¨PropertyÍ1ÍAÂÂÂKªIdentifierÍ1Í8§collegeN§LiteralÍ:ÍA¯è®¡ç®—æœºå­¦é™¢±'è®¡ç®—æœºå­¦é™¢'¤initM¨PropertyÍHÍYÂÂÂKªIdentifierÍHÍM¥majorN§LiteralÍOÍY¸è®¡ç®—æœºç§‘å­¦ä¸æŠ€æœ¯º'è®¡ç®—æœºç§‘å­¦ä¸æŠ€æœ¯'¤initM¨PropertyÍ`ÍtÂÂÂKªIdentifierÍ`Íi©classNameN§LiteralÍkÍt­23è®¡ç§‘U3ç­¯'23è®¡ç§‘U3ç­'¤initM¨PropertyÍ{ÍˆÂÂÂKªIdentifierÍ{Í€¥gradeN§LiteralÍ‚Íˆ¤2024¦'2024'¤initM¨PropertyÍÍ£ÂÂÂKªIdentifierÍÍ”¥phoneN§LiteralÍ–Í£«139****1111­'139****1111'¤initM¨PropertyÍªÍÎÂÂÂKªIdentifierÍªÍ¯¥emailN§LiteralÍ±ÍÎ»2024316020320@school.edu.cn½'2024316020320@school.edu.cn'¤initM¨PropertyÍÕÍïÂÂÂKªIdentifierÍÕÍÜ§addressN§LiteralÍŞÍïÙ%å¹¿ä¸œçœå¹¿å·å¸‚å¤©æ²³åŒºxxè·¯xxå·Ù''å¹¿ä¸œçœå¹¿å·å¸‚å¤©æ²³åŒºxxè·¯xxå·'¤initM¨PropertyÍöÍÂÂÂKªIdentifierÍöÍ­avatarInitialN§LiteralÍÍ£å¼ ¥'å¼ '¤init¥constÀH¶ExportNamedDeclarationÍ^ÍI³VariableDeclarationÍeÍ‘J²VariableDeclaratorÍkÍKªIdentifierÍkÍ~³MOCK_STUDENT_STATUSL°ObjectExpressionÍÍÜ M¨PropertyÍˆÍ¢ÂÂÂKªIdentifierÍˆÍ‘©studentIdN§LiteralÍ“Í¢­2024316020318¯'2024316020318'¤initM¨PropertyÍ©Í´ÂÂÂKªIdentifierÍ©Í­¤nameN§LiteralÍ¯Í´©æ—äºˆå®¸«'æ—äºˆå®¸'¤initM¨PropertyÍ»ÍÔÂÂÂKªIdentifierÍ»ÍÆ«englishNameN§LiteralÍÈÍÔªLin Yuchen¬'Lin Yuchen'¤initM¨PropertyÍÛÍæÂÂÂKªIdentifierÍÛÍá¦genderN§LiteralÍãÍæ£ç”·¥'ç”·'¤initM¨PropertyÍíÍúÂÂÂKªIdentifierÍíÍò¥gradeN§LiteralÍôÍú¤2024¦'2024'¤initM¨PropertyÍÍÂÂÂKªIdentifierÍÍ¬schoolSystemN§LiteralÍÍ¤4å¹´¦'4å¹´'¤initM¨PropertyÍÍ'ÂÂÂKªIdentifierÍÍ!§programN§LiteralÍ#Í'¦æœ¬ç§‘¨'æœ¬ç§‘'¤initM¨PropertyÍ.ÍDÂÂÂKªIdentifierÍ.Í<®educationLevelN§LiteralÍ>ÍD¬æ™®é€šæœ¬ç§‘®'æ™®é€šæœ¬ç§‘'¤initM¨PropertyÍKÍaÂÂÂKªIdentifierÍKÍZ¯studentCategoryN§LiteralÍ\Ía©å…¨æ—¥åˆ¶«'å…¨æ—¥åˆ¶'¤initM¨PropertyÍhÍyÂÂÂKªIdentifierÍhÍm¥majorN§LiteralÍoÍy¸è®¡ç®—æœºç§‘å­¦ä¸æŠ€æœ¯º'è®¡ç®—æœºç§‘å­¦ä¸æŠ€æœ¯'¤initM¨PropertyÍ€Í“ÂÂÂKªIdentifierÍ€ÍŠªdepartmentN§LiteralÍŒÍ“¯è®¡ç®—æœºå­¦é™¢±'è®¡ç®—æœºå­¦é™¢'¤initM¨PropertyÍšÍ²ÂÂÂKªIdentifierÍšÍ©¯adminDepartmentN§LiteralÍ«Í²¯è®¡ç®—æœºå­¦é™¢±'è®¡ç®—æœºå­¦é™¢'¤initM¨PropertyÍ¹ÍÇÂÂÂKªIdentifierÍ¹ÍÂ©directionN§LiteralÍÄÍÇ£â€”¥'â€”'¤initM¨PropertyÍÎÍâÂÂÂKªIdentifierÍÎÍ×©classNameN§LiteralÍÙÍâ­23è®¡ç§‘U3ç­¯'23è®¡ç§‘U3ç­'¤initM¨PropertyÍéÍÂÂÂKªIdentifierÍéÍ÷®enrollmentDateN§LiteralÍùÍª2024-09-01¬'2024-09-01'¤initM¨PropertyÍÍ,ÂÂÂKªIdentifierÍÍ²expectedGraduationN§LiteralÍ Í,ª2028-07-01¬'2028-07-01'¤initM¨PropertyÍ3ÍCÂÂÂKªIdentifierÍ3Í<©studyModeN§LiteralÍ>ÍC©å…¨æ—¥åˆ¶«'å…¨æ—¥åˆ¶'¤initM¨PropertyÍJÍ[ÂÂÂKªIdentifierÍJÍV¬isRegisteredN§LiteralÍXÍ[£æ˜¯¥'æ˜¯'¤initM¨PropertyÍbÍqÂÂÂKªIdentifierÍbÍlªisOnCampusN§LiteralÍnÍq£æ˜¯¥'æ˜¯'¤initM¨PropertyÍxÍ…ÂÂÂKªIdentifierÍxÍ~¦campusN§LiteralÍ€Í…©ä¸»æ ¡åŒº«'ä¸»æ ¡åŒº'¤initM¨PropertyÍŒÍ˜ÂÂÂKªIdentifierÍŒÍ’¦statusN§LiteralÍ”Í˜¦åœ¨æ ¡¨'åœ¨æ ¡'¤initM¨PropertyÍŸÍÀÂÂÂKªIdentifierÍŸÍ²³statusEffectiveDateN§LiteralÍ´ÍÀª2024-09-01¬'2024-09-01'¤initM¨PropertyÍÇÍÜÂÂÂKªIdentifierÍÇÍ×°hasStudentStatusN§LiteralÍÙÍÜ£æ˜¯¥'æ˜¯'¤initM¨PropertyÍãÍòÂÂÂKªIdentifierÍãÍíªisEmployedN§LiteralÍïÍò£å¦¥'å¦'¤initM¨PropertyÍùÍÂÂÂKªIdentifierÍùÍ §remarksN§LiteralÍÍ£â€”¥'â€”'¤initM¨PropertyÍÍÂÂÂKªIdentifierÍÍ©photoPathN§LiteralÍÍ ¢''¤init¥constÀH¶ExportNamedDeclarationÍ5ÍdI³VariableDeclarationÍ<Íd‘J²VariableDeclaratorÍBÍcKªIdentifierÍBÍM«MOCK_STATUSKªIdentifierÍPÍc³MOCK_STUDENT_STATUS¥constÀH¶ExportNamedDeclarationÍwÍîI³VariableDeclarationÍ~Íî‘J²VariableDeclaratorÍ„ÍíKªIdentifierÍ„Í‘­STATUS_FIELDSÔrO”¤type¥start£end¨elements¯ArrayExpressionÍ”Íí›N§LiteralÍ›ÍŸ¦å­¦å·¨'å­¦å·'N§LiteralÍ¡Í¥¦å§“å¨'å§“å'N§LiteralÍ§Í«¦æ€§åˆ«¨'æ€§åˆ«'N§LiteralÍ­Í±¦é™¢ç³»¨'é™¢ç³»'N§LiteralÍ³Í·¦ä¸“ä¸š¨'ä¸“ä¸š'N§LiteralÍ¹Í½¦ç­çº§¨'ç­çº§'N§LiteralÍÄÍÊ¬å­¦ç±çŠ¶æ€®'å­¦ç±çŠ¶æ€'N§LiteralÍÌÍÒ¬å…¥æ ¡æ—¶é—´®'å…¥æ ¡æ—¶é—´'N§LiteralÍÔÍÜ²é¢„è®¡æ¯•ä¸šæ—¶é—´´'é¢„è®¡æ¯•ä¸šæ—¶é—´'N§LiteralÍŞÍä¬åŸ¹å…»å±‚æ¬¡®'åŸ¹å…»å±‚æ¬¡'N§LiteralÍæÍê¦å­¦åˆ¶¨'å­¦åˆ¶'¥constÀH¶ExportNamedDeclarationÍ2Í¨I³VariableDeclarationÍ9Í¨‘J²VariableDeclaratorÍ?Í§KªIdentifierÍ?ÍK¬MOCK_COURSESO¯ArrayExpressionÍNÍ§•L°ObjectExpressionÍUÍ	nM¨PropertyÍ`Í|ÂÂÂKªIdentifierÍ`ÍjªcourseCodeN§LiteralÍlÍ|®VDZ02115204.06°'VDZ02115204.06'¤initM¨PropertyÍ‡ÍÂÂÂKªIdentifierÍ‡Í‘ªcourseNameN§LiteralÍ“Í°Web å‰ç«¯åº”ç”¨²'Web å‰ç«¯åº”ç”¨'¤initM¨PropertyÍ¨Í±ÂÂÂKªIdentifierÍ¨Í®¦creditN§LiteralÍ°Í±¡3¤initM¨PropertyÍ¼ÍĞÂÂÂKªIdentifierÍ¼ÍÆªcourseTypeN§LiteralÍÈÍĞ²ä¸“ä¸šæ‹“å±•è¯¾ç¨‹´'ä¸“ä¸šæ‹“å±•è¯¾ç¨‹'¤initM¨PropertyÍÛÍëÂÂÂKªIdentifierÍÛÍâ§collegeN§LiteralÍäÍë¯è®¡ç®—æœºå­¦é™¢±'è®¡ç®—æœºå­¦é™¢'¤initM¨PropertyÍöÍÂÂÂKªIdentifierÍöÍı§teacherN§LiteralÍÿÍ©çŸ³é›…è¹«'çŸ³é›…è¹'¤initM¨PropertyÍÍ"ÂÂÂKªIdentifierÍÍ©classroomN§LiteralÍÍ"ªæ•™8æ ‹613¬'æ•™8æ ‹613'¤initM¨PropertyÍ-Í9ÂÂÂKªIdentifierÍ-Í5¨capacityN§LiteralÍ7Í9<¢60¤initM¨PropertyÍDÍPÂÂÂKªIdentifierÍDÍL¨enrolledN§LiteralÍNÍP0¢48¤initM¨PropertyÍ[ÍlÂÂÂKªIdentifierÍ[Íd©weekRangeN§LiteralÍfÍl¦2-9å‘¨¨'2-9å‘¨'¤initM¨PropertyÍwÍ„ÂÂÂKªIdentifierÍwÍ|¥weeksO¯ArrayExpressionÍ~Í„’N§LiteralÍÍ€¡2N§LiteralÍ‚Íƒ	¡9¤initM¨PropertyÍÍšÂÂÂKªIdentifierÍÍ—¨weekTypeN§LiteralÍ™Íš ¡0¤initM¨PropertyÍ¥ÍŞÂÂÂKªIdentifierÍ¥Í°«descriptionN§LiteralÍ²ÍŞÙVæœ¬è¯¾ç¨‹ä»‹ç»Webå‰ç«¯å¼€å‘åŸºç¡€ï¼ŒåŒ…æ‹¬HTMLã€CSSã€JavaScriptåŠä¸»æµæ¡†æ¶ã€‚ÙX'æœ¬è¯¾ç¨‹ä»‹ç»Webå‰ç«¯å¼€å‘åŸºç¡€ï¼ŒåŒ…æ‹¬HTMLã€CSSã€JavaScriptåŠä¸»æµæ¡†æ¶ã€‚'¤initM¨PropertyÍéÍ	fÂÂÂKªIdentifierÍéÍò©timeSlotsO¯ArrayExpressionÍôÍ	f‘L°ObjectExpressionÍ	Í	Z•M¨PropertyÍ	Í	ÂÂÂKªIdentifierÍ	Í	©dayOfWeekN§LiteralÍ	Í	¡1¤initM¨PropertyÍ	Í	!ÂÂÂKªIdentifierÍ	Í	«startPeriodN§LiteralÍ	 Í	!¡1¤initM¨PropertyÍ	#Í	/ÂÂÂKªIdentifierÍ	#Í	,©endPeriodN§LiteralÍ	.Í	/¡2¤initM¨PropertyÍ	1Í	EÂÂÂKªIdentifierÍ	1Í	:©timeLabelN§LiteralÍ	<Í	E­ä¸Šåˆ 1-2èŠ‚¯'ä¸Šåˆ 1-2èŠ‚'¤initM¨PropertyÍ	GÍ	XÂÂÂKªIdentifierÍ	GÍ	R«timeSegmentN§LiteralÍ	TÍ	X¢am¤'am'¤init¤initL°ObjectExpressionÍ	uÍ}M¨PropertyÍ	€Í	œÂÂÂKªIdentifierÍ	€Í	ŠªcourseCodeN§LiteralÍ	ŒÍ	œ®VDZ02115204.xx°'VDZ02115204.xx'¤initM¨PropertyÍ	§Í	»ÂÂÂKªIdentifierÍ	§Í	±ªcourseNameN§LiteralÍ	³Í	»²è½¯ä»¶ç»¼åˆå®è·µ´'è½¯ä»¶ç»¼åˆå®è·µ'¤initM¨PropertyÍ	ÆÍ	ÏÂÂÂKªIdentifierÍ	ÆÍ	Ì¦creditN§LiteralÍ	ÎÍ	Ï¡4¤initM¨PropertyÍ	ÚÍ	ğÂÂÂKªIdentifierÍ	ÚÍ	äªcourseTypeN§LiteralÍ	æÍ	ğ¸é›†ä¸­å®è·µæ•™å­¦è¯¾ç¨‹º'é›†ä¸­å®è·µæ•™å­¦è¯¾ç¨‹'¤initM¨PropertyÍ	ûÍ
+ÂÂÂKªIdentifierÍ	ûÍ
+§collegeN§LiteralÍ
+Í
+¯è®¡ç®—æœºå­¦é™¢±'è®¡ç®—æœºå­¦é™¢'¤initM¨PropertyÍ
+Í
+$ÂÂÂKªIdentifierÍ
+Í
+§teacherN§LiteralÍ
+Í
+$©æå›½å¼º«'æå›½å¼º'¤initM¨PropertyÍ
+/Í
+BÂÂÂKªIdentifierÍ
+/Í
+8©classroomN§LiteralÍ
+:Í
+Bªæ•™9æ ‹708¬'æ•™9æ ‹708'¤initM¨PropertyÍ
+MÍ
+YÂÂÂKªIdentifierÍ
+MÍ
+U¨capacityN§LiteralÍ
+WÍ
+Y2¢50¤initM¨PropertyÍ
+dÍ
+pÂÂÂKªIdentifierÍ
+dÍ
+l¨enrolledN§LiteralÍ
+nÍ
+p*¢42¤initM¨PropertyÍ
+{Í
+ÂÂÂKªIdentifierÍ
+{Í
+„©weekRangeN§LiteralÍ
+†Í
+¯æŒ‰æ•™åŠ¡å®‰æ’±'æŒ‰æ•™åŠ¡å®‰æ’'¤initM¨PropertyÍ
+˜Í
+¦ÂÂÂKªIdentifierÍ
+˜Í
+¥weeksO¯ArrayExpressionÍ
+ŸÍ
+¦’N§LiteralÍ
+ Í
+¡¡1N§LiteralÍ
+£Í
+¥¢16¤initM¨PropertyÍ
+±Í
+¼ÂÂÂKªIdentifierÍ
+±Í
+¹¨weekTypeN§LiteralÍ
+»Í
+¼ ¡0¤initM¨PropertyÍ
+ÇÍ
+éÂÂÂKªIdentifierÍ
+ÇÍ
+Ò«descriptionN§LiteralÍ
+ÔÍ
+éÙ9é›†ä¸­å®è·µè¯¾ç¨‹ï¼Œå®Œæˆä¸€ä¸ªå®Œæ•´çš„è½¯ä»¶é¡¹ç›®ã€‚Ù;'é›†ä¸­å®è·µè¯¾ç¨‹ï¼Œå®Œæˆä¸€ä¸ªå®Œæ•´çš„è½¯ä»¶é¡¹ç›®ã€‚'¤initM¨PropertyÍ
+ôÍuÂÂÂKªIdentifierÍ
+ôÍ
+ı©timeSlotsO¯ArrayExpressionÍ
+ÿÍu‘L°ObjectExpressionÍÍi•M¨PropertyÍÍÂÂÂKªIdentifierÍÍ©dayOfWeekN§LiteralÍÍ¡2¤initM¨PropertyÍÍ,ÂÂÂKªIdentifierÍÍ)«startPeriodN§LiteralÍ+Í,¡5¤initM¨PropertyÍ.Í:ÂÂÂKªIdentifierÍ.Í7©endPeriodN§LiteralÍ9Í:¡8¤initM¨PropertyÍ<ÍTÂÂÂKªIdentifierÍ<ÍE©timeLabelN§LiteralÍGÍT¹ä¸‹åˆ 5-8èŠ‚ï¼ˆè¿ä¸Šï¼‰»'ä¸‹åˆ 5-8èŠ‚ï¼ˆè¿ä¸Šï¼‰'¤initM¨PropertyÍVÍgÂÂÂKªIdentifierÍVÍa«timeSegmentN§LiteralÍcÍg¢pm¤'pm'¤init¤initL°ObjectExpressionÍ„Í…M¨PropertyÍÍ¨ÂÂÂKªIdentifierÍÍ™ªcourseCodeN§LiteralÍ›Í¨«VDZ02115xxx­'VDZ02115xxx'¤initM¨PropertyÍ³ÍËÂÂÂKªIdentifierÍ³Í½ªcourseNameN§LiteralÍ¿ÍË¾å¤§å‹æ•°æ®åº“ç®¡ç†ä¸ç»´æŠ¤Ù 'å¤§å‹æ•°æ®åº“ç®¡ç†ä¸ç»´æŠ¤'¤initM¨PropertyÍÖÍßÂÂÂKªIdentifierÍÖÍÜ¦creditN§LiteralÍŞÍß¡3¤initM¨PropertyÍêÍşÂÂÂKªIdentifierÍêÍôªcourseTypeN§LiteralÍöÍş²ä¸“ä¸šæ‹“å±•è¯¾ç¨‹´'ä¸“ä¸šæ‹“å±•è¯¾ç¨‹'¤initM¨PropertyÍ	ÍÂÂÂKªIdentifierÍ	Í§collegeN§LiteralÍÍ¯è®¡ç®—æœºå­¦é™¢±'è®¡ç®—æœºå­¦é™¢'¤initM¨PropertyÍ$Í2ÂÂÂKªIdentifierÍ$Í+§teacherN§LiteralÍ-Í2©æå›½å¼º«'æå›½å¼º'¤initM¨PropertyÍ=ÍPÂÂÂKªIdentifierÍ=ÍF©classroomN§LiteralÍHÍPªæ•™9æ ‹708¬'æ•™9æ ‹708'¤initM¨PropertyÍ[ÍgÂÂÂKªIdentifierÍ[Íc¨capacityN§LiteralÍeÍg7¢55¤initM¨PropertyÍrÍ~ÂÂÂKªIdentifierÍrÍz¨enrolledN§LiteralÍ|Í~2¢50¤initM¨PropertyÍ‰Í›ÂÂÂKªIdentifierÍ‰Í’©weekRangeN§LiteralÍ”Í›§3-14å‘¨©'3-14å‘¨'¤initM¨PropertyÍ¦Í´ÂÂÂKªIdentifierÍ¦Í«¥weeksO¯ArrayExpressionÍ­Í´’N§LiteralÍ®Í¯¡3N§LiteralÍ±Í³¢14¤initM¨PropertyÍ¿ÍÊÂÂÂKªIdentifierÍ¿ÍÇ¨weekTypeN§LiteralÍÉÍÊ ¡0¤initM¨PropertyÍÕÍõÂÂÂKªIdentifierÍÕÍà«descriptionN§LiteralÍâÍõÙ3å­¦ä¹ å¤§å‹æ•°æ®åº“çš„è®¾è®¡ã€ç®¡ç†ä¸ç»´æŠ¤ã€‚Ù5'å­¦ä¹ å¤§å‹æ•°æ®åº“çš„è®¾è®¡ã€ç®¡ç†ä¸ç»´æŠ¤ã€‚'¤initM¨PropertyÍ Í}ÂÂÂKªIdentifierÍ Í	©timeSlotsO¯ArrayExpressionÍÍ}‘L°ObjectExpressionÍÍq•M¨PropertyÍÍ(ÂÂÂKªIdentifierÍÍ%©dayOfWeekN§LiteralÍ'Í(¡5¤initM¨PropertyÍ*Í8ÂÂÂKªIdentifierÍ*Í5«startPeriodN§LiteralÍ7Í8¡1¤initM¨PropertyÍ:ÍFÂÂÂKªIdentifierÍ:ÍC©endPeriodN§LiteralÍEÍF¡2¤initM¨PropertyÍHÍ\ÂÂÂKªIdentifierÍHÍQ©timeLabelN§LiteralÍSÍ\­ä¸Šåˆ 1-2èŠ‚¯'ä¸Šåˆ 1-2èŠ‚'¤initM¨PropertyÍ^ÍoÂÂÂKªIdentifierÍ^Íi«timeSegmentN§LiteralÍkÍo¢am¤'am'¤init¤initL°ObjectExpressionÍŒÍ—M¨PropertyÍ—Í°ÂÂÂKªIdentifierÍ—Í¡ªcourseCodeN§LiteralÍ£Í°«VDZ02115yyy­'VDZ02115yyy'¤initM¨PropertyÍ»ÍÏÂÂÂKªIdentifierÍ»ÍÅªcourseNameN§LiteralÍÇÍÏ²ç§»åŠ¨åº”ç”¨å¼€å‘´'ç§»åŠ¨åº”ç”¨å¼€å‘'¤initM¨PropertyÍÚÍãÂÂÂKªIdentifierÍÚÍà¦creditN§LiteralÍâÍã¡3¤initM¨PropertyÍîÍÂÂÂKªIdentifierÍîÍøªcourseTypeN§LiteralÍúÍ²ä¸“ä¸šæ ¸å¿ƒè¯¾ç¨‹´'ä¸“ä¸šæ ¸å¿ƒè¯¾ç¨‹'¤initM¨PropertyÍÍÂÂÂKªIdentifierÍÍ§collegeN§LiteralÍÍ¯è®¡ç®—æœºå­¦é™¢±'è®¡ç®—æœºå­¦é™¢'¤initM¨PropertyÍ(Í6ÂÂÂKªIdentifierÍ(Í/§teacherN§LiteralÍ1Í6©ç‹è€å¸ˆ«'ç‹è€å¸ˆ'¤initM¨PropertyÍAÍTÂÂÂKªIdentifierÍAÍJ©classroomN§LiteralÍLÍTªæ•™6æ ‹201¬'æ•™6æ ‹201'¤initM¨PropertyÍ_ÍkÂÂÂKªIdentifierÍ_Íg¨capacityN§LiteralÍiÍk<¢60¤initM¨PropertyÍvÍ‚ÂÂÂKªIdentifierÍvÍ~¨enrolledN§LiteralÍ€Í‚7¢55¤initM¨PropertyÍÍŸÂÂÂKªIdentifierÍÍ–©weekRangeN§LiteralÍ˜ÍŸ§1-16å‘¨©'1-16å‘¨'¤initM¨PropertyÍªÍ¸ÂÂÂKªIdentifierÍªÍ¯¥weeksO¯ArrayExpressionÍ±Í¸’N§LiteralÍ²Í³¡1N§LiteralÍµÍ·¢16¤initM¨PropertyÍÃÍÎÂÂÂKªIdentifierÍÃÍË¨weekTypeN§LiteralÍÍÍÎ ¡0¤initM¨PropertyÍÙÍÂÂÂKªIdentifierÍÙÍä«descriptionN§LiteralÍæÍÙ=å­¦ä¹ ç§»åŠ¨åº”ç”¨å¼€å‘ï¼ŒåŒ…æ‹¬Androidå’ŒHarmonyOSå¹³å°ã€‚Ù?'å­¦ä¹ ç§»åŠ¨åº”ç”¨å¼€å‘ï¼ŒåŒ…æ‹¬Androidå’ŒHarmonyOSå¹³å°ã€‚'¤initM¨PropertyÍÍÂÂÂKªIdentifierÍÍ©timeSlotsO¯ArrayExpressionÍÍ‘L°ObjectExpressionÍ,Íƒ•M¨PropertyÍ.Í:ÂÂÂKªIdentifierÍ.Í7©dayOfWeekN§LiteralÍ9Í:¡2¤initM¨PropertyÍ<ÍJÂÂÂKªIdentifierÍ<ÍG«startPeriodN§LiteralÍIÍJ¡3¤initM¨PropertyÍLÍXÂÂÂKªIdentifierÍLÍU©endPeriodN§LiteralÍWÍX¡4¤initM¨PropertyÍZÍnÂÂÂKªIdentifierÍZÍc©timeLabelN§LiteralÍeÍn­ä¸Šåˆ 3-4èŠ‚¯'ä¸Šåˆ 3-4èŠ‚'¤initM¨PropertyÍpÍÂÂÂKªIdentifierÍpÍ{«timeSegmentN§LiteralÍ}Í¢am¤'am'¤init¤initL°ObjectExpressionÍÍ£M¨PropertyÍ©ÍÂÂÂÂKªIdentifierÍ©Í³ªcourseCodeN§LiteralÍµÍÂ«VDZ02115zzz­'VDZ02115zzz'¤initM¨PropertyÍÍÍßÂÂÂKªIdentifierÍÍÍ×ªcourseNameN§LiteralÍÙÍß¬æ“ä½œç³»ç»Ÿ®'æ“ä½œç³»ç»Ÿ'¤initM¨PropertyÍêÍóÂÂÂKªIdentifierÍêÍğ¦creditN§LiteralÍòÍó¡4¤initM¨PropertyÍşÍÂÂÂKªIdentifierÍşÍªcourseTypeN§LiteralÍ
+Í²ä¸“ä¸šæ ¸å¿ƒè¯¾ç¨‹´'ä¸“ä¸šæ ¸å¿ƒè¯¾ç¨‹'¤initM¨PropertyÍÍ-ÂÂÂKªIdentifierÍÍ$§collegeN§LiteralÍ&Í-¯è®¡ç®—æœºå­¦é™¢±'è®¡ç®—æœºå­¦é™¢'¤initM¨PropertyÍ8ÍFÂÂÂKªIdentifierÍ8Í?§teacherN§LiteralÍAÍF©èµµè€å¸ˆ«'èµµè€å¸ˆ'¤initM¨PropertyÍQÍdÂÂÂKªIdentifierÍQÍZ©classroomN§LiteralÍ\Ídªæ•™7æ ‹410¬'æ•™7æ ‹410'¤initM¨PropertyÍoÍ{ÂÂÂKªIdentifierÍoÍw¨capacityN§LiteralÍyÍ{ÌA¢65¤initM¨PropertyÍ†Í’ÂÂÂKªIdentifierÍ†Í¨enrolledN§LiteralÍÍ’<¢60¤initM¨PropertyÍÍ¯ÂÂÂKªIdentifierÍÍ¦©weekRangeN§LiteralÍ¨Í¯§3-14å‘¨©'3-14å‘¨'¤initM¨PropertyÍºÍÈÂÂÂKªIdentifierÍºÍ¿¥weeksO¯ArrayExpressionÍÁÍÈ’N§LiteralÍÂÍÃ¡3N§LiteralÍÅÍÇ¢14¤initM¨PropertyÍÓÍŞÂÂÂKªIdentifierÍÓÍÛ¨weekTypeN§LiteralÍİÍŞ ¡0¤initM¨PropertyÍéÍÂÂÂKªIdentifierÍéÍô«descriptionN§LiteralÍöÍÙQå­¦ä¹ æ“ä½œç³»ç»ŸåŸç†ï¼ŒåŒ…æ‹¬è¿›ç¨‹ç®¡ç†ã€å†…å­˜ç®¡ç†ã€æ–‡ä»¶ç³»ç»Ÿç­‰ã€‚ÙS'å­¦ä¹ æ“ä½œç³»ç»ŸåŸç†ï¼ŒåŒ…æ‹¬è¿›ç¨‹ç®¡ç†ã€å†…å­˜ç®¡ç†ã€æ–‡ä»¶ç³»ç»Ÿç­‰ã€‚'¤initM¨PropertyÍÍ›ÂÂÂKªIdentifierÍÍ'©timeSlotsO¯ArrayExpressionÍ)Í›‘L°ObjectExpressionÍ8Í•M¨PropertyÍ:ÍFÂÂÂKªIdentifierÍ:ÍC©dayOfWeekN§LiteralÍEÍF¡4¤initM¨PropertyÍHÍVÂÂÂKªIdentifierÍHÍS«startPeriodN§LiteralÍUÍV¡3¤initM¨PropertyÍXÍdÂÂÂKªIdentifierÍXÍa©endPeriodN§LiteralÍcÍd¡4¤initM¨PropertyÍfÍzÂÂÂKªIdentifierÍfÍo©timeLabelN§LiteralÍqÍz­ä¸Šåˆ 3-4èŠ‚¯'ä¸Šåˆ 3-4èŠ‚'¤initM¨PropertyÍ|ÍÂÂÂKªIdentifierÍ|Í‡«timeSegmentN§LiteralÍ‰Í¢am¤'am'¤init¤init¥constÀH¶ExportNamedDeclarationÍÿÍÖI³VariableDeclarationÍÍÖ‘J²VariableDeclaratorÍÍÕKªIdentifierÍÍ³MOCK_SCHEDULE_CELLSO¯ArrayExpressionÍ"ÍÕ•L°ObjectExpressionÍAÍ›M¨PropertyÍCÍ_ÂÂÂKªIdentifierÍCÍMªcourseCodeN§LiteralÍOÍ_®VDZ02115204.06°'VDZ02115204.06'¤initM¨PropertyÍaÍwÂÂÂKªIdentifierÍaÍkªcourseNameN§LiteralÍmÍw°Web å‰ç«¯åº”ç”¨²'Web å‰ç«¯åº”ç”¨'¤initM¨PropertyÍyÍ‡ÂÂÂKªIdentifierÍyÍ€§teacherN§LiteralÍ‚Í‡©çŸ³é›…è¹«'çŸ³é›…è¹'¤initM¨PropertyÍ‰ÍœÂÂÂKªIdentifierÍ‰Í’©classroomN§LiteralÍ”Íœªæ•™8æ ‹613¬'æ•™8æ ‹613'¤initM¨PropertyÍÍ¯ÂÂÂKªIdentifierÍÍ§©weekRangeN§LiteralÍ©Í¯¦2-9å‘¨¨'2-9å‘¨'¤initM¨PropertyÍ±Í½ÂÂÂKªIdentifierÍ±Íº©dayOfWeekN§LiteralÍ¼Í½¡1¤initM¨PropertyÍ¿ÍÍÂÂÂKªIdentifierÍ¿ÍÊ«startPeriodN§LiteralÍÌÍÍ¡1¤initM¨PropertyÍÏÍÛÂÂÂKªIdentifierÍÏÍØ©endPeriodN§LiteralÍÚÍÛ¡2¤initM¨PropertyÍİÍäÂÂÂKªIdentifierÍİÍá¤spanN§LiteralÍãÍä¡2¤initM¨PropertyÍæÍøÂÂÂKªIdentifierÍæÍñ«isContinuedN§LiteralÍóÍøÂ¥false¤initM¨PropertyÍúÍÂÂÂKªIdentifierÍúÍ¬scheduleTypeN§LiteralÍÍ¦normal¨'normal'¤initL°ObjectExpressionÍ0Íı›M¨PropertyÍ2ÍKÂÂÂKªIdentifierÍ2Í<ªcourseCodeN§LiteralÍ>ÍK«VDZ02115yyy­'VDZ02115yyy'¤initM¨PropertyÍMÍaÂÂÂKªIdentifierÍMÍWªcourseNameN§LiteralÍYÍa²ç§»åŠ¨åº”ç”¨å¼€å‘´'ç§»åŠ¨åº”ç”¨å¼€å‘'¤initM¨PropertyÍcÍqÂÂÂKªIdentifierÍcÍj§teacherN§LiteralÍlÍq©ç‹è€å¸ˆ«'ç‹è€å¸ˆ'¤initM¨PropertyÍsÍ†ÂÂÂKªIdentifierÍsÍ|©classroomN§LiteralÍ~Í†ªæ•™6æ ‹201¬'æ•™6æ ‹201'¤initM¨PropertyÍˆÍšÂÂÂKªIdentifierÍˆÍ‘©weekRangeN§LiteralÍ“Íš§1-16å‘¨©'1-16å‘¨'¤initM¨PropertyÍœÍ¨ÂÂÂKªIdentifierÍœÍ¥©dayOfWeekN§LiteralÍ§Í¨¡2¤initM¨PropertyÍªÍ¸ÂÂÂKªIdentifierÍªÍµ«startPeriodN§LiteralÍ·Í¸¡3¤initM¨PropertyÍºÍÆÂÂÂKªIdentifierÍºÍÃ©endPeriodN§LiteralÍÅÍÆ¡4¤initM¨PropertyÍÈÍÏÂÂÂKªIdentifierÍÈÍÌ¤spanN§LiteralÍÎÍÏ¡2¤initM¨PropertyÍÑÍãÂÂÂKªIdentifierÍÑÍÜ«isContinuedN§LiteralÍŞÍãÂ¥false¤initM¨PropertyÍåÍûÂÂÂKªIdentifierÍåÍñ¬scheduleTypeN§LiteralÍóÍû¦normal¨'normal'¤initL°ObjectExpressionÍÍï›M¨PropertyÍ!Í=ÂÂÂKªIdentifierÍ!Í+ªcourseCodeN§LiteralÍ-Í=®VDZ02115204.xx°'VDZ02115204.xx'¤initM¨PropertyÍ?ÍSÂÂÂKªIdentifierÍ?ÍIªcourseNameN§LiteralÍKÍS²è½¯ä»¶ç»¼åˆå®è·µ´'è½¯ä»¶ç»¼åˆå®è·µ'¤initM¨PropertyÍUÍcÂÂÂKªIdentifierÍUÍ\§teacherN§LiteralÍ^Íc©æå›½å¼º«'æå›½å¼º'¤initM¨PropertyÍeÍxÂÂÂKªIdentifierÍeÍn©classroomN§LiteralÍpÍxªæ•™9æ ‹708¬'æ•™9æ ‹708'¤initM¨PropertyÍzÍŒÂÂÂKªIdentifierÍzÍƒ©weekRangeN§LiteralÍ…ÍŒ¯æŒ‰æ•™åŠ¡å®‰æ’±'æŒ‰æ•™åŠ¡å®‰æ’'¤initM¨PropertyÍÍšÂÂÂKªIdentifierÍÍ—©dayOfWeekN§LiteralÍ™Íš¡2¤initM¨PropertyÍœÍªÂÂÂKªIdentifierÍœÍ§«startPeriodN§LiteralÍ©Íª¡5¤initM¨PropertyÍ¬Í¸ÂÂÂKªIdentifierÍ¬Íµ©endPeriodN§LiteralÍ·Í¸¡8¤initM¨PropertyÍºÍÁÂÂÂKªIdentifierÍºÍ¾¤spanN§LiteralÍÀÍÁ¡4¤initM¨PropertyÍÃÍÕÂÂÂKªIdentifierÍÃÍÎ«isContinuedN§LiteralÍĞÍÕÂ¥false¤initM¨PropertyÍ×ÍíÂÂÂKªIdentifierÍ×Íã¬scheduleTypeN§LiteralÍåÍí¦normal¨'normal'¤initL°ObjectExpressionÍÍã›M¨PropertyÍÍ3ÂÂÂKªIdentifierÍÍ$ªcourseCodeN§LiteralÍ&Í3«VDZ02115zzz­'VDZ02115zzz'¤initM¨PropertyÍ5ÍGÂÂÂKªIdentifierÍ5Í?ªcourseNameN§LiteralÍAÍG¬æ“ä½œç³»ç»Ÿ®'æ“ä½œç³»ç»Ÿ'¤initM¨PropertyÍIÍWÂÂÂKªIdentifierÍIÍP§teacherN§LiteralÍRÍW©èµµè€å¸ˆ«'èµµè€å¸ˆ'¤initM¨PropertyÍYÍlÂÂÂKªIdentifierÍYÍb©classroomN§LiteralÍdÍlªæ•™7æ ‹410¬'æ•™7æ ‹410'¤initM¨PropertyÍnÍ€ÂÂÂKªIdentifierÍnÍw©weekRangeN§LiteralÍyÍ€§3-14å‘¨©'3-14å‘¨'¤initM¨PropertyÍ‚ÍÂÂÂKªIdentifierÍ‚Í‹©dayOfWeekN§LiteralÍÍ¡4¤initM¨PropertyÍÍÂÂÂKªIdentifierÍÍ›«startPeriodN§LiteralÍÍ¡3¤initM¨PropertyÍ Í¬ÂÂÂKªIdentifierÍ Í©©endPeriodN§LiteralÍ«Í¬¡4¤initM¨PropertyÍ®ÍµÂÂÂKªIdentifierÍ®Í²¤spanN§LiteralÍ´Íµ¡2¤initM¨PropertyÍ·ÍÉÂÂÂKªIdentifierÍ·ÍÂ«isContinuedN§LiteralÍÄÍÉÂ¥false¤initM¨PropertyÍËÍáÂÂÂKªIdentifierÍËÍ×¬scheduleTypeN§LiteralÍÙÍá¦normal¨'normal'¤initL°ObjectExpressionÍ ÍÑ›M¨PropertyÍÍÂÂÂKªIdentifierÍÍªcourseCodeN§LiteralÍÍ«VDZ02115xxx­'VDZ02115xxx'¤initM¨PropertyÍÍ5ÂÂÂKªIdentifierÍÍ'ªcourseNameN§LiteralÍ)Í5¾å¤§å‹æ•°æ®åº“ç®¡ç†ä¸ç»´æŠ¤Ù 'å¤§å‹æ•°æ®åº“ç®¡ç†ä¸ç»´æŠ¤'¤initM¨PropertyÍ7ÍEÂÂÂKªIdentifierÍ7Í>§teacherN§LiteralÍ@ÍE©æå›½å¼º«'æå›½å¼º'¤initM¨PropertyÍGÍZÂÂÂKªIdentifierÍGÍP©classroomN§LiteralÍRÍZªæ•™9æ ‹708¬'æ•™9æ ‹708'¤initM¨PropertyÍ\ÍnÂÂÂKªIdentifierÍ\Íe©weekRangeN§LiteralÍgÍn§3-14å‘¨©'3-14å‘¨'¤initM¨PropertyÍpÍ|ÂÂÂKªIdentifierÍpÍy©dayOfWeekN§LiteralÍ{Í|¡5¤initM¨PropertyÍ~ÍŒÂÂÂKªIdentifierÍ~Í‰«startPeriodN§LiteralÍ‹ÍŒ¡1¤initM¨PropertyÍÍšÂÂÂKªIdentifierÍÍ—©endPeriodN§LiteralÍ™Íš¡2¤initM¨PropertyÍœÍ£ÂÂÂKªIdentifierÍœÍ ¤spanN§LiteralÍ¢Í£¡2¤initM¨PropertyÍ¥Í·ÂÂÂKªIdentifierÍ¥Í°«isContinuedN§LiteralÍ²Í·Â¥false¤initM¨PropertyÍ¹ÍÏÂÂÂKªIdentifierÍ¹ÍÅ¬scheduleTypeN§LiteralÍÇÍÏ¦normal¨'normal'¤init¥constÀH¶ExportNamedDeclarationÍçÍ³I³VariableDeclarationÍîÍ³‘J²VariableDeclaratorÍôÍ²KªIdentifierÍôÍ
+¶MOCK_PRACTICE_SCHEDULEO¯ArrayExpressionÍÍ²’L°ObjectExpressionÍÍİ›M¨PropertyÍÍ+ÂÂÂKªIdentifierÍÍ ªcourseCodeN§LiteralÍ"Í+§PRAC001©'PRAC001'¤initM¨PropertyÍ-Í?ÂÂÂKªIdentifierÍ-Í7ªcourseNameN§LiteralÍ9Í?¬ä¼ä¸šå®ä¹ ®'ä¼ä¸šå®ä¹ '¤initM¨PropertyÍAÍOÂÂÂKªIdentifierÍAÍH§teacherN§LiteralÍJÍO©æè€å¸ˆ«'æè€å¸ˆ'¤initM¨PropertyÍQÍdÂÂÂKªIdentifierÍQÍZ©classroomN§LiteralÍ\Íd²æ ¡å¤–å®ä¹ åŸºåœ°´'æ ¡å¤–å®ä¹ åŸºåœ°'¤initM¨PropertyÍfÍxÂÂÂKªIdentifierÍfÍo©weekRangeN§LiteralÍqÍx§1-16å‘¨©'1-16å‘¨'¤initM¨PropertyÍzÍ†ÂÂÂKªIdentifierÍzÍƒ©dayOfWeekN§LiteralÍ…Í†¡3¤initM¨PropertyÍˆÍ–ÂÂÂKªIdentifierÍˆÍ“«startPeriodN§LiteralÍ•Í–¡5¤initM¨PropertyÍ˜Í¤ÂÂÂKªIdentifierÍ˜Í¡©endPeriodN§LiteralÍ£Í¤¡8¤initM¨PropertyÍ¦Í­ÂÂÂKªIdentifierÍ¦Íª¤spanN§LiteralÍ¬Í­¡4¤initM¨PropertyÍ¯ÍÁÂÂÂKªIdentifierÍ¯Íº«isContinuedN§LiteralÍ¼ÍÁÂ¥false¤initM¨PropertyÍÃÍÛÂÂÂKªIdentifierÍÃÍÏ¬scheduleTypeN§LiteralÍÑÍÛ¨practiceª'practice'¤initL°ObjectExpressionÍäÍ®›M¨PropertyÍæÍûÂÂÂKªIdentifierÍæÍğªcourseCodeN§LiteralÍòÍû§PRAC002©'PRAC002'¤initM¨PropertyÍıÍÂÂÂKªIdentifierÍıÍªcourseNameN§LiteralÍ	Í¬è¯¾ç¨‹è®¾è®¡®'è¯¾ç¨‹è®¾è®¡'¤initM¨PropertyÍÍÂÂÂKªIdentifierÍÍ§teacherN§LiteralÍÍ©ç‹è€å¸ˆ«'ç‹è€å¸ˆ'¤initM¨PropertyÍ!Í4ÂÂÂKªIdentifierÍ!Í*©classroomN§LiteralÍ,Í4ªæ•™5æ ‹301¬'æ•™5æ ‹301'¤initM¨PropertyÍ6ÍIÂÂÂKªIdentifierÍ6Í?©weekRangeN§LiteralÍAÍI¨10-14å‘¨ª'10-14å‘¨'¤initM¨PropertyÍKÍWÂÂÂKªIdentifierÍKÍT©dayOfWeekN§LiteralÍVÍW¡5¤initM¨PropertyÍYÍgÂÂÂKªIdentifierÍYÍd«startPeriodN§LiteralÍfÍg¡5¤initM¨PropertyÍiÍuÂÂÂKªIdentifierÍiÍr©endPeriodN§LiteralÍtÍu¡6¤initM¨PropertyÍwÍ~ÂÂÂKªIdentifierÍwÍ{¤spanN§LiteralÍ}Í~¡2¤initM¨PropertyÍ€Í’ÂÂÂKªIdentifierÍ€Í‹«isContinuedN§LiteralÍÍ’Â¥false¤initM¨PropertyÍ”Í¬ÂÂÂKªIdentifierÍ”Í ¬scheduleTypeN§LiteralÍ¢Í¬¨practiceª'practice'¤init¥constÀH¶ExportNamedDeclarationÍÄÍ%I³VariableDeclarationÍËÍ%‘J²VariableDeclaratorÍÑÍ$KªIdentifierÍÑÍã²MOCK_TODAY_COURSESO¯ArrayExpressionÍæÍ$’L°ObjectExpressionÍíÍ™M¨PropertyÍøÍÂÂÂKªIdentifierÍøÍªcourseCodeN§LiteralÍÍ®VDZ02115204.06°'VDZ02115204.06'¤initM¨PropertyÍÍ5ÂÂÂKªIdentifierÍÍ)ªcourseNameN§LiteralÍ+Í5°Web å‰ç«¯åº”ç”¨²'Web å‰ç«¯åº”ç”¨'¤initM¨PropertyÍ@ÍNÂÂÂKªIdentifierÍ@ÍG§teacherN§LiteralÍIÍN©çŸ³é›…è¹«'çŸ³é›…è¹'¤initM¨PropertyÍYÍlÂÂÂKªIdentifierÍYÍb©classroomN§LiteralÍdÍlªæ•™8æ ‹613¬'æ•™8æ ‹613'¤initM¨PropertyÍwÍ…ÂÂÂKªIdentifierÍwÍ‚«startPeriodN§LiteralÍ„Í…¡1¤initM¨PropertyÍÍœÂÂÂKªIdentifierÍÍ™©endPeriodN§LiteralÍ›Íœ¡2¤initM¨PropertyÍ§Í½ÂÂÂKªIdentifierÍ§Í²«periodLabelN§LiteralÍ´Í½­ä¸Šåˆ 1-2èŠ‚¯'ä¸Šåˆ 1-2èŠ‚'¤initM¨PropertyÍÈÍàÂÂÂKªIdentifierÍÈÍÑ©timeLabelN§LiteralÍÓÍà«08:00-09:35­'08:00-09:35'¤initM¨PropertyÍëÍüÂÂÂKªIdentifierÍëÍõªisTomorrowN§LiteralÍ÷ÍüÂ¥false¤initL°ObjectExpressionÍÍ ™M¨PropertyÍÍ2ÂÂÂKªIdentifierÍÍ ªcourseCodeN§LiteralÍ"Í2®VDZ02115204.xx°'VDZ02115204.xx'¤initM¨PropertyÍ=ÍQÂÂÂKªIdentifierÍ=ÍGªcourseNameN§LiteralÍIÍQ²è½¯ä»¶ç»¼åˆå®è·µ´'è½¯ä»¶ç»¼åˆå®è·µ'¤initM¨PropertyÍ\ÍjÂÂÂKªIdentifierÍ\Íc§teacherN§LiteralÍeÍj©æå›½å¼º«'æå›½å¼º'¤initM¨PropertyÍuÍˆÂÂÂKªIdentifierÍuÍ~©classroomN§LiteralÍ€Íˆªæ•™9æ ‹708¬'æ•™9æ ‹708'¤initM¨PropertyÍ“Í¡ÂÂÂKªIdentifierÍ“Í«startPeriodN§LiteralÍ Í¡¡5¤initM¨PropertyÍ¬Í¸ÂÂÂKªIdentifierÍ¬Íµ©endPeriodN§LiteralÍ·Í¸¡8¤initM¨PropertyÍÃÍÙÂÂÂKªIdentifierÍÃÍÎ«periodLabelN§LiteralÍĞÍÙ­ä¸‹åˆ 5-8èŠ‚¯'ä¸‹åˆ 5-8èŠ‚'¤initM¨PropertyÍäÍüÂÂÂKªIdentifierÍäÍí©timeLabelN§LiteralÍïÍü«14:00-17:25­'14:00-17:25'¤initM¨PropertyÍÍÂÂÂKªIdentifierÍÍªisTomorrowN§LiteralÍÍÂ¥false¤init¥constÀH¶ExportNamedDeclarationÍ;ÍfI³VariableDeclarationÍBÍf‘J²VariableDeclaratorÍHÍeKªIdentifierÍHÍ`¸MOCK_TODAY_COURSES_EMPTYO¯ArrayExpressionÍcÍe¥constÀH¶ExportNamedDeclarationÍwÍ¹I³VariableDeclarationÍ~Í¹‘J²VariableDeclaratorÍ„Í¸KªIdentifierÍ„Í™µMOCK_TOMORROW_COURSESO¯ArrayExpressionÍœÍ¸‘L°ObjectExpressionÍ£Í´™M¨PropertyÍ®ÍÇÂÂÂKªIdentifierÍ®Í¸ªcourseCodeN§LiteralÍºÍÇ«VDZ02115yyy­'VDZ02115yyy'¤initM¨PropertyÍÒÍæÂÂÂKªIdentifierÍÒÍÜªcourseNameN§LiteralÍŞÍæ²ç§»åŠ¨åº”ç”¨å¼€å‘´'ç§»åŠ¨åº”ç”¨å¼€å‘'¤initM¨PropertyÍñÍÿÂÂÂKªIdentifierÍñÍø§teacherN§LiteralÍúÍÿ©ç‹è€å¸ˆ«'ç‹è€å¸ˆ'¤initM¨PropertyÍ
+ÍÂÂÂKªIdentifierÍ
+Í©classroomN§LiteralÍÍªæ•™6æ ‹201¬'æ•™6æ ‹201'¤initM¨PropertyÍ(Í6ÂÂÂKªIdentifierÍ(Í3«startPeriodN§LiteralÍ5Í6¡3¤initM¨PropertyÍAÍMÂÂÂKªIdentifierÍAÍJ©endPeriodN§LiteralÍLÍM¡4¤initM¨PropertyÍXÍnÂÂÂKªIdentifierÍXÍc«periodLabelN§LiteralÍeÍn­ä¸Šåˆ 3-4èŠ‚¯'ä¸Šåˆ 3-4èŠ‚'¤initM¨PropertyÍyÍ‘ÂÂÂKªIdentifierÍyÍ‚©timeLabelN§LiteralÍ„Í‘«09:50-11:25­'09:50-11:25'¤initM¨PropertyÍœÍ¬ÂÂÂKªIdentifierÍœÍ¦ªisTomorrowN§LiteralÍ¨Í¬Ã¤true¤init¥constÀH¶ExportNamedDeclarationÍÏÍ aI³VariableDeclarationÍÖÍ a‘J²VariableDeclaratorÍÜÍ `KªIdentifierÍÜÍï³MOCK_COURSE_DETAILSÔrP•¤type¥start£end¦callee©arguments­NewExpressionÍòÍ `KªIdentifierÍöÍù£Map‘O¯ArrayExpressionÍúÍ _’O¯ArrayExpressionÍ Í (’N§LiteralÍ Í ®VDZ02115204.06°'VDZ02115204.06'KªIdentifierÍ Í '³WEB_FRONTEND_DETAILO¯ArrayExpressionÍ /Í [’N§LiteralÍ 0Í @®VDZ02115204.xx°'VDZ02115204.xx'KªIdentifierÍ BÍ Z¸SOFTWARE_PRACTICE_DETAIL¥constÀH¶ExportNamedDeclarationÍ ¿Í%îI³VariableDeclarationÍ ÆÍ%î‘J²VariableDeclaratorÍ ÌÍ%íKªIdentifierÍ ÌÍ ß³MOCK_GRADES_CURRENTO¯ArrayExpressionÍ âÍ%í“L°ObjectExpressionÍ éÍ"–M¨PropertyÍ ôÍ şÂÂÂKªIdentifierÍ ôÍ ö¢idN§LiteralÍ øÍ ş¤g001¦'g001'¤initM¨PropertyÍ!	Í!#ÂÂÂKªIdentifierÍ!	Í!¨semesterN§LiteralÍ!Í!#´2025-2026 ç¬¬1å­¦æœŸ¶'2025-2026 ç¬¬1å­¦æœŸ'¤initM¨PropertyÍ!.Í!JÂÂÂKªIdentifierÍ!.Í!8ªcourseCodeN§LiteralÍ!:Í!J®VDZ02115204.06°'VDZ02115204.06'¤initM¨PropertyÍ!UÍ!sÂÂÂKªIdentifierÍ!UÍ!a¬courseSerialN§LiteralÍ!cÍ!s®VDZ02115204.06°'VDZ02115204.06'¤initM¨PropertyÍ!~Í!”ÂÂÂKªIdentifierÍ!~Í!ˆªcourseNameN§LiteralÍ!ŠÍ!”°Web å‰ç«¯åº”ç”¨²'Web å‰ç«¯åº”ç”¨'¤initM¨PropertyÍ!ŸÍ!³ÂÂÂKªIdentifierÍ!ŸÍ!©ªcourseTypeN§LiteralÍ!«Í!³²ä¸“ä¸šæ‹“å±•è¯¾ç¨‹´'ä¸“ä¸šæ‹“å±•è¯¾ç¨‹'¤initM¨PropertyÍ!¾Í!ÇÂÂÂKªIdentifierÍ!¾Í!Ä¦creditN§LiteralÍ!ÆÍ!Ç¡3¤initM¨PropertyÍ!ÒÍ!àÂÂÂKªIdentifierÍ!ÒÍ!ÜªfinalScoreN§LiteralÍ!ŞÍ!àÌX¢88¤initM¨PropertyÍ!ëÍ!ûÂÂÂKªIdentifierÍ!ëÍ!÷¬overallScoreN§LiteralÍ!ùÍ!ûÌZ¢90¤initM¨PropertyÍ"Í"ÂÂÂKªIdentifierÍ"Í"¨endScoreN§LiteralÍ"Í"ÌZ¢90¤initM¨PropertyÍ"Í"%ÂÂÂKªIdentifierÍ"Í" £gpaN§LiteralÍ""Í"%£4.0¤initM¨PropertyÍ"0Í"AÂÂÂKªIdentifierÍ"0Í";«isPublishedN§LiteralÍ"=Í"AÃ¤true¤initM¨PropertyÍ"LÍ"ÂÂÂKªIdentifierÍ"LÍ"U©subScoresL°ObjectExpressionÍ"WÍ"”M¨PropertyÍ"YÍ"dÂÂÂKªIdentifierÍ"YÍ"`§regularN§LiteralÍ"bÍ"dÌ\¢92¤initM¨PropertyÍ"fÍ"qÂÂÂKªIdentifierÍ"fÍ"m§midtermN§LiteralÍ"oÍ"qÌX¢88¤initM¨PropertyÍ"sÍ"|ÂÂÂKªIdentifierÍ"sÍ"x¥finalN§LiteralÍ"zÍ"|ÌX¢88¤initM¨PropertyÍ"~Í"ŒÂÂÂKªIdentifierÍ"~Í"ˆªexperimentN§LiteralÍ"ŠÍ"ŒÌ_¢95¤init¤initL°ObjectExpressionÍ"Í$IM¨PropertyÍ"¨Í"²ÂÂÂKªIdentifierÍ"¨Í"ª¢idN§LiteralÍ"¬Í"²¤g002¦'g002'¤initM¨PropertyÍ"½Í"×ÂÂÂKªIdentifierÍ"½Í"Å¨semesterN§LiteralÍ"ÇÍ"×´2025-2026 ç¬¬1å­¦æœŸ¶'2025-2026 ç¬¬1å­¦æœŸ'¤initM¨PropertyÍ"âÍ"şÂÂÂKªIdentifierÍ"âÍ"ìªcourseCodeN§LiteralÍ"îÍ"ş®VDZ02115204.xx°'VDZ02115204.xx'¤initM¨PropertyÍ#	Í#'ÂÂÂKªIdentifierÍ#	Í#¬courseSerialN§LiteralÍ#Í#'®VDZ02115204.xx°'VDZ02115204.xx'¤initM¨PropertyÍ#2Í#FÂÂÂKªIdentifierÍ#2Í#<ªcourseNameN§LiteralÍ#>Í#F²è½¯ä»¶ç»¼åˆå®è·µ´'è½¯ä»¶ç»¼åˆå®è·µ'¤initM¨PropertyÍ#QÍ#gÂÂÂKªIdentifierÍ#QÍ#[ªcourseTypeN§LiteralÍ#]Í#g¸é›†ä¸­å®è·µæ•™å­¦è¯¾ç¨‹º'é›†ä¸­å®è·µæ•™å­¦è¯¾ç¨‹'¤initM¨PropertyÍ#rÍ#{ÂÂÂKªIdentifierÍ#rÍ#x¦creditN§LiteralÍ#zÍ#{¡4¤initM¨PropertyÍ#†Í#”ÂÂÂKªIdentifierÍ#†Í#ªfinalScoreN§LiteralÍ#’Í#”ÌU¢85¤initM¨PropertyÍ#ŸÍ#¯ÂÂÂKªIdentifierÍ#ŸÍ#«¬overallScoreN§LiteralÍ#­Í#¯ÌW¢87¤initM¨PropertyÍ#ºÍ#ÆÂÂÂKªIdentifierÍ#ºÍ#Â¨endScoreN§LiteralÍ#ÄÍ#ÆÌW¢87¤initM¨PropertyÍ#ÑÍ#ÙÂÂÂKªIdentifierÍ#ÑÍ#Ô£gpaN§LiteralÍ#ÖÍ#ÙË@™™™™™š£3.7¤initM¨PropertyÍ#äÍ#õÂÂÂKªIdentifierÍ#äÍ#ï«isPublishedN§LiteralÍ#ñÍ#õÃ¤true¤initM¨PropertyÍ$ Í$AÂÂÂKªIdentifierÍ$ Í$	©subScoresL°ObjectExpressionÍ$Í$A”M¨PropertyÍ$Í$ÂÂÂKªIdentifierÍ$Í$§regularN§LiteralÍ$Í$ÌZ¢90¤initM¨PropertyÍ$Í$$ÂÂÂKªIdentifierÍ$Í$!§midtermN§LiteralÍ$#Í$$ ¡0¤initM¨PropertyÍ$&Í$/ÂÂÂKªIdentifierÍ$&Í$+¥finalN§LiteralÍ$-Í$/ÌU¢85¤initM¨PropertyÍ$1Í$?ÂÂÂKªIdentifierÍ$1Í$;ªexperimentN§LiteralÍ$=Í$?ÌX¢88¤init¤initL°ObjectExpressionÍ$PÍ%éM¨PropertyÍ$[Í$eÂÂÂKªIdentifierÍ$[Í$]¢idN§LiteralÍ$_Í$e¤g003¦'g003'¤initM¨PropertyÍ$pÍ$ŠÂÂÂKªIdentifierÍ$pÍ$x¨semesterN§LiteralÍ$zÍ$Š´2025-2026 ç¬¬1å­¦æœŸ¶'2025-2026 ç¬¬1å­¦æœŸ'¤initM¨PropertyÍ$•Í$®ÂÂÂKªIdentifierÍ$•Í$ŸªcourseCodeN§LiteralÍ$¡Í$®«VDZ02115xxx­'VDZ02115xxx'¤initM¨PropertyÍ$¹Í$ÔÂÂÂKªIdentifierÍ$¹Í$Å¬courseSerialN§LiteralÍ$ÇÍ$Ô«VDZ02115xxx­'VDZ02115xxx'¤initM¨PropertyÍ$ßÍ$÷ÂÂÂKªIdentifierÍ$ßÍ$éªcourseNameN§LiteralÍ$ëÍ$÷¾å¤§å‹æ•°æ®åº“ç®¡ç†ä¸ç»´æŠ¤Ù 'å¤§å‹æ•°æ®åº“ç®¡ç†ä¸ç»´æŠ¤'¤initM¨PropertyÍ%Í%ÂÂÂKªIdentifierÍ%Í%ªcourseTypeN§LiteralÍ%Í%²ä¸“ä¸šæ‹“å±•è¯¾ç¨‹´'ä¸“ä¸šæ‹“å±•è¯¾ç¨‹'¤initM¨PropertyÍ%!Í%*ÂÂÂKªIdentifierÍ%!Í%'¦creditN§LiteralÍ%)Í%*¡3¤initM¨PropertyÍ%5Í%CÂÂÂKªIdentifierÍ%5Í%?ªfinalScoreN§LiteralÍ%AÍ%CÌR¢82¤initM¨PropertyÍ%NÍ%^ÂÂÂKªIdentifierÍ%NÍ%Z¬overallScoreN§LiteralÍ%\Í%^ÌT¢84¤initM¨PropertyÍ%iÍ%uÂÂÂKªIdentifierÍ%iÍ%q¨endScoreN§LiteralÍ%sÍ%uÌT¢84¤initM¨PropertyÍ%€Í%ˆÂÂÂKªIdentifierÍ%€Í%ƒ£gpaN§LiteralÍ%…Í%ˆË@
+ffffff£3.3¤initM¨PropertyÍ%“Í%¤ÂÂÂKªIdentifierÍ%“Í%«isPublishedN§LiteralÍ% Í%¤Ã¤true¤initM¨PropertyÍ%¯Í%áÂÂÂKªIdentifierÍ%¯Í%¸©subScoresL°ObjectExpressionÍ%ºÍ%á“M¨PropertyÍ%¼Í%ÇÂÂÂKªIdentifierÍ%¼Í%Ã§regularN§LiteralÍ%ÅÍ%ÇÌU¢85¤initM¨PropertyÍ%ÉÍ%ÔÂÂÂKªIdentifierÍ%ÉÍ%Ğ§midtermN§LiteralÍ%ÒÍ%ÔÌP¢80¤initM¨PropertyÍ%ÖÍ%ßÂÂÂKªIdentifierÍ%ÖÍ%Û¥finalN§LiteralÍ%İÍ%ßÌR¢82¤init¤init¥constÀH¶ExportNamedDeclarationÍ&Í(äI³VariableDeclarationÍ&Í(ä‘J²VariableDeclaratorÍ&Í(ãKªIdentifierÍ&Í&!³MOCK_GRADES_HISTORYO¯ArrayExpressionÍ&$Í(ã’L°ObjectExpressionÍ&+Í'œM¨PropertyÍ&6Í&@ÂÂÂKªIdentifierÍ&6Í&8¢idN§LiteralÍ&:Í&@¤g004¦'g004'¤initM¨PropertyÍ&KÍ&eÂÂÂKªIdentifierÍ&KÍ&S¨semesterN§LiteralÍ&UÍ&e´2024-2025 ç¬¬2å­¦æœŸ¶'2024-2025 ç¬¬2å­¦æœŸ'¤initM¨PropertyÍ&pÍ&‰ÂÂÂKªIdentifierÍ&pÍ&zªcourseCodeN§LiteralÍ&|Í&‰«VDZ02114aaa­'VDZ02114aaa'¤initM¨PropertyÍ&”Í&¯ÂÂÂKªIdentifierÍ&”Í& ¬courseSerialN§LiteralÍ&¢Í&¯«VDZ02114aaa­'VDZ02114aaa'¤initM¨PropertyÍ&ºÍ&ÌÂÂÂKªIdentifierÍ&ºÍ&ÄªcourseNameN§LiteralÍ&ÆÍ&Ì¬æ•°æ®ç»“æ„®'æ•°æ®ç»“æ„'¤initM¨PropertyÍ&×Í&ëÂÂÂKªIdentifierÍ&×Í&áªcourseTypeN§LiteralÍ&ãÍ&ë²ä¸“ä¸šæ ¸å¿ƒè¯¾ç¨‹´'ä¸“ä¸šæ ¸å¿ƒè¯¾ç¨‹'¤initM¨PropertyÍ&öÍ&ÿÂÂÂKªIdentifierÍ&öÍ&ü¦creditN§LiteralÍ&şÍ&ÿ¡4¤initM¨PropertyÍ'
+Í'ÂÂÂKªIdentifierÍ'
+Í'ªfinalScoreN§LiteralÍ'Í'ÌZ¢90¤initM¨PropertyÍ'#Í'3ÂÂÂKªIdentifierÍ'#Í'/¬overallScoreN§LiteralÍ'1Í'3Ì[¢91¤initM¨PropertyÍ'>Í'JÂÂÂKªIdentifierÍ'>Í'F¨endScoreN§LiteralÍ'HÍ'JÌ[¢91¤initM¨PropertyÍ'UÍ']ÂÂÂKªIdentifierÍ'UÍ'X£gpaN§LiteralÍ'ZÍ']£4.0¤initM¨PropertyÍ'hÍ'yÂÂÂKªIdentifierÍ'hÍ's«isPublishedN§LiteralÍ'uÍ'yÃ¤true¤initL°ObjectExpressionÍ'ˆÍ(ßœM¨PropertyÍ'“Í'ÂÂÂKªIdentifierÍ'“Í'•¢idN§LiteralÍ'—Í'¤g005¦'g005'¤initM¨PropertyÍ'¨Í'ÂÂÂÂKªIdentifierÍ'¨Í'°¨semesterN§LiteralÍ'²Í'Â´2024-2025 ç¬¬2å­¦æœŸ¶'2024-2025 ç¬¬2å­¦æœŸ'¤initM¨PropertyÍ'ÍÍ'æÂÂÂKªIdentifierÍ'ÍÍ'×ªcourseCodeN§LiteralÍ'ÙÍ'æ«VDZ02114bbb­'VDZ02114bbb'¤initM¨PropertyÍ'ñÍ(ÂÂÂKªIdentifierÍ'ñÍ'ı¬courseSerialN§LiteralÍ'ÿÍ(«VDZ02114bbb­'VDZ02114bbb'¤initM¨PropertyÍ(Í(*ÂÂÂKªIdentifierÍ(Í(!ªcourseNameN§LiteralÍ(#Í(*¯è®¡ç®—æœºç½‘ç»œ±'è®¡ç®—æœºç½‘ç»œ'¤initM¨PropertyÍ(5Í(IÂÂÂKªIdentifierÍ(5Í(?ªcourseTypeN§LiteralÍ(AÍ(I²ä¸“ä¸šæ ¸å¿ƒè¯¾ç¨‹´'ä¸“ä¸šæ ¸å¿ƒè¯¾ç¨‹'¤initM¨PropertyÍ(TÍ(]ÂÂÂKªIdentifierÍ(TÍ(Z¦creditN§LiteralÍ(\Í(]¡3¤initM¨PropertyÍ(hÍ(vÂÂÂKªIdentifierÍ(hÍ(rªfinalScoreN§LiteralÍ(tÍ(vÌV¢86¤initM¨PropertyÍ(Í(‘ÂÂÂKªIdentifierÍ(Í(¬overallScoreN§LiteralÍ(Í(‘ÌW¢87¤initM¨PropertyÍ(œÍ(¨ÂÂÂKªIdentifierÍ(œÍ(¤¨endScoreN§LiteralÍ(¦Í(¨ÌW¢87¤initM¨PropertyÍ(³Í(»ÂÂÂKªIdentifierÍ(³Í(¶£gpaN§LiteralÍ(¸Í(»Ë@™™™™™š£3.7¤initM¨PropertyÍ(ÆÍ(×ÂÂÂKªIdentifierÍ(ÆÍ(Ñ«isPublishedN§LiteralÍ(ÓÍ(×Ã¤true¤init¥constÀH¶ExportNamedDeclarationÍ(úÍ*I³VariableDeclarationÍ)Í*‘J²VariableDeclaratorÍ)Í*€KªIdentifierÍ)Í)·MOCK_GRADES_UNPUBLISHEDO¯ArrayExpressionÍ)!Í*€‘L°ObjectExpressionÍ)(Í*|œM¨PropertyÍ)3Í)=ÂÂÂKªIdentifierÍ)3Í)5¢idN§LiteralÍ)7Í)=¤g006¦'g006'¤initM¨PropertyÍ)HÍ)bÂÂÂKªIdentifierÍ)HÍ)P¨semesterN§LiteralÍ)RÍ)b´2025-2026 ç¬¬2å­¦æœŸ¶'2025-2026 ç¬¬2å­¦æœŸ'¤initM¨PropertyÍ)mÍ)†ÂÂÂKªIdentifierÍ)mÍ)wªcourseCodeN§LiteralÍ)yÍ)†«VDZ02116aaa­'VDZ02116aaa'¤initM¨PropertyÍ)‘Í)¬ÂÂÂKªIdentifierÍ)‘Í)¬courseSerialN§LiteralÍ)ŸÍ)¬«VDZ02116aaa­'VDZ02116aaa'¤initM¨PropertyÍ)·Í)ËÂÂÂKªIdentifierÍ)·Í)ÁªcourseNameN§LiteralÍ)ÃÍ)Ë²äººå·¥æ™ºèƒ½å¯¼è®º´'äººå·¥æ™ºèƒ½å¯¼è®º'¤initM¨PropertyÍ)ÖÍ)êÂÂÂKªIdentifierÍ)ÖÍ)àªcourseTypeN§LiteralÍ)âÍ)ê²ä¸“ä¸šæ‹“å±•è¯¾ç¨‹´'ä¸“ä¸šæ‹“å±•è¯¾ç¨‹'¤initM¨PropertyÍ)õÍ)şÂÂÂKªIdentifierÍ)õÍ)û¦creditN§LiteralÍ)ıÍ)ş¡3¤initM¨PropertyÍ*	Í*ÂÂÂKªIdentifierÍ*	Í*ªfinalScoreN§LiteralÍ*Í* ¡0¤initM¨PropertyÍ*!Í*0ÂÂÂKªIdentifierÍ*!Í*-¬overallScoreN§LiteralÍ*/Í*0 ¡0¤initM¨PropertyÍ*;Í*FÂÂÂKªIdentifierÍ*;Í*C¨endScoreN§LiteralÍ*EÍ*F ¡0¤initM¨PropertyÍ*QÍ*WÂÂÂKªIdentifierÍ*QÍ*T£gpaN§LiteralÍ*VÍ*W ¡0¤initM¨PropertyÍ*bÍ*tÂÂÂKªIdentifierÍ*bÍ*m«isPublishedN§LiteralÍ*oÍ*tÂ¥false¤init¥constÀH¶ExportNamedDeclarationÍ*’Í+AI³VariableDeclarationÍ*™Í+A‘J²VariableDeclaratorÍ*ŸÍ+@KªIdentifierÍ*ŸÍ*´µMOCK_SEMESTER_SUMMARYL°ObjectExpressionÍ*·Í+@•M¨PropertyÍ*¾Í*ØÂÂÂKªIdentifierÍ*¾Í*Æ¨semesterN§LiteralÍ*ÈÍ*Ø´2025-2026 ç¬¬1å­¦æœŸ¶'2025-2026 ç¬¬1å­¦æœŸ'¤initM¨PropertyÍ*ßÍ*îÂÂÂKªIdentifierÍ*ßÍ*ê«totalCreditN§LiteralÍ*ìÍ*î
+¢10¤initM¨PropertyÍ*õÍ+ÂÂÂKªIdentifierÍ*õÍ*û¦avgGpaN§LiteralÍ*ıÍ+Ë@\(õÂ\¤3.67¤initM¨PropertyÍ+Í+ÂÂÂKªIdentifierÍ+Í+«weightedAvgN§LiteralÍ+Í+Ë@U“33333¤86.3¤initM¨PropertyÍ+ Í+<ÂÂÂKªIdentifierÍ+ Í+'§recordsKªIdentifierÍ+)Í+<³MOCK_GRADES_CURRENT¤init¥constÀH¶ExportNamedDeclarationÍ+…Í,AI³VariableDeclarationÍ+ŒÍ,A‘J²VariableDeclaratorÍ+’Í,@KªIdentifierÍ+’Í+¦´MOCK_SELECTION_ROUNDL°ObjectExpressionÍ+©Í,@•M¨PropertyÍ+°Í+ÍÂÂÂKªIdentifierÍ+°Í+¹©roundNameN§LiteralÍ+»Í+Í¸2025-2026-1 å­¦æœŸæ­£é€‰º'2025-2026-1 å­¦æœŸæ­£é€‰'¤initM¨PropertyÍ+ÔÍ+ñÂÂÂKªIdentifierÍ+ÔÍ+İ©startTimeN§LiteralÍ+ßÍ+ñ°2025-08-20 09:00²'2025-08-20 09:00'¤initM¨PropertyÍ+øÍ,ÂÂÂKªIdentifierÍ+øÍ+ÿ§endTimeN§LiteralÍ,Í,°2025-09-05 23:59²'2025-09-05 23:59'¤initM¨PropertyÍ,Í,(ÂÂÂKªIdentifierÍ,Í,"¨isActiveN§LiteralÍ,$Í,(Ã¤true¤initM¨PropertyÍ,/Í,<ÂÂÂKªIdentifierÍ,/Í,8©maxCreditN§LiteralÍ,:Í,<¢30¤init¥constÀH¶ExportNamedDeclarationÍ,RÍ0ßI³VariableDeclarationÍ,YÍ0ß‘J²VariableDeclaratorÍ,_Í0ŞKªIdentifierÍ,_Í,v·MOCK_SELECTABLE_COURSESO¯ArrayExpressionÍ,yÍ0Ş”L°ObjectExpressionÍ,€Í-™M¨PropertyÍ,‹Í,¤ÂÂÂKªIdentifierÍ,‹Í,•ªcourseCodeN§LiteralÍ,—Í,¤«VDZ02116aaa­'VDZ02116aaa'¤initM¨PropertyÍ,¯Í,ÃÂÂÂKªIdentifierÍ,¯Í,¹ªcourseNameN§LiteralÍ,»Í,Ã²äººå·¥æ™ºèƒ½å¯¼è®º´'äººå·¥æ™ºèƒ½å¯¼è®º'¤initM¨PropertyÍ,ÎÍ,ÜÂÂÂKªIdentifierÍ,ÎÍ,Õ§teacherN§LiteralÍ,×Í,Ü©é™ˆæ•™æˆ«'é™ˆæ•™æˆ'¤initM¨PropertyÍ,çÍ-ÂÂÂKªIdentifierÍ,çÍ,ó¬scheduleInfoN§LiteralÍ,õÍ-Ù#å‘¨ä¸‰ ä¸Šåˆ 1-2èŠ‚ Â· æ•™10æ ‹405Ù%'å‘¨ä¸‰ ä¸Šåˆ 1-2èŠ‚ Â· æ•™10æ ‹405'¤initM¨PropertyÍ-Í-"ÂÂÂKªIdentifierÍ-Í-¨capacityN§LiteralÍ- Í-"<¢60¤initM¨PropertyÍ--Í-9ÂÂÂKªIdentifierÍ--Í-5¨enrolledN§LiteralÍ-7Í-9-¢45¤initM¨PropertyÍ-DÍ-MÂÂÂKªIdentifierÍ-DÍ-J¦creditN§LiteralÍ-LÍ-M¡3¤initM¨PropertyÍ-XÍ-lÂÂÂKªIdentifierÍ-XÍ-bªcourseTypeN§LiteralÍ-dÍ-l²ä¸“ä¸šæ‹“å±•è¯¾ç¨‹´'ä¸“ä¸šæ‹“å±•è¯¾ç¨‹'¤initM¨PropertyÍ-wÍ-ˆÂÂÂKªIdentifierÍ-wÍ-ªisSelectedN§LiteralÍ-ƒÍ-ˆÂ¥false¤initL°ObjectExpressionÍ-—Í.¥™M¨PropertyÍ-¢Í-»ÂÂÂKªIdentifierÍ-¢Í-¬ªcourseCodeN§LiteralÍ-®Í-»«VDZ02116bbb­'VDZ02116bbb'¤initM¨PropertyÍ-ÆÍ-ØÂÂÂKªIdentifierÍ-ÆÍ-ĞªcourseNameN§LiteralÍ-ÒÍ-Ø¬æœºå™¨å­¦ä¹ ®'æœºå™¨å­¦ä¹ '¤initM¨PropertyÍ-ãÍ-ñÂÂÂKªIdentifierÍ-ãÍ-ê§teacherN§LiteralÍ-ìÍ-ñ©åˆ˜è€å¸ˆ«'åˆ˜è€å¸ˆ'¤initM¨PropertyÍ-üÍ. ÂÂÂKªIdentifierÍ-üÍ.¬scheduleInfoN§LiteralÍ.
+Í. Ù#å‘¨å›› ä¸Šåˆ 3-4èŠ‚ Â· æ•™10æ ‹501Ù%'å‘¨å›› ä¸Šåˆ 3-4èŠ‚ Â· æ•™10æ ‹501'¤initM¨PropertyÍ.+Í.7ÂÂÂKªIdentifierÍ.+Í.3¨capacityN§LiteralÍ.5Í.72¢50¤initM¨PropertyÍ.BÍ.NÂÂÂKªIdentifierÍ.BÍ.J¨enrolledN§LiteralÍ.LÍ.N2¢50¤initM¨PropertyÍ.YÍ.bÂÂÂKªIdentifierÍ.YÍ._¦creditN§LiteralÍ.aÍ.b¡3¤initM¨PropertyÍ.mÍ.ÂÂÂKªIdentifierÍ.mÍ.wªcourseTypeN§LiteralÍ.yÍ.²ä¸“ä¸šæ‹“å±•è¯¾ç¨‹´'ä¸“ä¸šæ‹“å±•è¯¾ç¨‹'¤initM¨PropertyÍ.ŒÍ.ÂÂÂKªIdentifierÍ.ŒÍ.–ªisSelectedN§LiteralÍ.˜Í.Â¥false¤initL°ObjectExpressionÍ.¬Í/À™M¨PropertyÍ.·Í.ĞÂÂÂKªIdentifierÍ.·Í.ÁªcourseCodeN§LiteralÍ.ÃÍ.Ğ«VDZ02116ccc­'VDZ02116ccc'¤initM¨PropertyÍ.ÛÍ.ïÂÂÂKªIdentifierÍ.ÛÍ.åªcourseNameN§LiteralÍ.çÍ.ï²è½¯ä»¶æµ‹è¯•æŠ€æœ¯´'è½¯ä»¶æµ‹è¯•æŠ€æœ¯'¤initM¨PropertyÍ.úÍ/ÂÂÂKªIdentifierÍ.úÍ/§teacherN§LiteralÍ/Í/©å¼ è€å¸ˆ«'å¼ è€å¸ˆ'¤initM¨PropertyÍ/Í/6ÂÂÂKªIdentifierÍ/Í/¬scheduleInfoN§LiteralÍ/!Í/6Ù"å‘¨äº” ä¸‹åˆ 5-6èŠ‚ Â· æ•™8æ ‹312Ù$'å‘¨äº” ä¸‹åˆ 5-6èŠ‚ Â· æ•™8æ ‹312'¤initM¨PropertyÍ/AÍ/MÂÂÂKªIdentifierÍ/AÍ/I¨capacityN§LiteralÍ/KÍ/M7¢55¤initM¨PropertyÍ/XÍ/dÂÂÂKªIdentifierÍ/XÍ/`¨enrolledN§LiteralÍ/bÍ/d¢30¤initM¨PropertyÍ/oÍ/xÂÂÂKªIdentifierÍ/oÍ/u¦creditN§LiteralÍ/wÍ/x¡2¤initM¨PropertyÍ/ƒÍ/—ÂÂÂKªIdentifierÍ/ƒÍ/ªcourseTypeN§LiteralÍ/Í/—²ä¸“ä¸šé€‰ä¿®è¯¾ç¨‹´'ä¸“ä¸šé€‰ä¿®è¯¾ç¨‹'¤initM¨PropertyÍ/¢Í/²ÂÂÂKªIdentifierÍ/¢Í/¬ªisSelectedN§LiteralÍ/®Í/²Ã¤true¤initL°ObjectExpressionÍ/ÇÍ0Ú™M¨PropertyÍ/ÒÍ/ëÂÂÂKªIdentifierÍ/ÒÍ/ÜªcourseCodeN§LiteralÍ/ŞÍ/ë«VDZ02116ddd­'VDZ02116ddd'¤initM¨PropertyÍ/öÍ0ÂÂÂKªIdentifierÍ/öÍ0 ªcourseNameN§LiteralÍ0Í0¾ç§»åŠ¨åº”ç”¨å¼€å‘ï¼ˆé¸¿è’™ï¼‰Ù 'ç§»åŠ¨åº”ç”¨å¼€å‘ï¼ˆé¸¿è’™ï¼‰'¤initM¨PropertyÍ0Í0'ÂÂÂKªIdentifierÍ0Í0 §teacherN§LiteralÍ0"Í0'©ç‹è€å¸ˆ«'ç‹è€å¸ˆ'¤initM¨PropertyÍ02Í0UÂÂÂKªIdentifierÍ02Í0>¬scheduleInfoN§LiteralÍ0@Í0UÙ"å‘¨äºŒ ä¸Šåˆ 3-4èŠ‚ Â· æ•™6æ ‹201Ù$'å‘¨äºŒ ä¸Šåˆ 3-4èŠ‚ Â· æ•™6æ ‹201'¤initM¨PropertyÍ0`Í0lÂÂÂKªIdentifierÍ0`Í0h¨capacityN§LiteralÍ0jÍ0l<¢60¤initM¨PropertyÍ0wÍ0ƒÂÂÂKªIdentifierÍ0wÍ0¨enrolledN§LiteralÍ0Í0ƒ:¢58¤initM¨PropertyÍ0Í0—ÂÂÂKªIdentifierÍ0Í0”¦creditN§LiteralÍ0–Í0—¡3¤initM¨PropertyÍ0¢Í0¶ÂÂÂKªIdentifierÍ0¢Í0¬ªcourseTypeN§LiteralÍ0®Í0¶²ä¸“ä¸šæ ¸å¿ƒè¯¾ç¨‹´'ä¸“ä¸šæ ¸å¿ƒè¯¾ç¨‹'¤initM¨PropertyÍ0ÁÍ0ÒÂÂÂKªIdentifierÍ0ÁÍ0ËªisSelectedN§LiteralÍ0ÍÍ0ÒÂ¥false¤init¥constÀH¶ExportNamedDeclarationÍ0ğÍ4`I³VariableDeclarationÍ0÷Í4`‘J²VariableDeclaratorÍ0ıÍ4_KªIdentifierÍ0ıÍ1²MOCK_MY_SELECTIONSO¯ArrayExpressionÍ1Í4_“L°ObjectExpressionÍ1Í2,™M¨PropertyÍ1$Í1@ÂÂÂKªIdentifierÍ1$Í1.ªcourseCodeN§LiteralÍ10Í1@®VDZ02115204.06°'VDZ02115204.06'¤initM¨PropertyÍ1KÍ1aÂÂÂKªIdentifierÍ1KÍ1UªcourseNameN§LiteralÍ1WÍ1a°Web å‰ç«¯åº”ç”¨²'Web å‰ç«¯åº”ç”¨'¤initM¨PropertyÍ1lÍ1zÂÂÂKªIdentifierÍ1lÍ1s§teacherN§LiteralÍ1uÍ1z©çŸ³é›…è¹«'çŸ³é›…è¹'¤initM¨PropertyÍ1…Í1¨ÂÂÂKªIdentifierÍ1…Í1‘¬scheduleInfoN§LiteralÍ1“Í1¨Ù"å‘¨ä¸€ ä¸Šåˆ 1-2èŠ‚ Â· æ•™8æ ‹613Ù$'å‘¨ä¸€ ä¸Šåˆ 1-2èŠ‚ Â· æ•™8æ ‹613'¤initM¨PropertyÍ1³Í1¿ÂÂÂKªIdentifierÍ1³Í1»¨capacityN§LiteralÍ1½Í1¿<¢60¤initM¨PropertyÍ1ÊÍ1ÖÂÂÂKªIdentifierÍ1ÊÍ1Ò¨enrolledN§LiteralÍ1ÔÍ1Ö0¢48¤initM¨PropertyÍ1áÍ1êÂÂÂKªIdentifierÍ1áÍ1ç¦creditN§LiteralÍ1éÍ1ê¡3¤initM¨PropertyÍ1õÍ2	ÂÂÂKªIdentifierÍ1õÍ1ÿªcourseTypeN§LiteralÍ2Í2	²ä¸“ä¸šæ‹“å±•è¯¾ç¨‹´'ä¸“ä¸šæ‹“å±•è¯¾ç¨‹'¤initM¨PropertyÍ2Í2$ÂÂÂKªIdentifierÍ2Í2ªisSelectedN§LiteralÍ2 Í2$Ã¤true¤initL°ObjectExpressionÍ23Í3F™M¨PropertyÍ2>Í2ZÂÂÂKªIdentifierÍ2>Í2HªcourseCodeN§LiteralÍ2JÍ2Z®VDZ02115204.xx°'VDZ02115204.xx'¤initM¨PropertyÍ2eÍ2yÂÂÂKªIdentifierÍ2eÍ2oªcourseNameN§LiteralÍ2qÍ2y²è½¯ä»¶ç»¼åˆå®è·µ´'è½¯ä»¶ç»¼åˆå®è·µ'¤initM¨PropertyÍ2„Í2’ÂÂÂKªIdentifierÍ2„Í2‹§teacherN§LiteralÍ2Í2’©æå›½å¼º«'æå›½å¼º'¤initM¨PropertyÍ2Í2ÀÂÂÂKªIdentifierÍ2Í2©¬scheduleInfoN§LiteralÍ2«Í2ÀÙ"å‘¨äºŒ ä¸‹åˆ 5-8èŠ‚ Â· æ•™9æ ‹708Ù$'å‘¨äºŒ ä¸‹åˆ 5-8èŠ‚ Â· æ•™9æ ‹708'¤initM¨PropertyÍ2ËÍ2×ÂÂÂKªIdentifierÍ2ËÍ2Ó¨capacityN§LiteralÍ2ÕÍ2×2¢50¤initM¨PropertyÍ2âÍ2îÂÂÂKªIdentifierÍ2âÍ2ê¨enrolledN§LiteralÍ2ìÍ2î*¢42¤initM¨PropertyÍ2ùÍ3ÂÂÂKªIdentifierÍ2ùÍ2ÿ¦creditN§LiteralÍ3Í3¡4¤initM¨PropertyÍ3Í3#ÂÂÂKªIdentifierÍ3Í3ªcourseTypeN§LiteralÍ3Í3#¸é›†ä¸­å®è·µæ•™å­¦è¯¾ç¨‹º'é›†ä¸­å®è·µæ•™å­¦è¯¾ç¨‹'¤initM¨PropertyÍ3.Í3>ÂÂÂKªIdentifierÍ3.Í38ªisSelectedN§LiteralÍ3:Í3>Ã¤true¤initL°ObjectExpressionÍ3MÍ4[™M¨PropertyÍ3XÍ3qÂÂÂKªIdentifierÍ3XÍ3bªcourseCodeN§LiteralÍ3dÍ3q«VDZ02116ccc­'VDZ02116ccc'¤initM¨PropertyÍ3|Í3ÂÂÂKªIdentifierÍ3|Í3†ªcourseNameN§LiteralÍ3ˆÍ3²è½¯ä»¶æµ‹è¯•æŠ€æœ¯´'è½¯ä»¶æµ‹è¯•æŠ€æœ¯'¤initM¨PropertyÍ3›Í3©ÂÂÂKªIdentifierÍ3›Í3¢§teacherN§LiteralÍ3¤Í3©©å¼ è€å¸ˆ«'å¼ è€å¸ˆ'¤initM¨PropertyÍ3´Í3×ÂÂÂKªIdentifierÍ3´Í3À¬scheduleInfoN§LiteralÍ3ÂÍ3×Ù"å‘¨äº” ä¸‹åˆ 5-6èŠ‚ Â· æ•™8æ ‹312Ù$'å‘¨äº” ä¸‹åˆ 5-6èŠ‚ Â· æ•™8æ ‹312'¤initM¨PropertyÍ3âÍ3îÂÂÂKªIdentifierÍ3âÍ3ê¨capacityN§LiteralÍ3ìÍ3î7¢55¤initM¨PropertyÍ3ùÍ4ÂÂÂKªIdentifierÍ3ùÍ4¨enrolledN§LiteralÍ4Í4¢30¤initM¨PropertyÍ4Í4ÂÂÂKªIdentifierÍ4Í4¦creditN§LiteralÍ4Í4¡2¤initM¨PropertyÍ4$Í48ÂÂÂKªIdentifierÍ4$Í4.ªcourseTypeN§LiteralÍ40Í48²ä¸“ä¸šé€‰ä¿®è¯¾ç¨‹´'ä¸“ä¸šé€‰ä¿®è¯¾ç¨‹'¤initM¨PropertyÍ4CÍ4SÂÂÂKªIdentifierÍ4CÍ4MªisSelectedN§LiteralÍ4OÍ4SÃ¤true¤init¥constÀH¶ExportNamedDeclarationÍ4¼Í9gI³VariableDeclarationÍ4ÃÍ9g‘J²VariableDeclaratorÍ4ÉÍ9fKªIdentifierÍ4ÉÍ4Ø¯MOCK_EVAL_TASKSO¯ArrayExpressionÍ4ÛÍ9f“L°ObjectExpressionÍ4âÍ6a›M¨PropertyÍ4íÍ4úÂÂÂKªIdentifierÍ4íÍ4ï¢idN§LiteralÍ4ñÍ4ú§eval001©'eval001'¤initM¨PropertyÍ5Í5!ÂÂÂKªIdentifierÍ5Í5ªcourseCodeN§LiteralÍ5Í5!®VDZ02115204.06°'VDZ02115204.06'¤initM¨PropertyÍ5,Í5BÂÂÂKªIdentifierÍ5,Í56ªcourseNameN§LiteralÍ58Í5B°Web å‰ç«¯åº”ç”¨²'Web å‰ç«¯åº”ç”¨'¤initM¨PropertyÍ5MÍ5aÂÂÂKªIdentifierÍ5MÍ5WªcourseTypeN§LiteralÍ5YÍ5a²ä¸“ä¸šæ‹“å±•è¯¾ç¨‹´'ä¸“ä¸šæ‹“å±•è¯¾ç¨‹'¤initM¨PropertyÍ5lÍ5zÂÂÂKªIdentifierÍ5lÍ5s§teacherN§LiteralÍ5uÍ5z©çŸ³é›…è¹«'çŸ³é›…è¹'¤initM¨PropertyÍ5…Í5ŸÂÂÂKªIdentifierÍ5…Í5¨semesterN§LiteralÍ5Í5Ÿ´2025-2026 ç¬¬1å­¦æœŸ¶'2025-2026 ç¬¬1å­¦æœŸ'¤initM¨PropertyÍ5ªÍ5ÍÂÂÂKªIdentifierÍ5ªÍ5»±questionnaireNameN§LiteralÍ5½Í5ÍÙ*æ•™å¸ˆè¯¾å ‚æ•™å­¦æƒ…å†µå­¦ç”Ÿé—®å·è°ƒæŸ¥Ù,'æ•™å¸ˆè¯¾å ‚æ•™å­¦æƒ…å†µå­¦ç”Ÿé—®å·è°ƒæŸ¥'¤initM¨PropertyÍ5ØÍ5èÂÂÂKªIdentifierÍ5ØÍ5Ş¦statusN§LiteralÍ5àÍ5è¦closed¨'closed'¤initM¨PropertyÍ5óÍ6ÂÂÂKªIdentifierÍ5óÍ5û¨openTimeN§LiteralÍ5ıÍ6°2026-01-01 00:00²'2026-01-01 00:00'¤initM¨PropertyÍ6Í67ÂÂÂKªIdentifierÍ6Í6#©closeTimeN§LiteralÍ6%Í67°2026-01-15 23:59²'2026-01-15 23:59'¤initM¨PropertyÍ6BÍ6YÂÂÂKªIdentifierÍ6BÍ6LªstatusTextN§LiteralÍ6NÍ6Y»ä¸åœ¨å¼€æ”¾æ—¶é—´èŒƒå›´å†…½'ä¸åœ¨å¼€æ”¾æ—¶é—´èŒƒå›´å†…'¤initL°ObjectExpressionÍ6hÍ7à›M¨PropertyÍ6sÍ6€ÂÂÂKªIdentifierÍ6sÍ6u¢idN§LiteralÍ6wÍ6€§eval002©'eval002'¤initM¨PropertyÍ6‹Í6§ÂÂÂKªIdentifierÍ6‹Í6•ªcourseCodeN§LiteralÍ6—Í6§®VDZ02115204.xx°'VDZ02115204.xx'¤initM¨PropertyÍ6²Í6ÆÂÂÂKªIdentifierÍ6²Í6¼ªcourseNameN§LiteralÍ6¾Í6Æ²è½¯ä»¶ç»¼åˆå®è·µ´'è½¯ä»¶ç»¼åˆå®è·µ'¤initM¨PropertyÍ6ÑÍ6çÂÂÂKªIdentifierÍ6ÑÍ6ÛªcourseTypeN§LiteralÍ6İÍ6ç¸é›†ä¸­å®è·µæ•™å­¦è¯¾ç¨‹º'é›†ä¸­å®è·µæ•™å­¦è¯¾ç¨‹'¤initM¨PropertyÍ6òÍ7 ÂÂÂKªIdentifierÍ6òÍ6ù§teacherN§LiteralÍ6ûÍ7 ©æå›½å¼º«'æå›½å¼º'¤initM¨PropertyÍ7Í7%ÂÂÂKªIdentifierÍ7Í7¨semesterN§LiteralÍ7Í7%´2025-2026 ç¬¬1å­¦æœŸ¶'2025-2026 ç¬¬1å­¦æœŸ'¤initM¨PropertyÍ70Í7SÂÂÂKªIdentifierÍ70Í7A±questionnaireNameN§LiteralÍ7CÍ7SÙ*æ•™å¸ˆè¯¾å ‚æ•™å­¦æƒ…å†µå­¦ç”Ÿé—®å·è°ƒæŸ¥Ù,'æ•™å¸ˆè¯¾å ‚æ•™å­¦æƒ…å†µå­¦ç”Ÿé—®å·è°ƒæŸ¥'¤initM¨PropertyÍ7^Í7lÂÂÂKªIdentifierÍ7^Í7d¦statusN§LiteralÍ7fÍ7l¤open¦'open'¤initM¨PropertyÍ7wÍ7“ÂÂÂKªIdentifierÍ7wÍ7¨openTimeN§LiteralÍ7Í7“°2025-12-01 00:00²'2025-12-01 00:00'¤initM¨PropertyÍ7Í7»ÂÂÂKªIdentifierÍ7Í7§©closeTimeN§LiteralÍ7©Í7»°2025-12-31 23:59²'2025-12-31 23:59'¤initM¨PropertyÍ7ÆÍ7ØÂÂÂKªIdentifierÍ7ÆÍ7ĞªstatusTextN§LiteralÍ7ÒÍ7Ø¬å¼€æ”¾è¯„æ•™®'å¼€æ”¾è¯„æ•™'¤initL°ObjectExpressionÍ7çÍ9b›M¨PropertyÍ7òÍ7ÿÂÂÂKªIdentifierÍ7òÍ7ô¢idN§LiteralÍ7öÍ7ÿ§eval003©'eval003'¤initM¨PropertyÍ8
+Í8#ÂÂÂKªIdentifierÍ8
+Í8ªcourseCodeN§LiteralÍ8Í8#«VDZ02115xxx­'VDZ02115xxx'¤initM¨PropertyÍ8.Í8FÂÂÂKªIdentifierÍ8.Í88ªcourseNameN§LiteralÍ8:Í8F¾å¤§å‹æ•°æ®åº“ç®¡ç†ä¸ç»´æŠ¤Ù 'å¤§å‹æ•°æ®åº“ç®¡ç†ä¸ç»´æŠ¤'¤initM¨PropertyÍ8QÍ8eÂÂÂKªIdentifierÍ8QÍ8[ªcourseTypeN§LiteralÍ8]Í8e²ä¸“ä¸šæ‹“å±•è¯¾ç¨‹´'ä¸“ä¸šæ‹“å±•è¯¾ç¨‹'¤initM¨PropertyÍ8pÍ8~ÂÂÂKªIdentifierÍ8pÍ8w§teacherN§LiteralÍ8yÍ8~©æå›½å¼º«'æå›½å¼º'¤initM¨PropertyÍ8‰Í8£ÂÂÂKªIdentifierÍ8‰Í8‘¨semesterN§LiteralÍ8“Í8£´2025-2026 ç¬¬1å­¦æœŸ¶'2025-2026 ç¬¬1å­¦æœŸ'¤initM¨PropertyÍ8®Í8ÑÂÂÂKªIdentifierÍ8®Í8¿±questionnaireNameN§LiteralÍ8ÁÍ8ÑÙ*æ•™å¸ˆè¯¾å ‚æ•™å­¦æƒ…å†µå­¦ç”Ÿé—®å·è°ƒæŸ¥Ù,'æ•™å¸ˆè¯¾å ‚æ•™å­¦æƒ…å†µå­¦ç”Ÿé—®å·è°ƒæŸ¥'¤initM¨PropertyÍ8ÜÍ8ïÂÂÂKªIdentifierÍ8ÜÍ8â¦statusN§LiteralÍ8äÍ8ï©submitted«'submitted'¤initM¨PropertyÍ8úÍ9ÂÂÂKªIdentifierÍ8úÍ9¨openTimeN§LiteralÍ9Í9°2025-12-01 00:00²'2025-12-01 00:00'¤initM¨PropertyÍ9!Í9>ÂÂÂKªIdentifierÍ9!Í9*©closeTimeN§LiteralÍ9,Í9>°2025-12-31 23:59²'2025-12-31 23:59'¤initM¨PropertyÍ9IÍ9ZÂÂÂKªIdentifierÍ9IÍ9SªstatusTextN§LiteralÍ9UÍ9Z©å·²æäº¤«'å·²æäº¤'¤init¥constÀH¶ExportNamedDeclarationÍ9ÍA8I³VariableDeclarationÍ9†ÍA8‘J²VariableDeclaratorÍ9ŒÍA7KªIdentifierÍ9ŒÍ9£·MOCK_EVAL_QUESTIONNAIREL°ObjectExpressionÍ9¦ÍA7’M¨PropertyÍ9­Í9¾ÂÂÂKªIdentifierÍ9­Í9³¦taskIdN§LiteralÍ9µÍ9¾§eval002©'eval002'¤initM¨PropertyÍ9ÅÍA3ÂÂÂKªIdentifierÍ9ÅÍ9Î©questionsO¯ArrayExpressionÍ9ĞÍA3•L°ObjectExpressionÍ9ÛÍ;Â–M¨PropertyÍ9êÍ9òÂÂÂKªIdentifierÍ9êÍ9ì¢idN§LiteralÍ9îÍ9ò¢q1¤'q1'¤initM¨PropertyÍ:Í:	ÂÂÂKªIdentifierÍ:Í:¥indexN§LiteralÍ:Í:	¡1¤initM¨PropertyÍ:Í:&ÂÂÂKªIdentifierÍ:Í:¤typeN§LiteralÍ:Í:&¦single¨'single'¤initM¨PropertyÍ:5Í:LÂÂÂKªIdentifierÍ:5Í::¥titleN§LiteralÍ:<Í:LÙ*æ•™å¸ˆçš„æ•™å­¦æ€åº¦æ˜¯å¦è®¤çœŸè´Ÿè´£ï¼ŸÙ,'æ•™å¸ˆçš„æ•™å­¦æ€åº¦æ˜¯å¦è®¤çœŸè´Ÿè´£ï¼Ÿ'¤initM¨PropertyÍ:[Í;™ÂÂÂKªIdentifierÍ:[Í:b§optionsO¯ArrayExpressionÍ:dÍ;™•L°ObjectExpressionÍ:wÍ:Ÿ“M¨PropertyÍ:yÍ:„ÂÂÂKªIdentifierÍ:yÍ:{¢idN§LiteralÍ:}Í:„¥q1_o1§'q1_o1'¤initM¨PropertyÍ:†Í:“ÂÂÂKªIdentifierÍ:†Í:‹¥labelN§LiteralÍ:Í:“¬éå¸¸è®¤çœŸ®'éå¸¸è®¤çœŸ'¤initM¨PropertyÍ:•Í:ÂÂÂKªIdentifierÍ:•Í:š¥scoreN§LiteralÍ:œÍ:¡5¤initL°ObjectExpressionÍ:²Í:Ú“M¨PropertyÍ:´Í:¿ÂÂÂKªIdentifierÍ:´Í:¶¢idN§LiteralÍ:¸Í:¿¥q1_o2§'q1_o2'¤initM¨PropertyÍ:ÁÍ:ÎÂÂÂKªIdentifierÍ:ÁÍ:Æ¥labelN§LiteralÍ:ÈÍ:Î¬æ¯”è¾ƒè®¤çœŸ®'æ¯”è¾ƒè®¤çœŸ'¤initM¨PropertyÍ:ĞÍ:ØÂÂÂKªIdentifierÍ:ĞÍ:Õ¥scoreN§LiteralÍ:×Í:Ø¡4¤initL°ObjectExpressionÍ:íÍ;“M¨PropertyÍ:ïÍ:úÂÂÂKªIdentifierÍ:ïÍ:ñ¢idN§LiteralÍ:óÍ:ú¥q1_o3§'q1_o3'¤initM¨PropertyÍ:üÍ;ÂÂÂKªIdentifierÍ:üÍ;¥labelN§LiteralÍ;Í;¦ä¸€èˆ¬¨'ä¸€èˆ¬'¤initM¨PropertyÍ;	Í;ÂÂÂKªIdentifierÍ;	Í;¥scoreN§LiteralÍ;Í;¡3¤initL°ObjectExpressionÍ;&Í;N“M¨PropertyÍ;(Í;3ÂÂÂKªIdentifierÍ;(Í;*¢idN§LiteralÍ;,Í;3¥q1_o4§'q1_o4'¤initM¨PropertyÍ;5Í;BÂÂÂKªIdentifierÍ;5Í;:¥labelN§LiteralÍ;<Í;B¬ä¸å¤ªè®¤çœŸ®'ä¸å¤ªè®¤çœŸ'¤initM¨PropertyÍ;DÍ;LÂÂÂKªIdentifierÍ;DÍ;I¥scoreN§LiteralÍ;KÍ;L¡2¤initL°ObjectExpressionÍ;aÍ;‰“M¨PropertyÍ;cÍ;nÂÂÂKªIdentifierÍ;cÍ;e¢idN§LiteralÍ;gÍ;n¥q1_o5§'q1_o5'¤initM¨PropertyÍ;pÍ;}ÂÂÂKªIdentifierÍ;pÍ;u¥labelN§LiteralÍ;wÍ;}¬å¾ˆä¸è®¤çœŸ®'å¾ˆä¸è®¤çœŸ'¤initM¨PropertyÍ;Í;‡ÂÂÂKªIdentifierÍ;Í;„¥scoreN§LiteralÍ;†Í;‡¡1¤init¤initM¨PropertyÍ;¨Í;¶ÂÂÂKªIdentifierÍ;¨Í;°¨requiredN§LiteralÍ;²Í;¶Ã¤true¤initL°ObjectExpressionÍ;ÍÍ=¶–M¨PropertyÍ;ÜÍ;äÂÂÂKªIdentifierÍ;ÜÍ;Ş¢idN§LiteralÍ;àÍ;ä¢q2¤'q2'¤initM¨PropertyÍ;óÍ;ûÂÂÂKªIdentifierÍ;óÍ;ø¥indexN§LiteralÍ;úÍ;û¡2¤initM¨PropertyÍ<
+Í<ÂÂÂKªIdentifierÍ<
+Í<¤typeN§LiteralÍ<Í<¦single¨'single'¤initM¨PropertyÍ<'Í<@ÂÂÂKªIdentifierÍ<'Í<,¥titleN§LiteralÍ<.Í<@Ù0æ•™å¸ˆçš„æ•™å­¦å†…å®¹æ˜¯å¦å……å®ã€æœ‰æ¡ç†ï¼ŸÙ2'æ•™å¸ˆçš„æ•™å­¦å†…å®¹æ˜¯å¦å……å®ã€æœ‰æ¡ç†ï¼Ÿ'¤initM¨PropertyÍ<OÍ=ÂÂÂKªIdentifierÍ<OÍ<V§optionsO¯ArrayExpressionÍ<XÍ=•L°ObjectExpressionÍ<kÍ<““M¨PropertyÍ<mÍ<xÂÂÂKªIdentifierÍ<mÍ<o¢idN§LiteralÍ<qÍ<x¥q2_o1§'q2_o1'¤initM¨PropertyÍ<zÍ<‡ÂÂÂKªIdentifierÍ<zÍ<¥labelN§LiteralÍ<Í<‡¬éå¸¸å……å®®'éå¸¸å……å®'¤initM¨PropertyÍ<‰Í<‘ÂÂÂKªIdentifierÍ<‰Í<¥scoreN§LiteralÍ<Í<‘¡5¤initL°ObjectExpressionÍ<¦Í<Î“M¨PropertyÍ<¨Í<³ÂÂÂKªIdentifierÍ<¨Í<ª¢idN§LiteralÍ<¬Í<³¥q2_o2§'q2_o2'¤initM¨PropertyÍ<µÍ<ÂÂÂÂKªIdentifierÍ<µÍ<º¥labelN§LiteralÍ<¼Í<Â¬æ¯”è¾ƒå……å®®'æ¯”è¾ƒå……å®'¤initM¨PropertyÍ<ÄÍ<ÌÂÂÂKªIdentifierÍ<ÄÍ<É¥scoreN§LiteralÍ<ËÍ<Ì¡4¤initL°ObjectExpressionÍ<áÍ=“M¨PropertyÍ<ãÍ<îÂÂÂKªIdentifierÍ<ãÍ<å¢idN§LiteralÍ<çÍ<î¥q2_o3§'q2_o3'¤initM¨PropertyÍ<ğÍ<ûÂÂÂKªIdentifierÍ<ğÍ<õ¥labelN§LiteralÍ<÷Í<û¦ä¸€èˆ¬¨'ä¸€èˆ¬'¤initM¨PropertyÍ<ıÍ=ÂÂÂKªIdentifierÍ<ıÍ=¥scoreN§LiteralÍ=Í=¡3¤initL°ObjectExpressionÍ=Í=B“M¨PropertyÍ=Í='ÂÂÂKªIdentifierÍ=Í=¢idN§LiteralÍ= Í='¥q2_o4§'q2_o4'¤initM¨PropertyÍ=)Í=6ÂÂÂKªIdentifierÍ=)Í=.¥labelN§LiteralÍ=0Í=6¬ä¸å¤ªå……å®®'ä¸å¤ªå……å®'¤initM¨PropertyÍ=8Í=@ÂÂÂKªIdentifierÍ=8Í==¥scoreN§LiteralÍ=?Í=@¡2¤initL°ObjectExpressionÍ=UÍ=}“M¨PropertyÍ=WÍ=bÂÂÂKªIdentifierÍ=WÍ=Y¢idN§LiteralÍ=[Í=b¥q2_o5§'q2_o5'¤initM¨PropertyÍ=dÍ=qÂÂÂKªIdentifierÍ=dÍ=i¥labelN§LiteralÍ=kÍ=q¬å¾ˆä¸å……å®®'å¾ˆä¸å……å®'¤initM¨PropertyÍ=sÍ={ÂÂÂKªIdentifierÍ=sÍ=x¥scoreN§LiteralÍ=zÍ={¡1¤init¤initM¨PropertyÍ=œÍ=ªÂÂÂKªIdentifierÍ=œÍ=¤¨requiredN§LiteralÍ=¦Í=ªÃ¤true¤initL°ObjectExpressionÍ=ÁÍ?¬–M¨PropertyÍ=ĞÍ=ØÂÂÂKªIdentifierÍ=ĞÍ=Ò¢idN§LiteralÍ=ÔÍ=Ø¢q3¤'q3'¤initM¨PropertyÍ=çÍ=ïÂÂÂKªIdentifierÍ=çÍ=ì¥indexN§LiteralÍ=îÍ=ï¡3¤initM¨PropertyÍ=şÍ>ÂÂÂKªIdentifierÍ=şÍ>¤typeN§LiteralÍ>Í>¥multi§'multi'¤initM¨PropertyÍ>Í>3ÂÂÂKªIdentifierÍ>Í>¥titleN§LiteralÍ>!Í>3Ù0æ•™å¸ˆé‡‡ç”¨äº†å“ªäº›æ•™å­¦æ–¹æ³•ï¼Ÿï¼ˆå¤šé€‰ï¼‰Ù2'æ•™å¸ˆé‡‡ç”¨äº†å“ªäº›æ•™å­¦æ–¹æ³•ï¼Ÿï¼ˆå¤šé€‰ï¼‰'¤initM¨PropertyÍ>BÍ?‚ÂÂÂKªIdentifierÍ>BÍ>I§optionsO¯ArrayExpressionÍ>KÍ?‚•L°ObjectExpressionÍ>^Í>†“M¨PropertyÍ>`Í>kÂÂÂKªIdentifierÍ>`Í>b¢idN§LiteralÍ>dÍ>k¥q3_o1§'q3_o1'¤initM¨PropertyÍ>mÍ>zÂÂÂKªIdentifierÍ>mÍ>r¥labelN§LiteralÍ>tÍ>z¬è¯¾å ‚è®²æˆ®'è¯¾å ‚è®²æˆ'¤initM¨PropertyÍ>|Í>„ÂÂÂKªIdentifierÍ>|Í>¥scoreN§LiteralÍ>ƒÍ>„¡1¤initL°ObjectExpressionÍ>™Í>Á“M¨PropertyÍ>›Í>¦ÂÂÂKªIdentifierÍ>›Í>¢idN§LiteralÍ>ŸÍ>¦¥q3_o2§'q3_o2'¤initM¨PropertyÍ>¨Í>µÂÂÂKªIdentifierÍ>¨Í>­¥labelN§LiteralÍ>¯Í>µ¬æ¡ˆä¾‹åˆ†æ®'æ¡ˆä¾‹åˆ†æ'¤initM¨PropertyÍ>·Í>¿ÂÂÂKªIdentifierÍ>·Í>¼¥scoreN§LiteralÍ>¾Í>¿¡1¤initL°ObjectExpressionÍ>ÔÍ>ü“M¨PropertyÍ>ÖÍ>áÂÂÂKªIdentifierÍ>ÖÍ>Ø¢idN§LiteralÍ>ÚÍ>á¥q3_o3§'q3_o3'¤initM¨PropertyÍ>ãÍ>ğÂÂÂKªIdentifierÍ>ãÍ>è¥labelN§LiteralÍ>êÍ>ğ¬å°ç»„è®¨è®º®'å°ç»„è®¨è®º'¤initM¨PropertyÍ>òÍ>úÂÂÂKªIdentifierÍ>òÍ>÷¥scoreN§LiteralÍ>ùÍ>ú¡1¤initL°ObjectExpressionÍ?Í?7“M¨PropertyÍ?Í?ÂÂÂKªIdentifierÍ?Í?¢idN§LiteralÍ?Í?¥q3_o4§'q3_o4'¤initM¨PropertyÍ?Í?+ÂÂÂKªIdentifierÍ?Í?#¥labelN§LiteralÍ?%Í?+¬å®éªŒå®è·µ®'å®éªŒå®è·µ'¤initM¨PropertyÍ?-Í?5ÂÂÂKªIdentifierÍ?-Í?2¥scoreN§LiteralÍ?4Í?5¡1¤initL°ObjectExpressionÍ?JÍ?r“M¨PropertyÍ?LÍ?WÂÂÂKªIdentifierÍ?LÍ?N¢idN§LiteralÍ?PÍ?W¥q3_o5§'q3_o5'¤initM¨PropertyÍ?YÍ?fÂÂÂKªIdentifierÍ?YÍ?^¥labelN§LiteralÍ?`Í?f¬åœ¨çº¿å­¦ä¹ ®'åœ¨çº¿å­¦ä¹ '¤initM¨PropertyÍ?hÍ?pÂÂÂKªIdentifierÍ?hÍ?m¥scoreN§LiteralÍ?oÍ?p¡1¤init¤initM¨PropertyÍ?‘Í? ÂÂÂKªIdentifierÍ?‘Í?™¨requiredN§LiteralÍ?›Í? Â¥false¤initL°ObjectExpressionÍ?·Í@h–M¨PropertyÍ?ÆÍ?ÎÂÂÂKªIdentifierÍ?ÆÍ?È¢idN§LiteralÍ?ÊÍ?Î¢q4¤'q4'¤initM¨PropertyÍ?İÍ?åÂÂÂKªIdentifierÍ?İÍ?â¥indexN§LiteralÍ?äÍ?å¡4¤initM¨PropertyÍ?ôÍ@ ÂÂÂKªIdentifierÍ?ôÍ?ø¤typeN§LiteralÍ?úÍ@ ¤star¦'star'¤initM¨PropertyÍ@Í@%ÂÂÂKªIdentifierÍ@Í@¥titleN§LiteralÍ@Í@%Ù'æ‚¨å¯¹è¿™é—¨è¯¾ç¨‹çš„æ€»ä½“æ»¡æ„åº¦ï¼ŸÙ)'æ‚¨å¯¹è¿™é—¨è¯¾ç¨‹çš„æ€»ä½“æ»¡æ„åº¦ï¼Ÿ'¤initM¨PropertyÍ@4Í@?ÂÂÂKªIdentifierÍ@4Í@;§optionsO¯ArrayExpressionÍ@=Í@?¤initM¨PropertyÍ@NÍ@\ÂÂÂKªIdentifierÍ@NÍ@V¨requiredN§LiteralÍ@XÍ@\Ã¤true¤initL°ObjectExpressionÍ@sÍA+–M¨PropertyÍ@‚Í@ŠÂÂÂKªIdentifierÍ@‚Í@„¢idN§LiteralÍ@†Í@Š¢q5¤'q5'¤initM¨PropertyÍ@™Í@¡ÂÂÂKªIdentifierÍ@™Í@¥indexN§LiteralÍ@ Í@¡¡5¤initM¨PropertyÍ@°Í@¼ÂÂÂKªIdentifierÍ@°Í@´¤typeN§LiteralÍ@¶Í@¼¤text¦'text'¤initM¨PropertyÍ@ËÍ@çÂÂÂKªIdentifierÍ@ËÍ@Ğ¥titleN§LiteralÍ@ÒÍ@çÙ9æ‚¨å¯¹è¿™é—¨è¯¾ç¨‹æˆ–æ•™å¸ˆæœ‰ä»€ä¹ˆå»ºè®®ï¼Ÿï¼ˆé€‰å¡«ï¼‰Ù;'æ‚¨å¯¹è¿™é—¨è¯¾ç¨‹æˆ–æ•™å¸ˆæœ‰ä»€ä¹ˆå»ºè®®ï¼Ÿï¼ˆé€‰å¡«ï¼‰'¤initM¨PropertyÍ@öÍAÂÂÂKªIdentifierÍ@öÍ@ı§optionsO¯ArrayExpressionÍ@ÿÍA¤initM¨PropertyÍAÍAÂÂÂKªIdentifierÍAÍA¨requiredN§LiteralÍAÍAÂ¥false¤init¤init¥constÀH¶ExportNamedDeclarationÍAOÍA”I³VariableDeclarationÍAVÍA”‘J²VariableDeclaratorÍA\ÍA“KªIdentifierÍA\ÍAo³MOCK_EVAL_QUESTIONSÔrQ—¤type¥start£end¦object¨property¨computed¨optional°MemberExpressionÍArÍA“KªIdentifierÍArÍA‰·MOCK_EVAL_QUESTIONNAIREKªIdentifierÍAŠÍA“©questionsÂÂ¥constÀH¶ExportNamedDeclarationÍAËÍE¨I³VariableDeclarationÍAÒÍE¨‘J²VariableDeclaratorÍAØÍE§KªIdentifierÍAØÍAä¬MOCK_NOTICESO¯ArrayExpressionÍAçÍE§“L°ObjectExpressionÍAîÍC‰—M¨PropertyÍAùÍBÂÂÂKªIdentifierÍAùÍAû¢idN§LiteralÍAıÍB¤n001¦'n001'¤initM¨PropertyÍBÍB/ÂÂÂKªIdentifierÍBÍB¥titleN§LiteralÍBÍB/Ù.å…³äº 2025-2026-1 å­¦æœŸé€‰è¯¾å®‰æ’çš„é€šçŸ¥Ù0'å…³äº 2025-2026-1 å­¦æœŸé€‰è¯¾å®‰æ’çš„é€šçŸ¥'¤initM¨PropertyÍB:ÍCÂÂÂKªIdentifierÍB:ÍBA§contentN§LiteralÍBCÍCÚ¬å„å­¦é™¢ã€å„ä½åŒå­¦ï¼š
+
+2025-2026å­¦å¹´ç¬¬ä¸€å­¦æœŸé€‰è¯¾å·¥ä½œå³å°†å¼€å§‹ï¼Œç°å°†æœ‰å…³äº‹é¡¹é€šçŸ¥å¦‚ä¸‹ï¼š
+ä¸€ã€é€‰è¯¾æ—¶é—´
+æ­£é€‰é˜¶æ®µï¼š2025å¹´8æœˆ20æ—¥9:00è‡³9æœˆ5æ—¥23:59
+è¡¥é€‰é˜¶æ®µï¼š2025å¹´9æœˆ10æ—¥9:00è‡³9æœˆ15æ—¥23:59
+
+äºŒã€é€‰è¯¾è¦æ±‚
+1. è¯·åŒå­¦ä»¬åœ¨è§„å®šæ—¶é—´å†…å®Œæˆé€‰è¯¾ï¼Œé€¾æœŸä¸äºˆè¡¥é€‰ã€‚
+2. é€‰è¯¾ç»“æœä»¥æœ€ç»ˆç¡®è®¤ä¸ºå‡†ï¼Œè¯·å…³æ³¨é€‰è¯¾ç»“æœå…¬ç¤ºã€‚
+
+æ•™åŠ¡å¤„
+2025å¹´8æœˆ10æ—¥Úº'å„å­¦é™¢ã€å„ä½åŒå­¦ï¼š\n\n2025-2026å­¦å¹´ç¬¬ä¸€å­¦æœŸé€‰è¯¾å·¥ä½œå³å°†å¼€å§‹ï¼Œç°å°†æœ‰å…³äº‹é¡¹é€šçŸ¥å¦‚ä¸‹ï¼š\nä¸€ã€é€‰è¯¾æ—¶é—´\næ­£é€‰é˜¶æ®µï¼š2025å¹´8æœˆ20æ—¥9:00è‡³9æœˆ5æ—¥23:59\nè¡¥é€‰é˜¶æ®µï¼š2025å¹´9æœˆ10æ—¥9:00è‡³9æœˆ15æ—¥23:59\n\näºŒã€é€‰è¯¾è¦æ±‚\n1. è¯·åŒå­¦ä»¬åœ¨è§„å®šæ—¶é—´å†…å®Œæˆé€‰è¯¾ï¼Œé€¾æœŸä¸äºˆè¡¥é€‰ã€‚\n2. é€‰è¯¾ç»“æœä»¥æœ€ç»ˆç¡®è®¤ä¸ºå‡†ï¼Œè¯·å…³æ³¨é€‰è¯¾ç»“æœå…¬ç¤ºã€‚\n\næ•™åŠ¡å¤„\n2025å¹´8æœˆ10æ—¥'¤initM¨PropertyÍCÍC*ÂÂÂKªIdentifierÍCÍC#©publisherN§LiteralÍC%ÍC*©æ•™åŠ¡å¤„«'æ•™åŠ¡å¤„'¤initM¨PropertyÍC5ÍCTÂÂÂKªIdentifierÍC5ÍC@«publishTimeN§LiteralÍCBÍCT°2025-08-10 09:00²'2025-08-10 09:00'¤initM¨PropertyÍC_ÍClÂÂÂKªIdentifierÍC_ÍCe¦isReadN§LiteralÍCgÍClÂ¥false¤initM¨PropertyÍCwÍCÂÂÂKªIdentifierÍCwÍC{¤typeN§LiteralÍC}ÍC¦é€šçŸ¥¨'é€šçŸ¥'¤initL°ObjectExpressionÍCÍD«—M¨PropertyÍC›ÍC¥ÂÂÂKªIdentifierÍC›ÍC¢idN§LiteralÍCŸÍC¥¤n002¦'n002'¤initM¨PropertyÍC°ÍCÍÂÂÂKªIdentifierÍC°ÍCµ¥titleN§LiteralÍC·ÍCÍÙ*å…³äº2025-2026å­¦å¹´æ ¡å†å®‰æ’çš„é€šçŸ¥Ù,'å…³äº2025-2026å­¦å¹´æ ¡å†å®‰æ’çš„é€šçŸ¥'¤initM¨PropertyÍCØÍD2ÂÂÂKªIdentifierÍCØÍCß§contentN§LiteralÍCáÍD2Ù2025-2026å­¦å¹´æ ¡å†å·²å‘å¸ƒï¼Œè¯·å„ä½åŒå­¦æŸ¥çœ‹ã€‚
+ç¬¬ä¸€å­¦æœŸï¼š2025å¹´9æœˆ1æ—¥è‡³2026å¹´1æœˆ18æ—¥
+ç¬¬äºŒå­¦æœŸï¼š2026å¹´2æœˆ24æ—¥è‡³2026å¹´7æœˆ5æ—¥Ù¡'2025-2026å­¦å¹´æ ¡å†å·²å‘å¸ƒï¼Œè¯·å„ä½åŒå­¦æŸ¥çœ‹ã€‚\nç¬¬ä¸€å­¦æœŸï¼š2025å¹´9æœˆ1æ—¥è‡³2026å¹´1æœˆ18æ—¥\nç¬¬äºŒå­¦æœŸï¼š2026å¹´2æœˆ24æ—¥è‡³2026å¹´7æœˆ5æ—¥'¤initM¨PropertyÍD=ÍDMÂÂÂKªIdentifierÍD=ÍDF©publisherN§LiteralÍDHÍDM©æ•™åŠ¡å¤„«'æ•™åŠ¡å¤„'¤initM¨PropertyÍDXÍDwÂÂÂKªIdentifierÍDXÍDc«publishTimeN§LiteralÍDeÍDw°2025-07-20 10:00²'2025-07-20 10:00'¤initM¨PropertyÍD‚ÍDÂÂÂKªIdentifierÍD‚ÍDˆ¦isReadN§LiteralÍDŠÍDÃ¤true¤initM¨PropertyÍD™ÍD£ÂÂÂKªIdentifierÍD™ÍD¤typeN§LiteralÍDŸÍD£¦é€šçŸ¥¨'é€šçŸ¥'¤initL°ObjectExpressionÍD²ÍE£—M¨PropertyÍD½ÍDÇÂÂÂKªIdentifierÍD½ÍD¿¢idN§LiteralÍDÁÍDÇ¤n003¦'n003'¤initM¨PropertyÍDÒÍDæÂÂÂKªIdentifierÍDÒÍD×¥titleN§LiteralÍDÙÍDæÙ!å…³äºæœŸæœ«è€ƒè¯•å®‰æ’çš„é€šçŸ¥Ù#'å…³äºæœŸæœ«è€ƒè¯•å®‰æ’çš„é€šçŸ¥'¤initM¨PropertyÍDñÍE'ÂÂÂKªIdentifierÍDñÍDø§contentN§LiteralÍDúÍE'Ùk2025-2026-1å­¦æœŸæœŸæœ«è€ƒè¯•å®‰æ’å·²å‘å¸ƒï¼Œè¯·åŒå­¦ä»¬åŠæ—¶æŸ¥çœ‹è€ƒè¯•å®‰æ’ï¼Œåšå¥½å¤ä¹ å‡†å¤‡ã€‚Ùm'2025-2026-1å­¦æœŸæœŸæœ«è€ƒè¯•å®‰æ’å·²å‘å¸ƒï¼Œè¯·åŒå­¦ä»¬åŠæ—¶æŸ¥çœ‹è€ƒè¯•å®‰æ’ï¼Œåšå¥½å¤ä¹ å‡†å¤‡ã€‚'¤initM¨PropertyÍE2ÍEBÂÂÂKªIdentifierÍE2ÍE;©publisherN§LiteralÍE=ÍEB©æ•™åŠ¡å¤„«'æ•™åŠ¡å¤„'¤initM¨PropertyÍEMÍElÂÂÂKªIdentifierÍEMÍEX«publishTimeN§LiteralÍEZÍEl°2025-12-20 14:00²'2025-12-20 14:00'¤initM¨PropertyÍEwÍE„ÂÂÂKªIdentifierÍEwÍE}¦isReadN§LiteralÍEÍE„Â¥false¤initM¨PropertyÍEÍE›ÂÂÂKªIdentifierÍEÍE“¤typeN§LiteralÍE•ÍE›¬è€ƒè¯•é€šçŸ¥®'è€ƒè¯•é€šçŸ¥'¤init¥constÀH¶ExportNamedDeclarationÍEßÍIyI³VariableDeclarationÍEæÍIy‘J²VariableDeclaratorÍEìÍIxKªIdentifierÍEìÍEöªMOCK_EXAMSO¯ArrayExpressionÍEùÍIx“L°ObjectExpressionÍF ÍG"™M¨PropertyÍFÍFÂÂÂKªIdentifierÍFÍF¢idN§LiteralÍFÍF¤e001¦'e001'¤initM¨PropertyÍF ÍF6ÂÂÂKªIdentifierÍF ÍF*ªcourseNameN§LiteralÍF,ÍF6°Web å‰ç«¯åº”ç”¨²'Web å‰ç«¯åº”ç”¨'¤initM¨PropertyÍFAÍFQÂÂÂKªIdentifierÍFAÍFI¨examTypeN§LiteralÍFKÍFQ¬æœŸæœ«è€ƒè¯•®'æœŸæœ«è€ƒè¯•'¤initM¨PropertyÍF\ÍFrÂÂÂKªIdentifierÍF\ÍFd¨examDateN§LiteralÍFfÍFrª2026-01-10¬'2026-01-10'¤initM¨PropertyÍF}ÍF”ÂÂÂKªIdentifierÍF}ÍF…¨examTimeN§LiteralÍF‡ÍF”«09:00-11:00­'09:00-11:00'¤initM¨PropertyÍFŸÍF±ÂÂÂKªIdentifierÍFŸÍF§¨examRoomN§LiteralÍF©ÍF±ªæ•™8æ ‹201¬'æ•™8æ ‹201'¤initM¨PropertyÍF¼ÍFÍÂÂÂKªIdentifierÍF¼ÍFÆªseatNumberN§LiteralÍFÈÍFÍ£A15¥'A15'¤initM¨PropertyÍFØÍFòÂÂÂKªIdentifierÍFØÍFà¨semesterN§LiteralÍFâÍFò´2025-2026 ç¬¬1å­¦æœŸ¶'2025-2026 ç¬¬1å­¦æœŸ'¤initM¨PropertyÍFıÍGÂÂÂKªIdentifierÍFıÍG¥notesN§LiteralÍGÍGÙ8è¯·æºå¸¦å­¦ç”Ÿè¯å’Œèº«ä»½è¯ï¼Œæå‰15åˆ†é’Ÿå…¥åœºã€‚Ù:'è¯·æºå¸¦å­¦ç”Ÿè¯å’Œèº«ä»½è¯ï¼Œæå‰15åˆ†é’Ÿå…¥åœºã€‚'¤initL°ObjectExpressionÍG)ÍHJ™M¨PropertyÍG4ÍG>ÂÂÂKªIdentifierÍG4ÍG6¢idN§LiteralÍG8ÍG>¤e002¦'e002'¤initM¨PropertyÍGIÍG]ÂÂÂKªIdentifierÍGIÍGSªcourseNameN§LiteralÍGUÍG]²è½¯ä»¶ç»¼åˆå®è·µ´'è½¯ä»¶ç»¼åˆå®è·µ'¤initM¨PropertyÍGhÍGxÂÂÂKªIdentifierÍGhÍGp¨examTypeN§LiteralÍGrÍGx¬é¡¹ç›®ç­”è¾©®'é¡¹ç›®ç­”è¾©'¤initM¨PropertyÍGƒÍG™ÂÂÂKªIdentifierÍGƒÍG‹¨examDateN§LiteralÍGÍG™ª2026-01-12¬'2026-01-12'¤initM¨PropertyÍG¤ÍG»ÂÂÂKªIdentifierÍG¤ÍG¬¨examTimeN§LiteralÍG®ÍG»«14:00-17:00­'14:00-17:00'¤initM¨PropertyÍGÆÍGØÂÂÂKªIdentifierÍGÆÍGÎ¨examRoomN§LiteralÍGĞÍGØªæ•™9æ ‹708¬'æ•™9æ ‹708'¤initM¨PropertyÍGãÍGòÂÂÂKªIdentifierÍGãÍGíªseatNumberN§LiteralÍGïÍGò£â€”¥'â€”'¤initM¨PropertyÍGıÍHÂÂÂKªIdentifierÍGıÍH¨semesterN§LiteralÍHÍH´2025-2026 ç¬¬1å­¦æœŸ¶'2025-2026 ç¬¬1å­¦æœŸ'¤initM¨PropertyÍH"ÍHBÂÂÂKªIdentifierÍH"ÍH'¥notesN§LiteralÍH)ÍHBÙ;è¯·å‡†å¤‡å¥½é¡¹ç›®æ¼”ç¤ºPPTï¼Œæ¯ç»„ç­”è¾©æ—¶é—´15åˆ†é’Ÿã€‚Ù='è¯·å‡†å¤‡å¥½é¡¹ç›®æ¼”ç¤ºPPTï¼Œæ¯ç»„ç­”è¾©æ—¶é—´15åˆ†é’Ÿã€‚'¤initL°ObjectExpressionÍHQÍIt™M¨PropertyÍH\ÍHfÂÂÂKªIdentifierÍH\ÍH^¢idN§LiteralÍH`ÍHf¤e003¦'e003'¤initM¨PropertyÍHqÍH‰ÂÂÂKªIdentifierÍHqÍH{ªcourseNameN§LiteralÍH}ÍH‰¾å¤§å‹æ•°æ®åº“ç®¡ç†ä¸ç»´æŠ¤Ù 'å¤§å‹æ•°æ®åº“ç®¡ç†ä¸ç»´æŠ¤'¤initM¨PropertyÍH”ÍH¤ÂÂÂKªIdentifierÍH”ÍHœ¨examTypeN§LiteralÍHÍH¤¬æœŸæœ«è€ƒè¯•®'æœŸæœ«è€ƒè¯•'¤initM¨PropertyÍH¯ÍHÅÂÂÂKªIdentifierÍH¯ÍH·¨examDateN§LiteralÍH¹ÍHÅª2026-01-14¬'2026-01-14'¤initM¨PropertyÍHĞÍHçÂÂÂKªIdentifierÍHĞÍHØ¨examTimeN§LiteralÍHÚÍHç«09:00-11:00­'09:00-11:00'¤initM¨PropertyÍHòÍIÂÂÂKªIdentifierÍHòÍHú¨examRoomN§LiteralÍHüÍIªæ•™9æ ‹405¬'æ•™9æ ‹405'¤initM¨PropertyÍIÍI ÂÂÂKªIdentifierÍIÍIªseatNumberN§LiteralÍIÍI £B08¥'B08'¤initM¨PropertyÍI+ÍIEÂÂÂKªIdentifierÍI+ÍI3¨semesterN§LiteralÍI5ÍIE´2025-2026 ç¬¬1å­¦æœŸ¶'2025-2026 ç¬¬1å­¦æœŸ'¤initM¨PropertyÍIPÍIlÂÂÂKªIdentifierÍIPÍIU¥notesN§LiteralÍIWÍIlÙ5é—­å·è€ƒè¯•ï¼Œè¯·æºå¸¦2Bé“…ç¬”å’Œé»‘è‰²ç­¾å­—ç¬”ã€‚Ù7'é—­å·è€ƒè¯•ï¼Œè¯·æºå¸¦2Bé“…ç¬”å’Œé»‘è‰²ç­¾å­—ç¬”ã€‚'¤init¥constÀH¶ExportNamedDeclarationÍI¶ÍN0I³VariableDeclarationÍI½ÍN0‘J²VariableDeclaratorÍIÃÍN/KªIdentifierÍIÃÍIÓ°MOCK_ASSIGNMENTSO¯ArrayExpressionÍIÖÍN/“L°ObjectExpressionÍIİÍK^›M¨PropertyÍIèÍIòÂÂÂKªIdentifierÍIèÍIê¢idN§LiteralÍIìÍIò¤a001¦'a001'¤initM¨PropertyÍIıÍJÂÂÂKªIdentifierÍIıÍJªcourseNameN§LiteralÍJ	ÍJ°Web å‰ç«¯åº”ç”¨²'Web å‰ç«¯åº”ç”¨'¤initM¨PropertyÍJÍJ:ÂÂÂKªIdentifierÍJÍJ(ªcourseCodeN§LiteralÍJ*ÍJ:®VDZ02115204.06°'VDZ02115204.06'¤initM¨PropertyÍJEÍJXÂÂÂKªIdentifierÍJEÍJJ¥titleN§LiteralÍJLÍJX¾å®éªŒä¸€ï¼šä¸ªäººç®€å†é¡µé¢Ù 'å®éªŒä¸€ï¼šä¸ªäººç®€å†é¡µé¢'¤initM¨PropertyÍJcÍJÂÂÂKªIdentifierÍJcÍJn«descriptionN§LiteralÍJpÍJÙGä½¿ç”¨HTML+CSSåˆ¶ä½œä¸€ä¸ªä¸ªäººç®€å†é¡µé¢ï¼Œè¦æ±‚å“åº”å¼å¸ƒå±€ã€‚ÙI'ä½¿ç”¨HTML+CSSåˆ¶ä½œä¸€ä¸ªä¸ªäººç®€å†é¡µé¢ï¼Œè¦æ±‚å“åº”å¼å¸ƒå±€ã€‚'¤initM¨PropertyÍJšÍJ¶ÂÂÂKªIdentifierÍJšÍJ¢¨deadlineN§LiteralÍJ¤ÍJ¶°2025-10-15 23:59²'2025-10-15 23:59'¤initM¨PropertyÍJÁÍJÔÂÂÂKªIdentifierÍJÁÍJÇ¦statusN§LiteralÍJÉÍJÔ©submitted«'submitted'¤initM¨PropertyÍJßÍJğÂÂÂKªIdentifierÍJßÍJéªstatusTextN§LiteralÍJëÍJğ©å·²æäº¤«'å·²æäº¤'¤initM¨PropertyÍJûÍKÂÂÂKªIdentifierÍJûÍK ¥scoreN§LiteralÍKÍKÌ\¢92¤initM¨PropertyÍKÍK3ÂÂÂKªIdentifierÍKÍK§commentN§LiteralÍKÍK3ÙKé¡µé¢å¸ƒå±€åˆç†ï¼Œå“åº”å¼æ•ˆæœè‰¯å¥½ï¼Œä½†é¢œè‰²æ­é…å¯ä»¥ä¼˜åŒ–ã€‚ÙM'é¡µé¢å¸ƒå±€åˆç†ï¼Œå“åº”å¼æ•ˆæœè‰¯å¥½ï¼Œä½†é¢œè‰²æ­é…å¯ä»¥ä¼˜åŒ–ã€‚'¤initM¨PropertyÍK>ÍKVÂÂÂKªIdentifierÍK>ÍKP²attachmentRequiredN§LiteralÍKRÍKVÃ¤true¤initL°ObjectExpressionÍKeÍL²™M¨PropertyÍKpÍKzÂÂÂKªIdentifierÍKpÍKr¢idN§LiteralÍKtÍKz¤a002¦'a002'¤initM¨PropertyÍK…ÍK›ÂÂÂKªIdentifierÍK…ÍKªcourseNameN§LiteralÍK‘ÍK›°Web å‰ç«¯åº”ç”¨²'Web å‰ç«¯åº”ç”¨'¤initM¨PropertyÍK¦ÍKÂÂÂÂKªIdentifierÍK¦ÍK°ªcourseCodeN§LiteralÍK²ÍKÂ®VDZ02115204.06°'VDZ02115204.06'¤initM¨PropertyÍKÍÍKåÂÂÂKªIdentifierÍKÍÍKÒ¥titleN§LiteralÍKÔÍKå»å®éªŒäºŒï¼šToDo Liståº”ç”¨½'å®éªŒäºŒï¼šToDo Liståº”ç”¨'¤initM¨PropertyÍKğÍL"ÂÂÂKªIdentifierÍKğÍKû«descriptionN§LiteralÍKıÍL"ÙCä½¿ç”¨JavaScriptå®ç°ä¸€ä¸ªToDo Liståº”ç”¨ï¼Œæ”¯æŒå¢åˆ æ”¹æŸ¥ã€‚ÙE'ä½¿ç”¨JavaScriptå®ç°ä¸€ä¸ªToDo Liståº”ç”¨ï¼Œæ”¯æŒå¢åˆ æ”¹æŸ¥ã€‚'¤initM¨PropertyÍL-ÍLIÂÂÂKªIdentifierÍL-ÍL5¨deadlineN§LiteralÍL7ÍLI°2025-11-01 23:59²'2025-11-01 23:59'¤initM¨PropertyÍLTÍLkÂÂÂKªIdentifierÍLTÍLZ¦statusN§LiteralÍL\ÍLk­not_submitted¯'not_submitted'¤initM¨PropertyÍLvÍL‡ÂÂÂKªIdentifierÍLvÍL€ªstatusTextN§LiteralÍL‚ÍL‡©æœªæäº¤«'æœªæäº¤'¤initM¨PropertyÍL’ÍLªÂÂÂKªIdentifierÍL’ÍL¤²attachmentRequiredN§LiteralÍL¦ÍLªÃ¤true¤initL°ObjectExpressionÍL¹ÍN+›M¨PropertyÍLÄÍLÎÂÂÂKªIdentifierÍLÄÍLÆ¢idN§LiteralÍLÈÍLÎ¤a003¦'a003'¤initM¨PropertyÍLÙÍLíÂÂÂKªIdentifierÍLÙÍLãªcourseNameN§LiteralÍLåÍLí²è½¯ä»¶ç»¼åˆå®è·µ´'è½¯ä»¶ç»¼åˆå®è·µ'¤initM¨PropertyÍLøÍMÂÂÂKªIdentifierÍLøÍMªcourseCodeN§LiteralÍMÍM®VDZ02115204.xx°'VDZ02115204.xx'¤initM¨PropertyÍMÍM.ÂÂÂKªIdentifierÍMÍM$¥titleN§LiteralÍM&ÍM.²é¡¹ç›®ä¸­æœŸæŠ¥å‘Š´'é¡¹ç›®ä¸­æœŸæŠ¥å‘Š'¤initM¨PropertyÍM9ÍMbÂÂÂKªIdentifierÍM9ÍMD«descriptionN§LiteralÍMFÍMbÙNæäº¤é¡¹ç›®ä¸­æœŸæŠ¥å‘Šï¼ŒåŒ…æ‹¬éœ€æ±‚åˆ†æã€ç³»ç»Ÿè®¾è®¡ã€è¿›åº¦å®‰æ’ã€‚ÙP'æäº¤é¡¹ç›®ä¸­æœŸæŠ¥å‘Šï¼ŒåŒ…æ‹¬éœ€æ±‚åˆ†æã€ç³»ç»Ÿè®¾è®¡ã€è¿›åº¦å®‰æ’ã€‚'¤initM¨PropertyÍMmÍM‰ÂÂÂKªIdentifierÍMmÍMu¨deadlineN§LiteralÍMwÍM‰°2025-11-15 23:59²'2025-11-15 23:59'¤initM¨PropertyÍM”ÍM¤ÂÂÂKªIdentifierÍM”ÍMš¦statusN§LiteralÍMœÍM¤¦graded¨'graded'¤initM¨PropertyÍM¯ÍMÀÂÂÂKªIdentifierÍM¯ÍM¹ªstatusTextN§LiteralÍM»ÍMÀ©å·²æ‰¹æ”¹«'å·²æ‰¹æ”¹'¤initM¨PropertyÍMËÍMÔÂÂÂKªIdentifierÍMËÍMĞ¥scoreN§LiteralÍMÒÍMÔÌX¢88¤initM¨PropertyÍMßÍN ÂÂÂKªIdentifierÍMßÍMæ§commentN§LiteralÍMèÍN ÙBéœ€æ±‚åˆ†æè¾ƒå®Œæ•´ï¼Œç³»ç»Ÿè®¾è®¡åˆç†ï¼Œè¿›åº¦å®‰æ’å¯è¡Œã€‚ÙD'éœ€æ±‚åˆ†æè¾ƒå®Œæ•´ï¼Œç³»ç»Ÿè®¾è®¡åˆç†ï¼Œè¿›åº¦å®‰æ’å¯è¡Œã€‚'¤initM¨PropertyÍNÍN#ÂÂÂKªIdentifierÍNÍN²attachmentRequiredN§LiteralÍNÍN#Ã¤true¤init¥constÀH¶ExportNamedDeclarationÍNvÍN§I³VariableDeclarationÍN}ÍN§‘J²VariableDeclaratorÍNƒÍN¦KªIdentifierÍNƒÍN“°CURRENT_SEMESTERN§LiteralÍN–ÍN¦´2025-2026 ç¬¬1å­¦æœŸ¶'2025-2026 ç¬¬1å­¦æœŸ'¥constÀH¶ExportNamedDeclarationÍN·ÍNÖI³VariableDeclarationÍN¾ÍNÖ‘J²VariableDeclaratorÍNÄÍNÕKªIdentifierÍNÄÍNĞ¬CURRENT_WEEKN§LiteralÍNÓÍNÕ¢11¥constÀH¶ExportNamedDeclarationÍNçÍOhI³VariableDeclarationÍNîÍOh‘J²VariableDeclaratorÍNôÍOgKªIdentifierÍNôÍO°SEMESTER_OPTIONSO¯ArrayExpressionÍOÍOg”N§LiteralÍOÍO´2025-2026 ç¬¬1å­¦æœŸ¶'2025-2026 ç¬¬1å­¦æœŸ'N§LiteralÍO%ÍO5´2025-2026 ç¬¬2å­¦æœŸ¶'2025-2026 ç¬¬2å­¦æœŸ'N§LiteralÍO<ÍOL´2024-2025 ç¬¬2å­¦æœŸ¶'2024-2025 ç¬¬2å­¦æœŸ'N§LiteralÍOSÍOc´2024-2025 ç¬¬1å­¦æœŸ¶'2024-2025 ç¬¬1å­¦æœŸ'¥constÀH¶ExportNamedDeclarationÍOÍP#ÔrR™¤type¥start£end¢idªexpression©generator¥async¦params¤body³FunctionDeclarationÍO†ÍP#KªIdentifierÍOÍO®getWeekOptionsÂÂÂÔrS”¤type¥start£end¤body®BlockStatementÍO ÍP#“I³VariableDeclarationÍO§ÍO¾‘J²VariableDeclaratorÍO­ÍO½KªIdentifierÍO­ÍO´§optionsO¯ArrayExpressionÍO·ÍO½‘N§LiteralÍO¸ÍO¼¦å…¨éƒ¨¨'å…¨éƒ¨'¥constÔrT—¤type¥start£end¤init¤test¦update¤body¬ForStatementÍOÄÍPI³VariableDeclarationÍOÉÍOÒ‘J²VariableDeclaratorÍOÍÍOÒKªIdentifierÍOÍÍOÎ¡iN§LiteralÍOÑÍOÒ¡1£letÔrU–¤type¥start£end¤left¨operator¥right°BinaryExpressionÍOÔÍOÛKªIdentifierÍOÔÍOÕ¡i¢<=N§LiteralÍOÙÍOÛ¢20ÔrV–¤type¥start£end¨operator¦prefix¨argument°UpdateExpressionÍOİÍOà¢++ÂKªIdentifierÍOİÍOŞ¡iS®BlockStatementÍOâÍP‘ÔrW”¤type¥start£endªexpression³ExpressionStatementÍOíÍPÔrX–¤type¥start£end¦callee©arguments¨optional®CallExpressionÍOíÍPQ°MemberExpressionÍOíÍOùKªIdentifierÍOíÍOô§optionsKªIdentifierÍOõÍOù¤pushÂÂ‘ÔrY•¤type¥start£end«expressions¦quasis¯TemplateLiteralÍOúÍP‘KªIdentifierÍOşÍOÿ¡i’ÔrZ•¤type¥start£end¥value¤tail¯TemplateElementÍOûÍOüÔr[’£raw¦cooked£ç¬¬£ç¬¬ÂZ¯TemplateElementÍP ÍP[£å‘¨£å‘¨ÃÂÔr\”¤type¥start£end¨argument¯ReturnStatementÍPÍP KªIdentifierÍPÍP§optionsÀH¶ExportNamedDeclarationÍP6ÍPÊR³FunctionDeclarationÍP=ÍPÊKªIdentifierÍPFÍPV°isValidStudentIdÂÂÂ‘KªIdentifierÍPWÍP`©studentIdS®BlockStatementÍPbÍPÊ‘\¯ReturnStatementÍPiÍPÇU±LogicalExpressionÍPpÍPÆU±LogicalExpressionÍPpÍP®U°BinaryExpressionÍPpÍPKªIdentifierÍPpÍPy©studentId£===N§LiteralÍP~ÍP­2024316020318¯'2024316020318'¢||U°BinaryExpressionÍP‘ÍP®KªIdentifierÍP‘ÍPš©studentId£===N§LiteralÍPŸÍP®­2024316020320¯'2024316020320'¢||U°BinaryExpressionÍP²ÍPÆKªIdentifierÍP²ÍP»©studentId£===N§LiteralÍPÀÍPÆ¤demo¦'demo'ÀH¶ExportNamedDeclarationÍPİÍQŒR³FunctionDeclarationÍPäÍQŒKªIdentifierÍPíÍPı°validatePasswordÂÂÂ’KªIdentifierÍPşÍQ©studentIdKªIdentifierÍQ	ÍQ¨passwordS®BlockStatementÍQÍQŒ’Ôr]–¤type¥start£end¤testªconsequent©alternate«IfStatementÍQÍQaU±LogicalExpressionÍQÍQ@V¯UnaryExpressionÍQÍQ'¡!ÃKªIdentifierÍQÍQ'¨password¢||U°BinaryExpressionÍQ+ÍQ@Q°MemberExpressionÍQ+ÍQ:KªIdentifierÍQ+ÍQ3¨passwordKªIdentifierÍQ4ÍQ:¦lengthÂÂ£===N§LiteralÍQ?ÍQ@ ¡0S®BlockStatementÍQBÍQa‘\¯ReturnStatementÍQMÍQZN§LiteralÍQTÍQYÂ¥falseÀ\¯ReturnStatementÍQ}ÍQ‰N§LiteralÍQ„ÍQˆÃ¤trueÀ

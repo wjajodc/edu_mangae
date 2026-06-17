@@ -1,0 +1,16 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "教学管理系统学生端"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "教学管理系统"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "教学管理系统"
+    }
+  ]
+}
