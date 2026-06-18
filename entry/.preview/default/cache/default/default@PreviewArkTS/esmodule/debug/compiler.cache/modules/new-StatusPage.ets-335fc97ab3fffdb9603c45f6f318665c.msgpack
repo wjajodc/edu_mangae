@@ -1,0 +1,709 @@
+Ôr@Ÿªassertions¤code´customTransformCache¬dependencies¢id¤meta±moduleSideEffects¬originalCode±originalSourcemap«resolvedIds®sourcemapChainµsyntheticNamedExportsµtransformDependencies®transformFiles¨cacheAstÔrAÚL~if (!("finalizeConstruction" in ViewPU.prototype)) {
+    Reflect.set(ViewPU.prototype, "finalizeConstruction", () => { });
+}
+/**
+ * å­¦ç±ä¿¡æ¯é¡µé¢
+ * å¯¹åº”éœ€æ±‚ 4.23ï¼Œå¯¹æ ‡ HTML å­¦ç±åŸå‹
+ * ä¸‰ä¸ª Tab åˆ‡æ¢ï¼šå­¦ç±ä¿¡æ¯ã€èµ„æ–™ç”³è¯·ä¿®æ”¹ã€è”ç³»ä¿¡æ¯
+ */
+import router from "@ohos.router";
+import { TopBar } from '../components/TopBar';
+import { LoadingPlaceholder } from '../components/LoadingPlaceholder';
+import { MOCK_STATUS, STATUS_FIELDS, MOCK_STUDENT } from '../mock/MockData';
+class StatusPage extends ViewPU {
+    constructor(parent, params, __localStorage, elmtId = -1, paramsLambda = undefined, extraInfo) {
+        super(parent, __localStorage, elmtId, extraInfo);
+        if (typeof paramsLambda === "function") {
+            this.paramsGenerator_ = paramsLambda;
+        }
+        this.__activeTab = new ObservedPropertySimplePU(0, this, "activeTab");
+        this.__statusData = new ObservedPropertyObjectPU(MOCK_STATUS, this, "statusData");
+        this.__isLoading = new ObservedPropertySimplePU(true, this, "isLoading");
+        this.tabs = ['å­¦ç±ä¿¡æ¯', 'èµ„æ–™ä¿®æ”¹', 'è”ç³»ä¿¡æ¯'];
+        this.setInitiallyProvidedValue(params);
+        this.finalizeConstruction();
+    }
+    setInitiallyProvidedValue(params) {
+        if (params.activeTab !== undefined) {
+            this.activeTab = params.activeTab;
+        }
+        if (params.statusData !== undefined) {
+            this.statusData = params.statusData;
+        }
+        if (params.isLoading !== undefined) {
+            this.isLoading = params.isLoading;
+        }
+        if (params.tabs !== undefined) {
+            this.tabs = params.tabs;
+        }
+    }
+    updateStateVars(params) {
+    }
+    purgeVariableDependenciesOnElmtId(rmElmtId) {
+        this.__activeTab.purgeDependencyOnElmtId(rmElmtId);
+        this.__statusData.purgeDependencyOnElmtId(rmElmtId);
+        this.__isLoading.purgeDependencyOnElmtId(rmElmtId);
+    }
+    aboutToBeDeleted() {
+        this.__activeTab.aboutToBeDeleted();
+        this.__statusData.aboutToBeDeleted();
+        this.__isLoading.aboutToBeDeleted();
+        SubscriberManager.Get().delete(this.id__());
+        this.aboutToBeDeletedInternal();
+    }
+    get activeTab() {
+        return this.__activeTab.get();
+    }
+    set activeTab(newValue) {
+        this.__activeTab.set(newValue);
+    }
+    get statusData() {
+        return this.__statusData.get();
+    }
+    set statusData(newValue) {
+        this.__statusData.set(newValue);
+    }
+    get isLoading() {
+        return this.__isLoading.get();
+    }
+    set isLoading(newValue) {
+        this.__isLoading.set(newValue);
+    }
+    aboutToAppear() {
+        this.loadData();
+    }
+    async loadData() {
+        this.isLoading = true;
+        await new Promise((r) => setTimeout(r, 300));
+        this.statusData = MOCK_STATUS;
+        this.isLoading = false;
+    }
+    initialRender() {
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Column.create();
+            Column.debugLine("entry/src/main/ets/pages/StatusPage.ets(33:5)", "entry");
+            Column.width('100%');
+            Column.height('100%');
+            Column.backgroundColor('#EEF2F8');
+        }, Column);
+        {
+            this.observeComponentCreation2((elmtId, isInitialRender) => {
+                if (isInitialRender) {
+                    let componentCall = new TopBar(this, { title: 'å­¦ç±ä¿¡æ¯', showBack: true, onBack: () => router.back() }, undefined, elmtId, () => { }, { page: "entry/src/main/ets/pages/StatusPage.ets", line: 34, col: 7 });
+                    ViewPU.create(componentCall);
+                    let paramsLambda = () => {
+                        return {
+                            title: 'å­¦ç±ä¿¡æ¯',
+                            showBack: true,
+                            onBack: () => router.back()
+                        };
+                    };
+                    componentCall.paramsGenerator_ = paramsLambda;
+                }
+                else {
+                    this.updateStateVarsOfChildByElmtId(elmtId, {
+                        title: 'å­¦ç±ä¿¡æ¯', showBack: true
+                    });
+                }
+            }, { name: "TopBar" });
+        }
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            If.create();
+            if (this.isLoading) {
+                this.ifElseBranchUpdateFunction(0, () => {
+                    {
+                        this.observeComponentCreation2((elmtId, isInitialRender) => {
+                            if (isInitialRender) {
+                                let componentCall = new LoadingPlaceholder(this, {}, undefined, elmtId, () => { }, { page: "entry/src/main/ets/pages/StatusPage.ets", line: 37, col: 9 });
+                                ViewPU.create(componentCall);
+                                let paramsLambda = () => {
+                                    return {};
+                                };
+                                componentCall.paramsGenerator_ = paramsLambda;
+                            }
+                            else {
+                                this.updateStateVarsOfChildByElmtId(elmtId, {});
+                            }
+                        }, { name: "LoadingPlaceholder" });
+                    }
+                });
+            }
+            else {
+                this.ifElseBranchUpdateFunction(1, () => {
+                    this.observeComponentCreation2((elmtId, isInitialRender) => {
+                        // Tab åˆ‡æ¢
+                        Row.create();
+                        Row.debugLine("entry/src/main/ets/pages/StatusPage.ets(40:9)", "entry");
+                        // Tab åˆ‡æ¢
+                        Row.width('100%');
+                        // Tab åˆ‡æ¢
+                        Row.backgroundColor('#FFFFFF');
+                    }, Row);
+                    this.observeComponentCreation2((elmtId, isInitialRender) => {
+                        ForEach.create();
+                        const forEachItemGenFunction = (_item, idx) => {
+                            const tab = _item;
+                            this.observeComponentCreation2((elmtId, isInitialRender) => {
+                                Text.create(tab);
+                                Text.debugLine("entry/src/main/ets/pages/StatusPage.ets(42:13)", "entry");
+                                Text.fontSize(14);
+                                Text.fontWeight(this.activeTab === idx ? 700 : 400);
+                                Text.fontColor(this.activeTab === idx ? '#2563EB' : '#64748B');
+                                Text.layoutWeight(1);
+                                Text.textAlign(TextAlign.Center);
+                                Text.padding({ top: 12, bottom: 12 });
+                                Text.borderWidth({ bottom: this.activeTab === idx ? 2 : 0 });
+                                Text.borderColor('#2563EB');
+                                Text.onClick(() => { this.activeTab = idx; });
+                            }, Text);
+                            Text.pop();
+                        };
+                        this.forEachUpdateFunction(elmtId, this.tabs, forEachItemGenFunction, undefined, true, false);
+                    }, ForEach);
+                    ForEach.pop();
+                    // Tab åˆ‡æ¢
+                    Row.pop();
+                    this.observeComponentCreation2((elmtId, isInitialRender) => {
+                        If.create();
+                        // å†…å®¹åŒºåŸŸ
+                        if (this.activeTab === 0) {
+                            this.ifElseBranchUpdateFunction(0, () => {
+                                this.buildStatusInfo.bind(this)();
+                            });
+                        }
+                        else if (this.activeTab === 1) {
+                            this.ifElseBranchUpdateFunction(1, () => {
+                                this.buildDocumentChange.bind(this)();
+                            });
+                        }
+                        else {
+                            this.ifElseBranchUpdateFunction(2, () => {
+                                this.buildContactInfo.bind(this)();
+                            });
+                        }
+                    }, If);
+                    If.pop();
+                });
+            }
+        }, If);
+        If.pop();
+        Column.pop();
+    }
+    /**
+     * å­¦ç±ä¿¡æ¯ Tab
+     * åªè¯»å±•ç¤ºæ‰€æœ‰å­¦ç±å­—æ®µï¼ŒDL ç½‘æ ¼å¸ƒå±€
+     */
+    buildStatusInfo(parent = null) {
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Scroll.create();
+            Scroll.debugLine("entry/src/main/ets/pages/StatusPage.ets(76:5)", "entry");
+            Scroll.width('100%');
+            Scroll.layoutWeight(1);
+            Scroll.scrollBar(BarState.Off);
+        }, Scroll);
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Column.create();
+            Column.debugLine("entry/src/main/ets/pages/StatusPage.ets(77:7)", "entry");
+            Column.width('100%');
+        }, Column);
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Column.create();
+            Column.debugLine("entry/src/main/ets/pages/StatusPage.ets(78:9)", "entry");
+            Column.width('100%');
+            Column.padding({ left: 16, right: 16 });
+            Column.backgroundColor('#FFFFFF');
+            Column.borderRadius(12);
+            Column.margin({ top: 14, left: 14, right: 14 });
+        }, Column);
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            ForEach.create();
+            const forEachItemGenFunction = (_item, idx) => {
+                const field = _item;
+                this.observeComponentCreation2((elmtId, isInitialRender) => {
+                    Row.create();
+                    Row.debugLine("entry/src/main/ets/pages/StatusPage.ets(80:13)", "entry");
+                    Row.width('100%');
+                    Row.padding({ top: 12, bottom: 12 });
+                    Row.borderWidth({ bottom: idx < STATUS_FIELDS.length - 1 ? 0.5 : 0 });
+                    Row.borderColor('#E2E8F0');
+                }, Row);
+                this.observeComponentCreation2((elmtId, isInitialRender) => {
+                    Text.create(field);
+                    Text.debugLine("entry/src/main/ets/pages/StatusPage.ets(81:15)", "entry");
+                    Text.fontSize(13);
+                    Text.fontColor('#64748B');
+                    Text.width(80);
+                }, Text);
+                Text.pop();
+                this.observeComponentCreation2((elmtId, isInitialRender) => {
+                    Text.create(this.getFieldValue(field));
+                    Text.debugLine("entry/src/main/ets/pages/StatusPage.ets(83:15)", "entry");
+                    Text.fontSize(13);
+                    Text.fontWeight(FontWeight.Medium);
+                    Text.fontColor('#0F172A');
+                    Text.layoutWeight(1);
+                }, Text);
+                Text.pop();
+                Row.pop();
+            };
+            this.forEachUpdateFunction(elmtId, STATUS_FIELDS, forEachItemGenFunction, undefined, true, false);
+        }, ForEach);
+        ForEach.pop();
+        Column.pop();
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Column.create();
+            Column.debugLine("entry/src/main/ets/pages/StatusPage.ets(99:9)", "entry");
+            Column.height(24);
+        }, Column);
+        Column.pop();
+        Column.pop();
+        Scroll.pop();
+    }
+    /**
+     * èµ„æ–™ç”³è¯·ä¿®æ”¹ Tabï¼ˆå ä½ï¼‰
+     */
+    buildDocumentChange(parent = null) {
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Column.create();
+            Column.debugLine("entry/src/main/ets/pages/StatusPage.ets(111:5)", "entry");
+            Column.width('100%');
+            Column.layoutWeight(1);
+            Column.justifyContent(FlexAlign.Center);
+            Column.alignItems(HorizontalAlign.Center);
+        }, Column);
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Text.create('èµ„æ–™ç”³è¯·ä¿®æ”¹');
+            Text.debugLine("entry/src/main/ets/pages/StatusPage.ets(112:7)", "entry");
+            Text.fontSize(16);
+            Text.fontWeight(FontWeight.Medium);
+            Text.margin({ bottom: 12 });
+        }, Text);
+        Text.pop();
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Text.create('èµ„æ–™ä¿®æ”¹åŠŸèƒ½å¼€å‘ä¸­ï¼Œå¦‚éœ€ä¿®æ”¹å­¦ç±èµ„æ–™ï¼Œè¯·è”ç³»æ•™åŠ¡å¤„ã€‚');
+            Text.debugLine("entry/src/main/ets/pages/StatusPage.ets(114:7)", "entry");
+            Text.fontSize(13);
+            Text.fontColor('#64748B');
+            Text.textAlign(TextAlign.Center);
+            Text.padding({ left: 24, right: 24 });
+        }, Text);
+        Text.pop();
+        Column.pop();
+    }
+    /**
+     * è”ç³»ä¿¡æ¯ Tabï¼ˆå ä½ï¼‰
+     */
+    buildContactInfo(parent = null) {
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Scroll.create();
+            Scroll.debugLine("entry/src/main/ets/pages/StatusPage.ets(127:5)", "entry");
+            Scroll.width('100%');
+            Scroll.layoutWeight(1);
+            Scroll.scrollBar(BarState.Off);
+        }, Scroll);
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Column.create();
+            Column.debugLine("entry/src/main/ets/pages/StatusPage.ets(128:7)", "entry");
+            Column.width('100%');
+        }, Column);
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Column.create();
+            Column.debugLine("entry/src/main/ets/pages/StatusPage.ets(129:9)", "entry");
+            Column.width('100%');
+            Column.padding({ left: 16, right: 16 });
+            Column.backgroundColor('#FFFFFF');
+            Column.borderRadius(12);
+            Column.margin({ top: 14, left: 14, right: 14 });
+        }, Column);
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Row.create();
+            Row.debugLine("entry/src/main/ets/pages/StatusPage.ets(130:11)", "entry");
+            Row.width('100%');
+            Row.padding({ top: 14, bottom: 14 });
+            Row.borderWidth({ bottom: 0.5 });
+            Row.borderColor('#E2E8F0');
+        }, Row);
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Text.create('æ‰‹æœºå·');
+            Text.debugLine("entry/src/main/ets/pages/StatusPage.ets(131:13)", "entry");
+            Text.fontSize(13);
+            Text.fontColor('#64748B');
+            Text.width(80);
+        }, Text);
+        Text.pop();
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Text.create(MOCK_STUDENT.phone);
+            Text.debugLine("entry/src/main/ets/pages/StatusPage.ets(132:13)", "entry");
+            Text.fontSize(13);
+            Text.fontWeight(500);
+            Text.fontColor('#0F172A');
+            Text.layoutWeight(1);
+        }, Text);
+        Text.pop();
+        Row.pop();
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Row.create();
+            Row.debugLine("entry/src/main/ets/pages/StatusPage.ets(135:11)", "entry");
+            Row.width('100%');
+            Row.padding({ top: 14, bottom: 14 });
+            Row.borderWidth({ bottom: 0.5 });
+            Row.borderColor('#E2E8F0');
+        }, Row);
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Text.create('é‚®ç®±');
+            Text.debugLine("entry/src/main/ets/pages/StatusPage.ets(136:13)", "entry");
+            Text.fontSize(13);
+            Text.fontColor('#64748B');
+            Text.width(80);
+        }, Text);
+        Text.pop();
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Text.create(MOCK_STUDENT.email);
+            Text.debugLine("entry/src/main/ets/pages/StatusPage.ets(137:13)", "entry");
+            Text.fontSize(13);
+            Text.fontWeight(500);
+            Text.fontColor('#0F172A');
+            Text.layoutWeight(1);
+        }, Text);
+        Text.pop();
+        Row.pop();
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Row.create();
+            Row.debugLine("entry/src/main/ets/pages/StatusPage.ets(140:11)", "entry");
+            Row.width('100%');
+            Row.padding({ top: 14, bottom: 14 });
+        }, Row);
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Text.create('é€šè®¯åœ°å€');
+            Text.debugLine("entry/src/main/ets/pages/StatusPage.ets(141:13)", "entry");
+            Text.fontSize(13);
+            Text.fontColor('#64748B');
+            Text.width(80);
+        }, Text);
+        Text.pop();
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Text.create(MOCK_STUDENT.address);
+            Text.debugLine("entry/src/main/ets/pages/StatusPage.ets(142:13)", "entry");
+            Text.fontSize(13);
+            Text.fontWeight(500);
+            Text.fontColor('#0F172A');
+            Text.layoutWeight(1);
+        }, Text);
+        Text.pop();
+        Row.pop();
+        Column.pop();
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Column.create();
+            Column.debugLine("entry/src/main/ets/pages/StatusPage.ets(149:9)", "entry");
+            Column.height(24);
+        }, Column);
+        Column.pop();
+        Column.pop();
+        Scroll.pop();
+    }
+    /** æ ¹æ®å­—æ®µåè·å–å¯¹åº”çš„å€¼ */
+    getFieldValue(field) {
+        if (field === 'å­¦å·') {
+            return this.statusData.studentId;
+        }
+        if (field === 'å§“å') {
+            return this.statusData.name;
+        }
+        if (field === 'æ€§åˆ«') {
+            return this.statusData.gender;
+        }
+        if (field === 'é™¢ç³»') {
+            return this.statusData.department;
+        }
+        if (field === 'ä¸“ä¸š') {
+            return this.statusData.major;
+        }
+        if (field === 'ç­çº§') {
+            return this.statusData.className;
+        }
+        if (field === 'å­¦ç±çŠ¶æ€') {
+            return this.statusData.status;
+        }
+        if (field === 'å…¥æ ¡æ—¶é—´') {
+            return this.statusData.enrollmentDate;
+        }
+        if (field === 'é¢„è®¡æ¯•ä¸šæ—¶é—´') {
+            return this.statusData.expectedGraduation;
+        }
+        if (field === 'åŸ¹å…»å±‚æ¬¡') {
+            return this.statusData.educationLevel;
+        }
+        if (field === 'å­¦åˆ¶') {
+            return this.statusData.schoolSystem;
+        }
+        return 'â€”';
+    }
+    rerender() {
+        this.updateDirtyElements();
+    }
+    static getEntryName() {
+        return "StatusPage";
+    }
+}
+registerNamedRoute(() => new StatusPage(undefined, {}), "", { bundleName: "com.example.notepad", moduleName: "entry", pagePath: "pages/StatusPage", pageFullPath: "entry/src/main/ets/pages/StatusPage", integratedHsp: "false", moduleType: "followWithHap" });
+//# sourceMappingURL=StatusPage.js.mapÂ”ÙX hvigor_ignore_C:_HuaWei_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.router.d.tsÙXC:\Users\32492\DevEcoStudioProjects\harmony_edu\entry\src\main\ets\components\TopBar.etsÙdC:\Users\32492\DevEcoStudioProjects\harmony_edu\entry\src\main\ets\components\LoadingPlaceholder.etsÙTC:\Users\32492\DevEcoStudioProjects\harmony_edu\entry\src\main\ets\mock\MockData.etsÙWC:\Users\32492\DevEcoStudioProjects\harmony_edu\entry\src\main\ets\pages\StatusPage.etsÔrBšªmoduleName±isLocalDependency¯isNodeEntryFile§pkgPath±belongProjectPath§pkgNameªpkgVersion±dependencyPkgInfo°belongModulePath¬shouldEmitJs¥entryÃÂÙ5C:\Users\32492\DevEcoStudioProjects\harmony_edu\entryÙ/C:\Users\32492\DevEcoStudioProjects\harmony_edu¥entry¥1.0.0Ô  Ù5C:\Users\32492\DevEcoStudioProjects\harmony_edu\entryÃÃÚ?/**
+ * å­¦ç±ä¿¡æ¯é¡µé¢
+ * å¯¹åº”éœ€æ±‚ 4.23ï¼Œå¯¹æ ‡ HTML å­¦ç±åŸå‹
+ * ä¸‰ä¸ª Tab åˆ‡æ¢ï¼šå­¦ç±ä¿¡æ¯ã€èµ„æ–™ç”³è¯·ä¿®æ”¹ã€è”ç³»ä¿¡æ¯
+ */
+import { router } from '@kit.ArkUI';
+import { TopBar } from '../components/TopBar';
+import { LoadingPlaceholder } from '../components/LoadingPlaceholder';
+import { MOCK_STATUS, STATUS_FIELDS, MOCK_STUDENT } from '../mock/MockData';
+import { StudentStatus } from '../model/CommonModel';
+
+@Entry
+@Component
+struct StatusPage {
+  @State activeTab: number = 0;
+  @State statusData: StudentStatus = MOCK_STATUS;
+  @State isLoading: boolean = true;
+
+  private tabs: string[] = ['å­¦ç±ä¿¡æ¯', 'èµ„æ–™ä¿®æ”¹', 'è”ç³»ä¿¡æ¯'];
+
+  aboutToAppear(): void {
+    this.loadData();
+  }
+
+  private async loadData(): Promise<void> {
+    this.isLoading = true;
+    await new Promise<void>((r) => setTimeout(r, 300));
+    this.statusData = MOCK_STATUS;
+    this.isLoading = false;
+  }
+
+  build() {
+    Column() {
+      TopBar({ title: 'å­¦ç±ä¿¡æ¯', showBack: true, onBack: () => router.back() })
+
+      if (this.isLoading) {
+        LoadingPlaceholder()
+      } else {
+        // Tab åˆ‡æ¢
+        Row() {
+          ForEach(this.tabs, (tab: string, idx: number) => {
+            Text(tab)
+              .fontSize(14)
+              .fontWeight(this.activeTab === idx ? 700 : 400)
+              .fontColor(this.activeTab === idx ? '#2563EB' : '#64748B')
+              .layoutWeight(1)
+              .textAlign(TextAlign.Center)
+              .padding({ top: 12, bottom: 12 })
+              .borderWidth({ bottom: this.activeTab === idx ? 2 : 0 })
+              .borderColor('#2563EB')
+              .onClick(() => { this.activeTab = idx; })
+          })
+        }
+        .width('100%')
+        .backgroundColor('#FFFFFF')
+
+        // å†…å®¹åŒºåŸŸ
+        if (this.activeTab === 0) {
+          this.buildStatusInfo()
+        } else if (this.activeTab === 1) {
+          this.buildDocumentChange()
+        } else {
+          this.buildContactInfo()
+        }
+      }
+    }
+    .width('100%').height('100%').backgroundColor('#EEF2F8')
+  }
+
+  /**
+   * å­¦ç±ä¿¡æ¯ Tab
+   * åªè¯»å±•ç¤ºæ‰€æœ‰å­¦ç±å­—æ®µï¼ŒDL ç½‘æ ¼å¸ƒå±€
+   */
+  @Builder
+  buildStatusInfo(): void {
+    Scroll() {
+      Column() {
+        Column() {
+          ForEach(STATUS_FIELDS, (field: string, idx: number) => {
+            Row() {
+              Text(field)
+                .fontSize(13).fontColor('#64748B').width(80)
+              Text(this.getFieldValue(field))
+                .fontSize(13).fontWeight(FontWeight.Medium).fontColor('#0F172A')
+                .layoutWeight(1)
+            }
+            .width('100%')
+            .padding({ top: 12, bottom: 12 })
+            .borderWidth({ bottom: idx < STATUS_FIELDS.length - 1 ? 0.5 : 0 })
+            .borderColor('#E2E8F0')
+          })
+        }
+        .width('100%')
+        .padding({ left: 16, right: 16 })
+        .backgroundColor('#FFFFFF')
+        .borderRadius(12)
+        .margin({ top: 14, left: 14, right: 14 })
+
+        Column().height(24)
+      }
+      .width('100%')
+    }
+    .width('100%').layoutWeight(1).scrollBar(BarState.Off)
+  }
+
+  /**
+   * èµ„æ–™ç”³è¯·ä¿®æ”¹ Tabï¼ˆå ä½ï¼‰
+   */
+  @Builder
+  buildDocumentChange(): void {
+    Column() {
+      Text('èµ„æ–™ç”³è¯·ä¿®æ”¹')
+        .fontSize(16).fontWeight(FontWeight.Medium).margin({ bottom: 12 })
+      Text('èµ„æ–™ä¿®æ”¹åŠŸèƒ½å¼€å‘ä¸­ï¼Œå¦‚éœ€ä¿®æ”¹å­¦ç±èµ„æ–™ï¼Œè¯·è”ç³»æ•™åŠ¡å¤„ã€‚')
+        .fontSize(13).fontColor('#64748B').textAlign(TextAlign.Center)
+        .padding({ left: 24, right: 24 })
+    }
+    .width('100%').layoutWeight(1)
+    .justifyContent(FlexAlign.Center).alignItems(HorizontalAlign.Center)
+  }
+
+  /**
+   * è”ç³»ä¿¡æ¯ Tabï¼ˆå ä½ï¼‰
+   */
+  @Builder
+  buildContactInfo(): void {
+    Scroll() {
+      Column() {
+        Column() {
+          Row() {
+            Text('æ‰‹æœºå·').fontSize(13).fontColor('#64748B').width(80)
+            Text(MOCK_STUDENT.phone).fontSize(13).fontWeight(500).fontColor('#0F172A').layoutWeight(1)
+          }.width('100%').padding({ top: 14, bottom: 14 }).borderWidth({ bottom: 0.5 }).borderColor('#E2E8F0')
+
+          Row() {
+            Text('é‚®ç®±').fontSize(13).fontColor('#64748B').width(80)
+            Text(MOCK_STUDENT.email).fontSize(13).fontWeight(500).fontColor('#0F172A').layoutWeight(1)
+          }.width('100%').padding({ top: 14, bottom: 14 }).borderWidth({ bottom: 0.5 }).borderColor('#E2E8F0')
+
+          Row() {
+            Text('é€šè®¯åœ°å€').fontSize(13).fontColor('#64748B').width(80)
+            Text(MOCK_STUDENT.address).fontSize(13).fontWeight(500).fontColor('#0F172A').layoutWeight(1)
+          }.width('100%').padding({ top: 14, bottom: 14 })
+        }
+        .width('100%').padding({ left: 16, right: 16 })
+        .backgroundColor('#FFFFFF').borderRadius(12)
+        .margin({ top: 14, left: 14, right: 14 })
+
+        Column().height(24)
+      }
+      .width('100%')
+    }
+    .width('100%').layoutWeight(1).scrollBar(BarState.Off)
+  }
+
+  /** æ ¹æ®å­—æ®µåè·å–å¯¹åº”çš„å€¼ */
+  private getFieldValue(field: string): string {
+    if (field === 'å­¦å·') {
+      return this.statusData.studentId;
+    }
+    if (field === 'å§“å') {
+      return this.statusData.name;
+    }
+    if (field === 'æ€§åˆ«') {
+      return this.statusData.gender;
+    }
+    if (field === 'é™¢ç³»') {
+      return this.statusData.department;
+    }
+    if (field === 'ä¸“ä¸š') {
+      return this.statusData.major;
+    }
+    if (field === 'ç­çº§') {
+      return this.statusData.className;
+    }
+    if (field === 'å­¦ç±çŠ¶æ€') {
+      return this.statusData.status;
+    }
+    if (field === 'å…¥æ ¡æ—¶é—´') {
+      return this.statusData.enrollmentDate;
+    }
+    if (field === 'é¢„è®¡æ¯•ä¸šæ—¶é—´') {
+      return this.statusData.expectedGraduation;
+    }
+    if (field === 'åŸ¹å…»å±‚æ¬¡') {
+      return this.statusData.educationLevel;
+    }
+    if (field === 'å­¦åˆ¶') {
+      return this.statusData.schoolSystem;
+    }
+    return 'â€”';
+  }
+}
+ÀÔrC”¬@ohos.routerÙ ../components/LoadingPlaceholder°../mock/MockData´../components/TopBarÔrD—ªassertions¨external¢id¤meta±moduleSideEffectsªresolvedByµsyntheticNamedExportsAÃÙX hvigor_ignore_C:_HuaWei_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.router.d.tsAÃªoh-resolveÂDAÂÙdC:\Users\32492\DevEcoStudioProjects\harmony_edu\entry\src\main\ets\components\LoadingPlaceholder.etsAÃªoh-resolveÂDAÂÙTC:\Users\32492\DevEcoStudioProjects\harmony_edu\entry\src\main\ets\mock\MockData.etsAÃªoh-resolveÂDAÂÙXC:\Users\32492\DevEcoStudioProjects\harmony_edu\entry\src\main\ets\components\TopBar.etsAÃªoh-resolveÂ“ÔrE–§version¤fileªsourceRoot§sources¥names¨mappings­StatusPage.js ‘®StatusPage.etsÜ¸‘”    ‘” –”   ” 	” ” ”! #”" $˜”   ” ”	 	” ” ” ”- -”. .˜”   ” ”	 	” ” ”# #”ÌE ÌE”ÌF ÌFœ”   ” ”	 	” ” ”# #”% %”1 1”3 3”9 9”ÌK ÌK”ÌL ÌL’” ” ‘”  ’”8 ”9 ’”9 %”ÌD 0’”8 ”< "˜” ” ” "” $”# *”% ,”+ 2”, 3‘” 	5’” 	” ’” 	” ’” 	” ’” 	” ’” 	” ’” 	” ’” ” –” ” ” 	” ” ” ’” ” ”” 
+”	 ”
+ ” —” ” ” 	” ” ” ” Ü ” ” 
+” ” ” ” ” ”  ”  "”! #”+ -”, .”- /”/ 1”2 4”3 5”4 6”5 7—” ” ” 	” ” ”% !”& "—” ” ” 	” ” ” ” ’” ” ‘” ’”  ”  
+–”  ”  
+” ÌB” ÌB
+” ÌB” ÌB–”  ”  
+” ÌB” ÌB” ÌB”  ÌB –”  ”  
+” ÌB"”" ÌB1”# ÌB2”, ÌB;Ü ”, !”2 !”9 !”; !”Ì@ !”ÌB !”ÌH !”ÌJ !”ÌR !&”ÌT !(”ÌX !,”ÌZ !.”Ì` !4”Ìb !6”Ìe !9”Ìg !;”Ìh !<”Ìn !ÌB”Ìo !ÌC”Ìs !ÌG”Ìu !ÌI”Ìw !ÌK”” !”! !”# !”) !”” !”$ !&”& !(”* !,š” !.”" !4”$ !6”' !9”) !;”* !<”0 !ÌB”1 !ÌC”5 !ÌG”7 !ÌI˜” !” !” !”% !”' !”/ !&”1 !(”5 !,–” #” #
+” #” #” #”  #’”8 $”ÌJ $‘” %‘” %’” &”! &’” '” '’” &”! &–” '” '” 5	”! 5”" 5”( 5’” &”! &–” '” '” 6	”+ 6”, 6”5 6"’” (
+” (’”? (+”ÌB (6””  )”$ )”, )”/ )–”  )”$ )”% *”- *”. *”0 *Ü ”  )”$ )”% +”/ +”0 +”4 +”5 +”> +(”ÌC +-”ÌF +0”ÌG +1”ÌH +2”ÌI +3”ÌL +6”ÌM +7”ÌN +8”ÌO +9”ÌR +<Ü ”  )”$ )”% ,”. ,”/ ,”3 ,”4 ,”= ,'”ÌB ,,”ÌE ,/”ÌF ,0”ÌG ,1”ÌH ,2”ÌQ ,;”ÌR ,<”ÌS ,=”ÌT ,>”Ì] ,ÌG–”  )”$ )”% -”1 -”2 -”3 -˜”  )”$ )”% .”. .”/ .”8 ."”9 .#”? .)”  )”$ )”% /”, /”- /”/ /”2 /”4 /”6 / ”8 /"”> /(”Ì@ /*”ÌB /,”ÌD /.Ü ”  )”$ )”% 0”0 0”1 0”3 0”9 0#”; 0%”? 0)”Ì@ 0*”ÌI 03”ÌN 08”ÌQ 0;”ÌR 0<”ÌS 0=”ÌT 0>”ÌU 0?”ÌV 0Ì@”ÌW 0ÌA”ÌX 0ÌB”ÌY 0ÌC”Ì[ 0ÌE–”  )”$ )”% 1”0 1”1 1”: 1$Ü ”  )”$ )”% 2”, 2”- 2”0 2”2 2”5 2”9 2#”: 2$”ÌC 2-”ÌF 20”ÌI 23”ÌJ 24”ÌK 25”ÌL 26’” )”  )””; (”? (”Ì@ (”ÌD (’” (
+” (’” &” &’” '” '’” 8” 8˜” 9” 9”  9”! 9”* 9”/ 9”0 9 ”2 9"•”  :
+”$ :”% :”4 :”ÌA : ‘” ;	˜” ;”! ;”% ;”& ;”/ ;!”4 ;&”5 ;'”7 ;)•”  <
+”$ <”% <”8 <"”ÌE <$‘” =	‘” =•”  >
+”$ >”% >”5 >”ÌB >!‘” ?	‘” Ì@’”  ”  
+‘” ÌC‘” ÌE‘” ÌH’” ÌJ” ÌJ’” ÌK” ÌK
+–” ÌK” ÌK
+” Ìf” Ìf
+” Ìf” Ìf–” ÌK” ÌK
+” Ìf” Ìf”  Ìf ”! Ìf!˜” ÌK” ÌK
+” Ìf#” Ìf,” Ìf-”% Ìf5”& Ìf6”) Ìf9’” ÌL” ÌL–” ÌL” ÌL” Ìd” Ìd” Ìd” Ìd’” ÌM” ÌM–” ÌM” ÌM” Ì\	” Ì\” Ì\” Ì\” ÌM” ÌM” Ì]	” Ì]” Ì]” Ì]”! Ì]”# Ì]”% Ì]”' Ì]”, Ì]"”. Ì]$”0 Ì]&”2 Ì](–” ÌM” ÌM” Ì^	”" Ì^”# Ì^”, Ì^"–” ÌM” ÌM” Ì_	” Ì_”  Ì_”" Ì_Ü ” ÌM” ÌM” Ì`	” Ì`” Ì`” Ì`” Ì`”! Ì`”# Ì`”% Ì`”) Ì`”+ Ì`!”- Ì`#”/ Ì`%”4 Ì`*”6 Ì`,”8 Ì`.”: Ì`0’” ÌN
+” ÌN’”3 ÌN1”6 ÌN<’” ÌO” ÌO–” ÌO” ÌO” ÌV” ÌV” ÌV”$ ÌV” ÌO” ÌO” ÌW” ÌW”  ÌW”" ÌW”% ÌW”' ÌW”) ÌW”+ ÌW ”1 ÌW&”3 ÌW(”5 ÌW*”7 ÌW,Ü ” ÌO” ÌO” ÌX”# ÌX”$ ÌX”& ÌX”, ÌX!”. ÌX#”1 ÌX&”4 ÌX)”ÌA ÌX6”ÌB ÌX7”ÌH ÌX=”ÌK ÌXÌ@”ÌL ÌXÌA”ÌM ÌXÌB”ÌN ÌXÌC”ÌO ÌXÌD”ÌR ÌXÌG”ÌS ÌXÌH”ÌT ÌXÌI”ÌU ÌXÌJ”ÌV ÌXÌK”ÌX ÌXÌM–” ÌO” ÌO” ÌY”# ÌY”$ ÌY”- ÌY"”” ÌP” ÌP”  ÌP”% ÌP–” ÌP” ÌP” ÌQ”! ÌQ”" ÌQ”$ ÌQ–” ÌP” ÌP” ÌQ”" ÌQ'”# ÌQ(”, ÌQ1–” ÌP” ÌP” ÌQ3” ÌQ8” ÌQ9”! ÌQ;’” ÌP” ÌP™” ÌR” ÌR”  ÌR”$ ÌR”% ÌR”2 ÌR%”3 ÌR&”8 ÌR+”9 ÌR,–” ÌR” ÌR” ÌS”! ÌS”" ÌS”$ ÌS˜” ÌR” ÌR” ÌS”# ÌS(”$ ÌS)”. ÌS3”/ ÌS4”5 ÌS:–” ÌR” ÌR” ÌS<”" ÌSÌE”# ÌSÌF”, ÌSÌO–” ÌR” ÌR” ÌT”% ÌT”& ÌT”' ÌT’” ÌR” ÌR’” ÌO” ÌO’”/ ÌN”< ÌN’” ÌN
+” ÌN’” ÌM” ÌM’” Ìb” Ìb–” Ìb” Ìb” Ìb” Ìb” Ìb” Ìb’” Ìb” Ìb’” ÌL” ÌL’” ÌK” ÌK
+‘” Ìg‘” Ìi‘” Ìk’” Ìm” Ìm’” Ìn” Ìn
+–” Ìn” Ìn
+” Ìu” Ìu
+” Ìu” Ìu–” Ìn” Ìn
+” Ìu” Ìu”  Ìu ”! Ìu!˜” Ìn” Ìn
+” Ìv”! Ìv”" Ìv”+ Ìv”, Ìv”2 Ìv$˜” Ìn” Ìn
+” Ìv&” Ìv0” Ìv1”- ÌvÌ@”. ÌvÌA”4 ÌvÌG”” Ìo” Ìo
+” Ìo”  Ìo–” Ìo” Ìo
+” Ìp	” Ìp” Ìp” Ìp˜” Ìo” Ìo
+” Ìp” Ìp ” Ìp!”& Ìp+”' Ìp,”- Ìp2š” Ìo” Ìo
+” Ìp4” Ìp:” Ìp;” Ìp=”  ÌpÌC”" ÌpÌE”$ ÌpÌG”& ÌpÌI’” Ìo” Ìo
+”” Ìq” Ìq
+” Ìq”4 Ìq'–” Ìq” Ìq
+” Ìr	” Ìr” Ìr” Ìr–” Ìq” Ìq
+” Ìr” Ìr” Ìr ”$ Ìr)˜” Ìq” Ìq
+” Ìr+” Ìr4” Ìr5”$ Ìr>”% Ìr?”+ ÌrÌE” Ìq” Ìq
+” Ìs	” Ìs” Ìs” Ìs” Ìs”! Ìs”# Ìs”% Ìs”* Ìs"”, Ìs$”. Ìs&”0 Ìs(’” Ìq” Ìq
+’” Ìn” Ìn
+‘” Ìw‘” Ìy‘” Ì{’” Ì}” Ì}’” Ì~” Ì~
+–” Ì~” Ì~
+” Ì˜” Ì˜
+” Ì˜” Ì˜–” Ì~” Ì~
+” Ì˜” Ì˜”  Ì˜ ”! Ì˜!˜” Ì~” Ì~
+” Ì˜#” Ì˜,” Ì˜-”% Ì˜5”& Ì˜6”) Ì˜9’” Ì” Ì–” Ì” Ì” Ì–” Ì–” Ì–” Ì–’” Ì€” Ì€–” Ì€” Ì€” Ì	” Ì” Ì” Ì” Ì€” Ì€” Ì” Ì” Ì” Ì!”! Ì%”# Ì'”% Ì)”' Ì+”, Ì0”. Ì2”0 Ì4”2 Ì6–” Ì€” Ì€” Ì‘	”" Ì‘”# Ì‘”, Ì‘"–” Ì€” Ì€” Ì‘$” Ì‘0”  Ì‘1”" Ì‘3Ü ” Ì€” Ì€” Ì’	” Ì’” Ì’” Ì’” Ì’”! Ì’”# Ì’”% Ì’”) Ì’”+ Ì’!”- Ì’#”/ Ì’%”4 Ì’*”6 Ì’,”8 Ì’.”: Ì’0’” Ì
+” Ì–” Ì
+” Ì” Ì„” Ì„” Ì„” Ì„” Ì
+” Ì” Ì„” Ì„!” Ì„"” Ì„$” Ì„'” Ì„)”! Ì„+”# Ì„-”) Ì„3”+ Ì„5”- Ì„7”/ Ì„9š” Ì
+” Ì” Ì„;” Ì„ÌF” Ì„ÌG” Ì„ÌI”$ Ì„ÌO”& Ì„ÌQ”) Ì„ÌT”+ Ì„ÌV–” Ì
+” Ì” Ì„ÌX” Ì„Ìc” Ì„Ìd”% Ì„Ìm”” Ì‚” Ì‚” Ì‚” Ì‚–” Ì‚” Ì‚” Ì‚” Ì‚ ” Ì‚!” Ì‚#–” Ì‚” Ì‚” Ì‚%” Ì‚.” Ì‚/”$ Ì‚8–” Ì‚” Ì‚” Ì‚:” Ì‚?” Ì‚Ì@” Ì‚ÌB’” Ì‚” Ì‚–” Ìƒ” Ìƒ” Ìƒ”$ Ìƒ”% Ìƒ”* Ìƒ#–” Ìƒ” Ìƒ” Ìƒ%” Ìƒ-” Ìƒ.” Ìƒ0–” Ìƒ” Ìƒ” Ìƒ2” Ìƒ<” Ìƒ=” ÌƒÌ@–” Ìƒ” Ìƒ” ÌƒÌB” ÌƒÌK” ÌƒÌL”$ ÌƒÌU–” Ìƒ” Ìƒ” ÌƒÌW” ÌƒÌc” ÌƒÌd” ÌƒÌe’” Ìƒ” Ìƒ’” Ì
+” Ì’” Ì†
+” Ì†–” Ì†
+” Ì†” Ì‰” Ì‰” Ì‰” Ì‰” Ì†
+” Ì†” Ì‰” Ì‰!” Ì‰"” Ì‰$” Ì‰'” Ì‰)”! Ì‰+”# Ì‰-”) Ì‰3”+ Ì‰5”- Ì‰7”/ Ì‰9š” Ì†
+” Ì†” Ì‰;” Ì‰ÌF” Ì‰ÌG” Ì‰ÌI”$ Ì‰ÌO”& Ì‰ÌQ”) Ì‰ÌT”+ Ì‰ÌV–” Ì†
+” Ì†” Ì‰ÌX” Ì‰Ìc” Ì‰Ìd”% Ì‰Ìm”” Ì‡” Ì‡” Ì‡” Ì‡–” Ì‡” Ì‡” Ì‡” Ì‡” Ì‡ ” Ì‡"–” Ì‡” Ì‡” Ì‡$” Ì‡-” Ì‡.”$ Ì‡7–” Ì‡” Ì‡” Ì‡9” Ì‡>” Ì‡?” Ì‡ÌA’” Ì‡” Ì‡–” Ìˆ” Ìˆ” Ìˆ”$ Ìˆ”% Ìˆ”* Ìˆ#–” Ìˆ” Ìˆ” Ìˆ%” Ìˆ-” Ìˆ.” Ìˆ0–” Ìˆ” Ìˆ” Ìˆ2” Ìˆ<” Ìˆ=” ÌˆÌ@–” Ìˆ” Ìˆ” ÌˆÌB” ÌˆÌK” ÌˆÌL”$ ÌˆÌU–” Ìˆ” Ìˆ” ÌˆÌW” ÌˆÌc” ÌˆÌd” ÌˆÌe’” Ìˆ” Ìˆ’” Ì†
+” Ì†’” Ì‹
+” Ì‹–” Ì‹
+” Ì‹” Ì” Ì” Ì” Ì” Ì‹
+” Ì‹” Ì” Ì!” Ì"” Ì$” Ì'” Ì)”! Ì+”# Ì-”) Ì3”+ Ì5”- Ì7”/ Ì9”” ÌŒ” ÌŒ” ÌŒ” ÌŒ–” ÌŒ” ÌŒ” ÌŒ” ÌŒ!” ÌŒ"” ÌŒ$–” ÌŒ” ÌŒ” ÌŒ&” ÌŒ/” ÌŒ0”$ ÌŒ9–” ÌŒ” ÌŒ” ÌŒ;” ÌŒÌ@” ÌŒÌA” ÌŒÌC’” ÌŒ” ÌŒ–” Ì” Ì” Ì”$ Ì”% Ì”, Ì%–” Ì” Ì” Ì'” Ì/” Ì0” Ì2–” Ì” Ì” Ì4” Ì>” Ì?” ÌÌB–” Ì” Ì” ÌÌD” ÌÌM” ÌÌN”$ ÌÌW–” Ì” Ì” ÌÌY” ÌÌe” ÌÌf” ÌÌg’” Ì” Ì’” Ì‹
+” Ì‹’” Ì€” Ì€’” Ì”” Ì”–” Ì”” Ì”” Ì”” Ì”” Ì”” Ì”’” Ì”” Ì”’” Ì” Ì’” Ì~” Ì~
+‘” Ì™’” Ì›” Ì›”” Ìœ
+” Ìœ” Ìœ” Ìœ%–” Ì” Ì” Ì” Ì” Ì” Ì˜” Ì” Ì” Ì” Ì”" Ì”# Ì”, Ì&”- Ì'‘”	 ÌŸ–” Ì ” Ì ” Ì ” Ì ” Ì ” Ì ˜” Ì¡” Ì¡” Ì¡” Ì¡”" Ì¡”# Ì¡”' Ì¡!”( Ì¡"‘”	 Ì¢–” Ì£” Ì£” Ì£” Ì£” Ì£” Ì£˜” Ì¤” Ì¤” Ì¤” Ì¤”" Ì¤”# Ì¤”) Ì¤#”* Ì¤$‘”	 Ì¥–” Ì¦” Ì¦” Ì¦” Ì¦” Ì¦” Ì¦˜” Ì§” Ì§” Ì§” Ì§”" Ì§”# Ì§”- Ì§'”. Ì§(‘”	 Ì¨–” Ì©” Ì©” Ì©” Ì©” Ì©” Ì©˜” Ìª” Ìª” Ìª” Ìª”" Ìª”# Ìª”( Ìª"”) Ìª#‘”	 Ì«–” Ì¬” Ì¬” Ì¬” Ì¬” Ì¬” Ì¬˜” Ì­” Ì­” Ì­” Ì­”" Ì­”# Ì­”, Ì­&”- Ì­'‘”	 Ì®–” Ì¯” Ì¯” Ì¯” Ì¯” Ì¯” Ì¯˜” Ì°” Ì°” Ì°” Ì°”" Ì°”# Ì°”) Ì°#”* Ì°$‘”	 Ì±–” Ì²” Ì²” Ì²” Ì²” Ì²” Ì²˜” Ì³” Ì³” Ì³” Ì³”" Ì³”# Ì³”1 Ì³+”2 Ì³,‘”	 Ì´–” Ìµ” Ìµ” Ìµ” Ìµ” Ìµ”  Ìµ˜” Ì¶” Ì¶” Ì¶” Ì¶”" Ì¶”# Ì¶”5 Ì¶/”6 Ì¶0‘”	 Ì·–” Ì¸” Ì¸” Ì¸” Ì¸” Ì¸” Ì¸˜” Ì¹” Ì¹” Ì¹” Ì¹”" Ì¹”# Ì¹”1 Ì¹+”2 Ì¹,‘”	 Ìº–” Ì»” Ì»” Ì»” Ì»” Ì»” Ì»˜” Ì¼” Ì¼” Ì¼” Ì¼”" Ì¼”# Ì¼”/ Ì¼)”0 Ì¼*‘”	 Ì½”” Ì¾” Ì¾” Ì¾” Ì¾’” Ì¿” Ì¿ÔrF–§version¤file§sources®sourcesContent¥names¨mappingsÀ‘À‘ÀÜÁ‘”    ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”  	 ‘”  
+ ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”    ‘”  ! ‘”  " ‘”  # ‘”  $ ‘”  % ‘”  & ‘”  ' ‘”  ( ‘”  ) ‘”  * ‘”  + ‘”  , ‘”  - ‘”  . ‘”  / ‘”  0 ‘”  1 ‘”  2 ‘”  3 ‘”  4 ‘”  5 ‘”  6 ‘”  7 ‘”  8 ‘”  9 ‘”  : ‘”  ; ‘”  < ‘”  = ‘”  > ‘”  ? ‘”  Ì@ ‘”  ÌA ‘”  ÌB ‘”  ÌC ‘”  ÌD ‘”  ÌE ‘”  ÌF ‘”  ÌG ‘”  ÌH ‘”  ÌI ‘”  ÌJ ‘”  ÌK ‘”  ÌL ‘”  ÌM ‘”  ÌN ‘”  ÌO ‘”  ÌP ‘”  ÌQ ‘”  ÌR ‘”  ÌS ‘”  ÌT ‘”  ÌU ‘”  ÌV ‘”  ÌW ‘”  ÌX ‘”  ÌY ‘”  ÌZ ‘”  Ì[ ‘”  Ì\ ‘”  Ì] ‘”  Ì^ ‘”  Ì_ ‘”  Ì` ‘”  Ìa ‘”  Ìb ‘”  Ìc ‘”  Ìd ‘”  Ìe ‘”  Ìf ‘”  Ìg ‘”  Ìh ‘”  Ìi ‘”  Ìj ‘”  Ìk ‘”  Ìl ‘”  Ìm ‘”  Ìn ‘”  Ìo ‘”  Ìp ‘”  Ìq ‘”  Ìr ‘”  Ìs ‘”  Ìt ‘”  Ìu ‘”  Ìv ‘”  Ìw ‘”  Ìx ‘”  Ìy ‘”  Ìz ‘”  Ì{ ‘”  Ì| ‘”  Ì} ‘”  Ì~ ‘”  Ì ‘”  Ì€ ‘”  Ì ‘”  Ì‚ ‘”  Ìƒ ‘”  Ì„ ‘”  Ì… ‘”  Ì† ‘”  Ì‡ ‘”  Ìˆ ‘”  Ì‰ ‘”  ÌŠ ‘”  Ì‹ ‘”  ÌŒ ‘”  Ì ‘”  Ì ‘”  Ì ‘”  Ì ‘”  Ì‘ ‘”  Ì’ ‘”  Ì“ ‘”  Ì” ‘”  Ì• ‘”  Ì– ‘”  Ì— ‘”  Ì˜ ‘”  Ì™ ‘”  Ìš ‘”  Ì› ‘”  Ìœ ‘”  Ì ‘”  Ì ‘”  ÌŸ ‘”  Ì  ‘”  Ì¡ ‘”  Ì¢ ‘”  Ì£ ‘”  Ì¤ ‘”  Ì¥ ‘”  Ì¦ ‘”  Ì§ ‘”  Ì¨ ‘”  Ì© ‘”  Ìª ‘”  Ì« ‘”  Ì¬ ‘”  Ì­ ‘”  Ì® ‘”  Ì¯ ‘”  Ì° ‘”  Ì± ‘”  Ì² ‘”  Ì³ ‘”  Ì´ ‘”  Ìµ ‘”  Ì¶ ‘”  Ì· ‘”  Ì¸ ‘”  Ì¹ ‘”  Ìº ‘”  Ì» ‘”  Ì¼ ‘”  Ì½ ‘”  Ì¾ ‘”  Ì¿ ‘”  ÌÀ ‘”  ÌÁ ‘”  ÌÂ ‘”  ÌÃ ‘”  ÌÄ ‘”  ÌÅ ‘”  ÌÆ ‘”  ÌÇ ‘”  ÌÈ ‘”  ÌÉ ‘”  ÌÊ ‘”  ÌË ‘”  ÌÌ ‘”  ÌÍ ‘”  ÌÎ ‘”  ÌÏ ‘”  ÌĞ ‘”  ÌÑ ‘”  ÌÒ ‘”  ÌÓ ‘”  ÌÔ ‘”  ÌÕ ‘”  ÌÖ ‘”  Ì× ‘”  ÌØ ‘”  ÌÙ ‘”  ÌÚ ‘”  ÌÛ ‘”  ÌÜ ‘”  Ìİ ‘”  ÌŞ ‘”  Ìß ‘”  Ìà ‘”  Ìá ‘”  Ìâ ‘”  Ìã ‘”  Ìä ‘”  Ìå ‘”  Ìæ ‘”  Ìç ‘”  Ìè ‘”  Ìé ‘”  Ìê ‘”  Ìë ‘”  Ìì ‘”  Ìí ‘”  Ìî ‘”  Ìï ‘”  Ìğ ‘”  Ìñ ‘”  Ìò ‘”  Ìó ‘”  Ìô ‘”  Ìõ ‘”  Ìö ‘”  Ì÷ ‘”  Ìø ‘”  Ìù ‘”  Ìú ‘”  Ìû ‘”  Ìü ‘”  Ìı ‘”  Ìş ‘”  Ìÿ ‘”  Í  ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í	 ‘”  Í
+ ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í  ‘”  Í! ‘”  Í" ‘”  Í# ‘”  Í$ ‘”  Í% ‘”  Í& ‘”  Í' ‘”  Í( ‘”  Í) ‘”  Í* ‘”  Í+ ‘”  Í, ‘”  Í- ‘”  Í. ‘”  Í/ ‘”  Í0 ‘”  Í1 ‘”  Í2 ‘”  Í3 ‘”  Í4 ‘”  Í5 ‘”  Í6 ‘”  Í7 ‘”  Í8 ‘”  Í9 ‘”  Í: ‘”  Í; ‘”  Í< ‘”  Í= ‘”  Í> ‘”  Í? ‘”  Í@ ‘”  ÍA ‘”  ÍB ‘”  ÍC ‘”  ÍD ‘”  ÍE ‘”  ÍF ‘”  ÍG ‘”  ÍH ‘”  ÍI ‘”  ÍJ ‘”  ÍK ‘”  ÍL ‘”  ÍM ‘”  ÍN ‘”  ÍO ‘”  ÍP ‘”  ÍQ ‘”  ÍR ‘”  ÍS ‘”  ÍT ‘”  ÍU ‘”  ÍV ‘”  ÍW ‘”  ÍX ‘”  ÍY ‘”  ÍZ ‘”  Í[ ‘”  Í\ ‘”  Í] ‘”  Í^ ‘”  Í_ ‘”  Í` ‘”  Ía ‘”  Íb ‘”  Íc ‘”  Íd ‘”  Íe ‘”  Íf ‘”  Íg ‘”  Íh ‘”  Íi ‘”  Íj ‘”  Ík ‘”  Íl ‘”  Ím ‘”  Ín ‘”  Ío ‘”  Íp ‘”  Íq ‘”  Ír ‘”  Ís ‘”  Ít ‘”  Íu ‘”  Ív ‘”  Íw ‘”  Íx ‘”  Íy ‘”  Íz ‘”  Í{ ‘”  Í| ‘”  Í} ‘”  Í~ ‘”  Í ‘”  Í€ ‘”  Í ‘”  Í‚ ‘”  Íƒ ‘”  Í„ ‘”  Í… ‘”  Í† ‘”  Í‡ ‘”  Íˆ ‘”  Í‰ ‘”  ÍŠ ‘”  Í‹ ‘”  ÍŒ ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í‘ ‘”  Í’ ‘”  Í“ ‘”  Í” ‘”  Í• ‘”  Í– ‘”  Í— ‘”  Í˜ ‘”  Í™ ‘”  Íš ‘”  Í› ‘”  Íœ ‘”  Í ‘”  Í ‘”  ÍŸ ‘”  Í  ‘”  Í¡ ‘”  Í¢ ‘”  Í£ ‘”  Í¤ ‘”  Í¥ ‘”  Í¦ ‘”  Í§ ‘”  Í¨ ‘”  Í© ‘”  Íª ‘”  Í« ‘”  Í¬ ‘”  Í­ ‘”  Í® ‘”  Í¯ ‘”  Í° ‘”  Í± ‘”  Í² ‘”  Í³ ‘”  Í´ ‘”  Íµ ‘”  Í¶ ‘”  Í· ‘”  Í¸ ‘”  Í¹ ‘”  Íº ‘”  Í» ‘”  Í¼ ‘”  Í½ ‘”  Í¾ ‘”  Í¿ ‘”  ÍÀ ÔrG’§missing¦pluginÃ¦genAbcÂÔ  ÔrH”²dynamicImportCache¹exportAllDeclarationCache»exportNamedDeclarationCache«importCache”ÔrI•¤type¥start£endªspecifiers¦source±ImportDeclarationÌÏÌñ‘ÔrJ”¤type¥start£end¥local¶ImportDefaultSpecifierÌÖÌÜÔrK”¤type¥start£end¤nameªIdentifierÌÖÌÜ¦routerÔrL•¤type¥start£end¥value£raw§LiteralÌâÌğ¬@ohos.router®"@ohos.router"I±ImportDeclarationÌóÍ!‘ÔrM•¤type¥start£end¨imported¥local¯ImportSpecifierÌüÍKªIdentifierÌüÍ¦TopBarKªIdentifierÌüÍ¦TopBarL§LiteralÍ
+Í ´../components/TopBar¶'../components/TopBar'I±ImportDeclarationÍ#Íi‘M¯ImportSpecifierÍ,Í>KªIdentifierÍ,Í>²LoadingPlaceholderKªIdentifierÍ,Í>²LoadingPlaceholderL§LiteralÍFÍhÙ ../components/LoadingPlaceholderÙ"'../components/LoadingPlaceholder'I±ImportDeclarationÍkÍ·“M¯ImportSpecifierÍtÍKªIdentifierÍtÍ«MOCK_STATUSKªIdentifierÍtÍ«MOCK_STATUSM¯ImportSpecifierÍÍKªIdentifierÍÍ­STATUS_FIELDSKªIdentifierÍÍ­STATUS_FIELDSM¯ImportSpecifierÍÍœKªIdentifierÍÍœ¬MOCK_STUDENTKªIdentifierÍÍœ¬MOCK_STUDENTL§LiteralÍ¤Í¶°../mock/MockData²'../mock/MockData'

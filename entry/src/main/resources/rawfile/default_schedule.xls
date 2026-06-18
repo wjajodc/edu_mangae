@@ -1,0 +1,387 @@
+     <table style="width: 100%;">
+            <tr><td colspan="8" style="font-size: 2em;font-weight:bold;text-align: center;">学生课表</td></tr>
+            <tr><td colspan="8" style="font-size: 1.5em;font-weight:bold;text-align: center;">2025-2026学年第二学期</td></tr>
+            <tr><td colspan="8">学号:2023307021058&nbsp;&nbsp;&nbsp; 学生姓名:周赛&nbsp;&nbsp;&nbsp;所属班级: 23计科U10班&nbsp;&nbsp;&nbsp;总学分:30</td></tr>
+
+    </table>
+    <table width="100%" id="manualArrangeCourseTable" align="center" class="gridtable"  style="text-align:center" border="1">
+        <thead>
+        <tr>
+            <th style="background-color:#DEEDF7;" height="10px" width="">节次/周次</th>
+                <th style="background-color:#DEEDF7;">
+                    <font size="2px">星期一</font>
+                </th>
+                <th style="background-color:#DEEDF7;">
+                    <font size="2px">星期二</font>
+                </th>
+                <th style="background-color:#DEEDF7;">
+                    <font size="2px">星期三</font>
+                </th>
+                <th style="background-color:#DEEDF7;">
+                    <font size="2px">星期四</font>
+                </th>
+                <th style="background-color:#DEEDF7;">
+                    <font size="2px">星期五</font>
+                </th>
+                <th style="background-color:#DEEDF7;">
+                    <font size="2px">星期六</font>
+                </th>
+                <th style="background-color:#DEEDF7;">
+                    <font size="2px">星期日</font>
+                </th>
+        </tr>
+        </thead>
+
+            <tr>
+                <td style="background-color:rgb(238, 255, 0)">
+                    <font size="2px"> 第一节</font>
+                </td>
+                            <td rowspan="2" style="backGround-Color:#ffffff;font-size:12px;text-align: center">
+鸿蒙应用开发初级认证        (VDZ02119204.09)
+        (曲昇港)
+        <br style="mso-data-placement: same-cell">
+        (2-5,8-9,11-12  上茶苑教7栋403（5G移动通信实训室）)
+        <br style="mso-data-placement: same-cell">
+鸿蒙应用开发初级认证        (VDZ02119204.09)
+        (曲昇港)
+        <br style="mso-data-placement: same-cell">
+        (7  上茶苑教7栋403（5G移动通信实训室）)
+        <br style="mso-data-placement: same-cell">
+鸿蒙应用开发初级认证        (VDZ02119204.09)
+        (曲昇港)
+        <br style="mso-data-placement: same-cell">
+        (10  上茶苑教7栋403（5G移动通信实训室）)
+        
+                            </td>
+                            <td rowspan="2" style="backGround-Color:#ffffff;font-size:12px;text-align: center">
+计算机组成原理        (VDZ02112704.11)
+        (袁小节)
+        <br style="mso-data-placement: same-cell">
+        (10-17  上茶苑教8栋814)
+        
+                            </td>
+                            <td rowspan="2" style="backGround-Color:#ffffff;font-size:12px;text-align: center">
+软件测试与管理        (VDZ02114904.10)
+        (卢超)
+        <br style="mso-data-placement: same-cell">
+        (2-16  上茶苑教8栋611)
+        
+                            </td>
+                            <td rowspan="4" style="backGround-Color:#ffffff;font-size:12px;text-align: center">
+编译原理        (VDZ02103003.10)
+        (张毅恒)
+        <br style="mso-data-placement: same-cell">
+        (2-13  上茶苑教7栋802)
+        
+                            </td>
+                            <td rowspan="2" style="backGround-Color:#ffffff;font-size:12px;text-align: center">
+大型数据库管理与维护        (VDZ02115104.10)
+        (陈勇)
+        <br style="mso-data-placement: same-cell">
+        (10-15,17  上茶苑教7栋702)
+        <br style="mso-data-placement: same-cell">
+计算机组成原理        (VDZ02112704.11)
+        (袁小节)
+        <br style="mso-data-placement: same-cell">
+        (2-9  上茶苑教8栋814)
+        
+                            </td>
+                            <td rowspan="2" style="backGround-Color:#ffffff;font-size:12px;text-align: center">
+软件工程        (VDZ02102903.11)
+        (任永伟)
+        <br style="mso-data-placement: same-cell">
+        (3,12-14  上茶苑教8栋516)
+        
+                            </td>
+                        <td style="backGround-Color:#ffffff;font-size:12px"></td>
+            </tr>
+            <tr>
+                <td style="background-color:rgb(238, 255, 0)">
+                    <font size="2px"> 第二节</font>
+                </td>
+                        <td style="backGround-Color:#ffffff;font-size:12px"></td>
+            </tr>
+            <tr>
+                <td style="background-color:rgb(238, 255, 0)">
+                    <font size="2px"> 第三节</font>
+                </td>
+                            <td rowspan="2" style="backGround-Color:#ffffff;font-size:12px;text-align: center">
+鸿蒙应用开发初级认证        (VDZ02119204.09)
+        (曲昇港)
+        <br style="mso-data-placement: same-cell">
+        (2-5,8-9,11-12  上茶苑教7栋403（5G移动通信实训室）)
+        <br style="mso-data-placement: same-cell">
+鸿蒙应用开发初级认证        (VDZ02119204.09)
+        (曲昇港)
+        <br style="mso-data-placement: same-cell">
+        (6  上茶苑教7栋403（5G移动通信实训室）)
+        
+                            </td>
+                            <td rowspan="2" style="backGround-Color:#ffffff;font-size:12px;text-align: center">
+软件测试与管理        (VDZ02114904.10)
+        (卢超)
+        <br style="mso-data-placement: same-cell">
+        (3-14  上茶苑教9栋510)
+        <br style="mso-data-placement: same-cell">
+软件测试与管理        (VDZ02114904.10)
+        (卢超)
+        <br style="mso-data-placement: same-cell">
+        (2,15-16  上茶苑教8栋611)
+        
+                            </td>
+                            <td rowspan="2" style="backGround-Color:#ffffff;font-size:12px;text-align: center">
+计算机组成原理        (VDZ02112704.11)
+        (袁小节)
+        <br style="mso-data-placement: same-cell">
+        (5-9,13-14  上茶苑教9栋402（计算机组成原理实训室）)
+        <br style="mso-data-placement: same-cell">
+计算机组成原理        (VDZ02112704.11)
+        (袁小节)
+        <br style="mso-data-placement: same-cell">
+        (4  上茶苑教9栋402（计算机组成原理实训室）)
+        <br style="mso-data-placement: same-cell">
+软件测试与管理        (VDZ02114904.10)
+        (卢超)
+        <br style="mso-data-placement: same-cell">
+        (15  上茶苑教9栋508)
+        <br style="mso-data-placement: same-cell">
+软件测试与管理        (VDZ02114904.10)
+        (卢超)
+        <br style="mso-data-placement: same-cell">
+        (16  上茶苑教9栋510)
+        
+                            </td>
+                            <td rowspan="2" style="backGround-Color:#ffffff;font-size:12px;text-align: center">
+大型数据库管理与维护        (VDZ02115104.10)
+        (陈勇)
+        <br style="mso-data-placement: same-cell">
+        (2-15,17  上茶苑教7栋702)
+        
+                            </td>
+                            <td rowspan="2" style="backGround-Color:#ffffff;font-size:12px;text-align: center">
+软件工程        (VDZ02102903.11)
+        (任永伟)
+        <br style="mso-data-placement: same-cell">
+        (13-14  上茶苑教9栋604)
+        <br style="mso-data-placement: same-cell">
+软件工程        (VDZ02102903.11)
+        (任永伟)
+        <br style="mso-data-placement: same-cell">
+        (3  上茶苑教8栋513)
+        
+                            </td>
+                        <td style="backGround-Color:#ffffff;font-size:12px"></td>
+            </tr>
+            <tr>
+                <td style="background-color:rgb(238, 255, 0)">
+                    <font size="2px"> 第四节</font>
+                </td>
+                        <td style="backGround-Color:#ffffff;font-size:12px"></td>
+            </tr>
+            <tr>
+                <td style="background-color:rgb(51, 187, 0)">
+                    <font size="2px"> 第五节</font>
+                </td>
+                            <td rowspan="2" style="backGround-Color:#ffffff;font-size:12px;text-align: center">
+大型数据库管理与维护        (VDZ02115104.10)
+        (陈勇)
+        <br style="mso-data-placement: same-cell">
+        (10-11  上茶苑教7栋702)
+        <br style="mso-data-placement: same-cell">
+软件工程        (VDZ02102903.11)
+        (任永伟)
+        <br style="mso-data-placement: same-cell">
+        (5-7单,8-9,12-14  上茶苑教8栋611)
+        <br style="mso-data-placement: same-cell">
+鸿蒙移动应用开发综合实践        (VDZ02119303.09)
+        (王鑫)
+        <br style="mso-data-placement: same-cell">
+        (15-17  上茶苑教9栋401（软件工程实训室）)
+        
+                            </td>
+                            <td rowspan="2" style="backGround-Color:#ffffff;font-size:12px;text-align: center">
+中国近现代史纲要        (VMK01100203.43)
+        (谢双明)
+        <br style="mso-data-placement: same-cell">
+        (2-9  长芗苑教13栋205)
+        <br style="mso-data-placement: same-cell">
+鸿蒙移动应用开发综合实践        (VDZ02119303.09)
+        (王鑫)
+        <br style="mso-data-placement: same-cell">
+        (15-17  上茶苑教9栋401（软件工程实训室）)
+        
+                            </td>
+                            <td rowspan="4" style="backGround-Color:#ffffff;font-size:12px;text-align: center">
+鸿蒙移动应用开发综合实践        (VDZ02119303.09)
+        (王鑫)
+        <br style="mso-data-placement: same-cell">
+        (15-17  上茶苑教9栋401（软件工程实训室）)
+        <br style="mso-data-placement: same-cell">
+鸿蒙应用开发初级认证        (VDZ02119204.09)
+        (曲昇港)
+        <br style="mso-data-placement: same-cell">
+        (8-12  上茶苑教7栋403（5G移动通信实训室）)
+        
+                            </td>
+                            <td rowspan="2" style="backGround-Color:#ffffff;font-size:12px;text-align: center">
+计算机组成原理        (VDZ02112704.11)
+        (袁小节)
+        <br style="mso-data-placement: same-cell">
+        (5-12  上茶苑教8栋615)
+        <br style="mso-data-placement: same-cell">
+鸿蒙移动应用开发综合实践        (VDZ02119303.09)
+        (王鑫)
+        <br style="mso-data-placement: same-cell">
+        (15-17  上茶苑教9栋401（软件工程实训室）)
+        
+                            </td>
+                            <td rowspan="2" style="backGround-Color:#ffffff;font-size:12px;text-align: center">
+软件工程        (VDZ02102903.11)
+        (任永伟)
+        <br style="mso-data-placement: same-cell">
+        (12  上茶苑教7栋302（数据通信实训室）)
+        <br style="mso-data-placement: same-cell">
+鸿蒙移动应用开发综合实践        (VDZ02119303.09)
+        (王鑫)
+        <br style="mso-data-placement: same-cell">
+        (15-17  上茶苑教9栋401（软件工程实训室）)
+        <br style="mso-data-placement: same-cell">
+鸿蒙应用开发初级认证        (VDZ02119204.09)
+        (曲昇港)
+        <br style="mso-data-placement: same-cell">
+        (11  上茶苑教7栋302（数据通信实训室）)
+        
+                            </td>
+                            <td rowspan="2" style="backGround-Color:#ffffff;font-size:12px;text-align: center">
+软件工程        (VDZ02102903.11)
+        (任永伟)
+        <br style="mso-data-placement: same-cell">
+        (11  上茶苑教7栋302（数据通信实训室）)
+        
+                            </td>
+                        <td style="backGround-Color:#ffffff;font-size:12px"></td>
+            </tr>
+            <tr>
+                <td style="background-color:rgb(51, 187, 0)">
+                    <font size="2px"> 第六节</font>
+                </td>
+                        <td style="backGround-Color:#ffffff;font-size:12px"></td>
+            </tr>
+            <tr>
+                <td style="background-color:rgb(51, 187, 0)">
+                    <font size="2px"> 第七节</font>
+                </td>
+                            <td rowspan="2" style="backGround-Color:#ffffff;font-size:12px;text-align: center">
+软件工程        (VDZ02102903.11)
+        (任永伟)
+        <br style="mso-data-placement: same-cell">
+        (8-12  上茶苑教8栋612)
+        <br style="mso-data-placement: same-cell">
+软件工程        (VDZ02102903.11)
+        (任永伟)
+        <br style="mso-data-placement: same-cell">
+        (5-7单  上茶苑教8栋612)
+        <br style="mso-data-placement: same-cell">
+鸿蒙移动应用开发综合实践        (VDZ02119303.09)
+        (王鑫)
+        <br style="mso-data-placement: same-cell">
+        (15-17  上茶苑教9栋401（软件工程实训室）)
+        
+                            </td>
+                            <td rowspan="2" style="backGround-Color:#ffffff;font-size:12px;text-align: center">
+大型数据库管理与维护        (VDZ02115104.10)
+        (陈勇)
+        <br style="mso-data-placement: same-cell">
+        (2-9  上茶苑教7栋702)
+        <br style="mso-data-placement: same-cell">
+鸿蒙移动应用开发综合实践        (VDZ02119303.09)
+        (王鑫)
+        <br style="mso-data-placement: same-cell">
+        (15-17  上茶苑教9栋401（软件工程实训室）)
+        
+                            </td>
+                            <td rowspan="2" style="backGround-Color:#ffffff;font-size:12px;text-align: center">
+中国近现代史纲要        (VMK01100203.43)
+        (谢双明)
+        <br style="mso-data-placement: same-cell">
+        (2-9  长芗苑教13栋205)
+        <br style="mso-data-placement: same-cell">
+鸿蒙移动应用开发综合实践        (VDZ02119303.09)
+        (王鑫)
+        <br style="mso-data-placement: same-cell">
+        (15-17  上茶苑教9栋401（软件工程实训室）)
+        
+                            </td>
+                            <td rowspan="2" style="backGround-Color:#ffffff;font-size:12px;text-align: center">
+中国近现代史纲要        (VMK01100203.43)
+        (谢双明)
+        <br style="mso-data-placement: same-cell">
+        (6-9  实践考察)
+        <br style="mso-data-placement: same-cell">
+中国近现代史纲要        (VMK01100203.43)
+        (谢双明)
+        <br style="mso-data-placement: same-cell">
+        (2-5  长芗苑教13栋205)
+        <br style="mso-data-placement: same-cell">
+鸿蒙移动应用开发综合实践        (VDZ02119303.09)
+        (王鑫)
+        <br style="mso-data-placement: same-cell">
+        (15-17  上茶苑教9栋401（软件工程实训室）)
+        
+                            </td>
+                            <td rowspan="2" style="backGround-Color:#ffffff;font-size:12px;text-align: center">
+软件工程        (VDZ02102903.11)
+        (任永伟)
+        <br style="mso-data-placement: same-cell">
+        (11  上茶苑教7栋302（数据通信实训室）)
+        
+                            </td>
+                        <td style="backGround-Color:#ffffff;font-size:12px"></td>
+            </tr>
+            <tr>
+                <td style="background-color:rgb(51, 187, 0)">
+                    <font size="2px"> 第八节</font>
+                </td>
+                        <td style="backGround-Color:#ffffff;font-size:12px"></td>
+            </tr>
+            <tr>
+                <td style="background-color:pink">
+                    <font size="2px"> 第九节</font>
+                </td>
+                        <td style="backGround-Color:#ffffff;font-size:12px"></td>
+                        <td style="backGround-Color:#ffffff;font-size:12px"></td>
+                        <td style="backGround-Color:#ffffff;font-size:12px"></td>
+                            <td rowspan="2" style="backGround-Color:#ffffff;font-size:12px;text-align: center">
+博物馆展览鉴赏        (VJW01102302.01)
+        (汪芷晔)
+        <br style="mso-data-placement: same-cell">
+        (3-18  长芗苑教10栋202)
+        
+                            </td>
+                            <td rowspan="2" style="backGround-Color:#ffffff;font-size:12px;text-align: center">
+鸿蒙应用开发初级认证        (VDZ02119204.09)
+        (曲昇港)
+        <br style="mso-data-placement: same-cell">
+        (6  上茶苑教9栋401（软件工程实训室）)
+        <br style="mso-data-placement: same-cell">
+鸿蒙应用开发初级认证        (VDZ02119204.09)
+        (曲昇港)
+        <br style="mso-data-placement: same-cell">
+        (7  上茶苑教9栋401（软件工程实训室）)
+        
+                            </td>
+                        <td style="backGround-Color:#ffffff;font-size:12px"></td>
+                        <td style="backGround-Color:#ffffff;font-size:12px"></td>
+            </tr>
+            <tr>
+                <td style="background-color:pink">
+                    <font size="2px"> 第十节</font>
+                </td>
+                        <td style="backGround-Color:#ffffff;font-size:12px"></td>
+                        <td style="backGround-Color:#ffffff;font-size:12px"></td>
+                        <td style="backGround-Color:#ffffff;font-size:12px"></td>
+                        <td style="backGround-Color:#ffffff;font-size:12px"></td>
+                        <td style="backGround-Color:#ffffff;font-size:12px"></td>
+            </tr>
+    </table>
+

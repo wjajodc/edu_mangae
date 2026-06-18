@@ -1,0 +1,508 @@
+Ôr@Ÿªassertions¤code´customTransformCache¬dependencies¢id¤meta±moduleSideEffects¬originalCode±originalSourcemap«resolvedIds®sourcemapChainµsyntheticNamedExportsµtransformDependencies®transformFiles¨cacheAstÔrAÚA‘if (!("finalizeConstruction" in ViewPU.prototype)) {
+    Reflect.set(ViewPU.prototype, "finalizeConstruction", () => { });
+}
+/**
+ * ç³»ç»Ÿè®¾ç½®é¡µé¢
+ * æ¶ˆæ¯é€šçŸ¥å¼€å…³ã€æ¸…é™¤ç¼“å­˜ã€æ·±è‰²æ¨¡å¼ã€å…³äºŽ
+ */
+import router from "@ohos.router";
+import { TopBar } from '../components/TopBar';
+import { ConfirmDialog } from '../components/ConfirmDialog';
+class SettingsPage extends ViewPU {
+    constructor(parent, params, __localStorage, elmtId = -1, paramsLambda = undefined, extraInfo) {
+        super(parent, __localStorage, elmtId, extraInfo);
+        if (typeof paramsLambda === "function") {
+            this.paramsGenerator_ = paramsLambda;
+        }
+        this.__notifEnabled = new ObservedPropertySimplePU(true, this, "notifEnabled");
+        this.__darkMode = new ObservedPropertySimplePU(false, this, "darkMode");
+        this.__showClearCache = new ObservedPropertySimplePU(false, this, "showClearCache");
+        this.__toastMsg = new ObservedPropertySimplePU('', this, "toastMsg");
+        this.__showToast = new ObservedPropertySimplePU(false, this, "showToast");
+        this.setInitiallyProvidedValue(params);
+        this.finalizeConstruction();
+    }
+    setInitiallyProvidedValue(params) {
+        if (params.notifEnabled !== undefined) {
+            this.notifEnabled = params.notifEnabled;
+        }
+        if (params.darkMode !== undefined) {
+            this.darkMode = params.darkMode;
+        }
+        if (params.showClearCache !== undefined) {
+            this.showClearCache = params.showClearCache;
+        }
+        if (params.toastMsg !== undefined) {
+            this.toastMsg = params.toastMsg;
+        }
+        if (params.showToast !== undefined) {
+            this.showToast = params.showToast;
+        }
+    }
+    updateStateVars(params) {
+    }
+    purgeVariableDependenciesOnElmtId(rmElmtId) {
+        this.__notifEnabled.purgeDependencyOnElmtId(rmElmtId);
+        this.__darkMode.purgeDependencyOnElmtId(rmElmtId);
+        this.__showClearCache.purgeDependencyOnElmtId(rmElmtId);
+        this.__toastMsg.purgeDependencyOnElmtId(rmElmtId);
+        this.__showToast.purgeDependencyOnElmtId(rmElmtId);
+    }
+    aboutToBeDeleted() {
+        this.__notifEnabled.aboutToBeDeleted();
+        this.__darkMode.aboutToBeDeleted();
+        this.__showClearCache.aboutToBeDeleted();
+        this.__toastMsg.aboutToBeDeleted();
+        this.__showToast.aboutToBeDeleted();
+        SubscriberManager.Get().delete(this.id__());
+        this.aboutToBeDeletedInternal();
+    }
+    get notifEnabled() {
+        return this.__notifEnabled.get();
+    }
+    set notifEnabled(newValue) {
+        this.__notifEnabled.set(newValue);
+    }
+    get darkMode() {
+        return this.__darkMode.get();
+    }
+    set darkMode(newValue) {
+        this.__darkMode.set(newValue);
+    }
+    get showClearCache() {
+        return this.__showClearCache.get();
+    }
+    set showClearCache(newValue) {
+        this.__showClearCache.set(newValue);
+    }
+    get toastMsg() {
+        return this.__toastMsg.get();
+    }
+    set toastMsg(newValue) {
+        this.__toastMsg.set(newValue);
+    }
+    get showToast() {
+        return this.__showToast.get();
+    }
+    set showToast(newValue) {
+        this.__showToast.set(newValue);
+    }
+    initialRender() {
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Stack.create();
+            Stack.debugLine("entry/src/main/ets/pages/SettingsPage.ets(20:5)", "entry");
+        }, Stack);
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Column.create();
+            Column.debugLine("entry/src/main/ets/pages/SettingsPage.ets(21:7)", "entry");
+            Column.width('100%');
+            Column.height('100%');
+            Column.backgroundColor('#EEF2F8');
+        }, Column);
+        {
+            this.observeComponentCreation2((elmtId, isInitialRender) => {
+                if (isInitialRender) {
+                    let componentCall = new TopBar(this, { title: 'ç³»ç»Ÿè®¾ç½®', showBack: true, onBack: () => router.back() }, undefined, elmtId, () => { }, { page: "entry/src/main/ets/pages/SettingsPage.ets", line: 22, col: 9 });
+                    ViewPU.create(componentCall);
+                    let paramsLambda = () => {
+                        return {
+                            title: 'ç³»ç»Ÿè®¾ç½®',
+                            showBack: true,
+                            onBack: () => router.back()
+                        };
+                    };
+                    componentCall.paramsGenerator_ = paramsLambda;
+                }
+                else {
+                    this.updateStateVarsOfChildByElmtId(elmtId, {
+                        title: 'ç³»ç»Ÿè®¾ç½®', showBack: true
+                    });
+                }
+            }, { name: "TopBar" });
+        }
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Scroll.create();
+            Scroll.debugLine("entry/src/main/ets/pages/SettingsPage.ets(24:9)", "entry");
+            Scroll.width('100%');
+            Scroll.layoutWeight(1);
+            Scroll.scrollBar(BarState.Off);
+        }, Scroll);
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Column.create();
+            Column.debugLine("entry/src/main/ets/pages/SettingsPage.ets(25:11)", "entry");
+            Column.width('100%');
+        }, Column);
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            // é€šçŸ¥è®¾ç½®
+            Column.create();
+            Column.debugLine("entry/src/main/ets/pages/SettingsPage.ets(27:13)", "entry");
+            // é€šçŸ¥è®¾ç½®
+            Column.width('100%');
+            // é€šçŸ¥è®¾ç½®
+            Column.backgroundColor('#FFFFFF');
+            // é€šçŸ¥è®¾ç½®
+            Column.borderRadius(14);
+            // é€šçŸ¥è®¾ç½®
+            Column.margin({ left: 14, right: 14, top: 14 });
+        }, Column);
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Text.create('é€šçŸ¥è®¾ç½®');
+            Text.debugLine("entry/src/main/ets/pages/SettingsPage.ets(28:15)", "entry");
+            Text.fontSize(11);
+            Text.fontWeight(700);
+            Text.fontColor('#64748B');
+            Text.padding({ left: 18, top: 16, bottom: 8 });
+            Text.width('100%');
+        }, Text);
+        Text.pop();
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Row.create();
+            Row.debugLine("entry/src/main/ets/pages/SettingsPage.ets(31:15)", "entry");
+            Row.width('100%');
+            Row.padding({ left: 18, right: 18, top: 14, bottom: 14 });
+            Row.borderWidth({ top: 0.5 });
+            Row.borderColor('#E2E8F0');
+        }, Row);
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Text.create('æ¶ˆæ¯é€šçŸ¥');
+            Text.debugLine("entry/src/main/ets/pages/SettingsPage.ets(32:17)", "entry");
+            Text.fontSize(14);
+            Text.fontWeight(500);
+            Text.fontColor('#0F172A');
+            Text.layoutWeight(1);
+        }, Text);
+        Text.pop();
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Toggle.create({ type: ToggleType.Switch, isOn: { value: this.notifEnabled, changeEvent: newValue => { this.notifEnabled = newValue; } } });
+            Toggle.debugLine("entry/src/main/ets/pages/SettingsPage.ets(33:17)", "entry");
+            Toggle.selectedColor('#2563EB');
+            Toggle.onChange((val) => { this.notifEnabled = val; });
+        }, Toggle);
+        Toggle.pop();
+        Row.pop();
+        // é€šçŸ¥è®¾ç½®
+        Column.pop();
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            // æ˜¾ç¤ºè®¾ç½®
+            Column.create();
+            Column.debugLine("entry/src/main/ets/pages/SettingsPage.ets(44:13)", "entry");
+            // æ˜¾ç¤ºè®¾ç½®
+            Column.width('100%');
+            // æ˜¾ç¤ºè®¾ç½®
+            Column.backgroundColor('#FFFFFF');
+            // æ˜¾ç¤ºè®¾ç½®
+            Column.borderRadius(14);
+            // æ˜¾ç¤ºè®¾ç½®
+            Column.margin({ left: 14, right: 14, top: 14 });
+        }, Column);
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Text.create('æ˜¾ç¤ºè®¾ç½®');
+            Text.debugLine("entry/src/main/ets/pages/SettingsPage.ets(45:15)", "entry");
+            Text.fontSize(11);
+            Text.fontWeight(700);
+            Text.fontColor('#64748B');
+            Text.padding({ left: 18, top: 16, bottom: 8 });
+            Text.width('100%');
+        }, Text);
+        Text.pop();
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Row.create();
+            Row.debugLine("entry/src/main/ets/pages/SettingsPage.ets(48:15)", "entry");
+            Row.width('100%');
+            Row.padding({ left: 18, right: 18, top: 14, bottom: 14 });
+            Row.borderWidth({ bottom: 0.5 });
+            Row.borderColor('#E2E8F0');
+        }, Row);
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Text.create('æ·±è‰²æ¨¡å¼');
+            Text.debugLine("entry/src/main/ets/pages/SettingsPage.ets(49:17)", "entry");
+            Text.fontSize(14);
+            Text.fontWeight(500);
+            Text.fontColor('#0F172A');
+            Text.layoutWeight(1);
+        }, Text);
+        Text.pop();
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Toggle.create({ type: ToggleType.Switch, isOn: { value: this.darkMode, changeEvent: newValue => { this.darkMode = newValue; } } });
+            Toggle.debugLine("entry/src/main/ets/pages/SettingsPage.ets(50:17)", "entry");
+            Toggle.selectedColor('#2563EB');
+            Toggle.onChange((val) => {
+                this.darkMode = val;
+                this.showToastOnce(val ? 'å·²åˆ‡æ¢æ·±è‰²æ¨¡å¼' : 'å·²åˆ‡æ¢æµ…è‰²æ¨¡å¼');
+            });
+        }, Toggle);
+        Toggle.pop();
+        Row.pop();
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Row.create();
+            Row.debugLine("entry/src/main/ets/pages/SettingsPage.ets(60:15)", "entry");
+            Row.width('100%');
+            Row.padding({ left: 18, right: 18, top: 14, bottom: 14 });
+        }, Row);
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Text.create('æ¸…é™¤ç¼“å­˜');
+            Text.debugLine("entry/src/main/ets/pages/SettingsPage.ets(61:17)", "entry");
+            Text.fontSize(14);
+            Text.fontWeight(500);
+            Text.fontColor('#0F172A');
+            Text.layoutWeight(1);
+        }, Text);
+        Text.pop();
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Text.create('128.5MB â€º');
+            Text.debugLine("entry/src/main/ets/pages/SettingsPage.ets(62:17)", "entry");
+            Text.fontSize(12);
+            Text.fontColor('#64748B');
+            Text.onClick(() => { this.showClearCache = true; });
+        }, Text);
+        Text.pop();
+        Row.pop();
+        // æ˜¾ç¤ºè®¾ç½®
+        Column.pop();
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            // å…³äºŽ
+            Column.create();
+            Column.debugLine("entry/src/main/ets/pages/SettingsPage.ets(72:13)", "entry");
+            // å…³äºŽ
+            Column.width('100%');
+            // å…³äºŽ
+            Column.backgroundColor('#FFFFFF');
+            // å…³äºŽ
+            Column.borderRadius(14);
+            // å…³äºŽ
+            Column.margin({ left: 14, right: 14, top: 14 });
+        }, Column);
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Row.create();
+            Row.debugLine("entry/src/main/ets/pages/SettingsPage.ets(73:15)", "entry");
+            Row.width('100%');
+            Row.padding({ left: 18, right: 18, top: 14, bottom: 14 });
+        }, Row);
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Text.create('å…³äºŽ');
+            Text.debugLine("entry/src/main/ets/pages/SettingsPage.ets(74:17)", "entry");
+            Text.fontSize(14);
+            Text.fontWeight(500);
+            Text.fontColor('#0F172A');
+            Text.layoutWeight(1);
+        }, Text);
+        Text.pop();
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Text.create('v1.0.0 â€º');
+            Text.debugLine("entry/src/main/ets/pages/SettingsPage.ets(75:17)", "entry");
+            Text.fontSize(12);
+            Text.fontColor('#64748B');
+            Text.onClick(() => this.showToastOnce('æ•™å­¦ç®¡ç†ç³»ç»Ÿå­¦ç”Ÿç«¯ v1.0.0'));
+        }, Text);
+        Text.pop();
+        Row.pop();
+        // å…³äºŽ
+        Column.pop();
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Column.create();
+            Column.debugLine("entry/src/main/ets/pages/SettingsPage.ets(84:13)", "entry");
+            Column.height(24);
+        }, Column);
+        Column.pop();
+        Column.pop();
+        Scroll.pop();
+        Column.pop();
+        {
+            this.observeComponentCreation2((elmtId, isInitialRender) => {
+                if (isInitialRender) {
+                    let componentCall = new ConfirmDialog(this, {
+                        title: 'æ¸…é™¤ç¼“å­˜',
+                        content: 'ç¡®å®šæ¸…é™¤æ‰€æœ‰ç¼“å­˜æ•°æ®ï¼Ÿè¿™ä¸ä¼šå½±å“æ‚¨çš„ä¸ªäººæ•°æ®ã€‚',
+                        visible: this.__showClearCache,
+                        onConfirm: () => {
+                            this.showToastOnce('ç¼“å­˜å·²æ¸…é™¤');
+                        }
+                    }, undefined, elmtId, () => { }, { page: "entry/src/main/ets/pages/SettingsPage.ets", line: 91, col: 7 });
+                    ViewPU.create(componentCall);
+                    let paramsLambda = () => {
+                        return {
+                            title: 'æ¸…é™¤ç¼“å­˜',
+                            content: 'ç¡®å®šæ¸…é™¤æ‰€æœ‰ç¼“å­˜æ•°æ®ï¼Ÿè¿™ä¸ä¼šå½±å“æ‚¨çš„ä¸ªäººæ•°æ®ã€‚',
+                            visible: this.showClearCache,
+                            onConfirm: () => {
+                                this.showToastOnce('ç¼“å­˜å·²æ¸…é™¤');
+                            }
+                        };
+                    };
+                    componentCall.paramsGenerator_ = paramsLambda;
+                }
+                else {
+                    this.updateStateVarsOfChildByElmtId(elmtId, {
+                        title: 'æ¸…é™¤ç¼“å­˜',
+                        content: 'ç¡®å®šæ¸…é™¤æ‰€æœ‰ç¼“å­˜æ•°æ®ï¼Ÿè¿™ä¸ä¼šå½±å“æ‚¨çš„ä¸ªäººæ•°æ®ã€‚'
+                    });
+                }
+            }, { name: "ConfirmDialog" });
+        }
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            If.create();
+            if (this.showToast) {
+                this.ifElseBranchUpdateFunction(0, () => {
+                    this.observeComponentCreation2((elmtId, isInitialRender) => {
+                        Text.create(this.toastMsg);
+                        Text.debugLine("entry/src/main/ets/pages/SettingsPage.ets(101:9)", "entry");
+                        Text.fontSize(13);
+                        Text.fontWeight(500);
+                        Text.fontColor('#FFFFFF');
+                        Text.padding({ left: 18, right: 18, top: 10, bottom: 10 });
+                        Text.borderRadius(999);
+                        Text.backgroundColor('rgba(15, 23, 42, 0.88)');
+                        Text.position({ bottom: 100, left: '50%' });
+                        Text.translate({ x: '-50%' });
+                    }, Text);
+                    Text.pop();
+                });
+            }
+            else {
+                this.ifElseBranchUpdateFunction(1, () => {
+                });
+            }
+        }, If);
+        If.pop();
+        Stack.pop();
+    }
+    showToastOnce(msg) {
+        this.toastMsg = msg;
+        this.showToast = true;
+        setTimeout(() => { this.showToast = false; }, 2000);
+    }
+    rerender() {
+        this.updateDirtyElements();
+    }
+    static getEntryName() {
+        return "SettingsPage";
+    }
+}
+registerNamedRoute(() => new SettingsPage(undefined, {}), "", { bundleName: "com.example.notepad", moduleName: "entry", pagePath: "pages/SettingsPage", pageFullPath: "entry/src/main/ets/pages/SettingsPage", integratedHsp: "false", moduleType: "followWithHap" });
+//# sourceMappingURL=SettingsPage.js.mapÂ“ÙX hvigor_ignore_C:_HuaWei_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.router.d.tsÙXC:\Users\32492\DevEcoStudioProjects\harmony_edu\entry\src\main\ets\components\TopBar.etsÙ_C:\Users\32492\DevEcoStudioProjects\harmony_edu\entry\src\main\ets\components\ConfirmDialog.etsÙYC:\Users\32492\DevEcoStudioProjects\harmony_edu\entry\src\main\ets\pages\SettingsPage.etsÔrBšªmoduleName±isLocalDependency¯isNodeEntryFile§pkgPath±belongProjectPath§pkgNameªpkgVersion±dependencyPkgInfo°belongModulePath¬shouldEmitJs¥entryÃÂÙ5C:\Users\32492\DevEcoStudioProjects\harmony_edu\entryÙ/C:\Users\32492\DevEcoStudioProjects\harmony_edu¥entry¥1.0.0Ô  Ù5C:\Users\32492\DevEcoStudioProjects\harmony_edu\entryÃÃÚO/**
+ * ç³»ç»Ÿè®¾ç½®é¡µé¢
+ * æ¶ˆæ¯é€šçŸ¥å¼€å…³ã€æ¸…é™¤ç¼“å­˜ã€æ·±è‰²æ¨¡å¼ã€å…³äºŽ
+ */
+import { router } from '@kit.ArkUI';
+import { TopBar } from '../components/TopBar';
+import { ListCard } from '../components/ListCard';
+import { ConfirmDialog } from '../components/ConfirmDialog';
+
+@Entry
+@Component
+struct SettingsPage {
+  @State notifEnabled: boolean = true;
+  @State darkMode: boolean = false;
+  @State showClearCache: boolean = false;
+  @State toastMsg: string = '';
+  @State showToast: boolean = false;
+
+  build() {
+    Stack() {
+      Column() {
+        TopBar({ title: 'ç³»ç»Ÿè®¾ç½®', showBack: true, onBack: () => router.back() })
+
+        Scroll() {
+          Column() {
+            // é€šçŸ¥è®¾ç½®
+            Column() {
+              Text('é€šçŸ¥è®¾ç½®').fontSize(11).fontWeight(700).fontColor('#64748B')
+                .padding({ left: 18, top: 16, bottom: 8 }).width('100%')
+
+              Row() {
+                Text('æ¶ˆæ¯é€šçŸ¥').fontSize(14).fontWeight(500).fontColor('#0F172A').layoutWeight(1)
+                Toggle({ type: ToggleType.Switch, isOn: $$this.notifEnabled })
+                  .selectedColor('#2563EB')
+                  .onChange((val: boolean) => { this.notifEnabled = val; })
+              }
+              .width('100%').padding({ left: 18, right: 18, top: 14, bottom: 14 })
+              .borderWidth({ top: 0.5 }).borderColor('#E2E8F0')
+            }
+            .width('100%').backgroundColor('#FFFFFF').borderRadius(14)
+            .margin({ left: 14, right: 14, top: 14 })
+
+            // æ˜¾ç¤ºè®¾ç½®
+            Column() {
+              Text('æ˜¾ç¤ºè®¾ç½®').fontSize(11).fontWeight(700).fontColor('#64748B')
+                .padding({ left: 18, top: 16, bottom: 8 }).width('100%')
+
+              Row() {
+                Text('æ·±è‰²æ¨¡å¼').fontSize(14).fontWeight(500).fontColor('#0F172A').layoutWeight(1)
+                Toggle({ type: ToggleType.Switch, isOn: $$this.darkMode })
+                  .selectedColor('#2563EB')
+                  .onChange((val: boolean) => {
+                    this.darkMode = val;
+                    this.showToastOnce(val ? 'å·²åˆ‡æ¢æ·±è‰²æ¨¡å¼' : 'å·²åˆ‡æ¢æµ…è‰²æ¨¡å¼');
+                  })
+              }
+              .width('100%').padding({ left: 18, right: 18, top: 14, bottom: 14 })
+              .borderWidth({ bottom: 0.5 }).borderColor('#E2E8F0')
+
+              Row() {
+                Text('æ¸…é™¤ç¼“å­˜').fontSize(14).fontWeight(500).fontColor('#0F172A').layoutWeight(1)
+                Text('128.5MB â€º')
+                  .fontSize(12).fontColor('#64748B')
+                  .onClick(() => { this.showClearCache = true; })
+              }
+              .width('100%').padding({ left: 18, right: 18, top: 14, bottom: 14 })
+            }
+            .width('100%').backgroundColor('#FFFFFF').borderRadius(14)
+            .margin({ left: 14, right: 14, top: 14 })
+
+            // å…³äºŽ
+            Column() {
+              Row() {
+                Text('å…³äºŽ').fontSize(14).fontWeight(500).fontColor('#0F172A').layoutWeight(1)
+                Text('v1.0.0 â€º')
+                  .fontSize(12).fontColor('#64748B')
+                  .onClick(() => this.showToastOnce('æ•™å­¦ç®¡ç†ç³»ç»Ÿå­¦ç”Ÿç«¯ v1.0.0'))
+              }
+              .width('100%').padding({ left: 18, right: 18, top: 14, bottom: 14 })
+            }
+            .width('100%').backgroundColor('#FFFFFF').borderRadius(14)
+            .margin({ left: 14, right: 14, top: 14 })
+
+            Column().height(24)
+          }.width('100%')
+        }
+        .width('100%').layoutWeight(1).scrollBar(BarState.Off)
+      }
+      .width('100%').height('100%').backgroundColor('#EEF2F8')
+
+      ConfirmDialog({
+        title: 'æ¸…é™¤ç¼“å­˜',
+        content: 'ç¡®å®šæ¸…é™¤æ‰€æœ‰ç¼“å­˜æ•°æ®ï¼Ÿè¿™ä¸ä¼šå½±å“æ‚¨çš„ä¸ªäººæ•°æ®ã€‚',
+        visible: $showClearCache,
+        onConfirm: () => {
+          this.showToastOnce('ç¼“å­˜å·²æ¸…é™¤');
+        }
+      })
+
+      if (this.showToast) {
+        Text(this.toastMsg)
+          .fontSize(13).fontWeight(500).fontColor('#FFFFFF')
+          .padding({ left: 18, right: 18, top: 10, bottom: 10 })
+          .borderRadius(999).backgroundColor('rgba(15, 23, 42, 0.88)')
+          .position({ bottom: 100, left: '50%' }).translate({ x: '-50%' })
+      }
+    }
+  }
+
+  private showToastOnce(msg: string): void {
+    this.toastMsg = msg; this.showToast = true;
+    setTimeout(() => { this.showToast = false; }, 2000);
+  }
+}
+ÀÔrC“¬@ohos.router»../components/ConfirmDialog´../components/TopBarÔrD—ªassertions¨external¢id¤meta±moduleSideEffectsªresolvedByµsyntheticNamedExportsAÃÙX hvigor_ignore_C:_HuaWei_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.router.d.tsAÃªoh-resolveÂDAÂÙ_C:\Users\32492\DevEcoStudioProjects\harmony_edu\entry\src\main\ets\components\ConfirmDialog.etsAÃªoh-resolveÂDAÂÙXC:\Users\32492\DevEcoStudioProjects\harmony_edu\entry\src\main\ets\components\TopBar.etsAÃªoh-resolveÂ“ÔrE–§version¤fileªsourceRoot§sources¥names¨mappings¯SettingsPage.js ‘°SettingsPage.etsÜu‘”    ‘” –”   ” 	” ” ”! #”" $˜”   ” ”	 	” ” ” ”- -”. .˜”   ” ”	 	” ” ” ”; ;”< <’” ” ‘” 	 ’”; !”? %’”7 ”< "’”= #”ÌB (’”7 ”9 ’”8 ”= #‘” <’” 	” ’” 	” ’” 	” ’” 	” ’” 	” ’” 	” ’” 	” ’” 	” ’” 	” ’” 	” ‘” ’” ” 	’” ” –” ” ” ÌX” ÌX” ÌX” ÌX–” ” ” ÌX” ÌX” ÌX”  ÌX"–” ” ” ÌX$”" ÌX3”# ÌX4”, ÌX=Ü ”, ”2 ”9 ”; ”Ì@ ”ÌB ”ÌH ”ÌJ  ”ÌR (”ÌT *”ÌX .”ÌZ 0”Ì` 6”Ìb 8”Ìe ;”Ìg =”Ìh >”Ìn ÌD”Ìo ÌE”Ìs ÌI”Ìu ÌK”Ìw ÌM”” ”! ”# ”) ””  ”$ (”& *”* .š” 0”" 6”$ 8”' ;”) =”* >”0 ÌD”1 ÌE”5 ÌI”7 ÌK˜” ” ” ”% ”'  ”/ (”1 *”5 .’” ” –” ” ” ÌV	” ÌV” ÌV” ÌV–” ” ” ÌV” ÌV#”  ÌV$”! ÌV%˜” ” ” ÌV'” ÌV0” ÌV1”% ÌV9”& ÌV:”) ÌV=’” 
+” –” 
+” ” ÌT” ÌT” ÌT” ÌT’” ” ’” ” ’” ” –” ” ” '” '” '” '’” ” –” ” ” '”" '*”# '+”, '4’” ” –” ” ” '6” 'ÌB”  'ÌC”" 'ÌE’” ” Ü ” ” ” (” (” (” (”  (”" (”$ (”& ( ”+ (%”- ('”/ ()”1 (+”4 (.”6 (0”8 (2”: (4”” ” ” ” –” ” ” ” #” $” &–” ” ” (” 2” 3” 6–” ” ” 8” ÌA” ÌB”$ ÌKÜ ” ” ” ” ” ” ” ”! !”# #”% %”( (”* *”, ,”. .”4 4”6 6”7 7”9 9–” ” ” ;” Ì@” ÌA” ÌG’” ” ’” ” –” ” ” $” $” $” $Ü ” ” ” $” $$” $%” $'” $+”  $-”" $/”$ $1”) $6”+ $8”- $:”/ $<”2 $?”4 $ÌA”6 $ÌC”8 $ÌE”> $ÌK”Ì@ $ÌM”ÌB $ÌO”ÌD $ÌQš” ” ” %” %” %” %”! % ”# %"”& %%”( %'–” ” ” %)” %4” %5”% %>”” ” ” ” –” ” ” ” %” &” (–” ” ” *” 4” 5” 8–” ” ” :” ÌC” ÌD”$ ÌM–” ” ” ÌO” Ì[” Ì\” Ì]’” ” Ü ”  ”  ”  ”  ”   ”"  ”,  )”-  *”3  0”5  2”9  6”ÌD  8”ÌI  ?”ÌU  ÌK”Ìr  8”Ìw  ?”Ìƒ  ÌK”Ì“  ÌK”Ì•  ÌM–”  ”  ” !”  ! ”! !!”* !*Ü ”  ”  ” "” "” "” "”  ")”" "+”$ "-”' "0”+ "4”, "5”8 "ÌA”; "ÌD”> "ÌG”? "ÌH”Ì@ "ÌI”ÌA "ÌJ’”  ”  ’” ” ’” ” ’” ” ’” *” *’” +” +’” *” *–” +” +” ÌC” ÌC” ÌC” ÌC’” *” *–” +” +” ÌC”" ÌC*”# ÌC+”, ÌC4’” *” *–” +” +” ÌC6” ÌCÌB”  ÌCÌC”" ÌCÌE’” *” *Ü ” +” +” ÌD” ÌD” ÌD” ÌD”  ÌD”" ÌD”$ ÌD”& ÌD ”+ ÌD%”- ÌD'”/ ÌD)”1 ÌD+”4 ÌD.”6 ÌD0”8 ÌD2”: ÌD4”” ,” ,” ,” ,–” ,” ,” ,” ,#” ,$” ,&–” ,” ,” ,(” ,2” ,3” ,6–” ,” ,” ,8” ,ÌA” ,ÌB”$ ,ÌKÜ ” ,” ,” -” -” -” -” -”! -!”# -#”% -%”( -(”* -*”, -,”. -.”4 -4”6 -6”7 -7”9 -9–” ,” ,” -;” -Ì@” -ÌA” -ÌG’” ,” ,’” /” /–” /” /” 8” 8” 8” 8Ü ” /” /” 8” 8$” 8%” 8'” 8+”  8-”" 8/”$ 81”) 86”+ 88”- 8:”/ 8<”2 8?”4 8ÌA”6 8ÌC”8 8ÌE”> 8ÌK”Ì@ 8ÌM”ÌB 8ÌO”ÌD 8ÌQš” /” /” 9” 9” 9” 9”$ 9#”& 9%”) 9(”+ 9*–” /” /” 9,” 97” 98”% 9ÌA”” 0” 0” 0” 0–” 0” 0” 0” 0%” 0&” 0(–” 0” 0” 0*” 04” 05” 08–” 0” 0” 0:” 0ÌC” 0ÌD”$ 0ÌM–” 0” 0” 0ÌO” 0Ì[” 0Ì\” 0Ì]’” 0” 0Ü ” 1” 1” 1” 1”  1”" 1”, 1)”- 1*”3 10”5 12”9 16”ÌD 18”ÌI 1?”ÌQ 1ÌG”Ìn 18”Ìs 1?”Ì{ 1ÌG”Ì‹ 1ÌG”Ì 1ÌI–” 1” 1” 2”  2 ”! 2!”* 2*™” 1” 1” 3” 3” 3” 3”  3)”" 3+”$ 3-—” 4” 4” 4” 4!”  4$”# 4'”$ 4(Ü ” 5” 5” 5”" 5&”# 5'”& 5*”' 5+”( 5,”) 5-”2 56”3 57”4 58”5 59”> 5ÌB”? 5ÌC”Ì@ 5ÌD’” 6” 6’” 1” 1’” /” /’” ;” ;–” ;” ;” ÌA” ÌA” ÌA” ÌAÜ ” ;” ;” ÌA” ÌA$” ÌA%” ÌA'” ÌA+”  ÌA-”" ÌA/”$ ÌA1”) ÌA6”+ ÌA8”- ÌA:”/ ÌA<”2 ÌA?”4 ÌAÌA”6 ÌAÌC”8 ÌAÌE”> ÌAÌK”Ì@ ÌAÌM”ÌB ÌAÌO”ÌD ÌAÌQ”” <” <” <” <–” <” <” <” <%” <&” <(–” <” <” <*” <4” <5” <8–” <” <” <:” <ÌC” <ÌD”$ <ÌM–” <” <” <ÌO” <Ì[” <Ì\” <Ì]’” <” <”” =” =” =”# = –” =” =” >” >” >” >–” =” =” > ” >)” >*”$ >3Ü ” =” =” ?” ?” ?” ?” ? ”! ?#”% ?'”& ?(”4 ?6”7 ?9”; ?=”< ?>”= ??”> ?Ì@’” =” =’” ;” ;’” *” *’” +” +’” ÌF” ÌF’” ÌG” ÌG’” ÌF” ÌF–” ÌG” ÌG” ÌP” ÌP” ÌP” ÌP’” ÌF” ÌF–” ÌG” ÌG” ÌP”" ÌP*”# ÌP+”, ÌP4’” ÌF” ÌF–” ÌG” ÌG” ÌP6” ÌPÌB”  ÌPÌC”" ÌPÌE’” ÌF” ÌFÜ ” ÌG” ÌG” ÌQ” ÌQ” ÌQ” ÌQ”  ÌQ”" ÌQ”$ ÌQ”& ÌQ ”+ ÌQ%”- ÌQ'”/ ÌQ)”1 ÌQ+”4 ÌQ.”6 ÌQ0”8 ÌQ2”: ÌQ4’” ÌH” ÌH–” ÌH” ÌH” ÌN” ÌN” ÌN” ÌNÜ ” ÌH” ÌH” ÌN” ÌN$” ÌN%” ÌN'” ÌN+”  ÌN-”" ÌN/”$ ÌN1”) ÌN6”+ ÌN8”- ÌN:”/ ÌN<”2 ÌN?”4 ÌNÌA”6 ÌNÌC”8 ÌNÌE”> ÌNÌK”Ì@ ÌNÌM”ÌB ÌNÌO”ÌD ÌNÌQ”” ÌI” ÌI” ÌI” ÌI–” ÌI” ÌI” ÌI” ÌI#” ÌI$” ÌI&–” ÌI” ÌI” ÌI(” ÌI2” ÌI3” ÌI6–” ÌI” ÌI” ÌI8” ÌIÌA” ÌIÌB”$ ÌIÌK–” ÌI” ÌI” ÌIÌM” ÌIÌY” ÌIÌZ” ÌIÌ[’” ÌI” ÌI”” ÌJ” ÌJ” ÌJ”" ÌJ–” ÌJ” ÌJ” ÌK” ÌK” ÌK” ÌK–” ÌJ” ÌJ” ÌK ” ÌK)” ÌK*”$ ÌK3ž” ÌJ” ÌJ” ÌL” ÌL” ÌL” ÌL” ÌL ” ÌL!”# ÌL%”$ ÌL&”1 ÌL3”2 ÌL4”ÌD ÌLÌF”ÌE ÌLÌG’” ÌJ” ÌJ’” ÌH” ÌH’” ÌF” ÌF’” ÌG” ÌG’” ÌS” ÌS–” ÌS” ÌS” ÌS” ÌS” ÌS” ÌS’” ÌS” ÌS’” 
+” ’” ” ’” ” “”, ÌZ”9 ÌZ”Ì@ ÌZ”” Ì[” Ì[” Ì[”% Ì[”” Ì\” Ì\”! Ì\”: Ì\*“” Ì]” Ì]”6 Ì] •” Ì^”! Ì^”# Ì^”& Ì^”( Ì^˜” Ì_
+”  Ì_”! Ì_”. Ì_”/ Ì_”6 Ì_$”7 Ì_%”8 Ì_&’” Ì`” Ì`	‘” Ìa”” Ì[”! Ì[”# Ì[”) Ì[”” Ì\”# Ì\”% Ì\”> Ì\*’” Ì]”# Ì]•” Ì^”% Ì^”' Ì^”* Ì^”, Ì^˜”  Ì_
+”$ Ì_”% Ì_”2 Ì_”3 Ì_”: Ì_$”; Ì_%”< Ì_&’” Ì`” Ì`	”” Ì[” Ì[” Ì[”% Ì[”” Ì\” Ì\”! Ì\”: Ì\*–” Ìc” Ìc
+” Ìc” Ìc” Ìc”  Ìc–” Ìd” Ìd”$ Ìd”( Ìd”) Ìd”1 Ìd–” Ìd” Ìd” Ìe”% Ìe”& Ìe”( Ìe–” Ìd” Ìd” Ìe”' Ìe"”( Ìe#”+ Ìe&–” Ìd” Ìd” Ìe(”& Ìe1”' Ìe2”0 Ìe;Ü ” Ìd” Ìd” Ìf”$ Ìf”% Ìf”' Ìf”+ Ìf”- Ìf”/ Ìf”1 Ìf”6 Ìf$”8 Ìf&”: Ìf(”< Ìf*”? Ìf-”ÌA Ìf/”ÌC Ìf1”ÌE Ìf3”ÌK Ìf9”ÌM Ìf;”ÌO Ìf=”ÌQ Ìf?–” Ìd” Ìd” Ìg”) Ìg”* Ìg”- Ìg–” Ìd” Ìd” Ìg”, Ìg,”- Ìg-”ÌE ÌgÌEž” Ìd” Ìd” Ìh”% Ìh”& Ìh”( Ìh”. Ìh”0 Ìh”3 Ìh!”5 Ìh#”9 Ìh'”; Ìh)”Ì@ Ìh.”ÌB Ìh0š” Ìd” Ìd” Ìh2”& Ìh;”' Ìh<”) Ìh>”* Ìh?”, ÌhÌA”2 ÌhÌG”4 ÌhÌI’” Ìd” Ìd‘” Ìi‘” Ìi’” ” 	‘” Ìk”” Ìm
+” Ìm” Ìm” Ìm#—” Ìn” Ìn” Ìn	” Ìn” Ìn” Ìn” Ìn—” Ìn” Ìn” Ìn” Ìn'” Ìn*” Ìn.” Ìn/Ü ” Ìo” Ìo” Ìo” Ìo” Ìo” Ìo” Ìo”  Ìo”) Ìo%”, Ìo(”1 Ìo-”2 Ìo.”3 Ìo/”4 Ìo0”6 Ìo2”: Ìo6”; Ìo7”< Ìo8’” Ìp” ÌpÔrF–§version¤file§sources®sourcesContent¥names¨mappingsÀ‘À‘ÀÜ~‘”    ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”  	 ‘”  
+ ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”    ‘”  ! ‘”  " ‘”  # ‘”  $ ‘”  % ‘”  & ‘”  ' ‘”  ( ‘”  ) ‘”  * ‘”  + ‘”  , ‘”  - ‘”  . ‘”  / ‘”  0 ‘”  1 ‘”  2 ‘”  3 ‘”  4 ‘”  5 ‘”  6 ‘”  7 ‘”  8 ‘”  9 ‘”  : ‘”  ; ‘”  < ‘”  = ‘”  > ‘”  ? ‘”  Ì@ ‘”  ÌA ‘”  ÌB ‘”  ÌC ‘”  ÌD ‘”  ÌE ‘”  ÌF ‘”  ÌG ‘”  ÌH ‘”  ÌI ‘”  ÌJ ‘”  ÌK ‘”  ÌL ‘”  ÌM ‘”  ÌN ‘”  ÌO ‘”  ÌP ‘”  ÌQ ‘”  ÌR ‘”  ÌS ‘”  ÌT ‘”  ÌU ‘”  ÌV ‘”  ÌW ‘”  ÌX ‘”  ÌY ‘”  ÌZ ‘”  Ì[ ‘”  Ì\ ‘”  Ì] ‘”  Ì^ ‘”  Ì_ ‘”  Ì` ‘”  Ìa ‘”  Ìb ‘”  Ìc ‘”  Ìd ‘”  Ìe ‘”  Ìf ‘”  Ìg ‘”  Ìh ‘”  Ìi ‘”  Ìj ‘”  Ìk ‘”  Ìl ‘”  Ìm ‘”  Ìn ‘”  Ìo ‘”  Ìp ‘”  Ìq ‘”  Ìr ‘”  Ìs ‘”  Ìt ‘”  Ìu ‘”  Ìv ‘”  Ìw ‘”  Ìx ‘”  Ìy ‘”  Ìz ‘”  Ì{ ‘”  Ì| ‘”  Ì} ‘”  Ì~ ‘”  Ì ‘”  Ì€ ‘”  Ì ‘”  Ì‚ ‘”  Ìƒ ‘”  Ì„ ‘”  Ì… ‘”  Ì† ‘”  Ì‡ ‘”  Ìˆ ‘”  Ì‰ ‘”  ÌŠ ‘”  Ì‹ ‘”  ÌŒ ‘”  Ì ‘”  ÌŽ ‘”  Ì ‘”  Ì ‘”  Ì‘ ‘”  Ì’ ‘”  Ì“ ‘”  Ì” ‘”  Ì• ‘”  Ì– ‘”  Ì— ‘”  Ì˜ ‘”  Ì™ ‘”  Ìš ‘”  Ì› ‘”  Ìœ ‘”  Ì ‘”  Ìž ‘”  ÌŸ ‘”  Ì  ‘”  Ì¡ ‘”  Ì¢ ‘”  Ì£ ‘”  Ì¤ ‘”  Ì¥ ‘”  Ì¦ ‘”  Ì§ ‘”  Ì¨ ‘”  Ì© ‘”  Ìª ‘”  Ì« ‘”  Ì¬ ‘”  Ì­ ‘”  Ì® ‘”  Ì¯ ‘”  Ì° ‘”  Ì± ‘”  Ì² ‘”  Ì³ ‘”  Ì´ ‘”  Ìµ ‘”  Ì¶ ‘”  Ì· ‘”  Ì¸ ‘”  Ì¹ ‘”  Ìº ‘”  Ì» ‘”  Ì¼ ‘”  Ì½ ‘”  Ì¾ ‘”  Ì¿ ‘”  ÌÀ ‘”  ÌÁ ‘”  ÌÂ ‘”  ÌÃ ‘”  ÌÄ ‘”  ÌÅ ‘”  ÌÆ ‘”  ÌÇ ‘”  ÌÈ ‘”  ÌÉ ‘”  ÌÊ ‘”  ÌË ‘”  ÌÌ ‘”  ÌÍ ‘”  ÌÎ ‘”  ÌÏ ‘”  ÌÐ ‘”  ÌÑ ‘”  ÌÒ ‘”  ÌÓ ‘”  ÌÔ ‘”  ÌÕ ‘”  ÌÖ ‘”  Ì× ‘”  ÌØ ‘”  ÌÙ ‘”  ÌÚ ‘”  ÌÛ ‘”  ÌÜ ‘”  ÌÝ ‘”  ÌÞ ‘”  Ìß ‘”  Ìà ‘”  Ìá ‘”  Ìâ ‘”  Ìã ‘”  Ìä ‘”  Ìå ‘”  Ìæ ‘”  Ìç ‘”  Ìè ‘”  Ìé ‘”  Ìê ‘”  Ìë ‘”  Ìì ‘”  Ìí ‘”  Ìî ‘”  Ìï ‘”  Ìð ‘”  Ìñ ‘”  Ìò ‘”  Ìó ‘”  Ìô ‘”  Ìõ ‘”  Ìö ‘”  Ì÷ ‘”  Ìø ‘”  Ìù ‘”  Ìú ‘”  Ìû ‘”  Ìü ‘”  Ìý ‘”  Ìþ ‘”  Ìÿ ‘”  Í  ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í	 ‘”  Í
+ ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í  ‘”  Í! ‘”  Í" ‘”  Í# ‘”  Í$ ‘”  Í% ‘”  Í& ‘”  Í' ‘”  Í( ‘”  Í) ‘”  Í* ‘”  Í+ ‘”  Í, ‘”  Í- ‘”  Í. ‘”  Í/ ‘”  Í0 ‘”  Í1 ‘”  Í2 ‘”  Í3 ‘”  Í4 ‘”  Í5 ‘”  Í6 ‘”  Í7 ‘”  Í8 ‘”  Í9 ‘”  Í: ‘”  Í; ‘”  Í< ‘”  Í= ‘”  Í> ‘”  Í? ‘”  Í@ ‘”  ÍA ‘”  ÍB ‘”  ÍC ‘”  ÍD ‘”  ÍE ‘”  ÍF ‘”  ÍG ‘”  ÍH ‘”  ÍI ‘”  ÍJ ‘”  ÍK ‘”  ÍL ‘”  ÍM ‘”  ÍN ‘”  ÍO ‘”  ÍP ‘”  ÍQ ‘”  ÍR ‘”  ÍS ‘”  ÍT ‘”  ÍU ‘”  ÍV ‘”  ÍW ‘”  ÍX ‘”  ÍY ‘”  ÍZ ‘”  Í[ ‘”  Í\ ‘”  Í] ‘”  Í^ ‘”  Í_ ‘”  Í` ‘”  Ía ‘”  Íb ‘”  Íc ‘”  Íd ‘”  Íe ‘”  Íf ‘”  Íg ‘”  Íh ‘”  Íi ‘”  Íj ‘”  Ík ‘”  Íl ‘”  Ím ‘”  Ín ‘”  Ío ‘”  Íp ‘”  Íq ‘”  Ír ‘”  Ís ‘”  Ít ‘”  Íu ‘”  Ív ‘”  Íw ‘”  Íx ‘”  Íy ‘”  Íz ‘”  Í{ ‘”  Í| ‘”  Í} ÔrG’§missing¦pluginÃ¦genAbcÂÔ  ÔrH”²dynamicImportCache¹exportAllDeclarationCache»exportNamedDeclarationCache«importCache“ÔrI•¤type¥start£endªspecifiers¦source±ImportDeclarationÌ­ÌÏ‘ÔrJ”¤type¥start£end¥local¶ImportDefaultSpecifierÌ´ÌºÔrK”¤type¥start£end¤nameªIdentifierÌ´Ìº¦routerÔrL•¤type¥start£end¥value£raw§LiteralÌÀÌÎ¬@ohos.router®"@ohos.router"I±ImportDeclarationÌÑÌÿ‘ÔrM•¤type¥start£end¨imported¥local¯ImportSpecifierÌÚÌàKªIdentifierÌÚÌà¦TopBarKªIdentifierÌÚÌà¦TopBarL§LiteralÌèÌþ´../components/TopBar¶'../components/TopBar'I±ImportDeclarationÍÍ=‘M¯ImportSpecifierÍ
+ÍKªIdentifierÍ
+Í­ConfirmDialogKªIdentifierÍ
+Í­ConfirmDialogL§LiteralÍÍ<»../components/ConfirmDialog½'../components/ConfirmDialog'

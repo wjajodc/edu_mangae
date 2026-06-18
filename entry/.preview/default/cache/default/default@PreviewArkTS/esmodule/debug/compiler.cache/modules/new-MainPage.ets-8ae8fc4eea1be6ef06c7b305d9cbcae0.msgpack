@@ -1,0 +1,247 @@
+Ôr@Ÿªassertions¤code´customTransformCache¬dependencies¢id¤meta±moduleSideEffects¬originalCode±originalSourcemap«resolvedIds®sourcemapChainµsyntheticNamedExportsµtransformDependencies®transformFiles¨cacheAstÔrAÚ Õif (!("finalizeConstruction" in ViewPU.prototype)) {
+    Reflect.set(ViewPU.prototype, "finalizeConstruction", () => { });
+}
+/**
+ * ä¸»æ¡†æ¶é¡µé¢
+ * åº•éƒ¨ Tab åˆ‡æ¢ï¼šé¦–é¡µã€è¯¾è¡¨ã€æˆç»©ã€æˆ‘çš„
+ */
+import { TabBar } from '../components/TabBar';
+import { HomePage } from './HomePage';
+import { SchedulePage } from './SchedulePage';
+import { GradesPage } from './GradesPage';
+import { MinePage } from './MinePage';
+import { Colors } from '../utils/StyleConstants';
+class MainPage extends ViewPU {
+    constructor(parent, params, __localStorage, elmtId = -1, paramsLambda = undefined, extraInfo) {
+        super(parent, __localStorage, elmtId, extraInfo);
+        if (typeof paramsLambda === "function") {
+            this.paramsGenerator_ = paramsLambda;
+        }
+        this.__activeIndex = this.createStorageLink('mainTabIndex', 0, "activeIndex");
+        this.__scheduleTabToken = this.createStorageLink('scheduleTabToken', 0, "scheduleTabToken");
+        this.setInitiallyProvidedValue(params);
+        this.finalizeConstruction();
+    }
+    setInitiallyProvidedValue(params) {
+    }
+    updateStateVars(params) {
+    }
+    purgeVariableDependenciesOnElmtId(rmElmtId) {
+        this.__activeIndex.purgeDependencyOnElmtId(rmElmtId);
+        this.__scheduleTabToken.purgeDependencyOnElmtId(rmElmtId);
+    }
+    aboutToBeDeleted() {
+        this.__activeIndex.aboutToBeDeleted();
+        this.__scheduleTabToken.aboutToBeDeleted();
+        SubscriberManager.Get().delete(this.id__());
+        this.aboutToBeDeletedInternal();
+    }
+    get activeIndex() {
+        return this.__activeIndex.get();
+    }
+    set activeIndex(newValue) {
+        this.__activeIndex.set(newValue);
+    }
+    get scheduleTabToken() {
+        return this.__scheduleTabToken.get();
+    }
+    set scheduleTabToken(newValue) {
+        this.__scheduleTabToken.set(newValue);
+    }
+    initialRender() {
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Column.create();
+            Column.debugLine("entry/src/main/ets/pages/MainPage.ets(19:5)", "entry");
+            Column.width('100%');
+            Column.height('100%');
+            Column.backgroundColor(Colors.BG);
+        }, Column);
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Stack.create();
+            Stack.debugLine("entry/src/main/ets/pages/MainPage.ets(20:7)", "entry");
+            Stack.layoutWeight(1);
+            Stack.width('100%');
+        }, Stack);
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            __Common__.create();
+            __Common__.width('100%');
+            __Common__.height('100%');
+            __Common__.visibility(this.activeIndex === 0 ? Visibility.Visible : Visibility.Hidden);
+        }, __Common__);
+        {
+            this.observeComponentCreation2((elmtId, isInitialRender) => {
+                if (isInitialRender) {
+                    let componentCall = new HomePage(this, {}, undefined, elmtId, () => { }, { page: "entry/src/main/ets/pages/MainPage.ets", line: 21, col: 9 });
+                    ViewPU.create(componentCall);
+                    let paramsLambda = () => {
+                        return {};
+                    };
+                    componentCall.paramsGenerator_ = paramsLambda;
+                }
+                else {
+                    this.updateStateVarsOfChildByElmtId(elmtId, {});
+                }
+            }, { name: "HomePage" });
+        }
+        __Common__.pop();
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            __Common__.create();
+            __Common__.width('100%');
+            __Common__.height('100%');
+            __Common__.visibility(this.activeIndex === 1 ? Visibility.Visible : Visibility.Hidden);
+        }, __Common__);
+        {
+            this.observeComponentCreation2((elmtId, isInitialRender) => {
+                if (isInitialRender) {
+                    let componentCall = new SchedulePage(this, { embedded: true, tabToken: this.scheduleTabToken }, undefined, elmtId, () => { }, { page: "entry/src/main/ets/pages/MainPage.ets", line: 26, col: 9 });
+                    ViewPU.create(componentCall);
+                    let paramsLambda = () => {
+                        return {
+                            embedded: true,
+                            tabToken: this.scheduleTabToken
+                        };
+                    };
+                    componentCall.paramsGenerator_ = paramsLambda;
+                }
+                else {
+                    this.updateStateVarsOfChildByElmtId(elmtId, {
+                        embedded: true, tabToken: this.scheduleTabToken
+                    });
+                }
+            }, { name: "SchedulePage" });
+        }
+        __Common__.pop();
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            __Common__.create();
+            __Common__.width('100%');
+            __Common__.height('100%');
+            __Common__.visibility(this.activeIndex === 2 ? Visibility.Visible : Visibility.Hidden);
+        }, __Common__);
+        {
+            this.observeComponentCreation2((elmtId, isInitialRender) => {
+                if (isInitialRender) {
+                    let componentCall = new GradesPage(this, { embedded: true }, undefined, elmtId, () => { }, { page: "entry/src/main/ets/pages/MainPage.ets", line: 31, col: 9 });
+                    ViewPU.create(componentCall);
+                    let paramsLambda = () => {
+                        return {
+                            embedded: true
+                        };
+                    };
+                    componentCall.paramsGenerator_ = paramsLambda;
+                }
+                else {
+                    this.updateStateVarsOfChildByElmtId(elmtId, {
+                        embedded: true
+                    });
+                }
+            }, { name: "GradesPage" });
+        }
+        __Common__.pop();
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            __Common__.create();
+            __Common__.width('100%');
+            __Common__.height('100%');
+            __Common__.visibility(this.activeIndex === 3 ? Visibility.Visible : Visibility.Hidden);
+        }, __Common__);
+        {
+            this.observeComponentCreation2((elmtId, isInitialRender) => {
+                if (isInitialRender) {
+                    let componentCall = new MinePage(this, {}, undefined, elmtId, () => { }, { page: "entry/src/main/ets/pages/MainPage.ets", line: 36, col: 9 });
+                    ViewPU.create(componentCall);
+                    let paramsLambda = () => {
+                        return {};
+                    };
+                    componentCall.paramsGenerator_ = paramsLambda;
+                }
+                else {
+                    this.updateStateVarsOfChildByElmtId(elmtId, {});
+                }
+            }, { name: "MinePage" });
+        }
+        __Common__.pop();
+        Stack.pop();
+        {
+            this.observeComponentCreation2((elmtId, isInitialRender) => {
+                if (isInitialRender) {
+                    let componentCall = new TabBar(this, { activeIndex: this.__activeIndex }, undefined, elmtId, () => { }, { page: "entry/src/main/ets/pages/MainPage.ets", line: 44, col: 7 });
+                    ViewPU.create(componentCall);
+                    let paramsLambda = () => {
+                        return {
+                            activeIndex: this.activeIndex
+                        };
+                    };
+                    componentCall.paramsGenerator_ = paramsLambda;
+                }
+                else {
+                    this.updateStateVarsOfChildByElmtId(elmtId, {});
+                }
+            }, { name: "TabBar" });
+        }
+        Column.pop();
+    }
+    rerender() {
+        this.updateDirtyElements();
+    }
+    static getEntryName() {
+        return "MainPage";
+    }
+}
+registerNamedRoute(() => new MainPage(undefined, {}), "", { bundleName: "com.example.notepad", moduleName: "entry", pagePath: "pages/MainPage", pageFullPath: "entry/src/main/ets/pages/MainPage", integratedHsp: "false", moduleType: "followWithHap" });
+//# sourceMappingURL=MainPage.js.mapÂ–ÙXC:\Users\32492\DevEcoStudioProjects\harmony_edu\entry\src\main\ets\components\TabBar.etsÙUC:\Users\32492\DevEcoStudioProjects\harmony_edu\entry\src\main\ets\pages\HomePage.etsÙYC:\Users\32492\DevEcoStudioProjects\harmony_edu\entry\src\main\ets\pages\SchedulePage.etsÙWC:\Users\32492\DevEcoStudioProjects\harmony_edu\entry\src\main\ets\pages\GradesPage.etsÙUC:\Users\32492\DevEcoStudioProjects\harmony_edu\entry\src\main\ets\pages\MinePage.etsÙ[C:\Users\32492\DevEcoStudioProjects\harmony_edu\entry\src\main\ets\utils\StyleConstants.etsÙUC:\Users\32492\DevEcoStudioProjects\harmony_edu\entry\src\main\ets\pages\MainPage.etsÔrBšªmoduleName±isLocalDependency¯isNodeEntryFile§pkgPath±belongProjectPath§pkgNameªpkgVersion±dependencyPkgInfo°belongModulePath¬shouldEmitJs¥entryÃÂÙ5C:\Users\32492\DevEcoStudioProjects\harmony_edu\entryÙ/C:\Users\32492\DevEcoStudioProjects\harmony_edu¥entry¥1.0.0Ô  Ù5C:\Users\32492\DevEcoStudioProjects\harmony_edu\entryÃÃÚ/**
+ * ä¸»æ¡†æ¶é¡µé¢
+ * åº•éƒ¨ Tab åˆ‡æ¢ï¼šé¦–é¡µã€è¯¾è¡¨ã€æˆç»©ã€æˆ‘çš„
+ */
+import { TabBar } from '../components/TabBar';
+import { HomePage } from './HomePage';
+import { SchedulePage } from './SchedulePage';
+import { GradesPage } from './GradesPage';
+import { MinePage } from './MinePage';
+import { Colors } from '../utils/StyleConstants';
+
+@Entry
+@Component
+struct MainPage {
+  @StorageLink('mainTabIndex') activeIndex: number = 0;
+  @StorageLink('scheduleTabToken') scheduleTabToken: number = 0;
+
+  build() {
+    Column() {
+      Stack() {
+        HomePage()
+          .width('100%')
+          .height('100%')
+          .visibility(this.activeIndex === 0 ? Visibility.Visible : Visibility.Hidden)
+
+        SchedulePage({ embedded: true, tabToken: this.scheduleTabToken })
+          .width('100%')
+          .height('100%')
+          .visibility(this.activeIndex === 1 ? Visibility.Visible : Visibility.Hidden)
+
+        GradesPage({ embedded: true })
+          .width('100%')
+          .height('100%')
+          .visibility(this.activeIndex === 2 ? Visibility.Visible : Visibility.Hidden)
+
+        MinePage()
+          .width('100%')
+          .height('100%')
+          .visibility(this.activeIndex === 3 ? Visibility.Visible : Visibility.Hidden)
+      }
+      .layoutWeight(1)
+      .width('100%')
+
+      TabBar({ activeIndex: $activeIndex })
+    }
+    .width('100%')
+    .height('100%')
+    .backgroundColor(Colors.BG)
+  }
+}
+ÀÔrC–ª./HomePage®./SchedulePage´../components/TabBar¬./GradesPageª./MinePage·../utils/StyleConstantsÔrD—ªassertions¨external¢id¤meta±moduleSideEffectsªresolvedByµsyntheticNamedExportsAÂÙUC:\Users\32492\DevEcoStudioProjects\harmony_edu\entry\src\main\ets\pages\HomePage.etsAÃªoh-resolveÂDAÂÙYC:\Users\32492\DevEcoStudioProjects\harmony_edu\entry\src\main\ets\pages\SchedulePage.etsAÃªoh-resolveÂDAÂÙXC:\Users\32492\DevEcoStudioProjects\harmony_edu\entry\src\main\ets\components\TabBar.etsAÃªoh-resolveÂDAÂÙWC:\Users\32492\DevEcoStudioProjects\harmony_edu\entry\src\main\ets\pages\GradesPage.etsAÃªoh-resolveÂDAÂÙUC:\Users\32492\DevEcoStudioProjects\harmony_edu\entry\src\main\ets\pages\MinePage.etsAÃªoh-resolveÂDAÂÙ[C:\Users\32492\DevEcoStudioProjects\harmony_edu\entry\src\main\ets\utils\StyleConstants.etsAÃªoh-resolveÂ“ÔrE–§version¤fileªsourceRoot§sources¥names¨mappings«MainPage.js ‘¬MainPage.etsÜ µ‘”    ‘” ˜”   ” ”	 	” ” ” ”- -”. .˜”   ” ”	 	” ” ” ”% %”& &˜”   ” ”	 	” ” ” ”- -”. .˜”   ” ”	 	” ” ” ”) )”* *˜”   ” ”	 	” ” ” ”% %”& &˜”  	 ” 	”	 		” 	” 	” 	”0 	0”1 	1’” ” ‘”  ””4 ”ÌB ”ÌD 5”ÌE 6””9 ”ÌK !”ÌM >”ÌN ?‘” 	1’” ” *’” ” *’” #” 3’” #” 3‘” ’” ” 
+–” ” 
+” -” -
+” -” -–” ” 
+” .” .” .”  .˜” ” 
+” /”" /”# /”) /”* /”, /’” ” –” ” ” (” (” (”  (–” ” ” )” )” )” )”” ” ” ”# ”” ” ” ”$ Ü ” ”! ”" ”& ”' ”2 &”7 +”8 ,”9 -”: .”; /”ÌE 9”ÌF :”ÌM ÌA”ÌN ÌB”ÌO ÌC”ÌP ÌD”ÌZ ÌN”Ì[ ÌO”Ìa ÌU’”, ”4 ”” ” ” ”# ”” ” ” ”$ Ü ” ”! ”" ”& ”' ”2 &”7 +”8 ,”9 -”: .”; /”ÌE 9”ÌF :”ÌM ÌA”ÌN ÌB”ÌO ÌC”ÌP ÌD”ÌZ ÌN”Ì[ ÌO”Ìa ÌU”, ”8 ”? ”ÌA ”ÌI ”ÌK !”ÌO %”ÌQ '”ÌY /”Ì[ 1”Ì_ 5”Ì` 6”Ìp ÌF”Ìr ÌH”” ”$ ”& !”* %–” '”$ /”& 1”* 5”+ 6”; ÌFš” ”  ”" !”& %”( '”0 /”2 1”6 5”7 6”ÌG ÌF”” ” ” ”# ””  ”  ”  ”$  Ü ” !”! !”" !”& !”' !”2 !&”7 !+”8 !,”9 !-”: !.”; !/”ÌE !9”ÌF !:”ÌM !ÌA”ÌN !ÌB”ÌO !ÌC”ÌP !ÌD”ÌZ !ÌN”Ì[ !ÌO”Ìa !ÌU˜”, ”6 ”= ”? ”ÌG ”ÌI ”ÌM #”ÌO %”” ”$ ”& ”* #”” ”  ”" ”& #”” $” $” $”# $”” %” %” %”$ %Ü ” &”! &”" &”& &”' &”2 &&”7 &+”8 &,”9 &-”: &.”; &/”ÌE &9”ÌF &:”ÌM &ÌA”ÌN &ÌB”ÌO &ÌC”ÌP &ÌD”ÌZ &ÌN”Ì[ &ÌO”Ìa &ÌU’”, #”4 #’” ” —”, +”2 +”9 +”; +”ÌF +”ÌZ +(”Ì\ +*’” +”' +’” ” 
+‘” 0ÔrF–§version¤file§sources®sourcesContent¥names¨mappingsÀ‘À‘ÀÜ ¾‘”    ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”  	 ‘”  
+ ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”    ‘”  ! ‘”  " ‘”  # ‘”  $ ‘”  % ‘”  & ‘”  ' ‘”  ( ‘”  ) ‘”  * ‘”  + ‘”  , ‘”  - ‘”  . ‘”  / ‘”  0 ‘”  1 ‘”  2 ‘”  3 ‘”  4 ‘”  5 ‘”  6 ‘”  7 ‘”  8 ‘”  9 ‘”  : ‘”  ; ‘”  < ‘”  = ‘”  > ‘”  ? ‘”  Ì@ ‘”  ÌA ‘”  ÌB ‘”  ÌC ‘”  ÌD ‘”  ÌE ‘”  ÌF ‘”  ÌG ‘”  ÌH ‘”  ÌI ‘”  ÌJ ‘”  ÌK ‘”  ÌL ‘”  ÌM ‘”  ÌN ‘”  ÌO ‘”  ÌP ‘”  ÌQ ‘”  ÌR ‘”  ÌS ‘”  ÌT ‘”  ÌU ‘”  ÌV ‘”  ÌW ‘”  ÌX ‘”  ÌY ‘”  ÌZ ‘”  Ì[ ‘”  Ì\ ‘”  Ì] ‘”  Ì^ ‘”  Ì_ ‘”  Ì` ‘”  Ìa ‘”  Ìb ‘”  Ìc ‘”  Ìd ‘”  Ìe ‘”  Ìf ‘”  Ìg ‘”  Ìh ‘”  Ìi ‘”  Ìj ‘”  Ìk ‘”  Ìl ‘”  Ìm ‘”  Ìn ‘”  Ìo ‘”  Ìp ‘”  Ìq ‘”  Ìr ‘”  Ìs ‘”  Ìt ‘”  Ìu ‘”  Ìv ‘”  Ìw ‘”  Ìx ‘”  Ìy ‘”  Ìz ‘”  Ì{ ‘”  Ì| ‘”  Ì} ‘”  Ì~ ‘”  Ì ‘”  Ì€ ‘”  Ì ‘”  Ì‚ ‘”  Ìƒ ‘”  Ì„ ‘”  Ì… ‘”  Ì† ‘”  Ì‡ ‘”  Ìˆ ‘”  Ì‰ ‘”  ÌŠ ‘”  Ì‹ ‘”  ÌŒ ‘”  Ì ‘”  Ì ‘”  Ì ‘”  Ì ‘”  Ì‘ ‘”  Ì’ ‘”  Ì“ ‘”  Ì” ‘”  Ì• ‘”  Ì– ‘”  Ì— ‘”  Ì˜ ‘”  Ì™ ‘”  Ìš ‘”  Ì› ‘”  Ìœ ‘”  Ì ‘”  Ì ‘”  ÌŸ ‘”  Ì  ‘”  Ì¡ ‘”  Ì¢ ‘”  Ì£ ‘”  Ì¤ ‘”  Ì¥ ‘”  Ì¦ ‘”  Ì§ ‘”  Ì¨ ‘”  Ì© ‘”  Ìª ‘”  Ì« ‘”  Ì¬ ‘”  Ì­ ‘”  Ì® ‘”  Ì¯ ‘”  Ì° ‘”  Ì± ‘”  Ì² ‘”  Ì³ ‘”  Ì´ ‘”  Ìµ ‘”  Ì¶ ‘”  Ì· ‘”  Ì¸ ‘”  Ì¹ ‘”  Ìº ‘”  Ì» ‘”  Ì¼ ‘”  Ì½ ÔrG’§missing¦pluginÃ¦genAbcÂÔ  ÔrH”²dynamicImportCache¹exportAllDeclarationCache»exportNamedDeclarationCache«importCache–ÔrI•¤type¥start£endªspecifiers¦source±ImportDeclarationÌ®ÌÜ‘ÔrJ•¤type¥start£end¨imported¥local¯ImportSpecifierÌ·Ì½ÔrK”¤type¥start£end¤nameªIdentifierÌ·Ì½¦TabBarKªIdentifierÌ·Ì½¦TabBarÔrL•¤type¥start£end¥value£raw§LiteralÌÅÌÛ´../components/TabBar¶'../components/TabBar'I±ImportDeclarationÌŞÍ‘J¯ImportSpecifierÌçÌïKªIdentifierÌçÌï¨HomePageKªIdentifierÌçÌï¨HomePageL§LiteralÌ÷Íª./HomePage¬'./HomePage'I±ImportDeclarationÍÍ4‘J¯ImportSpecifierÍÍKªIdentifierÍÍ¬SchedulePageKªIdentifierÍÍ¬SchedulePageL§LiteralÍ#Í3®./SchedulePage°'./SchedulePage'I±ImportDeclarationÍ6Í`‘J¯ImportSpecifierÍ?ÍIKªIdentifierÍ?ÍIªGradesPageKªIdentifierÍ?ÍIªGradesPageL§LiteralÍQÍ_¬./GradesPage®'./GradesPage'I±ImportDeclarationÍbÍˆ‘J¯ImportSpecifierÍkÍsKªIdentifierÍkÍs¨MinePageKªIdentifierÍkÍs¨MinePageL§LiteralÍ{Í‡ª./MinePage¬'./MinePage'I±ImportDeclarationÍŠÍ»‘J¯ImportSpecifierÍ“Í™KªIdentifierÍ“Í™¦ColorsKªIdentifierÍ“Í™¦ColorsL§LiteralÍ¡Íº·../utils/StyleConstants¹'../utils/StyleConstants'
